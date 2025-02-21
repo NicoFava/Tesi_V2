@@ -77,7 +77,7 @@ void sort_events_by_id(vector<muone>&);
 void PeSum_histograms(const vector<muone>&);
 
 // Funzione per creare un istogramma delle distanze percorse all'interno del rivelatore
-void Distance_histogram(const vector<muone>&);
+void Distance_histogram(const vector<muone>&, const string&);
 
 // Funzione per contare il numero di file da analizzare (.root)
 int count_root_files(const string&);

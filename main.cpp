@@ -16,17 +16,18 @@ int main(int argc, char* argv[]) {
 
     // Stampa il numero di eventi caricati per ciascun file con il nome della RUN
     for (size_t i = 0; i < eventi_per_file.size(); i++) {
-        cout << "RUN " << run_names[i] << ": " << eventi_per_file[i].size() << " eventi caricati" << endl;
+        cout << run_names[i] << ": " << eventi_per_file[i].size() << " eventi caricati" << endl;
     }
     cout <<"Tempo tra due eventi successivi e rate:" << endl;
     double delta_t = 0;
     for (size_t i = 0; i < eventi_per_file.size(); i++) {
+        cout << run_names[i] << ": "<< endl;
         delta_t = mean_delta_t(eventi_per_file[i])*1e-9;
-        cout << "RUN " << run_names[i] << ": "<< endl;
         cout <<"t = " << delta_t << "s | rate = "<< 1.0/(delta_t) << " Hz" << endl;
-        cout << "--------------------------------------------" << endl;
         total_PeSum_histogram(eventi_per_file[i], run_names[i]);
         plot_theta_distribution(eventi_per_file[i], run_names[i]);
+        Distance_histogram(eventi_per_file[i], run_names[i]);
+        cout << "--------------------------------------------" << endl;
     }
     app.Run();
     return 0;

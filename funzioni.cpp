@@ -98,8 +98,13 @@ void save_all_data_to_file(const vector<muone>& eventi, const string& filename =
 }
 
 void total_PeSum_histogram(const vector<muone>& eventi, const string& run_name) {
+    string folder_name = "PeSum_plot";
+    if (!fs::exists(folder_name)) {
+        fs::create_directory(folder_name);
+    }
     TCanvas *canvas = new TCanvas(("canvas_charge_" + run_name).c_str(), ("Istogramma Energia - " + run_name).c_str(), 800, 600);
     TH1F *charge = new TH1F(("Distribuzione_dell_energia_" + run_name).c_str(), ("Distribuzione dell'energia - " + run_name).c_str(), 100, 100, 100);
+    gPad->SetLeftMargin(0.12);
     charge->StatOverflows(kTRUE);
     canvas->SetGrid();
     for (const auto& ev : eventi) {
@@ -111,8 +116,10 @@ void total_PeSum_histogram(const vector<muone>& eventi, const string& run_name) 
     charge->SetFillColorAlpha(kBlue, 0.3);
     charge->Draw();
     // Salva il grafico con il nome della RUN
-    string filename = "PeSum_" + run_name + ".png";
+    string filename = folder_name + "/PeSum_" + run_name + ".png";
     canvas->SaveAs(filename.c_str());
+    delete canvas;
+    delete charge;
 }
 
 void plot_3D_distribution(const vector<muone>& eventi){
@@ -141,9 +148,14 @@ void plot_3D_distribution(const vector<muone>& eventi){
 }
 
 void plot_theta_distribution(const vector<muone>& eventi, const string& run_name){
+    string folder_name = "Theta_plot";
+    if (!fs::exists(folder_name)) {
+        fs::create_directory(folder_name);
+    }
     gStyle->SetOptStat(1);  // Abilita il box delle statistiche
     TCanvas *canvas = new TCanvas(("canvas_theta_" + run_name).c_str(), ("Distribuzione angolare - " + run_name).c_str(), 800, 600);
     TH1F *zenith = new TH1F(("Distribuzione_angolare_" + run_name).c_str(), ("Distribuzione angolare - " + run_name).c_str(), 100, 100, 100);
+    gPad->SetLeftMargin(0.12);
     zenith->StatOverflows(kTRUE);
     canvas->SetGrid();
     for(const auto& e:eventi){
@@ -157,8 +169,10 @@ void plot_theta_distribution(const vector<muone>& eventi, const string& run_name
     zenith->GetXaxis()->SetTitle("cos(#theta)");
     zenith->GetYaxis()->SetTitle("Counts [a.u.]");
     zenith->Draw("HIST");
-    string filename = "Theta_" + run_name + ".png";
+    string filename = folder_name + "/Theta_" + run_name + ".png";
     canvas->SaveAs(filename.c_str());
+    delete canvas;
+    delete zenith;
 }
 
 int muon_bundle(const vector<muone>& eventi){
@@ -310,9 +324,14 @@ void PeSum_histograms(const vector<muone>& eventi) {
     canvasB->SaveAs("PeSum_bundle.png");
 }
 
-void Distance_histogram(const vector<muone>& eventi){
-    TCanvas *canval = new TCanvas("canval", "Istogramma Distanza percorsa all'interno del CD", 800, 600);
-    TH1F *dist = new TH1F("Distanza percorsa all'interno del CD", "Distanza percorsa all'interno del CD", 100, 100, 100);
+void Distance_histogram(const vector<muone>& eventi, const string& run_name){
+    string folder_name = "Distance_plot";
+    if (!fs::exists(folder_name)) {
+        fs::create_directory(folder_name);
+    }
+    TCanvas *canval = new TCanvas(("canvas_dist_" + run_name).c_str(), ("Distanza percorsa - " + run_name).c_str(), 800, 600);
+    TH1F *dist = new TH1F(("Distribuzione_distanza_percorsa_" + run_name).c_str(), ("Distribuzione distanza percorsa - " + run_name).c_str(), 100, 100, 100);
+    gPad->SetLeftMargin(0.12);
     dist->StatOverflows(kTRUE);
     canval->SetGrid();
     for (const auto& ev : eventi) {
@@ -324,7 +343,10 @@ void Distance_histogram(const vector<muone>& eventi){
     dist->SetLineWidth(2);
     dist->SetFillColorAlpha(kOrange, 0.3);
     dist->Draw();
-    canval->SaveAs("Distance_plot.png");
+    string filename = folder_name + "/Distance_" + run_name + ".png";
+    canval->SaveAs(filename.c_str());
+    delete canval;
+    delete dist;
 }
 
 int count_root_files(const string& folder_path) {
