@@ -1,6 +1,5 @@
 #include "funzioni.h"
 
-// Prendo i dati dal TTree e li inserisco in un vector di muone
 vector<muone> load_root_data(const string& filename) {
     vector<muone> eventi;
     
@@ -40,7 +39,6 @@ vector<muone> load_root_data(const string& filename) {
     for (Long64_t i = 0; i < nEntries; i++) {
         tree->GetEntry(i);
         evento.distance = sqrt(pow(evento.exit_x - evento.entry_x, 2) + pow(evento.exit_y - evento.entry_y, 2) + pow(evento.exit_z - evento.entry_z, 2));
-
         eventi.push_back(evento);
     }
 
@@ -62,7 +60,7 @@ void print_all_data(const vector<muone>& eventi) {
         cout << "Uscita (x,y,z): (" << ev.exit_x << ", " << ev.exit_y << ", " << ev.exit_z << ")" << endl;
         cout << "Direzione (ux,uy,uz): (" << ev.ux << ", " << ev.uy << ", " << ev.uz << ")" << endl;
         cout << "Qualità Posizione: " << ev.quality << endl;
-       // cout << "Tempo Entrata: " << ev.entry_time << " | Tempo Uscita: " << ev.exit_time << endl;
+     // cout << "Tempo Entrata: " << ev.entry_time << " | Tempo Uscita: " << ev.exit_time << endl;
         cout << "Distanza percorsa: "<< ev.distance << " mm" << endl;
         cout << "--------------------------------------------" << endl;
     }
@@ -88,11 +86,10 @@ void save_all_data_to_file(const vector<muone>& eventi, const string& filename =
         file << "Uscita (x,y,z): (" << ev.exit_x << ", " << ev.exit_y << ", " << ev.exit_z << ")\n";
         file << "Direzione (ux,uy,uz): (" << ev.ux << ", " << ev.uy << ", " << ev.uz << ")\n";
         file << "Qualità Posizione: " << ev.quality << "\n";
-       // file << "Tempo Entrata: " << ev.entry_time << " | Tempo Uscita: " << ev.exit_time << "\n";
+     // file << "Tempo Entrata: " << ev.entry_time << " | Tempo Uscita: " << ev.exit_time << "\n";
         file << "Distanza percorsa: " << ev.distance << " mm\n";
         file << "--------------------------------------------\n";
     }
-
     file.close();
     cout << "Dati salvati con successo in " << filename << "!" << endl;
 }
@@ -102,20 +99,23 @@ void total_PeSum_histogram(const vector<muone>& eventi, const string& run_name) 
     if (!fs::exists(folder_name)) {
         fs::create_directory(folder_name);
     }
+    
     TCanvas *canvas = new TCanvas(("canvas_charge_" + run_name).c_str(), ("Istogramma Energia - " + run_name).c_str(), 800, 600);
     TH1F *charge = new TH1F(("Distribuzione_dell_energia_" + run_name).c_str(), ("Distribuzione dell'energia - " + run_name).c_str(), 100, 100, 100);
     gPad->SetLeftMargin(0.12);
     charge->StatOverflows(kTRUE);
     canvas->SetGrid();
+    
     for (const auto& ev : eventi) {
         charge->Fill(ev.PeSum);
     }
+    
     charge->GetXaxis()->SetTitle("Charge [p.e.]");
     charge->GetYaxis()->SetTitle("Counts [a.u.]");
     charge->SetLineWidth(2);
     charge->SetFillColorAlpha(kBlue, 0.3);
     charge->Draw();
-    // Salva il grafico con il nome della RUN
+    
     string filename = folder_name + "/PeSum_" + run_name + ".png";
     canvas->SaveAs(filename.c_str());
     delete canvas;
@@ -152,20 +152,22 @@ void plot_theta_distribution(const vector<muone>& eventi, const string& run_name
     if (!fs::exists(folder_name)) {
         fs::create_directory(folder_name);
     }
-    gStyle->SetOptStat(1);  // Abilita il box delle statistiche
+    
+    gStyle->SetOptStat(1);
     TCanvas *canvas = new TCanvas(("canvas_theta_" + run_name).c_str(), ("Distribuzione angolare - " + run_name).c_str(), 800, 600);
-    TH1F *zenith = new TH1F(("Distribuzione_angolare_" + run_name).c_str(), ("Distribuzione angolare - " + run_name).c_str(), 100, 100, 100);
+    TH1F *zenith = new TH1F(run_name.c_str(), ("Distribuzione angolare - " + run_name).c_str(), 100, 100, 100);
     gPad->SetLeftMargin(0.12);
     zenith->StatOverflows(kTRUE);
     canvas->SetGrid();
+    
     for(const auto& e:eventi){
         double theta = acos(e.uz);
         zenith->Fill(cos(theta));
     }
+    
     zenith->SetLineColor(kGreen);
     zenith->SetLineWidth(2);
     zenith->SetFillColorAlpha(kGreen, 0.3);
-    
     zenith->GetXaxis()->SetTitle("cos(#theta)");
     zenith->GetYaxis()->SetTitle("Counts [a.u.]");
     zenith->Draw("HIST");
@@ -202,10 +204,11 @@ int Nevents(const vector<muone>& eventi){
 float mean_delta_t(const vector<muone>& eventi){
     double mean_delta_t_= 0;
     int last_entry_time = 0;
+    
     vector<float> intervalli;
     for (size_t i = 1; i < eventi.size(); i++) {
         if(eventi[i].fSec+eventi[i].fNanosec!=last_entry_time){
-            // Converti il tempo in nanosecondi e calcola la differenza
+            // Converto il tempo in nanosecondi e calcola la differenza
             float t1 = eventi[i - 1].fSec * 1e9 + eventi[i - 1].fNanosec;
             float t2 = eventi[i].fSec * 1e9 + eventi[i].fNanosec;
             float delta_t = t2 - t1;
@@ -219,10 +222,8 @@ float mean_delta_t(const vector<muone>& eventi){
         }
     }
 
-    // Calcola la media
     double somma = accumulate(intervalli.begin(), intervalli.end(), 0.0);
     double media = somma / intervalli.size();
-
     return media;
 }
 
@@ -247,22 +248,17 @@ void PeSum_histograms(const vector<muone>& eventi) {
 
     size_t i = 0;
     while (i < eventi.size()) {
-        // Prendiamo il tempo di riferimento del primo evento del gruppo
         int current_fSec = eventi[i].fSec;
         int current_fNanosec = eventi[i].fNanosec;
         double totalPeSum = 0.0;
         int numMuoni = 0;
 
-        // Raggruppa tutti gli eventi con lo stesso tempo (fSec e fNanosec uguali) e somma PeSum
-        while (i < eventi.size() && 
-               eventi[i].fSec == current_fSec && 
-               eventi[i].fNanosec == current_fNanosec) {
+        while (i < eventi.size() && eventi[i].fSec == current_fSec && eventi[i].fNanosec == current_fNanosec) {
             totalPeSum += eventi[i].PeSum;
             numMuoni++;
             i++;
         }
 
-        // Inserisci nei rispettivi istogrammi
         if (numMuoni == 1) {
             one->Fill(totalPeSum);
         } else if (numMuoni == 2) {
@@ -276,7 +272,6 @@ void PeSum_histograms(const vector<muone>& eventi) {
         }
     }
 
-    // Disegna gli istogrammi
     canvasA->cd();
     one->GetXaxis()->SetTitle("Charge [p.e.]");
     one->GetYaxis()->SetTitle("Counts [a.u.]");
@@ -285,7 +280,6 @@ void PeSum_histograms(const vector<muone>& eventi) {
     one->SetFillColorAlpha(kRed, 0.3);
     one->Draw();
 
-    // Istogrammi bundle
     canvasB->cd(1);
     gPad->SetGrid();
     two->GetXaxis()->SetTitle("Charge [p.e.]");
@@ -319,7 +313,6 @@ void PeSum_histograms(const vector<muone>& eventi) {
     five->SetFillColorAlpha(kRed, 0.3);
     five->Draw();
 
-    // Salva i grafici
     canvasA->SaveAs("PeSum_singoli.png");
     canvasB->SaveAs("PeSum_bundle.png");
 }
@@ -329,11 +322,12 @@ void Distance_histogram(const vector<muone>& eventi, const string& run_name){
     if (!fs::exists(folder_name)) {
         fs::create_directory(folder_name);
     }
-    TCanvas *canval = new TCanvas(("canvas_dist_" + run_name).c_str(), ("Distanza percorsa - " + run_name).c_str(), 800, 600);
-    TH1F *dist = new TH1F(("Distribuzione_distanza_percorsa_" + run_name).c_str(), ("Distribuzione distanza percorsa - " + run_name).c_str(), 100, 100, 100);
+    
+    TCanvas *canvas = new TCanvas(("canvas_dist_" + run_name).c_str(), ("Distanza percorsa - " + run_name).c_str(), 800, 600);
+    TH1F *dist = new TH1F(run_name.c_str(), ("Distribuzione distanza percorsa - " + run_name).c_str(), 100, 100, 100);
     gPad->SetLeftMargin(0.12);
     dist->StatOverflows(kTRUE);
-    canval->SetGrid();
+    canvas->SetGrid();
     for (const auto& ev : eventi) {
         dist->Fill(ev.distance);
     }
@@ -344,15 +338,15 @@ void Distance_histogram(const vector<muone>& eventi, const string& run_name){
     dist->SetFillColorAlpha(kOrange, 0.3);
     dist->Draw();
     string filename = folder_name + "/Distance_" + run_name + ".png";
-    canval->SaveAs(filename.c_str());
-    delete canval;
+    canvas->SaveAs(filename.c_str());
+    delete canvas;
     delete dist;
 }
 
 int count_root_files(const string& folder_path) {
     int count = 0;
     
-    // Scansiona la cartella e conta i file con estensione .root
+    // Scansiono la cartella e conto i file con estensione .root
     for (const auto& entry : fs::directory_iterator(folder_path)) {
         if (entry.path().extension() == ".root") {
             count++;
@@ -362,10 +356,10 @@ int count_root_files(const string& folder_path) {
 }
 
 string get_run_name(const string& filepath) {
-    string filename = fs::path(filepath).filename().string();  // Ottiene solo il nome del file
-    size_t pos = filename.find("_");  // Trova il primo underscore
+    string filename = fs::path(filepath).filename().string();
+    size_t pos = filename.find("_");
     if (pos != string::npos) {
-        filename = filename.substr(0, pos);  // Prende solo la parte prima dell'underscore
+        filename = filename.substr(0, pos);
     }
     return filename;
 }
@@ -373,11 +367,11 @@ string get_run_name(const string& filepath) {
 vector<vector<muone>> load_multiple_root_files(const string& folder_path, vector<string>& run_names) {
     vector<vector<muone>> all_eventi;
     
-    // Scansiona la cartella e carica ogni file in un vettore separato
+    // Scansiono la cartella e carico ogni file in un vettore separato
     for (const auto& entry : fs::directory_iterator(folder_path)) {
         if (entry.path().extension() == ".root") {
             string run_name = get_run_name(entry.path().string());
-            run_names.push_back(run_name);  // Salva il nome della RUN
+            run_names.push_back(run_name);
 
             cout << "Caricamento file: " << run_name << endl;
             vector<muone> eventi = load_root_data(entry.path().string());
@@ -387,4 +381,31 @@ vector<vector<muone>> load_multiple_root_files(const string& folder_path, vector
 
     cout << "Numero totale di file ROOT analizzati: " << all_eventi.size() << endl;
     return all_eventi;
+}
+
+void PeSum_vs_Angle(const vector<muone>& eventi, const string& run_name) {
+    string folder_name = "PeSum_vs_Angle_plot";
+    if (!fs::exists(folder_name)) {
+        fs::create_directory(folder_name);
+    }
+    TCanvas *canvas = new TCanvas(("canvas_2D_" + run_name).c_str(), ("Heatmap Energia vs Angolo - " + run_name).c_str(), 800, 600);
+    gPad->SetRightMargin(0.12);
+    canvas->SetGrid();
+
+    TH2F *hist2D = new TH2F( run_name.c_str(), ("Energia vs Angolo - " + run_name).c_str(), 100, 100, 100, 100, 100, 100);
+
+    for (const auto& ev : eventi) {
+        hist2D->Fill(cos(acos(ev.uz)), ev.PeSum);
+    }
+
+    hist2D->GetXaxis()->SetTitle("cos(#theta)");
+    hist2D->GetYaxis()->SetTitle("PeSum [p.e.]");
+    hist2D->Draw("COLZ");
+
+
+    string filename = folder_name + "/Energy_vs_Direction_angle_" + run_name + ".png";
+    canvas->SaveAs(filename.c_str());
+    canvas->SaveAs(filename.c_str());
+    delete canvas;
+    delete hist2D;
 }

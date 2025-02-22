@@ -88,4 +88,7 @@ string get_run_name(const string&);
 // Funzione per caricare più file ROOT e salvare i nomi delle RUN
 vector<vector<muone>> load_multiple_root_files(const string&, vector<string>&);
 
+// Funzione per studiare la correlazione tra la direzione dei muoni e la loro energia
+void PeSum_vs_Angle(const vector<muone>&, const string&);
+
 #endif

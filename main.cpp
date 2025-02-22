@@ -27,6 +27,7 @@ int main(int argc, char* argv[]) {
         total_PeSum_histogram(eventi_per_file[i], run_names[i]);
         plot_theta_distribution(eventi_per_file[i], run_names[i]);
         Distance_histogram(eventi_per_file[i], run_names[i]);
+        PeSum_vs_Angle(eventi_per_file[i], run_names[i]);
         cout << "--------------------------------------------" << endl;
     }
     app.Run();
