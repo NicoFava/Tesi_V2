@@ -18,7 +18,6 @@ vector<muone> load_root_data(const string& filename) {
 
     muone evento;
     tree->SetBranchAddress("EvtID", &evento.eventID);
-    tree->SetBranchAddress("TrackNumber", &evento.trackID);
     tree->SetBranchAddress("fSec", &evento.fSec);
     tree->SetBranchAddress("fNanoSec", &evento.fNanosec);
     tree->SetBranchAddress("PeSum", &evento.PeSum);
@@ -35,11 +34,25 @@ vector<muone> load_root_data(const string& filename) {
    // tree->SetBranchAddress("InTime", &evento.entry_time);
    // tree->SetBranchAddress("OutTime", &evento.exit_time);
    
-   Long64_t nEntries = tree->GetEntries();
+    // Controllo se esiste il branch "TrackNumber"
+    bool hasTrackNumber = (tree->GetBranch("TrackNumber") != nullptr);
+    if (hasTrackNumber) {
+     tree->SetBranchAddress("TrackNumber", &evento.trackID);
+    }
+
+    Long64_t nEntries = tree->GetEntries();
     for (Long64_t i = 0; i < nEntries; i++) {
         tree->GetEntry(i);
         evento.distance = sqrt(pow(evento.exit_x - evento.entry_x, 2) + pow(evento.exit_y - evento.entry_y, 2) + pow(evento.exit_z - evento.entry_z, 2));
-        eventi.push_back(evento);
+
+     // Se il file ha il trackNumber, lo consideriamo normalmente
+        if (hasTrackNumber) {
+            eventi.push_back(evento);
+        } else {
+            // Se non ha trackNumber, possiamo decidere di ignorarlo o assegnare un valore di default
+            evento.trackID = -1; // Assegnamo un valore di default
+            eventi.push_back(evento);
+        }
     }
 
     file->Close();
@@ -177,19 +190,46 @@ void plot_theta_distribution(const vector<muone>& eventi, const string& run_name
     delete zenith;
 }
 
-int muon_bundle(const vector<muone>& eventi){
-    int bundle = 0;
-    int last_entry_time = 0;
-    for(const auto& e : eventi){
-        if(e.trackID > 0 && e.fSec+e.fNanosec!= last_entry_time){
-            last_entry_time = e.fSec+e.fNanosec;
-            bundle++;// Conto il bundle una sola volta per tempo
+int Nevents(const vector<muone>& eventi) {
+    int nevents = 0;
+    int last_event_id = -1;
+    for (const auto& e : eventi) {
+        if (e.eventID != last_event_id) {
+            last_event_id = e.eventID;
+            nevents++;
         }
     }
-    return bundle;
+    return nevents;
 }
 
-int Nevents(const vector<muone>& eventi){
+int muon_bundle(const vector<muone>& eventi) {
+    int bundle_count = 0;
+    int last_event_id = -1;
+    int count = 0;
+
+    for (const auto& e : eventi) {
+        if (e.trackID > 0) {
+            if (e.eventID != last_event_id) {
+                if (count > 1) {
+                    bundle_count++;
+                }
+                last_event_id = e.eventID;
+                count = 1;
+            } else {
+                count++;
+            }
+        }
+    }
+
+    // Controlla l'ultimo gruppo di eventi
+    if (count > 1) {
+        bundle_count++;
+    }
+
+    return bundle_count;
+}
+
+/*int Nevents(const vector<muone>& eventi){
     int nevents = 0;
     int last_entry_time = 0;
     for(const auto& e : eventi){
@@ -201,6 +241,7 @@ int Nevents(const vector<muone>& eventi){
     return nevents;
 }
 
+*/
 float mean_delta_t(const vector<muone>& eventi){
     double mean_delta_t_= 0;
     int last_entry_time = 0;
@@ -404,7 +445,6 @@ void PeSum_vs_Angle(const vector<muone>& eventi, const string& run_name) {
 
 
     string filename = folder_name + "/Energy_vs_Direction_angle_" + run_name + ".png";
-    canvas->SaveAs(filename.c_str());
     canvas->SaveAs(filename.c_str());
     delete canvas;
     delete hist2D;
