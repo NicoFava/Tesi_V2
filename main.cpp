@@ -18,12 +18,15 @@ int main(int argc, char* argv[]) {
     for (size_t i = 0; i < eventi_per_file.size(); i++) {
         cout << run_names[i] << ": " << eventi_per_file[i].size() << " eventi caricati" << endl;
     }
-    cout <<"Tempo tra due eventi successivi e rate:" << endl;
     double delta_t = 0;
+    cout << "============================================" << endl;
+    cout << "Alcuni dati per ogni RUN: " << endl;
     for (size_t i = 0; i < eventi_per_file.size(); i++) {
         cout << run_names[i] << ": "<< endl;
         delta_t = mean_delta_t(eventi_per_file[i])*1e-9;
         cout <<"t = " << delta_t << "s | rate = "<< 1.0/(delta_t) << " Hz" << endl;
+        cout << "Il numero di eventi singoli registrati è: " << Nevents(eventi_per_file[i]) << endl;
+        cout << "Il numero di eventi bundle (muoni per traccia > 1) registrati è: " << muon_bundle(eventi_per_file[i]) << " e rappresentano il: " << (double) muon_bundle(eventi_per_file[i])/((double)Nevents(eventi_per_file[i]))*100 << "%. " << endl;
         total_PeSum_histogram(eventi_per_file[i], run_names[i]);
         plot_theta_distribution(eventi_per_file[i], run_names[i]);
         Distance_histogram(eventi_per_file[i], run_names[i]);
