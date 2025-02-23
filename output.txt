@@ -1,0 +1,267 @@
+Caricamento file: RUN3896
+Caricamento file: RUN3415
+Caricamento file: RUN3639
+Caricamento file: RUNa3677
+Caricamento file: RUN3531
+Caricamento file: RUN3697
+Caricamento file: RUN3872
+Caricamento file: RUN3885
+Caricamento file: RUN3889
+Caricamento file: RUN3793
+Caricamento file: RUN3530
+Caricamento file: RUN3413
+Caricamento file: RUN3416
+Caricamento file: RUN3322
+Caricamento file: RUN3326
+Caricamento file: RUN3743
+Caricamento file: RUN3677
+Caricamento file: RUN3753
+Caricamento file: RUN3709
+Caricamento file: RUN3708
+Numero totale di file ROOT analizzati: 20
+RUN3896: 187385 eventi caricati
+RUN3415: 10536 eventi caricati
+RUN3639: 0 eventi caricati
+RUNa3677: 76956 eventi caricati
+RUN3531: 32251 eventi caricati
+RUN3697: 171223 eventi caricati
+RUN3872: 129659 eventi caricati
+RUN3885: 340561 eventi caricati
+RUN3889: 145502 eventi caricati
+RUN3793: 209297 eventi caricati
+RUN3530: 34924 eventi caricati
+RUN3413: 64440 eventi caricati
+RUN3416: 70877 eventi caricati
+RUN3322: 12934 eventi caricati
+RUN3326: 74193 eventi caricati
+RUN3743: 52329 eventi caricati
+RUN3677: 138330 eventi caricati
+RUN3753: 40160 eventi caricati
+RUN3709: 16430 eventi caricati
+RUN3708: 11342 eventi caricati
+============================================
+Alcuni dati per ogni RUN: 
+RUN3896: 
+t = 0.159895s | rate = 6.25412 Hz
+Il numero di eventi singoli registrati è: 157423
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 3436 e rappresentano il: 2.18265%. 
+Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3896.png has been created
+Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3896.png has been created
+Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3896.png has been created
+Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUN3896.png has been created
+--------------------------------------------
+RUN3415: 
+t = 0.164431s | rate = 6.08158 Hz
+Il numero di eventi singoli registrati è: 8886
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 0 e rappresentano il: 0%. 
+Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3415.png has been created
+Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3415.png has been created
+Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3415.png has been created
+Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUN3415.png has been created
+--------------------------------------------
+RUN3639: 
+t = -nans | rate = -nan Hz
+Il numero di eventi singoli registrati è: 0
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 0 e rappresentano il: -nan%. 
+Error in <TCanvas::Range>: illegal world coordinates range: x1=100.000000, y1=-0.131250, x2=100.000000, y2=1.181250
+Error in <TCanvas::RangeAxis>: illegal axis coordinates range: xmin=100.000000, ymin=0.000000, xmax=100.000000, ymax=1.050000
+Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3639.png has been created
+Error in <TCanvas::Range>: illegal world coordinates range: x1=100.000000, y1=-0.131250, x2=100.000000, y2=1.181250
+Error in <TCanvas::RangeAxis>: illegal axis coordinates range: xmin=100.000000, ymin=0.000000, xmax=100.000000, ymax=1.050000
+Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3639.png has been created
+Error in <TCanvas::Range>: illegal world coordinates range: x1=100.000000, y1=-0.131250, x2=100.000000, y2=1.181250
+Error in <TCanvas::RangeAxis>: illegal axis coordinates range: xmin=100.000000, ymin=0.000000, xmax=100.000000, ymax=1.050000
+Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3639.png has been created
+Error in <TCanvas::Range>: illegal world coordinates range: x1=100.000000, y1=100.000000, x2=100.000000, y2=100.000000
+Error in <TCanvas::RangeAxis>: illegal axis coordinates range: xmin=100.000000, ymin=100.000000, xmax=100.000000, ymax=100.000000
+Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUN3639.png has been created
+--------------------------------------------
+RUNa3677: 
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+t = 0.24468s | rate = 4.08696 Hz
+Il numero di eventi singoli registrati è: 64905
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1358 e rappresentano il: 2.09229%. 
+Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUNa3677.png has been created
+Info in <TCanvas::Print>: file Theta_plot/Theta_RUNa3677.png has been created
+Info in <TCanvas::Print>: file Distance_plot/Distance_RUNa3677.png has been created
+Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUNa3677.png has been created
+--------------------------------------------
+RUN3531: 
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+t = 0.157687s | rate = 6.34169 Hz
+Il numero di eventi singoli registrati è: 27104
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 0 e rappresentano il: 0%. 
+Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3531.png has been created
+Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3531.png has been created
+Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3531.png has been created
+Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUN3531.png has been created
+--------------------------------------------
+RUN3697: 
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+t = 0.234388s | rate = 4.26643 Hz
+Il numero di eventi singoli registrati è: 137728
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 2897 e rappresentano il: 2.10342%. 
+Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3697.png has been created
+Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3697.png has been created
+Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3697.png has been created
+Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUN3697.png has been created
+--------------------------------------------
+RUN3872: 
+t = 0.159002s | rate = 6.28924 Hz
+Il numero di eventi singoli registrati è: 109278
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 2311 e rappresentano il: 2.11479%. 
+Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3872.png has been created
+Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3872.png has been created
+Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3872.png has been created
+Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUN3872.png has been created
+--------------------------------------------
+RUN3885: 
+t = 0.159006s | rate = 6.28909 Hz
+Il numero di eventi singoli registrati è: 286644
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 6077 e rappresentano il: 2.12005%. 
+Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3885.png has been created
+Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3885.png has been created
+Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3885.png has been created
+Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUN3885.png has been created
+--------------------------------------------
+RUN3889: 
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+t = 0.160582s | rate = 6.22736 Hz
+Il numero di eventi singoli registrati è: 122035
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 2731 e rappresentano il: 2.23788%. 
+Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3889.png has been created
+Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3889.png has been created
+Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3889.png has been created
+Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUN3889.png has been created
+--------------------------------------------
+RUN3793: 
+t = 0.156288s | rate = 6.39844 Hz
+Il numero di eventi singoli registrati è: 175813
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 3792 e rappresentano il: 2.15684%. 
+Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3793.png has been created
+Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3793.png has been created
+Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3793.png has been created
+Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUN3793.png has been created
+--------------------------------------------
+RUN3530: 
+t = 0.149548s | rate = 6.6868 Hz
+Il numero di eventi singoli registrati è: 29429
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 0 e rappresentano il: 0%. 
+Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3530.png has been created
+Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3530.png has been created
+Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3530.png has been created
+Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUN3530.png has been created
+--------------------------------------------
+RUN3413: 
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+t = 0.163309s | rate = 6.12335 Hz
+Il numero di eventi singoli registrati è: 54336
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 0 e rappresentano il: 0%. 
+Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3413.png has been created
+Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3413.png has been created
+Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3413.png has been created
+Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUN3413.png has been created
+--------------------------------------------
+RUN3416: 
+t = 0.162423s | rate = 6.15676 Hz
+Il numero di eventi singoli registrati è: 59753
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 0 e rappresentano il: 0%. 
+Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3416.png has been created
+Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3416.png has been created
+Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3416.png has been created
+Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUN3416.png has been created
+--------------------------------------------
+RUN3322: 
+t = 0.31973s | rate = 3.12764 Hz
+Il numero di eventi singoli registrati è: 10732
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 0 e rappresentano il: 0%. 
+Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3322.png has been created
+Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3322.png has been created
+Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3322.png has been created
+Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUN3322.png has been created
+--------------------------------------------
+RUN3326: 
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+t = 0.452743s | rate = 2.20876 Hz
+Il numero di eventi singoli registrati è: 57227
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 0 e rappresentano il: 0%. 
+Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3326.png has been created
+Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3326.png has been created
+Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3326.png has been created
+Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUN3326.png has been created
+--------------------------------------------
+RUN3743: 
+t = 0.14971s | rate = 6.67958 Hz
+Il numero di eventi singoli registrati è: 43502
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 960 e rappresentano il: 2.2068%. 
+Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3743.png has been created
+Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3743.png has been created
+Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3743.png has been created
+Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUN3743.png has been created
+--------------------------------------------
+RUN3677: 
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
+t = 0.237514s | rate = 4.21028 Hz
+Il numero di eventi singoli registrati è: 116557
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 2499 e rappresentano il: 2.14402%. 
+Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3677.png has been created
+Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3677.png has been created
+Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3677.png has been created
+Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUN3677.png has been created
+--------------------------------------------
+RUN3753: 
+t = 0.150584s | rate = 6.6408 Hz
+Il numero di eventi singoli registrati è: 33859
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 694 e rappresentano il: 2.04968%. 
+Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3753.png has been created
+Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3753.png has been created
+Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3753.png has been created
+Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUN3753.png has been created
+--------------------------------------------
+RUN3709: 
+t = 0.242603s | rate = 4.12196 Hz
+Il numero di eventi singoli registrati è: 13529
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 308 e rappresentano il: 2.27659%. 
+Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3709.png has been created
+Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3709.png has been created
+Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3709.png has been created
+Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUN3709.png has been created
+--------------------------------------------
+RUN3708: 
+t = 0.157544s | rate = 6.34743 Hz
+Il numero di eventi singoli registrati è: 9422
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 202 e rappresentano il: 2.14392%. 
+Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3708.png has been created
+Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3708.png has been created
+Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3708.png has been created
+Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUN3708.png has been created
+--------------------------------------------
