@@ -2,8 +2,8 @@
 
 📌 **Tesi_V2** è l'evoluzione dei progetti **Tesi_V0** e **Tesi_V1**, con miglioramenti nel codice per supportare l'analisi di **più file contemporaneamente** e la generazione automatica di immagini organizzate in apposite cartelle.  
 
-## 📄 **Output.txt**  
-Il file **Output.txt** contiene una sintesi dei risultati principali dell'analisi:  
+## 📄 **output.txt**  
+Il file **output.txt** contiene una sintesi dei risultati principali dell'analisi:  
 
 - **t**: Tempo medio tra un evento e quello successivo.
 - **Rate**: Frequenza dei muoni rilevati.
