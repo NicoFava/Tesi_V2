@@ -5,7 +5,8 @@
 ## 📄 **output.txt**  
 Il file **output.txt** contiene una sintesi dei risultati principali dell'analisi:  
 
-- **t**: Tempo medio tra un evento e quello successivo.
+- **t**: Tempo totale della RUN in secondi.
+- **<delta_t>**: Tempo medio tra un evento e quello successivo in secondi.
 - **Rate**: Frequenza dei muoni rilevati.
 -  **Numero di eventi univoci**: Conteggio degli **EventID** registrati per ogni run (utile per calcolare la percentuale di eventi bundle).  
 - **Numero di eventi bundle**: Eventi con **più tracce** (ossia più di un muone per singolo EventID).  

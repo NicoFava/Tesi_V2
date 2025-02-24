@@ -16,6 +16,12 @@ vector<muone> load_root_data(const string& filename) {
         return eventi;
     }
 
+     if (tree->GetEntries() == 0) {
+        cerr << "Errore: TTree 'MuonEvents' è vuoto!" << endl;
+        file->Close();
+        return eventi;
+    }
+
     muone evento;
     tree->SetBranchAddress("EvtID", &evento.eventID);
     tree->SetBranchAddress("fSec", &evento.fSec);
@@ -448,4 +454,16 @@ void PeSum_vs_Angle(const vector<muone>& eventi, const string& run_name) {
     canvas->SaveAs(filename.c_str());
     delete canvas;
     delete hist2D;
+}
+
+double total_run_time(const vector<muone>& eventi) {
+    if (eventi.empty()) {
+        return 0.0;
+    }
+
+    double start_time = eventi.front().fSec + eventi.front().fNanosec * 1e-9;
+    double end_time = eventi.back().fSec + eventi.back().fNanosec * 1e-9;
+    double total_time = end_time - start_time;
+
+    return total_time;
 }

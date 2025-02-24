@@ -91,4 +91,7 @@ vector<vector<muone>> load_multiple_root_files(const string&, vector<string>&);
 // Funzione per studiare la correlazione tra la direzione dei muoni e la loro energia
 void PeSum_vs_Angle(const vector<muone>&, const string&);
 
+// Funzione per calcolare il tempo totale della run
+double total_run_time(const vector<muone>&);
+
 #endif
