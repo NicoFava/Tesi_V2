@@ -93,7 +93,7 @@ RUN4002: 55300 eventi caricati
 ============================================
 1) RUN3951: 
 Tempo totale della RUN: t = 13366.3 s
-<delta_t> = 0.15454 s | rate = 6.4708 Hz
+<delta_t> = 0.187031 s | rate = 5.3467 Hz
 Il numero di eventi singoli registrati è: 71281
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1566 e rappresentano il: 2.19694%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3951.png has been created
@@ -105,7 +105,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3951.png has be
 --------------------------------------------
 2) RUN3949: 
 Tempo totale della RUN: t = 12140.2 s
-<delta_t> = 0.156144 s | rate = 6.40433 Hz
+<delta_t> = 0.188952 s | rate = 5.29235 Hz
 Il numero di eventi singoli registrati è: 64010
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1415 e rappresentano il: 2.21059%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3949.png has been created
@@ -117,7 +117,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3949.png has be
 --------------------------------------------
 3) RUN4051: 
 Tempo totale della RUN: t = 1195.62 s
-<delta_t> = 0.151978 s | rate = 6.57989 Hz
+<delta_t> = 0.183361 s | rate = 5.45373 Hz
 Il numero di eventi singoli registrati è: 6747
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 136 e rappresentano il: 2.01571%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4051.png has been created
@@ -130,7 +130,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN4051.png has be
 4) RUN4013: RUN vuota, salto l'analisi.
 5) RUN3896: 
 Tempo totale della RUN: t = 30031.6 s
-<delta_t> = 0.159895 s | rate = 6.25412 Hz
+<delta_t> = 0.190327 s | rate = 5.25411 Hz
 Il numero di eventi singoli registrati è: 157423
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 3436 e rappresentano il: 2.18265%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3896.png has been created
@@ -142,7 +142,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3896.png has be
 --------------------------------------------
 6) RUN3415: 
 Tempo totale della RUN: t = 1732.28 s
-<delta_t> = 0.164431 s | rate = 6.08158 Hz
+<delta_t> = 0.194967 s | rate = 5.12908 Hz
 Il numero di eventi singoli registrati è: 8886
 In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3415.png has been created
@@ -153,7 +153,7 @@ Trovato trackID = -1, salto la creazione degli istogrammi per la run RUN3415
 --------------------------------------------
 7) RUN3976: 
 Tempo totale della RUN: t = 14300.2 s
-<delta_t> = 0.153755 s | rate = 6.50387 Hz
+<delta_t> = 0.186139 s | rate = 5.37232 Hz
 Il numero di eventi singoli registrati è: 76791
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1715 e rappresentano il: 2.23333%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3976.png has been created
@@ -166,7 +166,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3976.png has be
 8) RUN3639: RUN vuota, salto l'analisi.
 9) RUN3978: 
 Tempo totale della RUN: t = 14384.8 s
-<delta_t> = 0.153388 s | rate = 6.5194 Hz
+<delta_t> = 0.185868 s | rate = 5.38015 Hz
 Il numero di eventi singoli registrati è: 76903
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1762 e rappresentano il: 2.2912%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3978.png has been created
@@ -178,7 +178,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3978.png has be
 --------------------------------------------
 10) RUN4036: 
 Tempo totale della RUN: t = 8917.12 s
-<delta_t> = 0.145188 s | rate = 6.88765 Hz
+<delta_t> = 0.176044 s | rate = 5.6804 Hz
 Il numero di eventi singoli registrati è: 50747
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1152 e rappresentano il: 2.27008%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4036.png has been created
@@ -190,7 +190,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN4036.png has be
 --------------------------------------------
 11) RUN3948: 
 Tempo totale della RUN: t = 14294.9 s
-<delta_t> = 0.156087 s | rate = 6.40669 Hz
+<delta_t> = 0.189064 s | rate = 5.2892 Hz
 Il numero di eventi singoli registrati è: 75603
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1785 e rappresentano il: 2.36102%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3948.png has been created
@@ -202,7 +202,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3948.png has be
 --------------------------------------------
 12) RUN3937: 
 Tempo totale della RUN: t = 30613 s
-<delta_t> = 0.160153 s | rate = 6.24402 Hz
+<delta_t> = 0.189966 s | rate = 5.26409 Hz
 Il numero di eventi singoli registrati è: 160616
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 3403 e rappresentano il: 2.11872%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3937.png has been created
@@ -215,7 +215,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3937.png has be
 13) RUNa3677: 
 Tempo totale della RUN: t = 8062.97 s
 Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
-<delta_t> = 0.24468 s | rate = 4.08696 Hz
+<delta_t> = 0.290112 s | rate = 3.44695 Hz
 Il numero di eventi singoli registrati è: 64905
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1358 e rappresentano il: 2.09229%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUNa3677.png has been created
@@ -228,7 +228,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUNa3677.png has b
 14) RUN3531: 
 Tempo totale della RUN: t = 4842.63 s
 Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
-<delta_t> = 0.157687 s | rate = 6.34169 Hz
+<delta_t> = 0.187633 s | rate = 5.32954 Hz
 Il numero di eventi singoli registrati è: 27104
 In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3531.png has been created
@@ -239,7 +239,7 @@ Trovato trackID = -1, salto la creazione degli istogrammi per la run RUN3531
 --------------------------------------------
 15) RUN3938: 
 Tempo totale della RUN: t = 11804.6 s
-<delta_t> = 0.159716 s | rate = 6.26113 Hz
+<delta_t> = 0.189952 s | rate = 5.26449 Hz
 Il numero di eventi singoli registrati è: 62226
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1408 e rappresentano il: 2.26272%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3938.png has been created
@@ -252,7 +252,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3938.png has be
 16) RUN3697: 
 Tempo totale della RUN: t = 20473.9 s
 Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
-<delta_t> = 0.234388 s | rate = 4.26643 Hz
+<delta_t> = 0.291391 s | rate = 3.43181 Hz
 Il numero di eventi singoli registrati è: 137728
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 2897 e rappresentano il: 2.10342%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3697.png has been created
@@ -264,7 +264,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3697.png has be
 --------------------------------------------
 17) RUN3872: 
 Tempo totale della RUN: t = 20655.3 s
-<delta_t> = 0.159002 s | rate = 6.28924 Hz
+<delta_t> = 0.188657 s | rate = 5.30063 Hz
 Il numero di eventi singoli registrati è: 109278
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 2311 e rappresentano il: 2.11479%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3872.png has been created
@@ -276,7 +276,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3872.png has be
 --------------------------------------------
 18) RUN3885: 
 Tempo totale della RUN: t = 54190.6 s
-<delta_t> = 0.159006 s | rate = 6.28909 Hz
+<delta_t> = 0.188914 s | rate = 5.29341 Hz
 Il numero di eventi singoli registrati è: 286644
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 6077 e rappresentano il: 2.12005%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3885.png has been created
@@ -289,7 +289,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3885.png has be
 19) RUN3889: 
 Tempo totale della RUN: t = 23151.8 s
 Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
-<delta_t> = 0.160582 s | rate = 6.22736 Hz
+<delta_t> = 0.191462 s | rate = 5.22298 Hz
 Il numero di eventi singoli registrati è: 122035
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 2731 e rappresentano il: 2.23788%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3889.png has been created
@@ -301,7 +301,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3889.png has be
 --------------------------------------------
 20) RUN3793: 
 Tempo totale della RUN: t = 32650.6 s
-<delta_t> = 0.156288 s | rate = 6.39844 Hz
+<delta_t> = 0.186054 s | rate = 5.37479 Hz
 Il numero di eventi singoli registrati è: 175813
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 3792 e rappresentano il: 2.15684%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3793.png has been created
@@ -313,7 +313,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3793.png has be
 --------------------------------------------
 21) RUN4048: 
 Tempo totale della RUN: t = 5288.74 s
-<delta_t> = 0.144488 s | rate = 6.92097 Hz
+<delta_t> = 0.175611 s | rate = 5.69439 Hz
 Il numero di eventi singoli registrati è: 29741
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 700 e rappresentano il: 2.35365%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4048.png has been created
@@ -325,7 +325,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN4048.png has be
 --------------------------------------------
 22) RUN3530: 
 Tempo totale della RUN: t = 5253.97 s
-<delta_t> = 0.149548 s | rate = 6.6868 Hz
+<delta_t> = 0.177473 s | rate = 5.63465 Hz
 Il numero di eventi singoli registrati è: 29429
 In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3530.png has been created
@@ -336,7 +336,7 @@ Trovato trackID = -1, salto la creazione degli istogrammi per la run RUN3530
 --------------------------------------------
 23) RUN3975: 
 Tempo totale della RUN: t = 7616.1 s
-<delta_t> = 0.150266 s | rate = 6.65486 Hz
+<delta_t> = 0.182065 s | rate = 5.49255 Hz
 Il numero di eventi singoli registrati è: 41520
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 991 e rappresentano il: 2.3868%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3975.png has been created
@@ -348,7 +348,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3975.png has be
 --------------------------------------------
 24) RUN4049: 
 Tempo totale della RUN: t = 14382.4 s
-<delta_t> = 0.146163 s | rate = 6.84169 Hz
+<delta_t> = 0.177258 s | rate = 5.6415 Hz
 Il numero di eventi singoli registrati è: 81414
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1848 e rappresentano il: 2.26988%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4049.png has been created
@@ -361,7 +361,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN4049.png has be
 25) RUN3413: 
 Tempo totale della RUN: t = 9953.79 s
 Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
-<delta_t> = 0.163309 s | rate = 6.12335 Hz
+<delta_t> = 0.193678 s | rate = 5.1632 Hz
 Il numero di eventi singoli registrati è: 54336
 In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3413.png has been created
@@ -372,7 +372,7 @@ Trovato trackID = -1, salto la creazione degli istogrammi per la run RUN3413
 --------------------------------------------
 26) RUN3977: 
 Tempo totale della RUN: t = 14643.3 s
-<delta_t> = 0.15504 s | rate = 6.44997 Hz
+<delta_t> = 0.187445 s | rate = 5.33491 Hz
 Il numero di eventi singoli registrati è: 78456
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1718 e rappresentano il: 2.18976%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3977.png has been created
@@ -384,7 +384,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3977.png has be
 --------------------------------------------
 27) RUN4007: 
 Tempo totale della RUN: t = 14164.4 s
-<delta_t> = 0.154677 s | rate = 6.46508 Hz
+<delta_t> = 0.187296 s | rate = 5.33914 Hz
 Il numero di eventi singoli registrati è: 75583
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1750 e rappresentano il: 2.31534%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4007.png has been created
@@ -396,7 +396,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN4007.png has be
 --------------------------------------------
 28) RUN3416: 
 Tempo totale della RUN: t = 11511.9 s
-<delta_t> = 0.162423 s | rate = 6.15676 Hz
+<delta_t> = 0.192661 s | rate = 5.19045 Hz
 Il numero di eventi singoli registrati è: 59753
 In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3416.png has been created
@@ -407,7 +407,7 @@ Trovato trackID = -1, salto la creazione degli istogrammi per la run RUN3416
 --------------------------------------------
 29) RUN3322: 
 Tempo totale della RUN: t = 4135.07 s
-<delta_t> = 0.31973 s | rate = 3.12764 Hz
+<delta_t> = 0.385339 s | rate = 2.59512 Hz
 Il numero di eventi singoli registrati è: 10732
 In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3322.png has been created
@@ -418,7 +418,7 @@ Trovato trackID = -1, salto la creazione degli istogrammi per la run RUN3322
 --------------------------------------------
 30) RUN3990: 
 Tempo totale della RUN: t = 13778.3 s
-<delta_t> = 0.154294 s | rate = 6.48113 Hz
+<delta_t> = 0.186837 s | rate = 5.35227 Hz
 Il numero di eventi singoli registrati è: 73562
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1717 e rappresentano il: 2.33409%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3990.png has been created
@@ -431,7 +431,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3990.png has be
 31) RUN3326: 
 Tempo totale della RUN: t = 12380.6 s
 Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
-<delta_t> = 0.452743 s | rate = 2.20876 Hz
+<delta_t> = 0.586972 s | rate = 1.70366 Hz
 Il numero di eventi singoli registrati è: 57227
 In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3326.png has been created
@@ -442,7 +442,7 @@ Trovato trackID = -1, salto la creazione degli istogrammi per la run RUN3326
 --------------------------------------------
 32) RUN4045: 
 Tempo totale della RUN: t = 14362.8 s
-<delta_t> = 0.145595 s | rate = 6.86836 Hz
+<delta_t> = 0.17584 s | rate = 5.687 Hz
 Il numero di eventi singoli registrati è: 81289
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1831 e rappresentano il: 2.25246%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4045.png has been created
@@ -454,7 +454,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN4045.png has be
 --------------------------------------------
 33) RUN3743: 
 Tempo totale della RUN: t = 7781.32 s
-<delta_t> = 0.14971 s | rate = 6.67958 Hz
+<delta_t> = 0.180088 s | rate = 5.55283 Hz
 Il numero di eventi singoli registrati è: 43502
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 960 e rappresentano il: 2.2068%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3743.png has been created
@@ -496,7 +496,7 @@ Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
 Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
 Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
 Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
-<delta_t> = 0.237514 s | rate = 4.21028 Hz
+<delta_t> = 0.281893 s | rate = 3.54744 Hz
 Il numero di eventi singoli registrati è: 116557
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 2499 e rappresentano il: 2.14402%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3677.png has been created
@@ -508,7 +508,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3677.png has be
 --------------------------------------------
 35) RUN3947: 
 Tempo totale della RUN: t = 14397.4 s
-<delta_t> = 0.155168 s | rate = 6.44463 Hz
+<delta_t> = 0.18815 s | rate = 5.31491 Hz
 Il numero di eventi singoli registrati è: 76701
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1737 e rappresentano il: 2.26464%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3947.png has been created
@@ -520,7 +520,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3947.png has be
 --------------------------------------------
 36) RUN4005: 
 Tempo totale della RUN: t = 14381.9 s
-<delta_t> = 0.155302 s | rate = 6.43908 Hz
+<delta_t> = 0.188861 s | rate = 5.29489 Hz
 Il numero di eventi singoli registrati è: 76412
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1809 e rappresentano il: 2.36743%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4005.png has been created
@@ -532,7 +532,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN4005.png has be
 --------------------------------------------
 37) RUN3753: 
 Tempo totale della RUN: t = 6043.41 s
-<delta_t> = 0.150584 s | rate = 6.6408 Hz
+<delta_t> = 0.178608 s | rate = 5.59885 Hz
 Il numero di eventi singoli registrati è: 33859
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 694 e rappresentano il: 2.04968%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3753.png has been created
@@ -544,7 +544,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3753.png has be
 --------------------------------------------
 38) RUN3940: 
 Tempo totale della RUN: t = 14263.7 s
-<delta_t> = 0.159073 s | rate = 6.28643 Hz
+<delta_t> = 0.189244 s | rate = 5.28418 Hz
 Il numero di eventi singoli registrati è: 74805
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1590 e rappresentano il: 2.12553%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3940.png has been created
@@ -556,7 +556,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3940.png has be
 --------------------------------------------
 39) RUN3709: 
 Tempo totale della RUN: t = 3980.92 s
-<delta_t> = 0.242603 s | rate = 4.12196 Hz
+<delta_t> = 0.294628 s | rate = 3.39411 Hz
 Il numero di eventi singoli registrati è: 13529
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 308 e rappresentano il: 2.27659%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3709.png has been created
@@ -568,7 +568,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3709.png has be
 --------------------------------------------
 40) RUN4006: 
 Tempo totale della RUN: t = 14383.4 s
-<delta_t> = 0.152891 s | rate = 6.5406 Hz
+<delta_t> = 0.185586 s | rate = 5.38834 Hz
 Il numero di eventi singoli registrati è: 77020
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1810 e rappresentano il: 2.35004%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4006.png has been created
@@ -580,7 +580,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN4006.png has be
 --------------------------------------------
 41) RUN3945: 
 Tempo totale della RUN: t = 13698.5 s
-<delta_t> = 0.154753 s | rate = 6.46192 Hz
+<delta_t> = 0.187505 s | rate = 5.3332 Hz
 Il numero di eventi singoli registrati è: 73300
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1721 e rappresentano il: 2.34789%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3945.png has been created
@@ -592,7 +592,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3945.png has be
 --------------------------------------------
 42) RUN3708: 
 Tempo totale della RUN: t = 1693.94 s
-<delta_t> = 0.157544 s | rate = 6.34743 Hz
+<delta_t> = 0.189651 s | rate = 5.27283 Hz
 Il numero di eventi singoli registrati è: 9422
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 202 e rappresentano il: 2.14392%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3708.png has been created
@@ -604,7 +604,7 @@ Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3708.png has be
 --------------------------------------------
 43) RUN4002: 
 Tempo totale della RUN: t = 8544.48 s
-<delta_t> = 0.154093 s | rate = 6.48957 Hz
+<delta_t> = 0.186586 s | rate = 5.35945 Hz
 Il numero di eventi singoli registrati è: 45670
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1061 e rappresentano il: 2.32319%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4002.png has been created
