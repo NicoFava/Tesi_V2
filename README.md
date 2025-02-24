@@ -47,6 +47,8 @@ Istogrammi della **carica in fotoelettroni** per i muoni singoli.
 ### :six: **:file_folder: PeSum_bundle_plot**  
 Istogrammi della **carica in fotoelettroni** per i muoni bundle.  
 
+### :seven: **:eight_pointed_black_star: Muon_Rate_vs_Run**  
+Grafico del **rate dei muoni** in funzione dell'indice della run. Questo grafico mostra la frequenza dei muoni rilevati per ogni run.
 ---  
 
 ## :rocket: **Come usare il programma**  
@@ -61,12 +63,12 @@ Istogrammi della **carica in fotoelettroni** per i muoni bundle.
 
 ## :gear: **Dipendenze**  
 Assicurarsi di avere installate le seguenti librerie e strumenti necessari per eseguire il programma:  
-- ROOT (CERN)  
+- CERN ROOT  
 - g++  
 - CMake  
 
 ---  
 
 ## :pencil: **Autore**  
-Tesi sviluppata da **Nicolò Favagrossa**  
+Codice sviluppato da **Nicolò Favagrossa**  
 

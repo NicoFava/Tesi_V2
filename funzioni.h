@@ -25,6 +25,8 @@
 #include "TColor.h"
 #include "TFile.h"
 #include "TTree.h"
+#include "TGraphErrors.h"
+#include "TString.h"
 
 using namespace std;
 namespace fs = std::filesystem; // Alias per filesystem
