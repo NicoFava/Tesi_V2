@@ -74,7 +74,7 @@ float mean_delta_t(const vector<muone>&);
 void sort_events_by_id(vector<muone>&);
 
 // Funzione per creare istogramma di energia per muoni singoli e bundle
-void PeSum_histograms(const vector<muone>&);
+void PeSum_histograms(const vector<muone>& eventi, const string& run_name);
 
 // Funzione per creare un istogramma delle distanze percorse all'interno del rivelatore
 void Distance_histogram(const vector<muone>&, const string&);

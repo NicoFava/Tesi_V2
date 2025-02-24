@@ -2,6 +2,8 @@
 
 :pushpin: **Tesi_V2** è l'evoluzione dei progetti **Tesi_V0** e **Tesi_V1**, con miglioramenti nel codice per supportare l'analisi di **più file contemporaneamente** e la generazione automatica di immagini organizzate in apposite cartelle.  
 
+---  
+
 ## :page_facing_up: **output.txt**  
 Il file **output.txt** contiene una sintesi dei risultati principali dell'analisi:  
 
@@ -16,8 +18,9 @@ Il file **output.txt** contiene una sintesi dei risultati principali dell'analis
   - Se viene rilevato un **intervallo di tempo negativo tra due eventi**, verrà stampato un **messaggio di errore** a video e quell'intervallo sarà **ignorato** nel calcolo di <delta_t>.  
 - **Rate**: Frequenza dei muoni rilevati.  
 - **Numero di eventi univoci**: Conteggio degli **EventID** registrati per ogni run (utile per calcolare la percentuale di eventi bundle).  
-- **Numero di eventi bundle**: Eventi con **più tracce** (ossia più di un muone per singolo EventID).  
-- **Percentuale di eventi bundle**: Percentuale di eventi multipli rispetto al totale.  
+- **Numero di eventi bundle**: Eventi con **più tracce** (ossia più di un muone per singolo EventID).
+- **Percentuale di eventi bundle**: Percentuale di eventi multipli rispetto al totale.
+  -In caso di **TrackID inesistente** tutte le quantità legate ai muoni bundle non verranno calcolate.  
 
  Inoltre, il file di output include i **messaggi di creazione delle immagini** generate automaticamente durante l'analisi.  
 
@@ -38,13 +41,32 @@ Grafici **bidimensionali** che mostrano la correlazione tra **direzione** e **en
 ### :four: **:file_folder: Theta_plot**  
 Istogrammi della **distribuzione angolare** dei muoni, mostrando il **coseno dell’angolo** della direzione di propagazione dei muoni rispetto all'asse \( z \).  
 
+### :five: **:file_folder: PeSum_single_plot**  
+Istogrammi della **carica in fotoelettroni** per i muoni singoli.  
+
+### :six: **:file_folder: PeSum_bundle_plot**  
+Istogrammi della **carica in fotoelettroni** per i muoni bundle.  
+
 ---  
 
 ## :rocket: **Come usare il programma**  
 1. Inserire i file .root da analizzare in una cartella **<nome_cartella>**.  
 2. Eseguire il programma:  
    
-
 ```bash  
    ./main <nome_cartella>  
-```
+```  
+ 
+---  
+
+## :gear: **Dipendenze**  
+Assicurarsi di avere installate le seguenti librerie e strumenti necessari per eseguire il programma:  
+- ROOT (CERN)  
+- g++  
+- CMake  
+
+---  
+
+## :pencil: **Autore**  
+Tesi sviluppata da **Nicolò Favagrossa**  
+

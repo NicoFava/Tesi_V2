@@ -55,8 +55,7 @@ vector<muone> load_root_data(const string& filename) {
         if (hasTrackNumber) {
             eventi.push_back(evento);
         } else {
-            // Se non ha trackNumber, possiamo decidere di ignorarlo o assegnare un valore di default
-            evento.trackID = -1; // Assegnamo un valore di default
+            evento.trackID = -1;
             eventi.push_back(evento);
         }
     }
@@ -235,19 +234,6 @@ int muon_bundle(const vector<muone>& eventi) {
     return bundle_count;
 }
 
-/*int Nevents(const vector<muone>& eventi){
-    int nevents = 0;
-    int last_entry_time = 0;
-    for(const auto& e : eventi){
-        if(e.fSec+e.fNanosec != last_entry_time){
-            last_entry_time = e.fSec+e.fNanosec;
-            nevents++;
-        }
-    }
-    return nevents;
-}
-
-*/
 float mean_delta_t(const vector<muone>& eventi){
     double mean_delta_t_= 0;
     int last_entry_time = 0;
@@ -280,27 +266,44 @@ void sort_events_by_id(vector<muone>& eventi) {
     });
 }
 
-void PeSum_histograms(const vector<muone>& eventi) {
-    TCanvas *canvasA = new TCanvas("canvasA", "Istogramma Energia - Muoni Singoli", 800, 600);
-    TCanvas *canvasB = new TCanvas("canvasB", "Istogramma Energia - Muoni Bundle", 800, 600);
-    canvasB->Divide(2,2);
+void PeSum_histograms(const vector<muone>& eventi, const string& run_name) {
+    // Controlla se c'è almeno un trackID uguale a -1
+    for (const auto& e : eventi) {
+        if (e.trackID == -1) {
+            cout << "Trovato trackID = -1, salto la creazione degli istogrammi per la run " << run_name << endl;
+            return; // Esce dalla funzione
+        }
+    }
 
-    TH1F *one = new TH1F("Muoni singoli", "Distribuzione Energia - Muoni Singoli", 100, 100, 100);
-    TH1F *two = new TH1F("Muoni doppi", "Distribuzione Energia - Muoni doppi", 100, 100, 100);
-    TH1F *three = new TH1F("Muoni tripli", "Distribuzione Energia - Muoni tripli", 100, 100, 100);
-    TH1F *four = new TH1F("Muoni quadrupli", "Distribuzione Energia - Muoni quadrupli", 100, 100, 100);
-    TH1F *five = new TH1F("Muoni > quintupli", "Distribuzione Energia - Muoni > quintupli", 100, 100, 100);
+    string folder_name_singoli = "PeSum_histograms_singoli";
+    string folder_name_bundle = "PeSum_histograms_bundle";
+
+    if (!fs::exists(folder_name_singoli)) {
+        fs::create_directory(folder_name_singoli);
+    }
+    if (!fs::exists(folder_name_bundle)) {
+        fs::create_directory(folder_name_bundle);
+    }
+
+    TCanvas *canvasA = new TCanvas(("canvasA_" + run_name).c_str(), ("Istogramma Energia - Muoni Singoli - " + run_name).c_str(), 800, 600);
+    TCanvas *canvasB = new TCanvas(("canvasB_" + run_name).c_str(), ("Istogramma Energia - Muoni Bundle - " + run_name).c_str(), 800, 600);
+    canvasB->Divide(2, 2);
+
+    TH1F *one = new TH1F(("1_" + run_name).c_str(), ("Distribuzione Energia - Muoni Singoli - " + run_name).c_str(), 100, 100, 100);
+    TH1F *two = new TH1F(("2_" + run_name).c_str(), ("Distribuzione Energia - Muoni Doppi - " + run_name).c_str(), 100, 100, 100);
+    TH1F *three = new TH1F(("3_" + run_name).c_str(), ("Distribuzione Energia - Muoni Tripli - " + run_name).c_str(), 100, 100, 100);
+    TH1F *four = new TH1F(("4_" + run_name).c_str(), ("Distribuzione Energia - Muoni Quadrupli - " + run_name).c_str(), 100, 100, 100);
+    TH1F *five = new TH1F(("4>_" + run_name).c_str(), ("Distribuzione Energia - Muoni > Quintupli - " + run_name).c_str(), 100, 100, 100);
 
     canvasA->SetGrid();
 
     size_t i = 0;
     while (i < eventi.size()) {
-        int current_fSec = eventi[i].fSec;
-        int current_fNanosec = eventi[i].fNanosec;
+        int current_eventID = eventi[i].eventID;
         double totalPeSum = 0.0;
         int numMuoni = 0;
 
-        while (i < eventi.size() && eventi[i].fSec == current_fSec && eventi[i].fNanosec == current_fNanosec) {
+        while (i < eventi.size() && eventi[i].eventID == current_eventID) {
             totalPeSum += eventi[i].PeSum;
             numMuoni++;
             i++;
@@ -360,8 +363,17 @@ void PeSum_histograms(const vector<muone>& eventi) {
     five->SetFillColorAlpha(kRed, 0.3);
     five->Draw();
 
-    canvasA->SaveAs("PeSum_singoli.png");
-    canvasB->SaveAs("PeSum_bundle.png");
+    string filenameA = folder_name_singoli + "/PeSum_singoli_" + run_name + ".png";
+    string filenameB = folder_name_bundle + "/PeSum_bundle_" + run_name + ".png";
+    canvasA->SaveAs(filenameA.c_str());
+    canvasB->SaveAs(filenameB.c_str());
+    delete canvasA;
+    delete canvasB;
+    delete one;
+    delete two;
+    delete three;
+    delete four;
+    delete five;
 }
 
 void Distance_histogram(const vector<muone>& eventi, const string& run_name){
