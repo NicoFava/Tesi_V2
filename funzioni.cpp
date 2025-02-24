@@ -275,8 +275,8 @@ void PeSum_histograms(const vector<muone>& eventi, const string& run_name) {
         }
     }
 
-    string folder_name_singoli = "PeSum_histograms_singoli";
-    string folder_name_bundle = "PeSum_histograms_bundle";
+    string folder_name_singoli = "PeSum_single_plot";
+    string folder_name_bundle = "PeSum_bundle_plot";
 
     if (!fs::exists(folder_name_singoli)) {
         fs::create_directory(folder_name_singoli);

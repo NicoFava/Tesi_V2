@@ -53,14 +53,14 @@ Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3896.png has been created
 Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3896.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3896.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUN3896.png has been created
-Info in <TCanvas::Print>: file PeSum_histograms_singoli/PeSum_singoli_RUN3896.png has been created
-Info in <TCanvas::Print>: file PeSum_histograms_bundle/PeSum_bundle_RUN3896.png has been created
+Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3896.png has been created
+Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3896.png has been created
 --------------------------------------------
 RUN3415: 
 Tempo totale della RUN: t = 1732.28 s
 <delta_t> = 0.164431 s | rate = 6.08158 Hz
 Il numero di eventi singoli registrati è: 8886
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 0 e rappresentano il: 0%. 
+In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3415.png has been created
 Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3415.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3415.png has been created
@@ -79,15 +79,15 @@ Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUNa3677.png has been created
 Info in <TCanvas::Print>: file Theta_plot/Theta_RUNa3677.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUNa3677.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUNa3677.png has been created
-Info in <TCanvas::Print>: file PeSum_histograms_singoli/PeSum_singoli_RUNa3677.png has been created
-Info in <TCanvas::Print>: file PeSum_histograms_bundle/PeSum_bundle_RUNa3677.png has been created
+Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUNa3677.png has been created
+Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUNa3677.png has been created
 --------------------------------------------
 RUN3531: 
 Tempo totale della RUN: t = 4842.63 s
 Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
 <delta_t> = 0.157687 s | rate = 6.34169 Hz
 Il numero di eventi singoli registrati è: 27104
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 0 e rappresentano il: 0%. 
+In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3531.png has been created
 Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3531.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3531.png has been created
@@ -104,8 +104,8 @@ Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3697.png has been created
 Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3697.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3697.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUN3697.png has been created
-Info in <TCanvas::Print>: file PeSum_histograms_singoli/PeSum_singoli_RUN3697.png has been created
-Info in <TCanvas::Print>: file PeSum_histograms_bundle/PeSum_bundle_RUN3697.png has been created
+Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3697.png has been created
+Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3697.png has been created
 --------------------------------------------
 RUN3872: 
 Tempo totale della RUN: t = 20655.3 s
@@ -116,8 +116,8 @@ Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3872.png has been created
 Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3872.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3872.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUN3872.png has been created
-Info in <TCanvas::Print>: file PeSum_histograms_singoli/PeSum_singoli_RUN3872.png has been created
-Info in <TCanvas::Print>: file PeSum_histograms_bundle/PeSum_bundle_RUN3872.png has been created
+Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3872.png has been created
+Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3872.png has been created
 --------------------------------------------
 RUN3885: 
 Tempo totale della RUN: t = 54190.6 s
@@ -128,8 +128,8 @@ Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3885.png has been created
 Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3885.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3885.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUN3885.png has been created
-Info in <TCanvas::Print>: file PeSum_histograms_singoli/PeSum_singoli_RUN3885.png has been created
-Info in <TCanvas::Print>: file PeSum_histograms_bundle/PeSum_bundle_RUN3885.png has been created
+Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3885.png has been created
+Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3885.png has been created
 --------------------------------------------
 RUN3889: 
 Tempo totale della RUN: t = 23151.8 s
@@ -141,8 +141,8 @@ Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3889.png has been created
 Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3889.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3889.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUN3889.png has been created
-Info in <TCanvas::Print>: file PeSum_histograms_singoli/PeSum_singoli_RUN3889.png has been created
-Info in <TCanvas::Print>: file PeSum_histograms_bundle/PeSum_bundle_RUN3889.png has been created
+Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3889.png has been created
+Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3889.png has been created
 --------------------------------------------
 RUN3793: 
 Tempo totale della RUN: t = 32650.6 s
@@ -153,14 +153,14 @@ Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3793.png has been created
 Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3793.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3793.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUN3793.png has been created
-Info in <TCanvas::Print>: file PeSum_histograms_singoli/PeSum_singoli_RUN3793.png has been created
-Info in <TCanvas::Print>: file PeSum_histograms_bundle/PeSum_bundle_RUN3793.png has been created
+Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3793.png has been created
+Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3793.png has been created
 --------------------------------------------
 RUN3530: 
 Tempo totale della RUN: t = 5253.97 s
 <delta_t> = 0.149548 s | rate = 6.6868 Hz
 Il numero di eventi singoli registrati è: 29429
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 0 e rappresentano il: 0%. 
+In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3530.png has been created
 Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3530.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3530.png has been created
@@ -172,7 +172,7 @@ Tempo totale della RUN: t = 9953.79 s
 Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
 <delta_t> = 0.163309 s | rate = 6.12335 Hz
 Il numero di eventi singoli registrati è: 54336
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 0 e rappresentano il: 0%. 
+In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3413.png has been created
 Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3413.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3413.png has been created
@@ -183,7 +183,7 @@ RUN3416:
 Tempo totale della RUN: t = 11511.9 s
 <delta_t> = 0.162423 s | rate = 6.15676 Hz
 Il numero di eventi singoli registrati è: 59753
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 0 e rappresentano il: 0%. 
+In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3416.png has been created
 Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3416.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3416.png has been created
@@ -194,7 +194,7 @@ RUN3322:
 Tempo totale della RUN: t = 4135.07 s
 <delta_t> = 0.31973 s | rate = 3.12764 Hz
 Il numero di eventi singoli registrati è: 10732
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 0 e rappresentano il: 0%. 
+In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3322.png has been created
 Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3322.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3322.png has been created
@@ -206,7 +206,7 @@ Tempo totale della RUN: t = 12380.6 s
 Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
 <delta_t> = 0.452743 s | rate = 2.20876 Hz
 Il numero di eventi singoli registrati è: 57227
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 0 e rappresentano il: 0%. 
+In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3326.png has been created
 Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3326.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3326.png has been created
@@ -222,8 +222,8 @@ Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3743.png has been created
 Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3743.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3743.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUN3743.png has been created
-Info in <TCanvas::Print>: file PeSum_histograms_singoli/PeSum_singoli_RUN3743.png has been created
-Info in <TCanvas::Print>: file PeSum_histograms_bundle/PeSum_bundle_RUN3743.png has been created
+Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3743.png has been created
+Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3743.png has been created
 --------------------------------------------
 RUN3677: 
 Tempo totale della RUN: t = 12862.4 s
@@ -264,8 +264,8 @@ Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3677.png has been created
 Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3677.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3677.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUN3677.png has been created
-Info in <TCanvas::Print>: file PeSum_histograms_singoli/PeSum_singoli_RUN3677.png has been created
-Info in <TCanvas::Print>: file PeSum_histograms_bundle/PeSum_bundle_RUN3677.png has been created
+Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3677.png has been created
+Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3677.png has been created
 --------------------------------------------
 RUN3753: 
 Tempo totale della RUN: t = 6043.41 s
@@ -276,8 +276,8 @@ Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3753.png has been created
 Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3753.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3753.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUN3753.png has been created
-Info in <TCanvas::Print>: file PeSum_histograms_singoli/PeSum_singoli_RUN3753.png has been created
-Info in <TCanvas::Print>: file PeSum_histograms_bundle/PeSum_bundle_RUN3753.png has been created
+Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3753.png has been created
+Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3753.png has been created
 --------------------------------------------
 RUN3709: 
 Tempo totale della RUN: t = 3980.92 s
@@ -288,8 +288,8 @@ Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3709.png has been created
 Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3709.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3709.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUN3709.png has been created
-Info in <TCanvas::Print>: file PeSum_histograms_singoli/PeSum_singoli_RUN3709.png has been created
-Info in <TCanvas::Print>: file PeSum_histograms_bundle/PeSum_bundle_RUN3709.png has been created
+Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3709.png has been created
+Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3709.png has been created
 --------------------------------------------
 RUN3708: 
 Tempo totale della RUN: t = 1693.94 s
@@ -300,6 +300,6 @@ Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3708.png has been created
 Info in <TCanvas::Print>: file Theta_plot/Theta_RUN3708.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3708.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Angle_plot/Energy_vs_Direction_angle_RUN3708.png has been created
-Info in <TCanvas::Print>: file PeSum_histograms_singoli/PeSum_singoli_RUN3708.png has been created
-Info in <TCanvas::Print>: file PeSum_histograms_bundle/PeSum_bundle_RUN3708.png has been created
+Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3708.png has been created
+Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3708.png has been created
 --------------------------------------------
