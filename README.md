@@ -49,6 +49,7 @@ Istogrammi della **carica in fotoelettroni** per i muoni bundle.
 
 ### :seven: **:eight_pointed_black_star: Muon_Rate_vs_Run**  
 Grafico del **rate dei muoni** in funzione dell'indice della run. Questo grafico mostra la frequenza dei muoni rilevati per ogni run.
+
 ---  
 
 ## :rocket: **Come usare il programma**  
