@@ -235,9 +235,7 @@ int muon_bundle(const vector<muone>& eventi) {
 }
 
 float mean_delta_t(const vector<muone>& eventi){
-    double mean_delta_t_= 0;
     int last_entry_time = 0;
-    
     vector<float> intervalli;
     for (size_t i = 1; i < eventi.size(); i++) {
         last_entry_time = eventi[i - 1].fSec + eventi[i - 1].fNanosec;
