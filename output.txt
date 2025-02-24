@@ -20,6 +20,7 @@ Caricamento file: RUN3753
 Caricamento file: RUN3709
 Caricamento file: RUN3708
 Numero totale di file ROOT analizzati: 20
+============================================
 RUN3896: 187385 eventi caricati
 RUN3415: 10536 eventi caricati
 RUN3639: 0 eventi caricati
@@ -41,7 +42,8 @@ RUN3753: 40160 eventi caricati
 RUN3709: 16430 eventi caricati
 RUN3708: 11342 eventi caricati
 ============================================
-Alcuni dati per ogni RUN: 
+ ALCUNI DATI PER OGNI RUN 
+============================================
 RUN3896: 
 Tempo totale della RUN: t = 30031.6 s
 <delta_t> = 0.159895 s | rate = 6.25412 Hz

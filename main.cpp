@@ -13,6 +13,7 @@ int main(int argc, char* argv[]) {
 
     // Carica i dati in più vettori e salva i nomi delle RUN
     vector<vector<muone>> eventi_per_file = load_multiple_root_files(folder_path, run_names);
+    cout << "============================================" << endl;
 
     // Stampa il numero di eventi caricati per ciascun file con il nome della RUN
     for (size_t i = 0; i < eventi_per_file.size(); i++) {
@@ -20,7 +21,8 @@ int main(int argc, char* argv[]) {
     }
     double delta_t = 0;
     cout << "============================================" << endl;
-    cout << "Alcuni dati per ogni RUN: " << endl;
+    cout << " ALCUNI DATI PER OGNI RUN " << endl;
+    cout << "============================================" << endl;
     for (size_t i = 0; i < eventi_per_file.size(); i++) {
         cout << run_names[i] << ": "<< endl;
         if (eventi_per_file[i].empty()) {
