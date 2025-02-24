@@ -240,6 +240,7 @@ float mean_delta_t(const vector<muone>& eventi){
     
     vector<float> intervalli;
     for (size_t i = 1; i < eventi.size(); i++) {
+        last_entry_time = eventi[i - 1].fSec + eventi[i - 1].fNanosec;
         if(eventi[i].fSec+eventi[i].fNanosec!=last_entry_time){
             // Converto il tempo in nanosecondi e calcola la differenza
             float t1 = eventi[i - 1].fSec * 1e9 + eventi[i - 1].fNanosec;
