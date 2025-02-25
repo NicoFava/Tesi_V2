@@ -9,6 +9,7 @@
 #include <cmath>
 #include <numeric>
 #include <filesystem>
+#include <algorithm>
 
 // Librerie di ROOT
 #include "TH1F.h"
@@ -43,6 +44,12 @@ struct muone {
     float quality;
    // float entry_time, exit_time;
     double distance;
+};
+
+struct RunInfo {
+    string run_name;
+    string date;
+    string time;
 };
 
 // Funzione per caricare i dati ROOT in un vettore
@@ -96,4 +103,6 @@ void PeSum_vs_Angle(const vector<muone>&, const string&);
 // Funzione per calcolare il tempo totale della run
 double total_run_time(const vector<muone>&);
 
+// Funzione per estrarre le informazioni sulla run
+vector<RunInfo> load_run_info(const string&);
 #endif

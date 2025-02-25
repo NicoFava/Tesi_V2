@@ -424,17 +424,26 @@ string get_run_name(const string& filepath) {
 
 vector<vector<muone>> load_multiple_root_files(const string& folder_path, vector<string>& run_names) {
     vector<vector<muone>> all_eventi;
-    
-    // Scansiono la cartella e carico ogni file in un vettore separato
+    vector<string> file_paths;
+
+    // Scansiono la cartella e memorizzo i percorsi dei file con estensione .root
     for (const auto& entry : fs::directory_iterator(folder_path)) {
         if (entry.path().extension() == ".root") {
-            string run_name = get_run_name(entry.path().string());
-            run_names.push_back(run_name);
-
-            cout << "Caricamento file: " << run_name << endl;
-            vector<muone> eventi = load_root_data(entry.path().string());
-            all_eventi.push_back(eventi);
+            file_paths.push_back(entry.path().string());
         }
+    }
+
+    // Ordino i percorsi dei file
+    sort(file_paths.begin(), file_paths.end());
+
+    // Carico i file ordinati
+    for (const auto& file_path : file_paths) {
+        string run_name = get_run_name(file_path);
+        run_names.push_back(run_name);
+
+        cout << "Caricamento file: " << run_name << endl;
+        vector<muone> eventi = load_root_data(file_path);
+        all_eventi.push_back(eventi);
     }
 
     cout << "Numero totale di file ROOT analizzati: " << all_eventi.size() << endl;
@@ -477,4 +486,24 @@ double total_run_time(const vector<muone>& eventi) {
     double total_time = end_time - start_time;
 
     return total_time;
+}
+
+vector<RunInfo> load_run_info(const string& filename){
+    vector<RunInfo> run_info;
+    ifstream file(filename);
+    if (!file) {
+        cerr << "Errore: impossibile aprire il file " << filename << " per la lettura!" << endl;
+        return run_info;
+    }
+
+    string line;
+    while (getline(file, line)) {
+        istringstream iss(line);
+        RunInfo info;
+        iss >> info.run_name >> info.date >> info.time;
+        run_info.push_back(info);
+    }
+
+    file.close();
+    return run_info;
 }

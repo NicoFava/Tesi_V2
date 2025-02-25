@@ -10,6 +10,16 @@ int main(int argc, char* argv[]) {
 
     // Contiene i nomi delle RUN
     vector<string> run_names;
+
+    string run_info_file = "run_info.txt";
+    
+    // Carico le informazioni sulle RUN
+    vector<RunInfo> run_info_list = load_run_info(run_info_file);
+    if (run_info_list.empty()) {
+        cerr << "Errore: Nessuna informazione sulle RUN caricata." << endl;
+        return 1;
+    }
+
     // Carico i dati in più vettori e salva i nomi delle RUN
     vector<vector<muone>> eventi_per_file = load_multiple_root_files(folder_name, run_names);
     cout << "============================================" << endl;
@@ -29,10 +39,25 @@ int main(int argc, char* argv[]) {
     for (size_t i = 0; i < eventi_per_file.size(); i++) {
         if (eventi_per_file[i].empty()) {
             cout << i+1 << ") " << run_names[i] << ": RUN vuota, salto l'analisi." << endl;
+            cout << "--------------------------------------------" << endl;
             continue;
         }else{
             cout << i+1 << ") " << run_names[i] << ": "<< endl;
         }
+        
+         // Trovo le informazioni sulla RUN
+         bool found = false;
+         for (const auto& info : run_info_list) {
+             if (info.run_name == run_names[i]) {
+                 cout << "Data di inizio: " << info.date << " Ora di inizio: " << info.time << endl;
+                 found = true;
+                 break;
+             }
+         }
+         if (!found) {
+             cout << "Informazioni sulla RUN non trovate." << endl;
+         }
+        
         cout << "Tempo totale della RUN: t = " << total_run_time(eventi_per_file[i]) << " s" << endl;
         delta_t = mean_delta_t(eventi_per_file[i])*1e-9;
         rate = 1.0/(delta_t);
