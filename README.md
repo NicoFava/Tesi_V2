@@ -19,10 +19,10 @@ Il file **output.txt** contiene una sintesi dei risultati principali dell'analis
 - **Rate**: Frequenza dei muoni rilevati.  
 - **Numero di eventi univoci**: Conteggio degli **EventID** registrati per ogni run (utile per calcolare la percentuale di eventi bundle).  
 - **Numero di eventi bundle**: Eventi con **più tracce** (ossia più di un muone per singolo EventID).
-- **Percentuale di eventi bundle**: Percentuale di eventi multipli rispetto al totale.
-  -In caso di **TrackID inesistente** tutte le quantità legate ai muoni bundle non verranno calcolate o rappresentate in un grafico.  
+- **Percentuale di eventi bundle**: Percentuale di eventi multipli rispetto al totale.  
+  - In caso di **TrackID inesistente** tutte le quantità legate ai muoni bundle non verranno calcolate o rappresentate in un grafico. 
 
- Inoltre, il file di output include i **messaggi di creazione delle immagini** generate automaticamente durante l'analisi.  
+Inoltre, il file di output include i **messaggi di creazione delle immagini** generate automaticamente durante l'analisi.  
 
 ---  
 
