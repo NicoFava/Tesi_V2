@@ -13,6 +13,7 @@ Il file **output.txt** contiene una sintesi dei risultati principali dell'analis
 - Per ogni **run**, viene stampato il **numero di eventi** contenuti al suo interno.  
 
 ### :1234: **Dati di output**  
+- **Data e ora di inizio della RUN**: Informazioni sulla data e l'ora di inizio della RUN, caricate dal file `run_info.txt`.
 - **t**: Tempo totale della RUN in secondi.  
 - **<delta_t>**: Tempo medio tra un evento e quello successivo in secondi.  
   - Se viene rilevato un **intervallo di tempo negativo tra due eventi**, verrà stampato un **messaggio di errore** a video e quell'intervallo sarà **ignorato** nel calcolo di <delta_t>.  
@@ -23,6 +24,11 @@ Il file **output.txt** contiene una sintesi dei risultati principali dell'analis
   - In caso di **TrackID inesistente** tutte le quantità legate ai muoni bundle non verranno calcolate o rappresentate in un grafico. 
 
 Inoltre, il file di output include i **messaggi di creazione delle immagini** generate automaticamente durante l'analisi.  
+
+---
+## :page_facing_up: **run_info.txt**  
+Il file **run_info.txt** contiene le informazioni sulla data e l'ora di inizio di ogni RUN. Ogni riga del file ha il seguente formato:
+<nome_run> <data> <ora>
 
 ---  
 
@@ -54,7 +60,8 @@ Grafico del **rate dei muoni** in funzione dell'indice della run.
 
 ## :rocket: **Come usare il programma**  
 1. Inserire i file .root da analizzare in una cartella **<nome_cartella>**.  
-2. Eseguire il programma:  
+2. Creare un file **run_info.txt** con le informazioni sulla data e l'ora di inizio di ogni RUN.  
+3. Eseguire il programma:  
    
 ```bash  
    ./main <nome_cartella>  
