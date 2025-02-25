@@ -26,9 +26,13 @@ Il file **output.txt** contiene una sintesi dei risultati principali dell'analis
 Inoltre, il file di output include i **messaggi di creazione delle immagini** generate automaticamente durante l'analisi.  
 
 ---
+
 ## :page_facing_up: **run_info.txt**  
 Il file **run_info.txt** contiene le informazioni sulla data e l'ora di inizio di ogni RUN. Ogni riga del file ha il seguente formato:
+
+```txt
 <nome_run> <data> <ora>
+```
 
 ---  
 
