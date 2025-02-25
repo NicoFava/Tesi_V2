@@ -8,7 +8,7 @@
 Il file **output.txt** contiene una sintesi dei risultati principali dell'analisi:  
 
 ### :white_check_mark: **Stampe iniziali**  
-- Il programma stampa a video i **file caricati** e segnala eventuali errori se non viene trovato il **"TTree MuonseEents"** o se questo è vuoto.  
+- Il programma stampa a video i **file caricati** e segnala eventuali errori se non viene trovato il **"TTree MuonsEvents"** o se questo è vuoto.  
 - Stampa il **numero totale di file caricati**.  
 - Per ogni **run**, viene stampato il **numero di eventi** contenuti al suo interno.  
 
