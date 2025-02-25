@@ -10,12 +10,11 @@ int main(int argc, char* argv[]) {
 
     // Contiene i nomi delle RUN
     vector<string> run_names;
-
-    // Carica i dati in più vettori e salva i nomi delle RUN
+    // Carico i dati in più vettori e salva i nomi delle RUN
     vector<vector<muone>> eventi_per_file = load_multiple_root_files(folder_name, run_names);
     cout << "============================================" << endl;
 
-    // Stampa il numero di eventi caricati per ciascun file con il nome della RUN
+    // Stampo il numero di eventi caricati per ciascun file con il nome della RUN
     for (size_t i = 0; i < eventi_per_file.size(); i++) {
         cout << run_names[i] << ": " << eventi_per_file[i].size() << " eventi caricati" << endl;
     }
@@ -63,11 +62,11 @@ int main(int argc, char* argv[]) {
     }
     TCanvas *canvas = new TCanvas("canvas", "Rate dei Muoni in Funzione della Run", 800, 600);
     TGraph *graph = new TGraph(run_indices.size(), &run_indices[0], &muon_rates[0]);
-    canvas->SetGrid(); // Aggiungi la griglia
+    canvas->SetGrid();
 
     graph->SetTitle("Rate dei Muoni in Funzione della Run;Indice della Run;Rate [Hz]");
-    graph->SetMarkerStyle(21); // Usa quadratini come marker
-    graph->SetMarkerSize(1.5); // Aumenta la dimensione dei marker
+    graph->SetMarkerStyle(21);
+    graph->SetMarkerSize(1.5);
     graph->Draw("AP");
 
     canvas->SaveAs("Muon_Rate_vs_Run.png");

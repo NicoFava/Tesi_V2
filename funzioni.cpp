@@ -226,7 +226,7 @@ int muon_bundle(const vector<muone>& eventi) {
         }
     }
 
-    // Controlla l'ultimo gruppo di eventi
+    // Controllo l'ultimo gruppo di eventi
     if (count > 1) {
         bundle_count++;
     }
@@ -266,11 +266,11 @@ void sort_events_by_id(vector<muone>& eventi) {
 }
 
 void PeSum_histograms(const vector<muone>& eventi, const string& run_name) {
-    // Controlla se c'è almeno un trackID uguale a -1
+    // Controllo se c'è almeno un trackID uguale a -1
     for (const auto& e : eventi) {
         if (e.trackID == -1) {
             cout << "Trovato trackID = -1, salto la creazione degli istogrammi per la run " << run_name << endl;
-            return; // Esce dalla funzione
+            return;
         }
     }
 
