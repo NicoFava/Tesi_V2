@@ -85,11 +85,7 @@ Assicurarsi di avere installate le seguenti librerie e strumenti necessari per e
 
 ---  
 
-## :pencil: **Autore**  
-Codice sviluppato da **Nicolò Favagrossa**  
-
-
-### Futuri Update
+### Futuri Update e idee
 
 1. **Studio dell'angolo azimutale**:
     - Oltre a plottare l'angolo polare è sicuramente interessante andare a studiare l'angolo azimutale.
@@ -99,3 +95,8 @@ Codice sviluppato da **Nicolò Favagrossa**
 
 3. **Evolvere l'analisi e intepretare i risultati ottenuti**:
     - Cercare e pensare a nuovi modi e nuove analisi su questi dati e cercare di interpretare meglio i risultati già ottenuti.
+
+---
+
+## :pencil: **Autore**  
+Codice sviluppato da **Nicolò Favagrossa**.
