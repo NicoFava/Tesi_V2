@@ -10,6 +10,7 @@
 #include <numeric>
 #include <filesystem>
 #include <algorithm>
+#include <set>
 
 // Librerie di ROOT
 #include "TH1F.h"
@@ -67,8 +68,8 @@ void total_PeSum_histogram(const vector<muone>&, const string&);
 // Funzione per creare plot tridimensionale dei punti di entrata
 void plot_3D_distribution(const vector<muone>&);
 
-// Funzione per creare istrogramma Theta vs Punti di entrata
-void plot_theta_distribution(const vector<muone>&, const string&);
+// Funzione per creare istrogramma distribuzione angolo polare
+void plot_polar_angle_distribution(const vector<muone>&, const string&);
 
 // Funzione per calcolare il numero di bundle di muoni
 int muon_bundle(const vector<muone>&);
@@ -98,11 +99,17 @@ string get_run_name(const string&);
 vector<vector<muone>> load_multiple_root_files(const string&, vector<string>&);
 
 // Funzione per studiare la correlazione tra la direzione dei muoni e la loro energia
-void PeSum_vs_Angle(const vector<muone>&, const string&);
+void PeSum_vs_polar_angle(const vector<muone>&, const string&);
 
 // Funzione per calcolare il tempo totale della run
 double total_run_time(const vector<muone>&);
 
 // Funzione per estrarre le informazioni sulla run
 vector<RunInfo> load_run_info(const string&);
+
+// Funzione per calcolare il rate dei muoni nel tempo
+void plot_muon_rate(const vector<muone>& , const string&, double interval_sec);
+
+// Funzione per calcolare il rate dei muoni nel tempo per più file
+void plot_muon_rate_vs_run(const vector<vector<muone>>&, const vector<string>&);
 #endif

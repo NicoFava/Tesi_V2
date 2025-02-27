@@ -165,34 +165,34 @@ void plot_3D_distribution(const vector<muone>& eventi){
     c3D->Update();
 }
 
-void plot_theta_distribution(const vector<muone>& eventi, const string& run_name){
-    string folder_name = "Theta_plot";
+void plot_polar_angle_distribution(const vector<muone>& eventi, const string& run_name){
+    string folder_name = "Polar_Angle_plot";
     if (!fs::exists(folder_name)) {
         fs::create_directory(folder_name);
     }
     
     gStyle->SetOptStat(1);
-    TCanvas *canvas = new TCanvas(("canvas_theta_" + run_name).c_str(), ("Distribuzione angolare - " + run_name).c_str(), 800, 600);
-    TH1F *zenith = new TH1F(run_name.c_str(), ("Distribuzione angolare - " + run_name).c_str(), 100, 100, 100);
+    TCanvas *canvas = new TCanvas(("canvas_polar_angle_" + run_name).c_str(), ("Distribuzione dell'angolo polare - " + run_name).c_str(), 800, 600);
+    TH1F *polar = new TH1F(run_name.c_str(), ("Distribuzione dell'angolo polare - " + run_name).c_str(), 100, 100, 100);
     gPad->SetLeftMargin(0.12);
-    zenith->StatOverflows(kTRUE);
+    polar->StatOverflows(kTRUE);
     canvas->SetGrid();
     
     for(const auto& e:eventi){
         double theta = acos(e.uz);
-        zenith->Fill(cos(theta));
+        polar->Fill(cos(theta));
     }
     
-    zenith->SetLineColor(kGreen);
-    zenith->SetLineWidth(2);
-    zenith->SetFillColorAlpha(kGreen, 0.3);
-    zenith->GetXaxis()->SetTitle("cos(#theta)");
-    zenith->GetYaxis()->SetTitle("Counts [a.u.]");
-    zenith->Draw("HIST");
+    polar->SetLineColor(kGreen);
+    polar->SetLineWidth(2);
+    polar->SetFillColorAlpha(kGreen, 0.3);
+    polar->GetXaxis()->SetTitle("cos(#theta)");
+    polar->GetYaxis()->SetTitle("Counts [a.u.]");
+    polar->Draw("HIST");
     string filename = folder_name + "/Theta_" + run_name + ".png";
     canvas->SaveAs(filename.c_str());
     delete canvas;
-    delete zenith;
+    delete polar;
 }
 
 int Nevents(const vector<muone>& eventi) {
@@ -304,6 +304,7 @@ void PeSum_histograms(const vector<muone>& eventi, const string& run_name) {
 
         while (i < eventi.size() && eventi[i].eventID == current_eventID) {
             totalPeSum += eventi[i].PeSum;
+            current_eventID = eventi[i].eventID;
             numMuoni++;
             i++;
         }
@@ -450,16 +451,16 @@ vector<vector<muone>> load_multiple_root_files(const string& folder_path, vector
     return all_eventi;
 }
 
-void PeSum_vs_Angle(const vector<muone>& eventi, const string& run_name) {
-    string folder_name = "PeSum_vs_Angle_plot";
+void PeSum_vs_polar_angle(const vector<muone>& eventi, const string& run_name) {
+    string folder_name = "PeSum_vs_Polar_Angle_plot";
     if (!fs::exists(folder_name)) {
         fs::create_directory(folder_name);
     }
-    TCanvas *canvas = new TCanvas(("canvas_2D_" + run_name).c_str(), ("Heatmap Energia vs Angolo - " + run_name).c_str(), 800, 600);
+    TCanvas *canvas = new TCanvas(("canvas_2D_" + run_name).c_str(), ("Heatmap Energia vs Angolo Polare - " + run_name).c_str(), 800, 600);
     gPad->SetRightMargin(0.12);
     canvas->SetGrid();
 
-    TH2F *hist2D = new TH2F( run_name.c_str(), ("Energia vs Angolo - " + run_name).c_str(), 100, 100, 100, 100, 100, 100);
+    TH2F *hist2D = new TH2F( run_name.c_str(), ("Carica vs Angolo Polare - " + run_name).c_str(), 100, 100, 100, 100, 100, 100);
 
     for (const auto& ev : eventi) {
         hist2D->Fill(cos(acos(ev.uz)), ev.PeSum);
@@ -470,7 +471,7 @@ void PeSum_vs_Angle(const vector<muone>& eventi, const string& run_name) {
     hist2D->Draw("COLZ");
 
 
-    string filename = folder_name + "/Energy_vs_Direction_angle_" + run_name + ".png";
+    string filename = folder_name + "/PeSum_vs_Polar_Angle_" + run_name + ".png";
     canvas->SaveAs(filename.c_str());
     delete canvas;
     delete hist2D;
@@ -506,4 +507,99 @@ vector<RunInfo> load_run_info(const string& filename){
 
     file.close();
     return run_info;
+}
+
+void plot_muon_rate(const vector<muone>& eventi, const string& run_name, double interval_sec) {
+    string folder_name = "MuonRate_plot";
+    if (!fs::exists(folder_name)) {
+        fs::create_directory(folder_name);
+    }
+    if (eventi.empty()) {
+        cerr << "Errore: Nessun evento disponibile per il calcolo del rate!" << endl;
+        return;
+    }
+
+    // Trovo il tempo iniziale e finale della RUN
+    double t_start = eventi.front().fSec + eventi.front().fNanosec * 1e-9;
+    double t_end = eventi.back().fSec + eventi.back().fNanosec * 1e-9;
+    double duration = t_end - t_start;
+
+    if (duration <= 0) {
+        cerr << "Errore: Tempo totale della RUN non valido!" << endl;
+        return;
+    }
+
+    // Numero di bin = numero di intervalli di tempo
+    int num_bins = ceil(duration / interval_sec);
+
+    // Vettori per i dati
+    vector<double> times(num_bins);
+    vector<double> rates(num_bins, 0.0);
+
+    for (const auto& ev : eventi) {
+        double event_time = ev.fSec + ev.fNanosec * 1e-9;
+        int bin = (event_time - t_start) / interval_sec;
+        if (bin >= 0 && bin < num_bins) {
+            rates[bin]++;
+        }
+    }
+
+    // Calcolo i tempi centrali dei bin
+    for (int i = 0; i < num_bins; i++) {
+        times[i] = t_start + (i + 0.5) * interval_sec; // Per ottenere il punto medio dell'intervallo
+        rates[i] /= interval_sec;
+    }
+
+    // Creo il grafico
+    TGraph *graph = new TGraph(num_bins, &times[0], &rates[0]);
+
+    // Stile del grafico
+    TCanvas *c_rate = new TCanvas(("RateCanvas_" + run_name).c_str(), "Rate Muoni vs Tempo", 800, 600);
+    c_rate->SetGrid();
+    graph->SetTitle(("Rate dei muoni nel tempo - " + run_name).c_str());
+    graph->GetXaxis()->SetTitle("Tempo [s]");
+    graph->GetYaxis()->SetTitle("Rate [Hz]");
+    graph->SetMarkerStyle(21);
+    graph->SetMarkerSize(1.5);
+    graph->SetLineColor(kRed);
+    graph->SetLineWidth(2);
+    graph->Draw("AP");
+
+    // Salvataggio del grafico
+    string filename = folder_name + "/MuonRate_" + run_name + ".png";
+    c_rate->SaveAs(filename.c_str());
+
+    delete c_rate;
+    delete graph;
+}
+
+void plot_muon_rate_vs_run(const vector<vector<muone>>& eventi_per_file, const vector<string>& run_names) {
+    vector<double> run_indices;
+    vector<double> muon_rates;
+
+    for (size_t i = 0; i < eventi_per_file.size(); i++) {
+        if (eventi_per_file[i].empty()) {
+            continue;
+        }
+
+        double total_time = total_run_time(eventi_per_file[i]);
+        double rate = eventi_per_file[i].size() / total_time;
+
+        run_indices.push_back(i + 1);
+        muon_rates.push_back(rate);
+    }
+
+    TCanvas *canvas = new TCanvas("canvas", "Rate dei Muoni in Funzione della Run", 800, 600);
+    TGraph *graph = new TGraph(run_indices.size(), &run_indices[0], &muon_rates[0]);
+    canvas->SetGrid();
+
+    graph->SetTitle("Rate dei Muoni in Funzione della Run;Indice della Run;Rate [Hz]");
+    graph->SetMarkerStyle(21);
+    graph->SetMarkerSize(1.5);
+    graph->Draw("AP");
+
+    canvas->SaveAs("Muon_Rate_vs_Run.png");
+
+    delete canvas;
+    delete graph;
 }

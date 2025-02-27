@@ -36,6 +36,7 @@ int main(int argc, char* argv[]) {
     vector<double> muon_rates;
     double delta_t = 0;
     double rate = 0;
+    double rates = 0;
     for (size_t i = 0; i < eventi_per_file.size(); i++) {
         if (eventi_per_file[i].empty()) {
             cout << i+1 << ") " << run_names[i] << ": RUN vuota, salto l'analisi." << endl;
@@ -61,10 +62,10 @@ int main(int argc, char* argv[]) {
         cout << "Tempo totale della RUN: t = " << total_run_time(eventi_per_file[i]) << " s" << endl;
         delta_t = mean_delta_t(eventi_per_file[i])*1e-9;
         rate = 1.0/(delta_t);
-        cout <<"<delta_t> = " << delta_t << " s | rate = "<< 1.0/(delta_t) << " Hz" << endl;
+        rates = eventi_per_file[i].size()/total_run_time(eventi_per_file[i]);
+        cout <<"<delta_t> = " << delta_t << " s | rate (contando gli eventi bundle come unici) = "<< 1.0/(delta_t) << " Hz" << endl;
+        cout << "Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: " << rates << " Hz." <<  endl;
         cout << "Il numero di eventi singoli registrati è: " << Nevents(eventi_per_file[i]) << endl;
-        run_indices.push_back(i+1);
-        muon_rates.push_back(rate);
         
         bool TrackID = false;
         for (const auto& e : eventi_per_file[i]) {
@@ -79,22 +80,17 @@ int main(int argc, char* argv[]) {
             cout << "In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle." << endl;
         }
         total_PeSum_histogram(eventi_per_file[i], run_names[i]);
-        plot_theta_distribution(eventi_per_file[i], run_names[i]);
+        plot_polar_angle_distribution(eventi_per_file[i], run_names[i]);
         Distance_histogram(eventi_per_file[i], run_names[i]);
-        PeSum_vs_Angle(eventi_per_file[i], run_names[i]);
+        PeSum_vs_polar_angle(eventi_per_file[i], run_names[i]);
         PeSum_histograms(eventi_per_file[i], run_names[i]);
+        plot_muon_rate(eventi_per_file[i], run_names[i], 300);   
         cout << "--------------------------------------------" << endl;
     }
-    TCanvas *canvas = new TCanvas("canvas", "Rate dei Muoni in Funzione della Run", 800, 600);
-    TGraph *graph = new TGraph(run_indices.size(), &run_indices[0], &muon_rates[0]);
-    canvas->SetGrid();
-
-    graph->SetTitle("Rate dei Muoni in Funzione della Run;Indice della Run;Rate [Hz]");
-    graph->SetMarkerStyle(21);
-    graph->SetMarkerSize(1.5);
-    graph->Draw("AP");
-
-    canvas->SaveAs("Muon_Rate_vs_Run.png");
+    plot_muon_rate_vs_run(eventi_per_file, run_names);
+    cout << "============================================" << endl;
+    cout << "FINE ANALISI" << endl;
+    cout << "============================================" << endl;
     app.Run();
     return 0;
 }

@@ -17,7 +17,8 @@ Il file **output.txt** contiene una sintesi dei risultati principali dell'analis
 - **t**: Tempo totale della RUN in secondi.  
 - **<delta_t>**: Tempo medio tra un evento e quello successivo in secondi.  
   - Se viene rilevato un **intervallo di tempo negativo tra due eventi**, verrà stampato un **messaggio di errore** a video e quell'intervallo sarà **ignorato** nel calcolo di <delta_t>.  
-- **Rate**: Frequenza dei muoni rilevati.  
+- **Rate**: Frequenza dei muoni rilevati.
+  -Il rate viene calcolato sia contando gli eventi bundle una singola volta (eventi univocamente determinati dall'**EventID**), sia contando la totalità dei muoni (tenendo conto della **moltiplicità** dei muoni bundle).  
 - **Numero di eventi univoci**: Conteggio degli **EventID** registrati per ogni run (utile per calcolare la percentuale di eventi bundle).  
 - **Numero di eventi bundle**: Eventi con **più tracce** (ossia più di un muone per singolo EventID).
 - **Percentuale di eventi bundle**: Percentuale di eventi multipli rispetto al totale.  
@@ -45,11 +46,11 @@ Istogrammi della **distanza percorsa** dal muone (o dal bundle di muoni) per ogn
 ### :two: **:file_folder: PeSum_plot**  
 Istogrammi della **carica in fotoelettroni** prodotta per ogni evento.  
 
-### :three: **:file_folder: PeSum_vs_Angle_plot**  
+### :three: **:file_folder: PeSum_vs_Polar_Angle_plot**  
 Grafici **bidimensionali** che mostrano la correlazione tra **direzione** e **energia** dei muoni, per ogni run.  
 
-### :four: **:file_folder: Theta_plot**  
-Istogrammi della **distribuzione angolare** dei muoni, mostrando il **coseno dell’angolo** della direzione di propagazione dei muoni rispetto all'asse \( z \).  
+### :four: **:file_folder: Polar_Angle_plot**  
+Istogrammi della **distribuzione angolare** dei muoni, mostrando il **coseno dell’angolo polare**. 
 
 ### :five: **:file_folder: PeSum_single_plot**  
 Istogrammi della **carica in fotoelettroni** per i muoni singoli.  
@@ -57,7 +58,10 @@ Istogrammi della **carica in fotoelettroni** per i muoni singoli.
 ### :six: **:file_folder: PeSum_bundle_plot**  
 Istogrammi della **carica in fotoelettroni** per i muoni bundle.  
 
-### :seven: **:eight_pointed_black_star: Muon_Rate_vs_Run**  
+### :seven: **:file_folder: Muon_Rate_plot**  
+Grafici dei rate dei muoni in funzione del tempo calcolato su intervalli di tempo fissati (300 s). 
+
+### :eight: **:eight_pointed_black_star: Muon_Rate_vs_Run**  
 Grafico del **rate dei muoni** in funzione dell'indice della run.
 
 ---  
@@ -84,3 +88,14 @@ Assicurarsi di avere installate le seguenti librerie e strumenti necessari per e
 ## :pencil: **Autore**  
 Codice sviluppato da **Nicolò Favagrossa**  
 
+
+### Futuri Update
+
+1. **Studio dell'angolo azimutale**:
+    - Oltre a plottare l'angolo polare è sicuramente interessante andare a studiare l'angolo azimutale.
+
+2. **Barre di errore**:
+    - Aggiungere le barre di errore ai grafici dei rate.
+
+3. **Evolvere l'analisi e intepretare i risultati ottenuti**:
+    - Cercare e pensare a nuovi modi e nuove analisi su questi dati e cercare di interpretare meglio i risultati già ottenuti.
