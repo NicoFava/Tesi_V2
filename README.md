@@ -61,10 +61,13 @@ Istogrammi della **carica in fotoelettroni** per i muoni bundle.
 ### :seven: **:file_folder: Muon_Rate_plot**  
 Grafici dei rate dei muoni in funzione del tempo calcolato su intervalli di tempo fissati (300 s). 
 
-### :eight: **:file_folder: Azimuthal_Angle_plot**  
+### :eight: **:file_folder: Polar_vs_azimuth_plot**  
+Grafici **bidimensionali** che mostrano la correlazione tra l'angolo **polare** e l'angolo **azimutale**.
+
+### :nine: **:file_folder: Azimuthal_Angle_plot**  
 Istogramma della distribuzione dell'angolo **azimutale** della direzione dei muoni.
 
-### :nine: **:eight_pointed_black_star: Muon_Rate_vs_Run**  
+### :one::zero: **:eight_pointed_black_star: Muon_Rate_vs_Run**  
 Grafico del **rate dei muoni** in funzione dell'indice della run.
 
 ---  

@@ -179,6 +179,8 @@ void plot_polar_angle_distribution(const vector<muone>& eventi, const string& ru
     canvas->SetGrid();
     
     for(const auto& e:eventi){
+        //double r = sqrt(pow(e.entry_x, 2) + pow(e.entry_y, 2) + pow(e.entry_z, 2));
+        //double theta = acos(e.entry_z/r);
         double theta = acos(e.uz);
         polar->Fill(cos(theta));
     }
@@ -626,6 +628,7 @@ void plot_azimuthal_angle_distribution(const vector<muone>& eventi, const string
     canvas->SetGrid();
     
     for(const auto& e : eventi){
+        //double phi = atan2(e.entry_y, e.entry_x);
         double phi = atan2(e.uy, e.ux);
         azimuthal->Fill(phi);
     }
@@ -641,3 +644,30 @@ void plot_azimuthal_angle_distribution(const vector<muone>& eventi, const string
     delete canvas;
     delete azimuthal;
 }   
+
+void Polar_vs_Azimuthal_angle(const vector<muone>& eventi, const string& run_name) {
+    string folder_name = "Polar_vs_Azimuthal_Angle_plot";
+    if (!fs::exists(folder_name)) {
+        fs::create_directory(folder_name);
+    }
+    TCanvas *canvas = new TCanvas(("canvas_2D_" + run_name).c_str(), ("Heatmap Angolo Polare vs Angolo Azimutale - " + run_name).c_str(), 800, 600);
+    gPad->SetRightMargin(0.12);
+    canvas->SetGrid();
+    gStyle->SetPalette(kRainBow);
+
+    TH2F *hist2D = new TH2F( run_name.c_str(), ("Carica vs Angolo Polare - " + run_name).c_str(), 100, 100, 100, 100, 100, 100);
+
+    for (const auto& ev : eventi) {
+        hist2D->Fill(atan2(ev.uy, ev.ux), cos(acos(ev.uz)));
+    }
+
+    hist2D->GetXaxis()->SetTitle("#phi [rad]");
+    hist2D->GetYaxis()->SetTitle("cos(#theta)");
+    hist2D->Draw("COLZ");
+
+
+    string filename = folder_name + "/Polar_vs_Azimuthal_Angle_" + run_name + ".png";
+    canvas->SaveAs(filename.c_str());
+    delete canvas;
+    delete hist2D;
+}

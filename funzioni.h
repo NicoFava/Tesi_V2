@@ -29,6 +29,7 @@
 #include "TTree.h"
 #include "TGraphErrors.h"
 #include "TString.h"
+#include "TRandom.h"
 
 using namespace std;
 namespace fs = std::filesystem; // Alias per filesystem
@@ -115,4 +116,7 @@ void plot_muon_rate_vs_run(const vector<vector<muone>>&, const vector<string>&);
 
 // Funzione per creare un istogramma della distribuzione dell'angolo azimutale
 void plot_azimuthal_angle_distribution(const vector<muone>&, const string&);
+
+// Funzione per confrontare angolo polare e azimutale
+void Polar_vs_Azimuthal_angle(const vector<muone>&, const string&);
 #endif
