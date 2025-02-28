@@ -17,8 +17,8 @@ Il file **output.txt** contiene una sintesi dei risultati principali dell'analis
 - **t**: Tempo totale della RUN in secondi.  
 - **<delta_t>**: Tempo medio tra un evento e quello successivo in secondi.  
   - Se viene rilevato un **intervallo di tempo negativo tra due eventi**, verrà stampato un **messaggio di errore** a video e quell'intervallo sarà **ignorato** nel calcolo di <delta_t>.  
-- **Rate**: Frequenza dei muoni rilevati.
-  -Il rate viene calcolato sia contando gli eventi bundle una singola volta (eventi univocamente determinati dall'**EventID**), sia contando la totalità dei muoni (tenendo conto della **moltiplicità** dei muoni bundle).  
+- **Rate**: Frequenza dei muoni rilevati.  
+  - Il rate viene calcolato sia contando gli eventi bundle una singola volta (eventi univocamente determinati dall'**EventID**), sia contando la totalità dei muoni (tenendo conto della **moltiplicità** dei muoni bundle).  
 - **Numero di eventi univoci**: Conteggio degli **EventID** registrati per ogni run (utile per calcolare la percentuale di eventi bundle).  
 - **Numero di eventi bundle**: Eventi con **più tracce** (ossia più di un muone per singolo EventID).
 - **Percentuale di eventi bundle**: Percentuale di eventi multipli rispetto al totale.  
