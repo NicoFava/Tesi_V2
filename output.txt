@@ -104,6 +104,7 @@ Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RU
 Trovato trackID = -1, salto la creazione degli istogrammi per la run RUN3322
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3322.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3322.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3322.png has been created
 --------------------------------------------
 2) RUN3326: 
 Data di inizio: 2025-02-03 Ora di inizio: \\
@@ -121,6 +122,7 @@ Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RU
 Trovato trackID = -1, salto la creazione degli istogrammi per la run RUN3326
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3326.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3326.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3326.png has been created
 --------------------------------------------
 3) RUN3413: 
 Data di inizio: 2025-02-04 Ora di inizio: \\
@@ -138,6 +140,7 @@ Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RU
 Trovato trackID = -1, salto la creazione degli istogrammi per la run RUN3413
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3413.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3413.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3413.png has been created
 --------------------------------------------
 4) RUN3415: 
 Data di inizio: 2025-02-04 Ora di inizio: \\
@@ -154,6 +157,7 @@ Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RU
 Trovato trackID = -1, salto la creazione degli istogrammi per la run RUN3415
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3415.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3415.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3415.png has been created
 --------------------------------------------
 5) RUN3416: 
 Data di inizio: 2025-02-04 Ora di inizio: \\
@@ -170,6 +174,7 @@ Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RU
 Trovato trackID = -1, salto la creazione degli istogrammi per la run RUN3416
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3416.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3416.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3416.png has been created
 --------------------------------------------
 6) RUN3530: 
 Data di inizio: \\ Ora di inizio: \\
@@ -186,6 +191,7 @@ Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RU
 Trovato trackID = -1, salto la creazione degli istogrammi per la run RUN3530
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3530.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3530.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3530.png has been created
 --------------------------------------------
 7) RUN3531: 
 Data di inizio: \\ Ora di inizio: \\
@@ -203,6 +209,7 @@ Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RU
 Trovato trackID = -1, salto la creazione degli istogrammi per la run RUN3531
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3531.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3531.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3531.png has been created
 --------------------------------------------
 8) RUN3639: RUN vuota, salto l'analisi.
 --------------------------------------------
@@ -252,6 +259,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3677.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3677.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3677.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3677.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3677.png has been created
 --------------------------------------------
 10) RUN3697: 
 Data di inizio: 2025-02-08 Ora di inizio: 18:59:14
@@ -270,6 +278,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3697.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3697.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3697.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3697.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3697.png has been created
 --------------------------------------------
 11) RUN3708: 
 Data di inizio: 2025-02-08 Ora di inizio: 18:53:43
@@ -287,6 +296,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3708.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3708.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3708.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3708.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3708.png has been created
 --------------------------------------------
 12) RUN3709: 
 Data di inizio: 2025-02-08 Ora di inizio: 19:24:22
@@ -304,6 +314,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3709.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3709.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3709.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3709.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3709.png has been created
 --------------------------------------------
 13) RUN3743: 
 Data di inizio: 2025-02-09 Ora di inizio: 02:38:39
@@ -321,6 +332,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3743.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3743.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3743.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3743.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3743.png has been created
 --------------------------------------------
 14) RUN3753: 
 Data di inizio: 2025-02-09 Ora di inizio: 14:40:04
@@ -338,6 +350,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3753.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3753.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3753.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3753.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3753.png has been created
 --------------------------------------------
 15) RUN3793: 
 Data di inizio: 2025-02-09 Ora di inizio: 22:43:27
@@ -355,6 +368,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3793.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3793.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3793.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3793.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3793.png has been created
 --------------------------------------------
 16) RUN3872: 
 Data di inizio: 2025-02-10 Ora di inizio: 21:29:48
@@ -372,6 +386,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3872.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3872.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3872.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3872.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3872.png has been created
 --------------------------------------------
 17) RUN3885: 
 Data di inizio: 2025-02-11 Ora di inizio: 03:34:19
@@ -389,6 +404,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3885.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3885.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3885.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3885.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3885.png has been created
 --------------------------------------------
 18) RUN3889: 
 Data di inizio: 2025-02-11 Ora di inizio: 01:09:27
@@ -407,6 +423,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3889.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3889.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3889.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3889.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3889.png has been created
 --------------------------------------------
 19) RUN3896: 
 Data di inizio: 2025-02-12 Ora di inizio: 07:58:49
@@ -424,6 +441,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3896.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3896.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3896.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3896.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3896.png has been created
 --------------------------------------------
 20) RUN3937: 
 Data di inizio: \\ Ora di inizio: \\
@@ -441,6 +459,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3937.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3937.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3937.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3937.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3937.png has been created
 --------------------------------------------
 21) RUN3938: 
 Data di inizio: \\ Ora di inizio: \\
@@ -458,6 +477,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3938.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3938.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3938.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3938.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3938.png has been created
 --------------------------------------------
 22) RUN3940: 
 Data di inizio: 2025-02-14 Ora di inizio: 14:02:04
@@ -475,6 +495,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3940.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3940.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3940.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3940.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3940.png has been created
 --------------------------------------------
 23) RUN3945: 
 Data di inizio: 2025-02-17 Ora di inizio: 00:33:26
@@ -492,6 +513,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3945.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3945.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3945.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3945.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3945.png has been created
 --------------------------------------------
 24) RUN3947: 
 Data di inizio: 2025-02-17 Ora di inizio: 00:33:30
@@ -509,6 +531,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3947.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3947.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3947.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3947.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3947.png has been created
 --------------------------------------------
 25) RUN3948: 
 Data di inizio: 2025-02-17 Ora di inizio: 00:33:35
@@ -526,6 +549,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3948.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3948.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3948.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3948.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3948.png has been created
 --------------------------------------------
 26) RUN3949: 
 Data di inizio: 2025-02-17 Ora di inizio: 00:39:43
@@ -543,6 +567,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3949.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3949.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3949.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3949.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3949.png has been created
 --------------------------------------------
 27) RUN3951: 
 Data di inizio: 2025-02-17 Ora di inizio: 00:39:48
@@ -560,6 +585,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3951.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3951.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3951.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3951.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3951.png has been created
 --------------------------------------------
 28) RUN3975: 
 Data di inizio: \\ Ora di inizio: \\
@@ -577,6 +603,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3975.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3975.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3975.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3975.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3975.png has been created
 --------------------------------------------
 29) RUN3976: 
 Data di inizio: 2025-02-17 Ora di inizio: 00:39:56
@@ -594,6 +621,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3976.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3976.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3976.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3976.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3976.png has been created
 --------------------------------------------
 30) RUN3977: 
 Data di inizio: 2025-02-17 Ora di inizio: 00:40:01
@@ -611,6 +639,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3977.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3977.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3977.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3977.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3977.png has been created
 --------------------------------------------
 31) RUN3978: 
 Data di inizio: 2025-02-17 Ora di inizio: 00:40:01
@@ -628,6 +657,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3978.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3978.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3978.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3978.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3978.png has been created
 --------------------------------------------
 32) RUN3990: 
 Data di inizio: 2025-02-17 Ora di inizio: 00:40:11
@@ -645,6 +675,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3990.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3990.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3990.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3990.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3990.png has been created
 --------------------------------------------
 33) RUN4002: 
 Data di inizio: 2025-02-17 Ora di inizio: 00:40:16
@@ -662,6 +693,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN4002.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN4002.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN4002.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN4002.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN4002.png has been created
 --------------------------------------------
 34) RUN4005: 
 Data di inizio: 2025-02-17 Ora di inizio: 15:27:33
@@ -679,6 +711,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN4005.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN4005.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN4005.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN4005.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN4005.png has been created
 --------------------------------------------
 35) RUN4006: 
 Data di inizio: 2025-02-17 Ora di inizio: 15:27:38
@@ -696,6 +729,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN4006.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN4006.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN4006.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN4006.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN4006.png has been created
 --------------------------------------------
 36) RUN4007: 
 Data di inizio: 2025-02-17 Ora di inizio: 15:27:43
@@ -713,6 +747,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN4007.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN4007.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN4007.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN4007.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN4007.png has been created
 --------------------------------------------
 37) RUN4013: RUN vuota, salto l'analisi.
 --------------------------------------------
@@ -732,6 +767,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN4036.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN4036.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN4036.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN4036.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN4036.png has been created
 --------------------------------------------
 39) RUN4045: 
 Data di inizio: 2025-02-19 Ora di inizio: 19:05:49
@@ -749,6 +785,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN4045.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN4045.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN4045.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN4045.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN4045.png has been created
 --------------------------------------------
 40) RUN4048: 
 Data di inizio: 2025-02-19 Ora di inizio: 19:06:14
@@ -766,6 +803,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN4048.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN4048.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN4048.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN4048.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN4048.png has been created
 --------------------------------------------
 41) RUN4049: 
 Data di inizio: 2025-02-19 Ora di inizio: 19:06:26
@@ -783,6 +821,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN4049.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN4049.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN4049.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN4049.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN4049.png has been created
 --------------------------------------------
 42) RUN4051: 
 Data di inizio: \\ Ora di inizio: \\
@@ -800,6 +839,7 @@ Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN4051.png has b
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN4051.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN4051.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN4051.png has been created
+Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN4051.png has been created
 --------------------------------------------
 Info in <TCanvas::Print>: file Muon_Rate_vs_Run.png has been created
 ============================================

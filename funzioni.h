@@ -119,4 +119,10 @@ void plot_azimuthal_angle_distribution(const vector<muone>&, const string&);
 
 // Funzione per confrontare angolo polare e azimutale
 void Polar_vs_Azimuthal_angle(const vector<muone>&, const string&);
+
+// Funzione per calcolare la distanza tra l'origine e la retta del muone
+double distance_point_to_line(const muone&);
+
+// Funzione che plotta la distanza della retta di muoni dall'origine
+void path_distance_histogram(const vector<muone>&, const string&);
 #endif

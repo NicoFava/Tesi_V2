@@ -671,3 +671,74 @@ void Polar_vs_Azimuthal_angle(const vector<muone>& eventi, const string& run_nam
     delete canvas;
     delete hist2D;
 }
+
+double distance_point_to_line(const muone& evento){
+     // Punto di entrata
+     double x1 = evento.entry_x;
+     double y1 = evento.entry_y;
+     double z1 = evento.entry_z;
+ 
+     // Punto di uscita
+     double x2 = evento.exit_x;
+     double y2 = evento.exit_y;
+     double z2 = evento.exit_z;
+ 
+     // Centro del rivelatore (origine)
+     double x0 = 0.0;
+     double y0 = 0.0;
+     double z0 = 0.0;
+ 
+     // Vettore direzionale della retta (P2 - P1)
+     double ux = x2 - x1;
+     double uy = y2 - y1;
+     double uz = z2 - z1;
+ 
+     // Vettore dal centro del rivelatore al punto di entrata (P1 - P0)
+     double vx = x1 - x0;
+     double vy = y1 - y0;
+     double vz = z1 - z0;
+ 
+     // Prodotto vettoriale u x v
+     double cross_x = uy * vz - uz * vy;
+     double cross_y = uz * vx - ux * vz;
+     double cross_z = ux * vy - uy * vx;
+ 
+     // Norma del prodotto vettoriale |u x v|
+     double cross_norm = sqrt(cross_x * cross_x + cross_y * cross_y + cross_z * cross_z);
+ 
+     // Norma del vettore direzionale |u|
+     double u_norm = sqrt(ux * ux + uy * uy + uz * uz);
+ 
+     // Distanza punto-retta
+     double distance = cross_norm / u_norm;
+ 
+     return distance;
+}
+
+void path_distance_histogram(const vector<muone>& eventi, const string& run_name) {
+    string folder_name = "Path_Distance_plot";
+    if (!fs::exists(folder_name)) {
+        fs::create_directory(folder_name);
+    }
+
+    TCanvas *canvas = new TCanvas(("canvas_distance_" + run_name).c_str(), ("Distribuzione delle distanze origine-retta muone - " + run_name).c_str(), 800, 600);
+    TH1F *distance_hist = new TH1F(run_name.c_str(), ("Distribuzione della distanza origine-retta muone - " + run_name).c_str(), 100, 100, 100); // 100 bins, range 0-100 mm
+    gPad->SetLeftMargin(0.12);
+    canvas->SetGrid();
+
+    for (const auto& e : eventi) {
+        double distance = distance_point_to_line(e);
+        distance_hist->Fill(distance);
+    }
+
+    distance_hist->SetLineColor(kBlue);
+    distance_hist->SetLineWidth(2);
+    distance_hist->SetFillColorAlpha(kBlue, 0.3);
+    distance_hist->GetXaxis()->SetTitle("Distanza [mm]");
+    distance_hist->GetYaxis()->SetTitle("Conteggio");
+    distance_hist->Draw("HIST");
+    string filename = folder_name + "/Path_Distance_" + run_name + ".png";
+    canvas->SaveAs(filename.c_str());
+    delete canvas;
+    delete distance_hist;
+}

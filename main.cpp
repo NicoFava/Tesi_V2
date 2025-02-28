@@ -87,6 +87,7 @@ int main(int argc, char* argv[]) {
         PeSum_histograms(eventi_per_file[i], run_names[i]);
         plot_muon_rate(eventi_per_file[i], run_names[i], 300);   
         Polar_vs_Azimuthal_angle(eventi_per_file[i], run_names[i]);
+        path_distance_histogram(eventi_per_file[i], run_names[i]);
         cout << "--------------------------------------------" << endl;
     }
     plot_muon_rate_vs_run(eventi_per_file, run_names);

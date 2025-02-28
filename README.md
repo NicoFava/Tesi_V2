@@ -67,6 +67,9 @@ Grafici **bidimensionali** che mostrano la correlazione tra l'angolo **polare** 
 ### :nine: **:file_folder: Azimuthal_Angle_plot**  
 Istogramma della distribuzione dell'angolo **azimutale** della direzione dei muoni.
 
+### :one::zero: **:file_folder: Path_Distance_plot**
+Istogramma della distanza tra l'origine degli assi cartesiani (**centro del CD**) e la **retta** passante da **entry point** e **exit point**.
+
 ### :one::zero: **:eight_pointed_black_star: Muon_Rate_vs_Run**  
 Grafico del **rate dei muoni** in funzione dell'indice della run.
 
