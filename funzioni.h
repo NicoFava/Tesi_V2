@@ -112,4 +112,7 @@ void plot_muon_rate(const vector<muone>& , const string&, double interval_sec);
 
 // Funzione per calcolare il rate dei muoni nel tempo per più file
 void plot_muon_rate_vs_run(const vector<vector<muone>>&, const vector<string>&);
+
+// Funzione per creare un istogramma della distribuzione dell'angolo azimutale
+void plot_azimuthal_angle_distribution(const vector<muone>&, const string&);
 #endif

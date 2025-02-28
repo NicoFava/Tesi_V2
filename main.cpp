@@ -81,6 +81,7 @@ int main(int argc, char* argv[]) {
         }
         total_PeSum_histogram(eventi_per_file[i], run_names[i]);
         plot_polar_angle_distribution(eventi_per_file[i], run_names[i]);
+        plot_azimuthal_angle_distribution(eventi_per_file[i], run_names[i]);
         Distance_histogram(eventi_per_file[i], run_names[i]);
         PeSum_vs_polar_angle(eventi_per_file[i], run_names[i]);
         PeSum_histograms(eventi_per_file[i], run_names[i]);

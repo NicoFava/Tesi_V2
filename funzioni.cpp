@@ -547,7 +547,13 @@ void plot_muon_rate(const vector<muone>& eventi, const string& run_name, double 
     // Calcolo i tempi centrali dei bin
     for (int i = 0; i < num_bins; i++) {
         times[i] = t_start + (i + 0.5) * interval_sec; // Per ottenere il punto medio dell'intervallo
-        rates[i] /= interval_sec;
+        if (i == num_bins - 1) {
+            // Calcolo il rate per l'ultimo bin in base alla durata effettiva
+            double last_bin_duration = duration - (num_bins - 1) * interval_sec;
+            rates[i] /= last_bin_duration;
+        } else {
+            rates[i] /= interval_sec;
+        }
     }
 
     // Creo il grafico
@@ -556,9 +562,11 @@ void plot_muon_rate(const vector<muone>& eventi, const string& run_name, double 
     // Stile del grafico
     TCanvas *c_rate = new TCanvas(("RateCanvas_" + run_name).c_str(), "Rate Muoni vs Tempo", 800, 600);
     c_rate->SetGrid();
-    graph->SetTitle(("Rate dei muoni nel tempo - " + run_name).c_str());
+    string title = "Rate dei muoni nel tempo - " + run_name + " (Intervallo: " + to_string(interval_sec) + " s)";
+    graph->SetTitle(title.c_str());
     graph->GetXaxis()->SetTitle("Tempo [s]");
     graph->GetYaxis()->SetTitle("Rate [Hz]");
+    graph->GetYaxis()->SetRangeUser(0, *max_element(rates.begin(), rates.end()) * 1.1); // Imposta la scala dell'asse Y per partire da 0
     graph->SetMarkerStyle(21);
     graph->SetMarkerSize(1.5);
     graph->SetLineColor(kRed);
@@ -603,3 +611,33 @@ void plot_muon_rate_vs_run(const vector<vector<muone>>& eventi_per_file, const v
     delete canvas;
     delete graph;
 }
+
+void plot_azimuthal_angle_distribution(const vector<muone>& eventi, const string& run_name) {
+    string folder_name = "Azimuthal_Angle_plot";
+    if (!fs::exists(folder_name)) {
+        fs::create_directory(folder_name);
+    }
+    
+    gStyle->SetOptStat(1);
+    TCanvas *canvas = new TCanvas(("canvas_azimuthal_angle_" + run_name).c_str(), ("Distribuzione dell'angolo azimutale - " + run_name).c_str(), 800, 600);
+    TH1F *azimuthal = new TH1F(run_name.c_str(), ("Distribuzione dell'angolo azimutale - " + run_name).c_str(), 100, -M_PI, M_PI);
+    gPad->SetLeftMargin(0.12);
+    azimuthal->StatOverflows(kTRUE);
+    canvas->SetGrid();
+    
+    for(const auto& e : eventi){
+        double phi = atan2(e.uy, e.ux);
+        azimuthal->Fill(phi);
+    }
+    
+    azimuthal->SetLineColor(kBlue);
+    azimuthal->SetLineWidth(2);
+    azimuthal->SetFillColorAlpha(kBlue, 0.3);
+    azimuthal->GetXaxis()->SetTitle("Azimuthal Angle [rad]");
+    azimuthal->GetYaxis()->SetTitle("Counts [a.u.]");
+    azimuthal->Draw("HIST");
+    string filename = folder_name + "/Azimuthal_" + run_name + ".png";
+    canvas->SaveAs(filename.c_str());
+    delete canvas;
+    delete azimuthal;
+}   

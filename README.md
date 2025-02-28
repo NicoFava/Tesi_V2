@@ -61,7 +61,10 @@ Istogrammi della **carica in fotoelettroni** per i muoni bundle.
 ### :seven: **:file_folder: Muon_Rate_plot**  
 Grafici dei rate dei muoni in funzione del tempo calcolato su intervalli di tempo fissati (300 s). 
 
-### :eight: **:eight_pointed_black_star: Muon_Rate_vs_Run**  
+### :eight: **:file_folder: Azimuthal_Angle_plot**  
+Istogramma della distribuzione dell'angolo **azimutale** della direzione dei muoni.
+
+### :nine: **:eight_pointed_black_star: Muon_Rate_vs_Run**  
 Grafico del **rate dei muoni** in funzione dell'indice della run.
 
 ---  
@@ -87,13 +90,10 @@ Assicurarsi di avere installate le seguenti librerie e strumenti necessari per e
 
 ### Futuri Update e idee
 
-1. **Studio dell'angolo azimutale**:
-    - Oltre a plottare l'angolo polare è sicuramente interessante andare a studiare l'angolo azimutale.
-
-2. **Barre di errore**:
+1. **Barre di errore**:
     - Aggiungere le barre di errore ai grafici dei rate.
 
-3. **Evolvere l'analisi e intepretare i risultati ottenuti**:
+2. **Evolvere l'analisi e intepretare i risultati ottenuti**:
     - Cercare e pensare a nuovi modi e nuove analisi su questi dati e cercare di interpretare meglio i risultati già ottenuti.
 
 ---

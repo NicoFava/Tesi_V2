@@ -98,6 +98,7 @@ Il numero di eventi singoli registrati è: 10732
 In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3322.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3322.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3322.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3322.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3322.png has been created
 Trovato trackID = -1, salto la creazione degli istogrammi per la run RUN3322
@@ -113,6 +114,7 @@ Il numero di eventi singoli registrati è: 57227
 In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3326.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3326.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3326.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3326.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3326.png has been created
 Trovato trackID = -1, salto la creazione degli istogrammi per la run RUN3326
@@ -128,6 +130,7 @@ Il numero di eventi singoli registrati è: 54336
 In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3413.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3413.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3413.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3413.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3413.png has been created
 Trovato trackID = -1, salto la creazione degli istogrammi per la run RUN3413
@@ -142,6 +145,7 @@ Il numero di eventi singoli registrati è: 8886
 In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3415.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3415.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3415.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3415.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3415.png has been created
 Trovato trackID = -1, salto la creazione degli istogrammi per la run RUN3415
@@ -156,6 +160,7 @@ Il numero di eventi singoli registrati è: 59753
 In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3416.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3416.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3416.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3416.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3416.png has been created
 Trovato trackID = -1, salto la creazione degli istogrammi per la run RUN3416
@@ -170,6 +175,7 @@ Il numero di eventi singoli registrati è: 29429
 In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3530.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3530.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3530.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3530.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3530.png has been created
 Trovato trackID = -1, salto la creazione degli istogrammi per la run RUN3530
@@ -185,6 +191,7 @@ Il numero di eventi singoli registrati è: 27104
 In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3531.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3531.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3531.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3531.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3531.png has been created
 Trovato trackID = -1, salto la creazione degli istogrammi per la run RUN3531
@@ -231,6 +238,7 @@ Il numero di eventi singoli registrati è: 116557
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 2499 e rappresentano il: 2.14402%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3677.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3677.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3677.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3677.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3677.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3677.png has been created
@@ -247,6 +255,7 @@ Il numero di eventi singoli registrati è: 137728
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 2897 e rappresentano il: 2.10342%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3697.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3697.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3697.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3697.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3697.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3697.png has been created
@@ -262,6 +271,7 @@ Il numero di eventi singoli registrati è: 9422
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 202 e rappresentano il: 2.14392%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3708.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3708.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3708.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3708.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3708.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3708.png has been created
@@ -277,6 +287,7 @@ Il numero di eventi singoli registrati è: 13529
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 308 e rappresentano il: 2.27659%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3709.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3709.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3709.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3709.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3709.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3709.png has been created
@@ -292,6 +303,7 @@ Il numero di eventi singoli registrati è: 43502
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 960 e rappresentano il: 2.2068%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3743.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3743.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3743.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3743.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3743.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3743.png has been created
@@ -307,6 +319,7 @@ Il numero di eventi singoli registrati è: 33859
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 694 e rappresentano il: 2.04968%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3753.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3753.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3753.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3753.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3753.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3753.png has been created
@@ -322,6 +335,7 @@ Il numero di eventi singoli registrati è: 175813
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 3792 e rappresentano il: 2.15684%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3793.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3793.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3793.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3793.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3793.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3793.png has been created
@@ -337,6 +351,7 @@ Il numero di eventi singoli registrati è: 109278
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 2311 e rappresentano il: 2.11479%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3872.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3872.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3872.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3872.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3872.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3872.png has been created
@@ -352,6 +367,7 @@ Il numero di eventi singoli registrati è: 286644
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 6077 e rappresentano il: 2.12005%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3885.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3885.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3885.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3885.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3885.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3885.png has been created
@@ -368,6 +384,7 @@ Il numero di eventi singoli registrati è: 122035
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 2731 e rappresentano il: 2.23788%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3889.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3889.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3889.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3889.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3889.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3889.png has been created
@@ -383,6 +400,7 @@ Il numero di eventi singoli registrati è: 157423
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 3436 e rappresentano il: 2.18265%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3896.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3896.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3896.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3896.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3896.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3896.png has been created
@@ -398,6 +416,7 @@ Il numero di eventi singoli registrati è: 160616
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 3403 e rappresentano il: 2.11872%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3937.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3937.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3937.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3937.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3937.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3937.png has been created
@@ -413,6 +432,7 @@ Il numero di eventi singoli registrati è: 62226
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1408 e rappresentano il: 2.26272%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3938.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3938.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3938.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3938.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3938.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3938.png has been created
@@ -428,6 +448,7 @@ Il numero di eventi singoli registrati è: 74805
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1590 e rappresentano il: 2.12553%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3940.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3940.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3940.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3940.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3940.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3940.png has been created
@@ -443,6 +464,7 @@ Il numero di eventi singoli registrati è: 73300
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1721 e rappresentano il: 2.34789%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3945.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3945.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3945.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3945.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3945.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3945.png has been created
@@ -458,6 +480,7 @@ Il numero di eventi singoli registrati è: 76701
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1737 e rappresentano il: 2.26464%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3947.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3947.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3947.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3947.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3947.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3947.png has been created
@@ -473,6 +496,7 @@ Il numero di eventi singoli registrati è: 75603
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1785 e rappresentano il: 2.36102%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3948.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3948.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3948.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3948.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3948.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3948.png has been created
@@ -488,6 +512,7 @@ Il numero di eventi singoli registrati è: 64010
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1415 e rappresentano il: 2.21059%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3949.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3949.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3949.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3949.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3949.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3949.png has been created
@@ -503,6 +528,7 @@ Il numero di eventi singoli registrati è: 71281
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1566 e rappresentano il: 2.19694%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3951.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3951.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3951.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3951.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3951.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3951.png has been created
@@ -518,6 +544,7 @@ Il numero di eventi singoli registrati è: 41520
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 991 e rappresentano il: 2.3868%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3975.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3975.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3975.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3975.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3975.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3975.png has been created
@@ -533,6 +560,7 @@ Il numero di eventi singoli registrati è: 76791
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1715 e rappresentano il: 2.23333%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3976.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3976.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3976.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3976.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3976.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3976.png has been created
@@ -548,6 +576,7 @@ Il numero di eventi singoli registrati è: 78456
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1718 e rappresentano il: 2.18976%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3977.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3977.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3977.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3977.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3977.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3977.png has been created
@@ -563,6 +592,7 @@ Il numero di eventi singoli registrati è: 76903
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1762 e rappresentano il: 2.2912%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3978.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3978.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3978.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3978.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3978.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3978.png has been created
@@ -578,6 +608,7 @@ Il numero di eventi singoli registrati è: 73562
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1717 e rappresentano il: 2.33409%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3990.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3990.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3990.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3990.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3990.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3990.png has been created
@@ -593,6 +624,7 @@ Il numero di eventi singoli registrati è: 45670
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1061 e rappresentano il: 2.32319%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4002.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN4002.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN4002.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN4002.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN4002.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN4002.png has been created
@@ -608,6 +640,7 @@ Il numero di eventi singoli registrati è: 76412
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1809 e rappresentano il: 2.36743%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4005.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN4005.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN4005.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN4005.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN4005.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN4005.png has been created
@@ -623,6 +656,7 @@ Il numero di eventi singoli registrati è: 77020
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1810 e rappresentano il: 2.35004%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4006.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN4006.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN4006.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN4006.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN4006.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN4006.png has been created
@@ -638,6 +672,7 @@ Il numero di eventi singoli registrati è: 75583
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1750 e rappresentano il: 2.31534%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4007.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN4007.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN4007.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN4007.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN4007.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN4007.png has been created
@@ -655,6 +690,7 @@ Il numero di eventi singoli registrati è: 50747
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1152 e rappresentano il: 2.27008%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4036.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN4036.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN4036.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN4036.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN4036.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN4036.png has been created
@@ -670,6 +706,7 @@ Il numero di eventi singoli registrati è: 81289
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1831 e rappresentano il: 2.25246%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4045.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN4045.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN4045.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN4045.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN4045.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN4045.png has been created
@@ -685,6 +722,7 @@ Il numero di eventi singoli registrati è: 29741
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 700 e rappresentano il: 2.35365%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4048.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN4048.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN4048.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN4048.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN4048.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN4048.png has been created
@@ -700,6 +738,7 @@ Il numero di eventi singoli registrati è: 81414
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1848 e rappresentano il: 2.26988%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4049.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN4049.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN4049.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN4049.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN4049.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN4049.png has been created
@@ -715,6 +754,7 @@ Il numero di eventi singoli registrati è: 6747
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 136 e rappresentano il: 2.01571%. 
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4051.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN4051.png has been created
+Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN4051.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN4051.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN4051.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN4051.png has been created
