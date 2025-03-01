@@ -76,7 +76,7 @@ Istogramma della distanza tra l'origine degli assi cartesiani (**centro del CD**
 ### :one::one: **:eight_pointed_black_star: Muon_Rate_vs_Run**  
 Grafico del **rate dei muoni** in funzione dell'indice della run.
 
-### :one::tww: **:eight_pointed_black_star: Muon_Rate_edge_cut_vs_Run**  
+### :one::two: **:eight_pointed_black_star: Muon_Rate_edge_cut_vs_Run**  
 Grafico del **rate dei muoni** in funzione dell'indice della run togliendo gli eventi di **bordo**.
 
 ---  
