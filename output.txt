@@ -96,6 +96,9 @@ Tempo totale della RUN: t = 4135.07 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 3.12788 Hz.
 Il numero di eventi singoli registrati è: 10732
 In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
+La distanza massima tra l'origine e il tracciato dei muoni è: 20499.9 mm
+I muoni che passano al bordo sono: 4188
+La frequenza togliendo gli eventi di bordo è: 2.11508 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3322.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3322.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3322.png has been created
@@ -114,6 +117,9 @@ Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 5.99269 Hz.
 Il numero di eventi singoli registrati è: 57227
 In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
+La distanza massima tra l'origine e il tracciato dei muoni è: 20524.5 mm
+I muoni che passano al bordo sono: 25817
+La frequenza togliendo gli eventi di bordo è: 3.90741 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3326.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3326.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3326.png has been created
@@ -132,6 +138,9 @@ Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.47392 Hz.
 Il numero di eventi singoli registrati è: 54336
 In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
+La distanza massima tra l'origine e il tracciato dei muoni è: 20532.5 mm
+I muoni che passano al bordo sono: 15356
+La frequenza togliendo gli eventi di bordo è: 4.93119 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3413.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3413.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3413.png has been created
@@ -149,6 +158,9 @@ Tempo totale della RUN: t = 1732.28 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.08215 Hz.
 Il numero di eventi singoli registrati è: 8886
 In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
+La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
+I muoni che passano al bordo sono: 2509
+La frequenza togliendo gli eventi di bordo è: 4.63377 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3415.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3415.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3415.png has been created
@@ -166,6 +178,9 @@ Tempo totale della RUN: t = 11511.9 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.15685 Hz.
 Il numero di eventi singoli registrati è: 59753
 In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
+La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
+I muoni che passano al bordo sono: 16970
+La frequenza togliendo gli eventi di bordo è: 4.68272 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3416.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3416.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3416.png has been created
@@ -183,6 +198,9 @@ Tempo totale della RUN: t = 5253.97 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.64717 Hz.
 Il numero di eventi singoli registrati è: 29429
 In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
+La distanza massima tra l'origine e il tracciato dei muoni è: 20524.5 mm
+I muoni che passano al bordo sono: 8352
+La frequenza togliendo gli eventi di bordo è: 5.05751 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3530.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3530.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3530.png has been created
@@ -201,6 +219,9 @@ Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.65981 Hz.
 Il numero di eventi singoli registrati è: 27104
 In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
+La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
+I muoni che passano al bordo sono: 7732
+La frequenza togliendo gli eventi di bordo è: 5.06316 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3531.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3531.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3531.png has been created
@@ -250,6 +271,9 @@ Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 10.7546 Hz.
 Il numero di eventi singoli registrati è: 116557
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 2499 e rappresentano il: 2.14402%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
+I muoni che passano al bordo sono: 33127
+La frequenza togliendo gli eventi di bordo è: 8.17909 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3677.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3677.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3677.png has been created
@@ -269,6 +293,9 @@ Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 8.36298 Hz.
 Il numero di eventi singoli registrati è: 137728
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 2897 e rappresentano il: 2.10342%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
+I muoni che passano al bordo sono: 60732
+La frequenza togliendo gli eventi di bordo è: 5.39667 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3697.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3697.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3697.png has been created
@@ -287,6 +314,9 @@ Tempo totale della RUN: t = 1693.94 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.69564 Hz.
 Il numero di eventi singoli registrati è: 9422
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 202 e rappresentano il: 2.14392%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20530.3 mm
+I muoni che passano al bordo sono: 3052
+La frequenza togliendo gli eventi di bordo è: 4.89392 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3708.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3708.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3708.png has been created
@@ -305,6 +335,9 @@ Tempo totale della RUN: t = 3980.92 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 4.12718 Hz.
 Il numero di eventi singoli registrati è: 13529
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 308 e rappresentano il: 2.27659%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20508.1 mm
+I muoni che passano al bordo sono: 4539
+La frequenza togliendo gli eventi di bordo è: 2.987 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3709.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3709.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3709.png has been created
@@ -323,6 +356,9 @@ Tempo totale della RUN: t = 7781.32 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.72495 Hz.
 Il numero di eventi singoli registrati è: 43502
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 960 e rappresentano il: 2.2068%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
+I muoni che passano al bordo sono: 13708
+La frequenza togliendo gli eventi di bordo è: 4.9633 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3743.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3743.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3743.png has been created
@@ -341,6 +377,9 @@ Tempo totale della RUN: t = 6043.41 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.64525 Hz.
 Il numero di eventi singoli registrati è: 33859
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 694 e rappresentano il: 2.04968%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
+I muoni che passano al bordo sono: 9625
+La frequenza togliendo gli eventi di bordo è: 5.05261 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3753.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3753.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3753.png has been created
@@ -359,6 +398,9 @@ Tempo totale della RUN: t = 32650.6 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.4102 Hz.
 Il numero di eventi singoli registrati è: 175813
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 3792 e rappresentano il: 2.15684%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
+I muoni che passano al bordo sono: 51998
+La frequenza togliendo gli eventi di bordo è: 4.81764 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3793.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3793.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3793.png has been created
@@ -377,6 +419,9 @@ Tempo totale della RUN: t = 20655.3 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.27726 Hz.
 Il numero di eventi singoli registrati è: 109278
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 2311 e rappresentano il: 2.11479%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20541.2 mm
+I muoni che passano al bordo sono: 32634
+La frequenza togliendo gli eventi di bordo è: 4.69733 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3872.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3872.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3872.png has been created
@@ -395,6 +440,9 @@ Tempo totale della RUN: t = 54190.6 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.2845 Hz.
 Il numero di eventi singoli registrati è: 286644
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 6077 e rappresentano il: 2.12005%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
+I muoni che passano al bordo sono: 86160
+La frequenza togliendo gli eventi di bordo è: 4.69456 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3885.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3885.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3885.png has been created
@@ -414,6 +462,9 @@ Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.28469 Hz.
 Il numero di eventi singoli registrati è: 122035
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 2731 e rappresentano il: 2.23788%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
+I muoni che passano al bordo sono: 36462
+La frequenza togliendo gli eventi di bordo è: 4.70978 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3889.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3889.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3889.png has been created
@@ -432,6 +483,9 @@ Tempo totale della RUN: t = 30031.6 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.2396 Hz.
 Il numero di eventi singoli registrati è: 157423
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 3436 e rappresentano il: 2.18265%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20546.8 mm
+I muoni che passano al bordo sono: 47583
+La frequenza togliendo gli eventi di bordo è: 4.65516 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3896.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3896.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3896.png has been created
@@ -450,6 +504,9 @@ Tempo totale della RUN: t = 30613 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.22334 Hz.
 Il numero di eventi singoli registrati è: 160616
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 3403 e rappresentano il: 2.11872%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20545.7 mm
+I muoni che passano al bordo sono: 48177
+La frequenza togliendo gli eventi di bordo è: 4.6496 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3937.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3937.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3937.png has been created
@@ -468,6 +525,9 @@ Tempo totale della RUN: t = 11804.6 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.26924 Hz.
 Il numero di eventi singoli registrati è: 62226
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1408 e rappresentano il: 2.26272%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
+I muoni che passano al bordo sono: 18491
+La frequenza togliendo gli eventi di bordo è: 4.70282 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3938.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3938.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3938.png has been created
@@ -486,6 +546,9 @@ Tempo totale della RUN: t = 14263.7 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.23912 Hz.
 Il numero di eventi singoli registrati è: 74805
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1590 e rappresentano il: 2.12553%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
+I muoni che passano al bordo sono: 22446
+La frequenza togliendo gli eventi di bordo è: 4.66548 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3940.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3940.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3940.png has been created
@@ -504,6 +567,9 @@ Tempo totale della RUN: t = 13698.5 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.4834 Hz.
 Il numero di eventi singoli registrati è: 73300
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1721 e rappresentano il: 2.34789%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20536.5 mm
+I muoni che passano al bordo sono: 22441
+La frequenza togliendo gli eventi di bordo è: 4.8452 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3945.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3945.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3945.png has been created
@@ -522,6 +588,9 @@ Tempo totale della RUN: t = 14397.4 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.45978 Hz.
 Il numero di eventi singoli registrati è: 76701
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1737 e rappresentano il: 2.26464%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
+I muoni che passano al bordo sono: 23194
+La frequenza togliendo gli eventi di bordo è: 4.8488 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3947.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3947.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3947.png has been created
@@ -540,6 +609,9 @@ Tempo totale della RUN: t = 14294.9 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.40618 Hz.
 Il numero di eventi singoli registrati è: 75603
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1785 e rappresentano il: 2.36102%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20545.7 mm
+I muoni che passano al bordo sono: 23176
+La frequenza togliendo gli eventi di bordo è: 4.78491 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3948.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3948.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3948.png has been created
@@ -558,6 +630,9 @@ Tempo totale della RUN: t = 12140.2 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.38037 Hz.
 Il numero di eventi singoli registrati è: 64010
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1415 e rappresentano il: 2.21059%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20530.3 mm
+I muoni che passano al bordo sono: 19521
+La frequenza togliendo gli eventi di bordo è: 4.77241 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3949.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3949.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3949.png has been created
@@ -576,6 +651,9 @@ Tempo totale della RUN: t = 13366.3 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.45407 Hz.
 Il numero di eventi singoli registrati è: 71281
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1566 e rappresentano il: 2.19694%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
+I muoni che passano al bordo sono: 21725
+La frequenza togliendo gli eventi di bordo è: 4.82872 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3951.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3951.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3951.png has been created
@@ -594,6 +672,9 @@ Tempo totale della RUN: t = 7616.1 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.60522 Hz.
 Il numero di eventi singoli registrati è: 41520
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 991 e rappresentano il: 2.3868%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
+I muoni che passano al bordo sono: 12556
+La frequenza togliendo gli eventi di bordo è: 4.95661 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3975.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3975.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3975.png has been created
@@ -612,6 +693,9 @@ Tempo totale della RUN: t = 14300.2 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.50097 Hz.
 Il numero di eventi singoli registrati è: 76791
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1715 e rappresentano il: 2.23333%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
+I muoni che passano al bordo sono: 22868
+La frequenza togliendo gli eventi di bordo è: 4.90183 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3976.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3976.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3976.png has been created
@@ -630,6 +714,9 @@ Tempo totale della RUN: t = 14643.3 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.47763 Hz.
 Il numero di eventi singoli registrati è: 78456
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1718 e rappresentano il: 2.18976%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
+I muoni che passano al bordo sono: 23588
+La frequenza togliendo gli eventi di bordo è: 4.8668 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3977.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3977.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3977.png has been created
@@ -648,6 +735,9 @@ Tempo totale della RUN: t = 14384.8 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.47816 Hz.
 Il numero di eventi singoli registrati è: 76903
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1762 e rappresentano il: 2.2912%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20503.9 mm
+I muoni che passano al bordo sono: 23399
+La frequenza togliendo gli eventi di bordo è: 4.85151 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3978.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3978.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3978.png has been created
@@ -666,6 +756,9 @@ Tempo totale della RUN: t = 13778.3 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.46503 Hz.
 Il numero di eventi singoli registrati è: 73562
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1717 e rappresentano il: 2.33409%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
+I muoni che passano al bordo sono: 22195
+La frequenza togliendo gli eventi di bordo è: 4.85416 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3990.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3990.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3990.png has been created
@@ -684,6 +777,9 @@ Tempo totale della RUN: t = 8544.48 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.47201 Hz.
 Il numero di eventi singoli registrati è: 45670
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1061 e rappresentano il: 2.32319%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20542.5 mm
+I muoni che passano al bordo sono: 13887
+La frequenza togliendo gli eventi di bordo è: 4.84675 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4002.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN4002.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN4002.png has been created
@@ -702,6 +798,9 @@ Tempo totale della RUN: t = 14381.9 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.46118 Hz.
 Il numero di eventi singoli registrati è: 76412
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1809 e rappresentano il: 2.36743%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
+I muoni che passano al bordo sono: 23457
+La frequenza togliendo gli eventi di bordo è: 4.83017 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4005.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN4005.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN4005.png has been created
@@ -720,6 +819,9 @@ Tempo totale della RUN: t = 14383.4 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.49986 Hz.
 Il numero di eventi singoli registrati è: 77020
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1810 e rappresentano il: 2.35004%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20514 mm
+I muoni che passano al bordo sono: 23345
+La frequenza togliendo gli eventi di bordo è: 4.87681 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4006.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN4006.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN4006.png has been created
@@ -738,6 +840,9 @@ Tempo totale della RUN: t = 14164.4 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.46141 Hz.
 Il numero di eventi singoli registrati è: 75583
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1750 e rappresentano il: 2.31534%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
+I muoni che passano al bordo sono: 22952
+La frequenza togliendo gli eventi di bordo è: 4.84101 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4007.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN4007.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN4007.png has been created
@@ -758,6 +863,9 @@ Tempo totale della RUN: t = 8917.12 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.90043 Hz.
 Il numero di eventi singoli registrati è: 50747
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1152 e rappresentano il: 2.27008%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
+I muoni che passano al bordo sono: 14730
+La frequenza togliendo gli eventi di bordo è: 5.24855 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4036.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN4036.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN4036.png has been created
@@ -776,6 +884,9 @@ Tempo totale della RUN: t = 14362.8 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.83539 Hz.
 Il numero di eventi singoli registrati è: 81289
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1831 e rappresentano il: 2.25246%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
+I muoni che passano al bordo sono: 23731
+La frequenza togliendo gli eventi di bordo è: 5.18313 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4045.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN4045.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN4045.png has been created
@@ -794,6 +905,9 @@ Tempo totale della RUN: t = 5288.74 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.83471 Hz.
 Il numero di eventi singoli registrati è: 29741
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 700 e rappresentano il: 2.35365%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
+I muoni che passano al bordo sono: 8662
+La frequenza togliendo gli eventi di bordo è: 5.19689 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4048.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN4048.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN4048.png has been created
@@ -812,6 +926,9 @@ Tempo totale della RUN: t = 14382.4 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.86491 Hz.
 Il numero di eventi singoli registrati è: 81414
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1848 e rappresentano il: 2.26988%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
+I muoni che passano al bordo sono: 23676
+La frequenza togliendo gli eventi di bordo è: 5.21873 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4049.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN4049.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN4049.png has been created
@@ -830,6 +947,9 @@ Tempo totale della RUN: t = 1195.62 s
 Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.8082 Hz.
 Il numero di eventi singoli registrati è: 6747
 Il numero di eventi bundle (muoni per traccia > 1) registrati è: 136 e rappresentano il: 2.01571%. 
+La distanza massima tra l'origine e il tracciato dei muoni è: 20511.5 mm
+I muoni che passano al bordo sono: 1940
+La frequenza togliendo gli eventi di bordo è: 5.1856 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4051.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN4051.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN4051.png has been created
@@ -842,6 +962,8 @@ Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN4051.png has been created
 --------------------------------------------
 Info in <TCanvas::Print>: file Muon_Rate_vs_Run.png has been created
+Info in <TCanvas::Print>: file Muon_Rate_edge_cut_vs_Run.png has been created
+La distanza del tracciato con l'origine massima registrata tra tutti i file è: 20548.1 mm
 ============================================
 FINE ANALISI
 ============================================

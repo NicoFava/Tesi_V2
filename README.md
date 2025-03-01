@@ -23,6 +23,9 @@ Il file **output.txt** contiene una sintesi dei risultati principali dell'analis
 - **Numero di eventi bundle**: Eventi con **più tracce** (ossia più di un muone per singolo EventID).
 - **Percentuale di eventi bundle**: Percentuale di eventi multipli rispetto al totale.  
   - In caso di **TrackID inesistente** tutte le quantità legate ai muoni bundle non verranno calcolate o rappresentate in un grafico. 
+- **Distanza massima del tracciato del muone rispetto all'origine del rivelatore**: viene calcolata la distanza massima tra l'origine e la **retta** che congiunge i punti di **entrata** e di **uscita** di ogni evento.
+- **Eventi nel bordo**: Numero di eventi classificati come eventi **bordo**.   
+- **Rate dopo il taglio**: Rate dei muoni dopo aver sottratto gli eventi di **bordo**.  
 
 Inoltre, il file di output include i **messaggi di creazione delle immagini** generate automaticamente durante l'analisi.  
 
@@ -72,6 +75,9 @@ Istogramma della distanza tra l'origine degli assi cartesiani (**centro del CD**
 
 ### :one::one: **:eight_pointed_black_star: Muon_Rate_vs_Run**  
 Grafico del **rate dei muoni** in funzione dell'indice della run.
+
+### :one::tww: **:eight_pointed_black_star: Muon_Rate_edge_cut_vs_Run**  
+Grafico del **rate dei muoni** in funzione dell'indice della run togliendo gli eventi di **bordo**.
 
 ---  
 

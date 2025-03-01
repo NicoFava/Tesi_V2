@@ -125,4 +125,11 @@ double distance_point_to_line(const muone&);
 
 // Funzione che plotta la distanza della retta di muoni dall'origine
 void path_distance_histogram(const vector<muone>&, const string&);
+
+// Funzione per calcoare gli eventi di bordo
+double edge_events(const vector<muone>&, double);
+
+// Funzione per plottare il rate dei muoni con taglio sugli eventi di bordo
+void plot_muon_rate_with_edge_cut_vs_run(const vector<vector<muone>>&, const vector<string>&, double);
+
 #endif

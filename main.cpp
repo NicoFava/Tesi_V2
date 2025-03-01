@@ -34,9 +34,12 @@ int main(int argc, char* argv[]) {
     
     vector<double> run_indices;
     vector<double> muon_rates;
+    vector<double> path_distances;
+    vector<double> max_path_distances;
     double delta_t = 0;
     double rate = 0;
     double rates = 0;
+    double cut_distance = 2800; // Distanza di taglio per gli eventi di bordo
     for (size_t i = 0; i < eventi_per_file.size(); i++) {
         if (eventi_per_file[i].empty()) {
             cout << i+1 << ") " << run_names[i] << ": RUN vuota, salto l'analisi." << endl;
@@ -79,6 +82,20 @@ int main(int argc, char* argv[]) {
         } else {
             cout << "In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle." << endl;
         }
+        
+        vector<double> path_distances; // Inizializza il vettore per ogni run
+        for (const auto& e : eventi_per_file[i]) {
+            double distance = distance_point_to_line(e);
+            path_distances.push_back(distance);
+        }
+
+        // Calcola e stampa la distanza massima
+        double max_dist;
+        max_dist = *max_element(path_distances.begin(), path_distances.end());
+        max_path_distances.push_back(max_dist);
+        cout << "La distanza massima tra l'origine e il tracciato dei muoni è: " << max_dist << " mm" << endl;
+        cout << "I muoni che passano al bordo sono: " << edge_events(eventi_per_file[i], cut_distance) << endl;
+        cout << "La frequenza togliendo gli eventi di bordo è: " << ((double )eventi_per_file[i].size() - (double)edge_events(eventi_per_file[i], cut_distance)) / total_run_time(eventi_per_file[i]) << " Hz" << endl;
         total_PeSum_histogram(eventi_per_file[i], run_names[i]);
         plot_polar_angle_distribution(eventi_per_file[i], run_names[i]);
         plot_azimuthal_angle_distribution(eventi_per_file[i], run_names[i]);
@@ -91,6 +108,8 @@ int main(int argc, char* argv[]) {
         cout << "--------------------------------------------" << endl;
     }
     plot_muon_rate_vs_run(eventi_per_file, run_names);
+    plot_muon_rate_with_edge_cut_vs_run(eventi_per_file, run_names, cut_distance);
+    cout << "La distanza del tracciato con l'origine massima registrata tra tutti i file è: " << *max_element(max_path_distances.begin(), max_path_distances.end()) << " mm" << endl;
     cout << "============================================" << endl;
     cout << "FINE ANALISI" << endl;
     cout << "============================================" << endl;

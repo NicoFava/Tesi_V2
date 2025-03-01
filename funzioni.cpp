@@ -655,7 +655,7 @@ void Polar_vs_Azimuthal_angle(const vector<muone>& eventi, const string& run_nam
     canvas->SetGrid();
     gStyle->SetPalette(kRainBow);
 
-    TH2F *hist2D = new TH2F( run_name.c_str(), ("Carica vs Angolo Polare - " + run_name).c_str(), 100, 100, 100, 100, 100, 100);
+    TH2F *hist2D = new TH2F(run_name.c_str(), ("Angolo Polare vs Angolo Azimutale - " + run_name).c_str(), 100, 100, 100, 100, 100, 100);
 
     for (const auto& ev : eventi) {
         hist2D->Fill(atan2(ev.uy, ev.ux), cos(acos(ev.uz)));
@@ -664,7 +664,6 @@ void Polar_vs_Azimuthal_angle(const vector<muone>& eventi, const string& run_nam
     hist2D->GetXaxis()->SetTitle("#phi [rad]");
     hist2D->GetYaxis()->SetTitle("cos(#theta)");
     hist2D->Draw("COLZ");
-
 
     string filename = folder_name + "/Polar_vs_Azimuthal_Angle_" + run_name + ".png";
     canvas->SaveAs(filename.c_str());
@@ -725,12 +724,10 @@ void path_distance_histogram(const vector<muone>& eventi, const string& run_name
     TH1F *distance_hist = new TH1F(run_name.c_str(), ("Distribuzione della distanza origine-retta muone - " + run_name).c_str(), 100, 100, 100); // 100 bins, range 0-100 mm
     gPad->SetLeftMargin(0.12);
     canvas->SetGrid();
-
     for (const auto& e : eventi) {
         double distance = distance_point_to_line(e);
         distance_hist->Fill(distance);
     }
-
     distance_hist->SetLineColor(kBlue);
     distance_hist->SetLineWidth(2);
     distance_hist->SetFillColorAlpha(kBlue, 0.3);
@@ -741,4 +738,48 @@ void path_distance_histogram(const vector<muone>& eventi, const string& run_name
     canvas->SaveAs(filename.c_str());
     delete canvas;
     delete distance_hist;
+}
+
+double edge_events(const vector<muone>& eventi, double cut_distance){
+    int count = 0;
+    double threshold = 20548.1 - cut_distance;
+    for (const auto& e : eventi) {
+        double distance = distance_point_to_line(e);
+        if(distance >= threshold){ // Se tolgo 3000 mm ottengo le dimensioni del CD (circa 35.5 m di diametro)
+            count ++;
+        } // Conto quanti eventi di muoni passano al bordo (devo capire ancora come definire il bordo)
+    }
+    return count;
+}
+
+void plot_muon_rate_with_edge_cut_vs_run(const vector<vector<muone>>& eventi_per_file, const vector<string>& run_names, double cut_distance) {
+    vector<double> run_indices;
+    vector<double> muon_rates;
+
+    for (size_t i = 0; i < eventi_per_file.size(); i++) {
+        if (eventi_per_file[i].empty()) {
+            continue;
+        }
+
+        double total_time = total_run_time(eventi_per_file[i]);
+        double rate = ((double )eventi_per_file[i].size() - (double)edge_events(eventi_per_file[i], cut_distance)) / total_time;
+
+        run_indices.push_back(i + 1);
+        muon_rates.push_back(rate);
+    }
+
+    TCanvas *canvas = new TCanvas("canvas", "Rate dei Muoni in Funzione della Run", 800, 600);
+    TGraph *graph = new TGraph(run_indices.size(), &run_indices[0], &muon_rates[0]);
+    canvas->SetGrid();
+
+    string title = "Rate dei Muoni in Funzione della Run dopo il Taglio (" + to_string(cut_distance) + " mm);Indice della Run;Rate [Hz]";
+    graph->SetTitle(title.c_str());
+    graph->SetMarkerStyle(21);
+    graph->SetMarkerSize(1.5);
+    graph->Draw("AP");
+
+    canvas->SaveAs("Muon_Rate_edge_cut_vs_Run.png");
+
+    delete canvas;
+    delete graph;
 }
