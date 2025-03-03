@@ -132,4 +132,6 @@ double edge_events(const vector<muone>&, double);
 // Funzione per plottare il rate dei muoni con taglio sugli eventi di bordo
 void plot_muon_rate_with_edge_cut_vs_run(const vector<vector<muone>>&, const vector<string>&, double);
 
+// Funzione per plottare il numero di trackID presenti
+void plot_trackID_distribution(const vector<muone>&, const string&);
 #endif

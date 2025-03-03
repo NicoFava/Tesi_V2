@@ -92,19 +92,21 @@ RUN4051: 8140 eventi caricati
 1) RUN3322: 
 Data di inizio: 2025-02-03 Ora di inizio: \\
 Tempo totale della RUN: t = 4135.07 s
-<delta_t> = 0.385339 s | rate (contando gli eventi bundle come unici) = 2.59512 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 3.12788 Hz.
-Il numero di eventi singoli registrati è: 10732
+Numero di eventi totali registrati: 12934
+<delta_t> = 0.385339 s | rate (contando gli eventi bundle come unici 1/delta_t) = 2.59512 Hz
+Il rate dei muoni (righe/t_tot) è: 3.12788 Hz.
+Il numero di eventi univoci per EventID: 10732
 In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
 La distanza massima tra l'origine e il tracciato dei muoni è: 20499.9 mm
-I muoni che passano al bordo sono: 4188
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 4188
 La frequenza togliendo gli eventi di bordo è: 2.11508 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3322.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3322.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3322.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3322.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3322.png has been created
-Trovato trackID = -1, salto la creazione degli istogrammi per la run RUN3322
+Trovato trackID = -1, salto la creazione degli istogrammi bundle per la run RUN3322
+Trovato trackID = -1, salto la creazione dell'istrogramma TrackID per la RUN3322
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3322.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3322.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3322.png has been created
@@ -112,20 +114,22 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3322.png has 
 2) RUN3326: 
 Data di inizio: 2025-02-03 Ora di inizio: \\
 Tempo totale della RUN: t = 12380.6 s
+Numero di eventi totali registrati: 74193
 Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
-<delta_t> = 0.586972 s | rate (contando gli eventi bundle come unici) = 1.70366 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 5.99269 Hz.
-Il numero di eventi singoli registrati è: 57227
+<delta_t> = 0.586972 s | rate (contando gli eventi bundle come unici 1/delta_t) = 1.70366 Hz
+Il rate dei muoni (righe/t_tot) è: 5.99269 Hz.
+Il numero di eventi univoci per EventID: 57227
 In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
 La distanza massima tra l'origine e il tracciato dei muoni è: 20524.5 mm
-I muoni che passano al bordo sono: 25817
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 25817
 La frequenza togliendo gli eventi di bordo è: 3.90741 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3326.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3326.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3326.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3326.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3326.png has been created
-Trovato trackID = -1, salto la creazione degli istogrammi per la run RUN3326
+Trovato trackID = -1, salto la creazione degli istogrammi bundle per la run RUN3326
+Trovato trackID = -1, salto la creazione dell'istrogramma TrackID per la RUN3326
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3326.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3326.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3326.png has been created
@@ -133,20 +137,22 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3326.png has 
 3) RUN3413: 
 Data di inizio: 2025-02-04 Ora di inizio: \\
 Tempo totale della RUN: t = 9953.79 s
+Numero di eventi totali registrati: 64440
 Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
-<delta_t> = 0.193678 s | rate (contando gli eventi bundle come unici) = 5.1632 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.47392 Hz.
-Il numero di eventi singoli registrati è: 54336
+<delta_t> = 0.193678 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.1632 Hz
+Il rate dei muoni (righe/t_tot) è: 6.47392 Hz.
+Il numero di eventi univoci per EventID: 54336
 In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
 La distanza massima tra l'origine e il tracciato dei muoni è: 20532.5 mm
-I muoni che passano al bordo sono: 15356
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 15356
 La frequenza togliendo gli eventi di bordo è: 4.93119 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3413.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3413.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3413.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3413.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3413.png has been created
-Trovato trackID = -1, salto la creazione degli istogrammi per la run RUN3413
+Trovato trackID = -1, salto la creazione degli istogrammi bundle per la run RUN3413
+Trovato trackID = -1, salto la creazione dell'istrogramma TrackID per la RUN3413
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3413.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3413.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3413.png has been created
@@ -154,19 +160,21 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3413.png has 
 4) RUN3415: 
 Data di inizio: 2025-02-04 Ora di inizio: \\
 Tempo totale della RUN: t = 1732.28 s
-<delta_t> = 0.194967 s | rate (contando gli eventi bundle come unici) = 5.12908 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.08215 Hz.
-Il numero di eventi singoli registrati è: 8886
+Numero di eventi totali registrati: 10536
+<delta_t> = 0.194967 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.12908 Hz
+Il rate dei muoni (righe/t_tot) è: 6.08215 Hz.
+Il numero di eventi univoci per EventID: 8886
 In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
 La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
-I muoni che passano al bordo sono: 2509
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 2509
 La frequenza togliendo gli eventi di bordo è: 4.63377 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3415.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3415.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3415.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3415.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3415.png has been created
-Trovato trackID = -1, salto la creazione degli istogrammi per la run RUN3415
+Trovato trackID = -1, salto la creazione degli istogrammi bundle per la run RUN3415
+Trovato trackID = -1, salto la creazione dell'istrogramma TrackID per la RUN3415
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3415.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3415.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3415.png has been created
@@ -174,19 +182,21 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3415.png has 
 5) RUN3416: 
 Data di inizio: 2025-02-04 Ora di inizio: \\
 Tempo totale della RUN: t = 11511.9 s
-<delta_t> = 0.192661 s | rate (contando gli eventi bundle come unici) = 5.19045 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.15685 Hz.
-Il numero di eventi singoli registrati è: 59753
+Numero di eventi totali registrati: 70877
+<delta_t> = 0.192661 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.19045 Hz
+Il rate dei muoni (righe/t_tot) è: 6.15685 Hz.
+Il numero di eventi univoci per EventID: 59753
 In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
 La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
-I muoni che passano al bordo sono: 16970
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 16970
 La frequenza togliendo gli eventi di bordo è: 4.68272 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3416.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3416.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3416.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3416.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3416.png has been created
-Trovato trackID = -1, salto la creazione degli istogrammi per la run RUN3416
+Trovato trackID = -1, salto la creazione degli istogrammi bundle per la run RUN3416
+Trovato trackID = -1, salto la creazione dell'istrogramma TrackID per la RUN3416
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3416.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3416.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3416.png has been created
@@ -194,19 +204,21 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3416.png has 
 6) RUN3530: 
 Data di inizio: \\ Ora di inizio: \\
 Tempo totale della RUN: t = 5253.97 s
-<delta_t> = 0.177473 s | rate (contando gli eventi bundle come unici) = 5.63465 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.64717 Hz.
-Il numero di eventi singoli registrati è: 29429
+Numero di eventi totali registrati: 34924
+<delta_t> = 0.177473 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.63465 Hz
+Il rate dei muoni (righe/t_tot) è: 6.64717 Hz.
+Il numero di eventi univoci per EventID: 29429
 In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
 La distanza massima tra l'origine e il tracciato dei muoni è: 20524.5 mm
-I muoni che passano al bordo sono: 8352
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 8352
 La frequenza togliendo gli eventi di bordo è: 5.05751 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3530.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3530.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3530.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3530.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3530.png has been created
-Trovato trackID = -1, salto la creazione degli istogrammi per la run RUN3530
+Trovato trackID = -1, salto la creazione degli istogrammi bundle per la run RUN3530
+Trovato trackID = -1, salto la creazione dell'istrogramma TrackID per la RUN3530
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3530.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3530.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3530.png has been created
@@ -214,20 +226,22 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3530.png has 
 7) RUN3531: 
 Data di inizio: \\ Ora di inizio: \\
 Tempo totale della RUN: t = 4842.63 s
+Numero di eventi totali registrati: 32251
 Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
-<delta_t> = 0.187633 s | rate (contando gli eventi bundle come unici) = 5.32954 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.65981 Hz.
-Il numero di eventi singoli registrati è: 27104
+<delta_t> = 0.187633 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.32954 Hz
+Il rate dei muoni (righe/t_tot) è: 6.65981 Hz.
+Il numero di eventi univoci per EventID: 27104
 In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
 La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
-I muoni che passano al bordo sono: 7732
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 7732
 La frequenza togliendo gli eventi di bordo è: 5.06316 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3531.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3531.png has been created
 Info in <TCanvas::Print>: file Azimuthal_Angle_plot/Azimuthal_RUN3531.png has been created
 Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3531.png has been created
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3531.png has been created
-Trovato trackID = -1, salto la creazione degli istogrammi per la run RUN3531
+Trovato trackID = -1, salto la creazione degli istogrammi bundle per la run RUN3531
+Trovato trackID = -1, salto la creazione dell'istrogramma TrackID per la RUN3531
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3531.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3531.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3531.png has been created
@@ -237,6 +251,7 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3531.png has 
 9) RUN3677: 
 Data di inizio: 2025-02-08 Ora di inizio: 18:48:57
 Tempo totale della RUN: t = 12862.4 s
+Numero di eventi totali registrati: 138330
 Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
 Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
 Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
@@ -267,12 +282,12 @@ Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
 Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
 Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
 Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
-<delta_t> = 0.281893 s | rate (contando gli eventi bundle come unici) = 3.54744 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 10.7546 Hz.
-Il numero di eventi singoli registrati è: 116557
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 2499 e rappresentano il: 2.14402%. 
+<delta_t> = 0.281893 s | rate (contando gli eventi bundle come unici 1/delta_t) = 3.54744 Hz
+Il rate dei muoni (righe/t_tot) è: 10.7546 Hz.
+Il numero di eventi univoci per EventID: 116557
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 18568 e rappresentano il: 15.9304%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
-I muoni che passano al bordo sono: 33127
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 33127
 La frequenza togliendo gli eventi di bordo è: 8.17909 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3677.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3677.png has been created
@@ -281,6 +296,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3677.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3677.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3677.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3677.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN3677.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3677.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3677.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3677.png has been created
@@ -288,13 +304,14 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3677.png has 
 10) RUN3697: 
 Data di inizio: 2025-02-08 Ora di inizio: 18:59:14
 Tempo totale della RUN: t = 20473.9 s
+Numero di eventi totali registrati: 171223
 Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
-<delta_t> = 0.291391 s | rate (contando gli eventi bundle come unici) = 3.43181 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 8.36298 Hz.
-Il numero di eventi singoli registrati è: 137728
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 2897 e rappresentano il: 2.10342%. 
+<delta_t> = 0.291391 s | rate (contando gli eventi bundle come unici 1/delta_t) = 3.43181 Hz
+Il rate dei muoni (righe/t_tot) è: 8.36298 Hz.
+Il numero di eventi univoci per EventID: 137728
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 29886 e rappresentano il: 21.6993%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
-I muoni che passano al bordo sono: 60732
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 60732
 La frequenza togliendo gli eventi di bordo è: 5.39667 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3697.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3697.png has been created
@@ -303,6 +320,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3697.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3697.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3697.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3697.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN3697.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3697.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3697.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3697.png has been created
@@ -310,12 +328,13 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3697.png has 
 11) RUN3708: 
 Data di inizio: 2025-02-08 Ora di inizio: 18:53:43
 Tempo totale della RUN: t = 1693.94 s
-<delta_t> = 0.189651 s | rate (contando gli eventi bundle come unici) = 5.27283 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.69564 Hz.
-Il numero di eventi singoli registrati è: 9422
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 202 e rappresentano il: 2.14392%. 
+Numero di eventi totali registrati: 11342
+<delta_t> = 0.189651 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.27283 Hz
+Il rate dei muoni (righe/t_tot) è: 6.69564 Hz.
+Il numero di eventi univoci per EventID: 9422
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1674 e rappresentano il: 17.7669%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20530.3 mm
-I muoni che passano al bordo sono: 3052
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 3052
 La frequenza togliendo gli eventi di bordo è: 4.89392 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3708.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3708.png has been created
@@ -324,6 +343,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3708.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3708.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3708.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3708.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN3708.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3708.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3708.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3708.png has been created
@@ -331,12 +351,13 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3708.png has 
 12) RUN3709: 
 Data di inizio: 2025-02-08 Ora di inizio: 19:24:22
 Tempo totale della RUN: t = 3980.92 s
-<delta_t> = 0.294628 s | rate (contando gli eventi bundle come unici) = 3.39411 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 4.12718 Hz.
-Il numero di eventi singoli registrati è: 13529
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 308 e rappresentano il: 2.27659%. 
+Numero di eventi totali registrati: 16430
+<delta_t> = 0.294628 s | rate (contando gli eventi bundle come unici 1/delta_t) = 3.39411 Hz
+Il rate dei muoni (righe/t_tot) è: 4.12718 Hz.
+Il numero di eventi univoci per EventID: 13529
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 2519 e rappresentano il: 18.6193%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20508.1 mm
-I muoni che passano al bordo sono: 4539
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 4539
 La frequenza togliendo gli eventi di bordo è: 2.987 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3709.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3709.png has been created
@@ -345,6 +366,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3709.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3709.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3709.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3709.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN3709.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3709.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3709.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3709.png has been created
@@ -352,12 +374,13 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3709.png has 
 13) RUN3743: 
 Data di inizio: 2025-02-09 Ora di inizio: 02:38:39
 Tempo totale della RUN: t = 7781.32 s
-<delta_t> = 0.180088 s | rate (contando gli eventi bundle come unici) = 5.55283 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.72495 Hz.
-Il numero di eventi singoli registrati è: 43502
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 960 e rappresentano il: 2.2068%. 
+Numero di eventi totali registrati: 52329
+<delta_t> = 0.180088 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.55283 Hz
+Il rate dei muoni (righe/t_tot) è: 6.72495 Hz.
+Il numero di eventi univoci per EventID: 43502
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 7608 e rappresentano il: 17.4889%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
-I muoni che passano al bordo sono: 13708
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 13708
 La frequenza togliendo gli eventi di bordo è: 4.9633 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3743.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3743.png has been created
@@ -366,6 +389,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3743.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3743.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3743.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3743.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN3743.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3743.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3743.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3743.png has been created
@@ -373,12 +397,13 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3743.png has 
 14) RUN3753: 
 Data di inizio: 2025-02-09 Ora di inizio: 14:40:04
 Tempo totale della RUN: t = 6043.41 s
-<delta_t> = 0.178608 s | rate (contando gli eventi bundle come unici) = 5.59885 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.64525 Hz.
-Il numero di eventi singoli registrati è: 33859
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 694 e rappresentano il: 2.04968%. 
+Numero di eventi totali registrati: 40160
+<delta_t> = 0.178608 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.59885 Hz
+Il rate dei muoni (righe/t_tot) è: 6.64525 Hz.
+Il numero di eventi univoci per EventID: 33859
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 5404 e rappresentano il: 15.9603%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
-I muoni che passano al bordo sono: 9625
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 9625
 La frequenza togliendo gli eventi di bordo è: 5.05261 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3753.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3753.png has been created
@@ -387,6 +412,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3753.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3753.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3753.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3753.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN3753.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3753.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3753.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3753.png has been created
@@ -394,12 +420,13 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3753.png has 
 15) RUN3793: 
 Data di inizio: 2025-02-09 Ora di inizio: 22:43:27
 Tempo totale della RUN: t = 32650.6 s
-<delta_t> = 0.186054 s | rate (contando gli eventi bundle come unici) = 5.37479 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.4102 Hz.
-Il numero di eventi singoli registrati è: 175813
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 3792 e rappresentano il: 2.15684%. 
+Numero di eventi totali registrati: 209297
+<delta_t> = 0.186054 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.37479 Hz
+Il rate dei muoni (righe/t_tot) è: 6.4102 Hz.
+Il numero di eventi univoci per EventID: 175813
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 28662 e rappresentano il: 16.3025%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
-I muoni che passano al bordo sono: 51998
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 51998
 La frequenza togliendo gli eventi di bordo è: 4.81764 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3793.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3793.png has been created
@@ -408,6 +435,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3793.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3793.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3793.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3793.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN3793.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3793.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3793.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3793.png has been created
@@ -415,12 +443,13 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3793.png has 
 16) RUN3872: 
 Data di inizio: 2025-02-10 Ora di inizio: 21:29:48
 Tempo totale della RUN: t = 20655.3 s
-<delta_t> = 0.188657 s | rate (contando gli eventi bundle come unici) = 5.30063 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.27726 Hz.
-Il numero di eventi singoli registrati è: 109278
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 2311 e rappresentano il: 2.11479%. 
+Numero di eventi totali registrati: 129659
+<delta_t> = 0.188657 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.30063 Hz
+Il rate dei muoni (righe/t_tot) è: 6.27726 Hz.
+Il numero di eventi univoci per EventID: 109278
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 17457 e rappresentano il: 15.9749%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20541.2 mm
-I muoni che passano al bordo sono: 32634
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 32634
 La frequenza togliendo gli eventi di bordo è: 4.69733 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3872.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3872.png has been created
@@ -429,6 +458,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3872.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3872.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3872.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3872.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN3872.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3872.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3872.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3872.png has been created
@@ -436,12 +466,13 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3872.png has 
 17) RUN3885: 
 Data di inizio: 2025-02-11 Ora di inizio: 03:34:19
 Tempo totale della RUN: t = 54190.6 s
-<delta_t> = 0.188914 s | rate (contando gli eventi bundle come unici) = 5.29341 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.2845 Hz.
-Il numero di eventi singoli registrati è: 286644
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 6077 e rappresentano il: 2.12005%. 
+Numero di eventi totali registrati: 340561
+<delta_t> = 0.188914 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.29341 Hz
+Il rate dei muoni (righe/t_tot) è: 6.2845 Hz.
+Il numero di eventi univoci per EventID: 286644
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 46213 e rappresentano il: 16.1221%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
-I muoni che passano al bordo sono: 86160
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 86160
 La frequenza togliendo gli eventi di bordo è: 4.69456 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3885.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3885.png has been created
@@ -450,6 +481,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3885.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3885.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3885.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3885.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN3885.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3885.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3885.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3885.png has been created
@@ -457,13 +489,14 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3885.png has 
 18) RUN3889: 
 Data di inizio: 2025-02-11 Ora di inizio: 01:09:27
 Tempo totale della RUN: t = 23151.8 s
+Numero di eventi totali registrati: 145502
 Attenzione: Intervallo di tempo negativo rilevato tra due eventi!
-<delta_t> = 0.191462 s | rate (contando gli eventi bundle come unici) = 5.22298 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.28469 Hz.
-Il numero di eventi singoli registrati è: 122035
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 2731 e rappresentano il: 2.23788%. 
+<delta_t> = 0.191462 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.22298 Hz
+Il rate dei muoni (righe/t_tot) è: 6.28469 Hz.
+Il numero di eventi univoci per EventID: 122035
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 19965 e rappresentano il: 16.3601%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
-I muoni che passano al bordo sono: 36462
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 36462
 La frequenza togliendo gli eventi di bordo è: 4.70978 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3889.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3889.png has been created
@@ -472,6 +505,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3889.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3889.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3889.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3889.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN3889.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3889.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3889.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3889.png has been created
@@ -479,12 +513,13 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3889.png has 
 19) RUN3896: 
 Data di inizio: 2025-02-12 Ora di inizio: 07:58:49
 Tempo totale della RUN: t = 30031.6 s
-<delta_t> = 0.190327 s | rate (contando gli eventi bundle come unici) = 5.25411 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.2396 Hz.
-Il numero di eventi singoli registrati è: 157423
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 3436 e rappresentano il: 2.18265%. 
+Numero di eventi totali registrati: 187385
+<delta_t> = 0.190327 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.25411 Hz
+Il rate dei muoni (righe/t_tot) è: 6.2396 Hz.
+Il numero di eventi univoci per EventID: 157423
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 25648 e rappresentano il: 16.2924%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20546.8 mm
-I muoni che passano al bordo sono: 47583
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 47583
 La frequenza togliendo gli eventi di bordo è: 4.65516 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3896.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3896.png has been created
@@ -493,6 +528,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3896.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3896.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3896.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3896.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN3896.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3896.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3896.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3896.png has been created
@@ -500,12 +536,13 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3896.png has 
 20) RUN3937: 
 Data di inizio: \\ Ora di inizio: \\
 Tempo totale della RUN: t = 30613 s
-<delta_t> = 0.189966 s | rate (contando gli eventi bundle come unici) = 5.26409 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.22334 Hz.
-Il numero di eventi singoli registrati è: 160616
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 3403 e rappresentano il: 2.11872%. 
+Numero di eventi totali registrati: 190515
+<delta_t> = 0.189966 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.26409 Hz
+Il rate dei muoni (righe/t_tot) è: 6.22334 Hz.
+Il numero di eventi univoci per EventID: 160616
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 25550 e rappresentano il: 15.9075%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20545.7 mm
-I muoni che passano al bordo sono: 48177
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 48177
 La frequenza togliendo gli eventi di bordo è: 4.6496 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3937.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3937.png has been created
@@ -514,6 +551,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3937.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3937.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3937.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3937.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN3937.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3937.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3937.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3937.png has been created
@@ -521,12 +559,13 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3937.png has 
 21) RUN3938: 
 Data di inizio: \\ Ora di inizio: \\
 Tempo totale della RUN: t = 11804.6 s
-<delta_t> = 0.189952 s | rate (contando gli eventi bundle come unici) = 5.26449 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.26924 Hz.
-Il numero di eventi singoli registrati è: 62226
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1408 e rappresentano il: 2.26272%. 
+Numero di eventi totali registrati: 74006
+<delta_t> = 0.189952 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.26449 Hz
+Il rate dei muoni (righe/t_tot) è: 6.26924 Hz.
+Il numero di eventi univoci per EventID: 62226
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 9998 e rappresentano il: 16.0672%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
-I muoni che passano al bordo sono: 18491
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 18491
 La frequenza togliendo gli eventi di bordo è: 4.70282 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3938.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3938.png has been created
@@ -535,6 +574,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3938.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3938.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3938.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3938.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN3938.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3938.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3938.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3938.png has been created
@@ -542,12 +582,13 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3938.png has 
 22) RUN3940: 
 Data di inizio: 2025-02-14 Ora di inizio: 14:02:04
 Tempo totale della RUN: t = 14263.7 s
-<delta_t> = 0.189244 s | rate (contando gli eventi bundle come unici) = 5.28418 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.23912 Hz.
-Il numero di eventi singoli registrati è: 74805
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1590 e rappresentano il: 2.12553%. 
+Numero di eventi totali registrati: 88993
+<delta_t> = 0.189244 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.28418 Hz
+Il rate dei muoni (righe/t_tot) è: 6.23912 Hz.
+Il numero di eventi univoci per EventID: 74805
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 12156 e rappresentano il: 16.2503%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
-I muoni che passano al bordo sono: 22446
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 22446
 La frequenza togliendo gli eventi di bordo è: 4.66548 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3940.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3940.png has been created
@@ -556,6 +597,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3940.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3940.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3940.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3940.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN3940.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3940.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3940.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3940.png has been created
@@ -563,12 +605,13 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3940.png has 
 23) RUN3945: 
 Data di inizio: 2025-02-17 Ora di inizio: 00:33:26
 Tempo totale della RUN: t = 13698.5 s
-<delta_t> = 0.187505 s | rate (contando gli eventi bundle come unici) = 5.3332 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.4834 Hz.
-Il numero di eventi singoli registrati è: 73300
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1721 e rappresentano il: 2.34789%. 
+Numero di eventi totali registrati: 88813
+<delta_t> = 0.187505 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.3332 Hz
+Il rate dei muoni (righe/t_tot) è: 6.4834 Hz.
+Il numero di eventi univoci per EventID: 73300
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 13293 e rappresentano il: 18.1351%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20536.5 mm
-I muoni che passano al bordo sono: 22441
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 22441
 La frequenza togliendo gli eventi di bordo è: 4.8452 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3945.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3945.png has been created
@@ -577,6 +620,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3945.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3945.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3945.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3945.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN3945.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3945.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3945.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3945.png has been created
@@ -584,12 +628,13 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3945.png has 
 24) RUN3947: 
 Data di inizio: 2025-02-17 Ora di inizio: 00:33:30
 Tempo totale della RUN: t = 14397.4 s
-<delta_t> = 0.18815 s | rate (contando gli eventi bundle come unici) = 5.31491 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.45978 Hz.
-Il numero di eventi singoli registrati è: 76701
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1737 e rappresentano il: 2.26464%. 
+Numero di eventi totali registrati: 93004
+<delta_t> = 0.18815 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.31491 Hz
+Il rate dei muoni (righe/t_tot) è: 6.45978 Hz.
+Il numero di eventi univoci per EventID: 76701
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 14119 e rappresentano il: 18.4078%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
-I muoni che passano al bordo sono: 23194
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 23194
 La frequenza togliendo gli eventi di bordo è: 4.8488 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3947.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3947.png has been created
@@ -598,6 +643,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3947.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3947.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3947.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3947.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN3947.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3947.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3947.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3947.png has been created
@@ -605,12 +651,13 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3947.png has 
 25) RUN3948: 
 Data di inizio: 2025-02-17 Ora di inizio: 00:33:35
 Tempo totale della RUN: t = 14294.9 s
-<delta_t> = 0.189064 s | rate (contando gli eventi bundle come unici) = 5.2892 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.40618 Hz.
-Il numero di eventi singoli registrati è: 75603
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1785 e rappresentano il: 2.36102%. 
+Numero di eventi totali registrati: 91576
+<delta_t> = 0.189064 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.2892 Hz
+Il rate dei muoni (righe/t_tot) è: 6.40618 Hz.
+Il numero di eventi univoci per EventID: 75603
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 13729 e rappresentano il: 18.1593%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20545.7 mm
-I muoni che passano al bordo sono: 23176
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 23176
 La frequenza togliendo gli eventi di bordo è: 4.78491 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3948.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3948.png has been created
@@ -619,6 +666,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3948.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3948.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3948.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3948.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN3948.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3948.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3948.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3948.png has been created
@@ -626,12 +674,13 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3948.png has 
 26) RUN3949: 
 Data di inizio: 2025-02-17 Ora di inizio: 00:39:43
 Tempo totale della RUN: t = 12140.2 s
-<delta_t> = 0.188952 s | rate (contando gli eventi bundle come unici) = 5.29235 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.38037 Hz.
-Il numero di eventi singoli registrati è: 64010
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1415 e rappresentano il: 2.21059%. 
+Numero di eventi totali registrati: 77459
+<delta_t> = 0.188952 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.29235 Hz
+Il rate dei muoni (righe/t_tot) è: 6.38037 Hz.
+Il numero di eventi univoci per EventID: 64010
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 11666 e rappresentano il: 18.2253%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20530.3 mm
-I muoni che passano al bordo sono: 19521
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 19521
 La frequenza togliendo gli eventi di bordo è: 4.77241 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3949.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3949.png has been created
@@ -640,6 +689,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3949.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3949.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3949.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3949.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN3949.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3949.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3949.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3949.png has been created
@@ -647,12 +697,13 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3949.png has 
 27) RUN3951: 
 Data di inizio: 2025-02-17 Ora di inizio: 00:39:48
 Tempo totale della RUN: t = 13366.3 s
-<delta_t> = 0.187031 s | rate (contando gli eventi bundle come unici) = 5.3467 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.45407 Hz.
-Il numero di eventi singoli registrati è: 71281
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1566 e rappresentano il: 2.19694%. 
+Numero di eventi totali registrati: 86267
+<delta_t> = 0.187031 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.3467 Hz
+Il rate dei muoni (righe/t_tot) è: 6.45407 Hz.
+Il numero di eventi univoci per EventID: 71281
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 12996 e rappresentano il: 18.2321%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
-I muoni che passano al bordo sono: 21725
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 21725
 La frequenza togliendo gli eventi di bordo è: 4.82872 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3951.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3951.png has been created
@@ -661,6 +712,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3951.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3951.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3951.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3951.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN3951.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3951.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3951.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3951.png has been created
@@ -668,12 +720,13 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3951.png has 
 28) RUN3975: 
 Data di inizio: \\ Ora di inizio: \\
 Tempo totale della RUN: t = 7616.1 s
-<delta_t> = 0.182065 s | rate (contando gli eventi bundle come unici) = 5.49255 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.60522 Hz.
-Il numero di eventi singoli registrati è: 41520
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 991 e rappresentano il: 2.3868%. 
+Numero di eventi totali registrati: 50306
+<delta_t> = 0.182065 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.49255 Hz
+Il rate dei muoni (righe/t_tot) è: 6.60522 Hz.
+Il numero di eventi univoci per EventID: 41520
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 7516 e rappresentano il: 18.1021%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
-I muoni che passano al bordo sono: 12556
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 12556
 La frequenza togliendo gli eventi di bordo è: 4.95661 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3975.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3975.png has been created
@@ -682,6 +735,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3975.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3975.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3975.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3975.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN3975.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3975.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3975.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3975.png has been created
@@ -689,12 +743,13 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3975.png has 
 29) RUN3976: 
 Data di inizio: 2025-02-17 Ora di inizio: 00:39:56
 Tempo totale della RUN: t = 14300.2 s
-<delta_t> = 0.186139 s | rate (contando gli eventi bundle come unici) = 5.37232 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.50097 Hz.
-Il numero di eventi singoli registrati è: 76791
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1715 e rappresentano il: 2.23333%. 
+Numero di eventi totali registrati: 92965
+<delta_t> = 0.186139 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.37232 Hz
+Il rate dei muoni (righe/t_tot) è: 6.50097 Hz.
+Il numero di eventi univoci per EventID: 76791
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 13983 e rappresentano il: 18.2092%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
-I muoni che passano al bordo sono: 22868
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 22868
 La frequenza togliendo gli eventi di bordo è: 4.90183 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3976.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3976.png has been created
@@ -703,6 +758,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3976.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3976.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3976.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3976.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN3976.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3976.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3976.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3976.png has been created
@@ -710,12 +766,13 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3976.png has 
 30) RUN3977: 
 Data di inizio: 2025-02-17 Ora di inizio: 00:40:01
 Tempo totale della RUN: t = 14643.3 s
-<delta_t> = 0.187445 s | rate (contando gli eventi bundle come unici) = 5.33491 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.47763 Hz.
-Il numero di eventi singoli registrati è: 78456
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1718 e rappresentano il: 2.18976%. 
+Numero di eventi totali registrati: 94854
+<delta_t> = 0.187445 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.33491 Hz
+Il rate dei muoni (righe/t_tot) è: 6.47763 Hz.
+Il numero di eventi univoci per EventID: 78456
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 14214 e rappresentano il: 18.1172%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
-I muoni che passano al bordo sono: 23588
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 23588
 La frequenza togliendo gli eventi di bordo è: 4.8668 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3977.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3977.png has been created
@@ -724,6 +781,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3977.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3977.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3977.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3977.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN3977.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3977.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3977.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3977.png has been created
@@ -731,12 +789,13 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3977.png has 
 31) RUN3978: 
 Data di inizio: 2025-02-17 Ora di inizio: 00:40:01
 Tempo totale della RUN: t = 14384.8 s
-<delta_t> = 0.185868 s | rate (contando gli eventi bundle come unici) = 5.38015 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.47816 Hz.
-Il numero di eventi singoli registrati è: 76903
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1762 e rappresentano il: 2.2912%. 
+Numero di eventi totali registrati: 93187
+<delta_t> = 0.185868 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.38015 Hz
+Il rate dei muoni (righe/t_tot) è: 6.47816 Hz.
+Il numero di eventi univoci per EventID: 76903
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 14059 e rappresentano il: 18.2815%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20503.9 mm
-I muoni che passano al bordo sono: 23399
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 23399
 La frequenza togliendo gli eventi di bordo è: 4.85151 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3978.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3978.png has been created
@@ -745,6 +804,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3978.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3978.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3978.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3978.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN3978.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3978.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3978.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3978.png has been created
@@ -752,12 +812,13 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3978.png has 
 32) RUN3990: 
 Data di inizio: 2025-02-17 Ora di inizio: 00:40:11
 Tempo totale della RUN: t = 13778.3 s
-<delta_t> = 0.186837 s | rate (contando gli eventi bundle come unici) = 5.35227 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.46503 Hz.
-Il numero di eventi singoli registrati è: 73562
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1717 e rappresentano il: 2.33409%. 
+Numero di eventi totali registrati: 89077
+<delta_t> = 0.186837 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.35227 Hz
+Il rate dei muoni (righe/t_tot) è: 6.46503 Hz.
+Il numero di eventi univoci per EventID: 73562
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 13308 e rappresentano il: 18.0909%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
-I muoni che passano al bordo sono: 22195
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 22195
 La frequenza togliendo gli eventi di bordo è: 4.85416 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN3990.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN3990.png has been created
@@ -766,6 +827,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN3990.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN3990.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN3990.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN3990.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN3990.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN3990.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3990.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3990.png has been created
@@ -773,12 +835,13 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3990.png has 
 33) RUN4002: 
 Data di inizio: 2025-02-17 Ora di inizio: 00:40:16
 Tempo totale della RUN: t = 8544.48 s
-<delta_t> = 0.186586 s | rate (contando gli eventi bundle come unici) = 5.35945 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.47201 Hz.
-Il numero di eventi singoli registrati è: 45670
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1061 e rappresentano il: 2.32319%. 
+Numero di eventi totali registrati: 55300
+<delta_t> = 0.186586 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.35945 Hz
+Il rate dei muoni (righe/t_tot) è: 6.47201 Hz.
+Il numero di eventi univoci per EventID: 45670
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 8294 e rappresentano il: 18.1607%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20542.5 mm
-I muoni che passano al bordo sono: 13887
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 13887
 La frequenza togliendo gli eventi di bordo è: 4.84675 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4002.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN4002.png has been created
@@ -787,6 +850,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN4002.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN4002.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN4002.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN4002.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN4002.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN4002.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN4002.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN4002.png has been created
@@ -794,12 +858,13 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN4002.png has 
 34) RUN4005: 
 Data di inizio: 2025-02-17 Ora di inizio: 15:27:33
 Tempo totale della RUN: t = 14381.9 s
-<delta_t> = 0.188861 s | rate (contando gli eventi bundle come unici) = 5.29489 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.46118 Hz.
-Il numero di eventi singoli registrati è: 76412
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1809 e rappresentano il: 2.36743%. 
+Numero di eventi totali registrati: 92924
+<delta_t> = 0.188861 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.29489 Hz
+Il rate dei muoni (righe/t_tot) è: 6.46118 Hz.
+Il numero di eventi univoci per EventID: 76412
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 14173 e rappresentano il: 18.5481%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
-I muoni che passano al bordo sono: 23457
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 23457
 La frequenza togliendo gli eventi di bordo è: 4.83017 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4005.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN4005.png has been created
@@ -808,6 +873,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN4005.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN4005.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN4005.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN4005.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN4005.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN4005.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN4005.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN4005.png has been created
@@ -815,12 +881,13 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN4005.png has 
 35) RUN4006: 
 Data di inizio: 2025-02-17 Ora di inizio: 15:27:38
 Tempo totale della RUN: t = 14383.4 s
-<delta_t> = 0.185586 s | rate (contando gli eventi bundle come unici) = 5.38834 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.49986 Hz.
-Il numero di eventi singoli registrati è: 77020
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1810 e rappresentano il: 2.35004%. 
+Numero di eventi totali registrati: 93490
+<delta_t> = 0.185586 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.38834 Hz
+Il rate dei muoni (righe/t_tot) è: 6.49986 Hz.
+Il numero di eventi univoci per EventID: 77020
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 14186 e rappresentano il: 18.4186%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20514 mm
-I muoni che passano al bordo sono: 23345
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 23345
 La frequenza togliendo gli eventi di bordo è: 4.87681 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4006.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN4006.png has been created
@@ -829,6 +896,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN4006.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN4006.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN4006.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN4006.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN4006.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN4006.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN4006.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN4006.png has been created
@@ -836,12 +904,13 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN4006.png has 
 36) RUN4007: 
 Data di inizio: 2025-02-17 Ora di inizio: 15:27:43
 Tempo totale della RUN: t = 14164.4 s
-<delta_t> = 0.187296 s | rate (contando gli eventi bundle come unici) = 5.33914 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.46141 Hz.
-Il numero di eventi singoli registrati è: 75583
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1750 e rappresentano il: 2.31534%. 
+Numero di eventi totali registrati: 91522
+<delta_t> = 0.187296 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.33914 Hz
+Il rate dei muoni (righe/t_tot) è: 6.46141 Hz.
+Il numero di eventi univoci per EventID: 75583
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 13732 e rappresentano il: 18.1681%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
-I muoni che passano al bordo sono: 22952
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 22952
 La frequenza togliendo gli eventi di bordo è: 4.84101 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4007.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN4007.png has been created
@@ -850,6 +919,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN4007.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN4007.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN4007.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN4007.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN4007.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN4007.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN4007.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN4007.png has been created
@@ -859,12 +929,13 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN4007.png has 
 38) RUN4036: 
 Data di inizio: 2025-02-19 Ora di inizio: 18:58:09
 Tempo totale della RUN: t = 8917.12 s
-<delta_t> = 0.176044 s | rate (contando gli eventi bundle come unici) = 5.6804 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.90043 Hz.
-Il numero di eventi singoli registrati è: 50747
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1152 e rappresentano il: 2.27008%. 
+Numero di eventi totali registrati: 61532
+<delta_t> = 0.176044 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.6804 Hz
+Il rate dei muoni (righe/t_tot) è: 6.90043 Hz.
+Il numero di eventi univoci per EventID: 50747
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 9277 e rappresentano il: 18.2809%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
-I muoni che passano al bordo sono: 14730
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 14730
 La frequenza togliendo gli eventi di bordo è: 5.24855 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4036.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN4036.png has been created
@@ -873,6 +944,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN4036.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN4036.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN4036.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN4036.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN4036.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN4036.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN4036.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN4036.png has been created
@@ -880,12 +952,13 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN4036.png has 
 39) RUN4045: 
 Data di inizio: 2025-02-19 Ora di inizio: 19:05:49
 Tempo totale della RUN: t = 14362.8 s
-<delta_t> = 0.17584 s | rate (contando gli eventi bundle come unici) = 5.687 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.83539 Hz.
-Il numero di eventi singoli registrati è: 81289
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1831 e rappresentano il: 2.25246%. 
+Numero di eventi totali registrati: 98175
+<delta_t> = 0.17584 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.687 Hz
+Il rate dei muoni (righe/t_tot) è: 6.83539 Hz.
+Il numero di eventi univoci per EventID: 81289
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 14585 e rappresentano il: 17.9422%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
-I muoni che passano al bordo sono: 23731
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 23731
 La frequenza togliendo gli eventi di bordo è: 5.18313 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4045.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN4045.png has been created
@@ -894,6 +967,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN4045.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN4045.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN4045.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN4045.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN4045.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN4045.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN4045.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN4045.png has been created
@@ -901,12 +975,13 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN4045.png has 
 40) RUN4048: 
 Data di inizio: 2025-02-19 Ora di inizio: 19:06:14
 Tempo totale della RUN: t = 5288.74 s
-<delta_t> = 0.175611 s | rate (contando gli eventi bundle come unici) = 5.69439 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.83471 Hz.
-Il numero di eventi singoli registrati è: 29741
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 700 e rappresentano il: 2.35365%. 
+Numero di eventi totali registrati: 36147
+<delta_t> = 0.175611 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.69439 Hz
+Il rate dei muoni (righe/t_tot) è: 6.83471 Hz.
+Il numero di eventi univoci per EventID: 29741
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 5515 e rappresentano il: 18.5434%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
-I muoni che passano al bordo sono: 8662
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 8662
 La frequenza togliendo gli eventi di bordo è: 5.19689 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4048.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN4048.png has been created
@@ -915,6 +990,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN4048.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN4048.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN4048.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN4048.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN4048.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN4048.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN4048.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN4048.png has been created
@@ -922,12 +998,13 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN4048.png has 
 41) RUN4049: 
 Data di inizio: 2025-02-19 Ora di inizio: 19:06:26
 Tempo totale della RUN: t = 14382.4 s
-<delta_t> = 0.177258 s | rate (contando gli eventi bundle come unici) = 5.6415 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.86491 Hz.
-Il numero di eventi singoli registrati è: 81414
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1848 e rappresentano il: 2.26988%. 
+Numero di eventi totali registrati: 98734
+<delta_t> = 0.177258 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.6415 Hz
+Il rate dei muoni (righe/t_tot) è: 6.86491 Hz.
+Il numero di eventi univoci per EventID: 81414
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 14975 e rappresentano il: 18.3936%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
-I muoni che passano al bordo sono: 23676
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 23676
 La frequenza togliendo gli eventi di bordo è: 5.21873 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4049.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN4049.png has been created
@@ -936,6 +1013,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN4049.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN4049.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN4049.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN4049.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN4049.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN4049.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN4049.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN4049.png has been created
@@ -943,12 +1021,13 @@ Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN4049.png has 
 42) RUN4051: 
 Data di inizio: \\ Ora di inizio: \\
 Tempo totale della RUN: t = 1195.62 s
-<delta_t> = 0.183361 s | rate (contando gli eventi bundle come unici) = 5.45373 Hz
-Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: 6.8082 Hz.
-Il numero di eventi singoli registrati è: 6747
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 136 e rappresentano il: 2.01571%. 
+Numero di eventi totali registrati: 8140
+<delta_t> = 0.183361 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.45373 Hz
+Il rate dei muoni (righe/t_tot) è: 6.8082 Hz.
+Il numero di eventi univoci per EventID: 6747
+Il numero di eventi bundle (muoni per traccia > 1) registrati è: 1231 e rappresentano il: 18.2451%. 
 La distanza massima tra l'origine e il tracciato dei muoni è: 20511.5 mm
-I muoni che passano al bordo sono: 1940
+I muoni che passano nel bordo (cut = 2800 mm ) sono: 1940
 La frequenza togliendo gli eventi di bordo è: 5.1856 Hz
 Info in <TCanvas::Print>: file PeSum_plot/PeSum_RUN4051.png has been created
 Info in <TCanvas::Print>: file Polar_Angle_plot/Theta_RUN4051.png has been created
@@ -957,6 +1036,7 @@ Info in <TCanvas::Print>: file Distance_plot/Distance_RUN4051.png has been creat
 Info in <TCanvas::Print>: file PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN4051.png has been created
 Info in <TCanvas::Print>: file PeSum_single_plot/PeSum_singoli_RUN4051.png has been created
 Info in <TCanvas::Print>: file PeSum_bundle_plot/PeSum_bundle_RUN4051.png has been created
+Info in <TCanvas::Print>: file TrackID_Distribution_plot/TrackID_Distribution_RUN4051.png has been created
 Info in <TCanvas::Print>: file MuonRate_plot/MuonRate_RUN4051.png has been created
 Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN4051.png has been created
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN4051.png has been created

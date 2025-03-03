@@ -211,26 +211,18 @@ int Nevents(const vector<muone>& eventi) {
 
 int muon_bundle(const vector<muone>& eventi) {
     int bundle_count = 0;
-    int last_event_id = -1;
-    int count = 0;
 
-    for (const auto& e : eventi) {
-        if (e.trackID > 0) {
-            if (e.eventID != last_event_id) {
-                if (count > 1) {
-                    bundle_count++;
-                }
-                last_event_id = e.eventID;
-                count = 1;
-            } else {
-                count++;
-            }
+    // Conta il numero di righe per ogni eventID
+    for (size_t i = 0; i < eventi.size(); ) {
+        int current_eventID = eventi[i].eventID;
+        int count = 0;
+        while (i < eventi.size() && eventi[i].eventID == current_eventID) {
+            count++;
+            i++;
         }
-    }
-
-    // Controllo l'ultimo gruppo di eventi
-    if (count > 1) {
-        bundle_count++;
+        if (count > 1) {
+            bundle_count++;
+        }
     }
 
     return bundle_count;
@@ -271,7 +263,7 @@ void PeSum_histograms(const vector<muone>& eventi, const string& run_name) {
     // Controllo se c'è almeno un trackID uguale a -1
     for (const auto& e : eventi) {
         if (e.trackID == -1) {
-            cout << "Trovato trackID = -1, salto la creazione degli istogrammi per la run " << run_name << endl;
+            cout << "Trovato trackID = -1, salto la creazione degli istogrammi bundle per la run " << run_name << endl;
             return;
         }
     }
@@ -290,11 +282,11 @@ void PeSum_histograms(const vector<muone>& eventi, const string& run_name) {
     TCanvas *canvasB = new TCanvas(("canvasB_" + run_name).c_str(), ("Istogramma Energia - Muoni Bundle - " + run_name).c_str(), 800, 600);
     canvasB->Divide(2, 2);
 
-    TH1F *one = new TH1F(("1_" + run_name).c_str(), ("Distribuzione Energia - Muoni Singoli - " + run_name).c_str(), 100, 100, 100);
-    TH1F *two = new TH1F(("2_" + run_name).c_str(), ("Distribuzione Energia - Muoni Doppi - " + run_name).c_str(), 100, 100, 100);
-    TH1F *three = new TH1F(("3_" + run_name).c_str(), ("Distribuzione Energia - Muoni Tripli - " + run_name).c_str(), 100, 100, 100);
-    TH1F *four = new TH1F(("4_" + run_name).c_str(), ("Distribuzione Energia - Muoni Quadrupli - " + run_name).c_str(), 100, 100, 100);
-    TH1F *five = new TH1F(("4>_" + run_name).c_str(), ("Distribuzione Energia - Muoni > Quintupli - " + run_name).c_str(), 100, 100, 100);
+    TH1F *one = new TH1F(("1_" + run_name).c_str(), ("Distribuzione Energia - Muoni Singoli - " + run_name).c_str(), 100, 0, 1000);
+    TH1F *two = new TH1F(("2_" + run_name).c_str(), ("Distribuzione Energia - Muoni Doppi - " + run_name).c_str(), 100, 0, 1000);
+    TH1F *three = new TH1F(("3_" + run_name).c_str(), ("Distribuzione Energia - Muoni Tripli - " + run_name).c_str(), 100, 0, 1000);
+    TH1F *four = new TH1F(("4_" + run_name).c_str(), ("Distribuzione Energia - Muoni Quadrupli - " + run_name).c_str(), 100, 0, 1000);
+    TH1F *five = new TH1F(("4>_" + run_name).c_str(), ("Distribuzione Energia - Muoni > Quintupli - " + run_name).c_str(), 100, 0, 1000);
 
     canvasA->SetGrid();
 
@@ -306,7 +298,6 @@ void PeSum_histograms(const vector<muone>& eventi, const string& run_name) {
 
         while (i < eventi.size() && eventi[i].eventID == current_eventID) {
             totalPeSum += eventi[i].PeSum;
-            current_eventID = eventi[i].eventID;
             numMuoni++;
             i++;
         }
@@ -782,4 +773,82 @@ void plot_muon_rate_with_edge_cut_vs_run(const vector<vector<muone>>& eventi_per
 
     delete canvas;
     delete graph;
+}
+
+void plot_trackID_distribution(const vector<muone>& eventi, const string& run_name) {
+    // Controllo se c'è almeno un trackID uguale a -1
+    for (const auto& e : eventi) {
+        if (e.trackID == -1) {
+            cout << "Trovato trackID = -1, salto la creazione dell'istrogramma TrackID per la " << run_name << endl;
+            return;
+        }
+    }
+    
+    // Trova il trackID massimo presente negli eventi
+    int trackID_max = -1;
+    for (const auto& e : eventi) {
+        if (e.trackID > trackID_max) {
+            trackID_max = e.trackID;
+        }
+    }
+
+    // Crea un vettore per contare le occorrenze di ciascun trackID
+    vector<int> trackID_count(trackID_max + 1, 0);
+
+    // Conta il numero di righe per ogni eventID
+    for (size_t i = 0; i < eventi.size(); ) {
+        int current_eventID = eventi[i].eventID;
+        int count = 0;
+        while (i < eventi.size() && eventi[i].eventID == current_eventID) {
+            count++;
+            i++;
+        }
+        if (count <= trackID_max + 1) {
+            trackID_count[count - 1]++;
+        }
+    }
+
+    // Crea un istogramma per visualizzare il numero di eventi con un singolo trackID
+    string folder_name = "TrackID_Distribution_plot";
+    if (!fs::exists(folder_name)) {
+        fs::create_directory(folder_name);
+    }
+
+    TCanvas *canvas = new TCanvas(("canvas_trackID_" + run_name).c_str(), ("Distribuzione degli eventi con un singolo trackID - " + run_name).c_str(), 800, 600);
+    TH1F *trackID_hist = new TH1F(run_name.c_str(), ("Distribuzione degli eventi con un singolo trackID - " + run_name).c_str(), trackID_max + 1, 0, trackID_max + 1);
+    gPad->SetLeftMargin(0.12);
+    canvas->SetGrid();
+
+    for (int i = 0; i <= trackID_max; i++) {
+        trackID_hist->SetBinContent(i + 1, trackID_count[i]);
+        trackID_hist->GetXaxis()->SetBinLabel(i + 1, to_string(i).c_str());
+    }
+
+    trackID_hist->SetLineColor(kBlue);
+    trackID_hist->SetLineWidth(2);
+    trackID_hist->SetFillColorAlpha(kBlue, 0.3);
+    trackID_hist->GetXaxis()->SetTitle("TrackID");
+    trackID_hist->GetYaxis()->SetTitle("Conteggio");
+    trackID_hist->SetStats(kFALSE); // Disabilita la casella delle statistiche
+    trackID_hist->Draw("HIST");
+
+    // Crea una casella di testo in alto a destra per visualizzare il conteggio di ciascun trackID
+    TPaveText *pave = new TPaveText(0.7, 0.7, 0.9, 0.9, "NDC");
+    pave->SetFillColor(0);
+    pave->SetTextAlign(12);
+    pave->SetTextSize(0.03);
+    pave->SetBorderSize(1); // Imposta la dimensione del bordo
+    pave->SetFillStyle(1001); // Imposta lo stile di riempimento
+    for (int i = 0; i <= trackID_max; i++) {
+        if (trackID_count[i] > 0) {
+            pave->AddText(("TrackID " + to_string(i) + ": " + to_string(trackID_count[i])).c_str());
+        }
+    }
+    pave->Draw();
+
+    string filename = folder_name + "/TrackID_Distribution_" + run_name + ".png";
+    canvas->SaveAs(filename.c_str());
+    delete canvas;
+    delete trackID_hist;
+    delete pave;
 }

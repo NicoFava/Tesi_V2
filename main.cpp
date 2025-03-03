@@ -63,12 +63,13 @@ int main(int argc, char* argv[]) {
          }
         
         cout << "Tempo totale della RUN: t = " << total_run_time(eventi_per_file[i]) << " s" << endl;
+        cout << "Numero di eventi totali registrati: " << eventi_per_file[i].size() << endl;
         delta_t = mean_delta_t(eventi_per_file[i])*1e-9;
         rate = 1.0/(delta_t);
         rates = eventi_per_file[i].size()/total_run_time(eventi_per_file[i]);
-        cout <<"<delta_t> = " << delta_t << " s | rate (contando gli eventi bundle come unici) = "<< 1.0/(delta_t) << " Hz" << endl;
-        cout << "Il rate dei muoni contando tutti i singoli muoni e la molteplicità dei muoni bundle è: " << rates << " Hz." <<  endl;
-        cout << "Il numero di eventi singoli registrati è: " << Nevents(eventi_per_file[i]) << endl;
+        cout <<"<delta_t> = " << delta_t << " s | rate (contando gli eventi bundle come unici 1/delta_t) = "<< 1.0/(delta_t) << " Hz" << endl;
+        cout << "Il rate dei muoni (righe/t_tot) è: " << rates << " Hz." <<  endl;
+        cout << "Il numero di eventi univoci per EventID: " << Nevents(eventi_per_file[i]) << endl;
         
         bool TrackID = false;
         for (const auto& e : eventi_per_file[i]) {
@@ -94,7 +95,7 @@ int main(int argc, char* argv[]) {
         max_dist = *max_element(path_distances.begin(), path_distances.end());
         max_path_distances.push_back(max_dist);
         cout << "La distanza massima tra l'origine e il tracciato dei muoni è: " << max_dist << " mm" << endl;
-        cout << "I muoni che passano al bordo sono: " << edge_events(eventi_per_file[i], cut_distance) << endl;
+        cout << "I muoni che passano nel bordo (cut = " << cut_distance << " mm ) sono: " << edge_events(eventi_per_file[i], cut_distance) << endl;
         cout << "La frequenza togliendo gli eventi di bordo è: " << ((double )eventi_per_file[i].size() - (double)edge_events(eventi_per_file[i], cut_distance)) / total_run_time(eventi_per_file[i]) << " Hz" << endl;
         total_PeSum_histogram(eventi_per_file[i], run_names[i]);
         plot_polar_angle_distribution(eventi_per_file[i], run_names[i]);
@@ -102,6 +103,7 @@ int main(int argc, char* argv[]) {
         Distance_histogram(eventi_per_file[i], run_names[i]);
         PeSum_vs_polar_angle(eventi_per_file[i], run_names[i]);
         PeSum_histograms(eventi_per_file[i], run_names[i]);
+        plot_trackID_distribution(eventi_per_file[i], run_names[i]);
         plot_muon_rate(eventi_per_file[i], run_names[i], 300);   
         Polar_vs_Azimuthal_angle(eventi_per_file[i], run_names[i]);
         path_distance_histogram(eventi_per_file[i], run_names[i]);
