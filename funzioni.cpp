@@ -51,7 +51,7 @@ vector<muone> load_root_data(const string& filename) {
         tree->GetEntry(i);
         evento.distance = sqrt(pow(evento.exit_x - evento.entry_x, 2) + pow(evento.exit_y - evento.entry_y, 2) + pow(evento.exit_z - evento.entry_z, 2));
 
-     // Se il file ha il trackNumber, lo consideriamo normalmente
+     // Se il file ha il trackNumber, lo considero normalmente
         if (hasTrackNumber) {
             eventi.push_back(evento);
         } else {
@@ -212,7 +212,7 @@ int Nevents(const vector<muone>& eventi) {
 int muon_bundle(const vector<muone>& eventi) {
     int bundle_count = 0;
 
-    // Conta il numero di righe per ogni eventID
+    // Conto il numero di righe per ogni eventID
     for (size_t i = 0; i < eventi.size(); ) {
         int current_eventID = eventi[i].eventID;
         int count = 0;
@@ -253,6 +253,7 @@ float mean_delta_t(const vector<muone>& eventi){
     return media;
 }
 
+// Inutile ma ho verificato che per la RUN3677 alcuni eventID non erano in ordine 
 void sort_events_by_id(vector<muone>& eventi) {
     sort(eventi.begin(), eventi.end(), [](const muone& a, const muone& b) {
         return a.eventID < b.eventID;
@@ -286,22 +287,22 @@ void PeSum_histograms(const vector<muone>& eventi, const string& run_name) {
     TH1F *two = new TH1F(("2_" + run_name).c_str(), ("Distribuzione Energia - Muoni Doppi - " + run_name).c_str(), 100, 0, 1000);
     TH1F *three = new TH1F(("3_" + run_name).c_str(), ("Distribuzione Energia - Muoni Tripli - " + run_name).c_str(), 100, 0, 1000);
     TH1F *four = new TH1F(("4_" + run_name).c_str(), ("Distribuzione Energia - Muoni Quadrupli - " + run_name).c_str(), 100, 0, 1000);
-    TH1F *five = new TH1F(("4>_" + run_name).c_str(), ("Distribuzione Energia - Muoni > Quintupli - " + run_name).c_str(), 100, 0, 1000);
+    TH1F *five = new TH1F(("4>_" + run_name).c_str(), ("Distribuzione Energia - Muoni >= Quintupli - " + run_name).c_str(), 100, 0, 1000);
 
     canvasA->SetGrid();
-
+    // Itero attraverso gli eventi, raggruppandoli per eventID
     size_t i = 0;
     while (i < eventi.size()) {
         int current_eventID = eventi[i].eventID;
         double totalPeSum = 0.0;
         int numMuoni = 0;
-
+        // Calcolo la somma totale di PeSum per ogni eventID e conto il numero di tracce
         while (i < eventi.size() && eventi[i].eventID == current_eventID) {
             totalPeSum += eventi[i].PeSum;
             numMuoni++;
             i++;
         }
-
+        // Riempo l'istrogramma appropriato in base al numero di tracce
         if (numMuoni == 1) {
             one->Fill(totalPeSum);
         } else if (numMuoni == 2) {
@@ -408,9 +409,13 @@ int count_root_files(const string& folder_path) {
 }
 
 string get_run_name(const string& filepath) {
+    // Creo un oggetto path per estrarre il nome del file
     string filename = fs::path(filepath).filename().string();
+    // Cerco la posizione del primo carattere underscore nel nome del file e reastituisco la posizione (indice) del carattere
     size_t pos = filename.find("_");
+    // Verifico se l'underscore è stato trovato nel nome del file
     if (pos != string::npos) {
+        // Estraggo una sottoriga del nome del file che inizia all'indice 0 e ha una lunghezza di pos caratteri
         filename = filename.substr(0, pos);
     }
     return filename;
@@ -522,15 +527,15 @@ void plot_muon_rate(const vector<muone>& eventi, const string& run_name, double 
         return;
     }
 
-    // Numero di bin = numero di intervalli di tempo
+    // Numero di bin = numero di intervalli di tempo approssimando per eccesso
     int num_bins = ceil(duration / interval_sec);
 
-    // Vettori per i dati
     vector<double> times(num_bins);
     vector<double> rates(num_bins, 0.0);
 
     for (const auto& ev : eventi) {
         double event_time = ev.fSec + ev.fNanosec * 1e-9;
+        // Calcolo l'indice del bin in cui l'evento deve essere inserito
         int bin = (event_time - t_start) / interval_sec;
         if (bin >= 0 && bin < num_bins) {
             rates[bin]++;
@@ -539,7 +544,9 @@ void plot_muon_rate(const vector<muone>& eventi, const string& run_name, double 
 
     // Calcolo i tempi centrali dei bin
     for (int i = 0; i < num_bins; i++) {
-        times[i] = t_start + (i + 0.5) * interval_sec; // Per ottenere il punto medio dell'intervallo
+        // Per ottenere il punto medio dell'intervallo
+        times[i] = t_start + (i + 0.5) * interval_sec;
+        // Verifico se il bin corrente è l'ultimo bin
         if (i == num_bins - 1) {
             // Calcolo il rate per l'ultimo bin in base alla durata effettiva
             double last_bin_duration = duration - (num_bins - 1) * interval_sec;
@@ -549,10 +556,8 @@ void plot_muon_rate(const vector<muone>& eventi, const string& run_name, double 
         }
     }
 
-    // Creo il grafico
     TGraph *graph = new TGraph(num_bins, &times[0], &rates[0]);
 
-    // Stile del grafico
     TCanvas *c_rate = new TCanvas(("RateCanvas_" + run_name).c_str(), "Rate Muoni vs Tempo", 800, 600);
     c_rate->SetGrid();
     string title = "Rate dei muoni nel tempo - " + run_name + " (Intervallo: " + to_string(interval_sec) + " s)";
@@ -566,7 +571,6 @@ void plot_muon_rate(const vector<muone>& eventi, const string& run_name, double 
     graph->SetLineWidth(2);
     graph->Draw("AP");
 
-    // Salvataggio del grafico
     string filename = folder_name + "/MuonRate_" + run_name + ".png";
     c_rate->SaveAs(filename.c_str());
 
@@ -662,6 +666,7 @@ void Polar_vs_Azimuthal_angle(const vector<muone>& eventi, const string& run_nam
     delete hist2D;
 }
 
+// Funzione più generale possibile per modifiche future
 double distance_point_to_line(const muone& evento){
      // Punto di entrata
      double x1 = evento.entry_x;
@@ -719,9 +724,9 @@ void path_distance_histogram(const vector<muone>& eventi, const string& run_name
         double distance = distance_point_to_line(e);
         distance_hist->Fill(distance);
     }
-    distance_hist->SetLineColor(kBlue);
+    distance_hist->SetLineColor(kViolet);
     distance_hist->SetLineWidth(2);
-    distance_hist->SetFillColorAlpha(kBlue, 0.3);
+    distance_hist->SetFillColorAlpha(kViolet, 0.3);
     distance_hist->GetXaxis()->SetTitle("Distanza [mm]");
     distance_hist->GetYaxis()->SetTitle("Conteggio");
     distance_hist->Draw("HIST");
@@ -733,10 +738,10 @@ void path_distance_histogram(const vector<muone>& eventi, const string& run_name
 
 double edge_events(const vector<muone>& eventi, double cut_distance){
     int count = 0;
-    double threshold = 20548.1 - cut_distance;
+    double threshold = 20548.1 - cut_distance; // 20548.1 mm rappresentanta la distanza massima misurata tra origine e tracciato di un muone tra tutti i file
     for (const auto& e : eventi) {
         double distance = distance_point_to_line(e);
-        if(distance >= threshold){ // Se tolgo 3000 mm ottengo le dimensioni del CD (circa 35.5 m di diametro)
+        if(distance >= threshold){ // Se tolgo 2800 mm circa ottengo le dimensioni del CD (circa 35.5 m di diametro)
             count ++;
         } // Conto quanti eventi di muoni passano al bordo (devo capire ancora come definire il bordo)
     }
@@ -784,7 +789,7 @@ void plot_trackID_distribution(const vector<muone>& eventi, const string& run_na
         }
     }
     
-    // Trova il trackID massimo presente negli eventi
+    // Trovo il trackID massimo presente negli eventi
     int trackID_max = -1;
     for (const auto& e : eventi) {
         if (e.trackID > trackID_max) {
@@ -792,10 +797,10 @@ void plot_trackID_distribution(const vector<muone>& eventi, const string& run_na
         }
     }
 
-    // Crea un vettore per contare le occorrenze di ciascun trackID
+    // Creo un vettore per contare le occorrenze di ciascun trackID
     vector<int> trackID_count(trackID_max + 1, 0);
 
-    // Conta il numero di righe per ogni eventID
+    // Conto il numero di righe per ogni eventID
     for (size_t i = 0; i < eventi.size(); ) {
         int current_eventID = eventi[i].eventID;
         int count = 0;
@@ -808,7 +813,6 @@ void plot_trackID_distribution(const vector<muone>& eventi, const string& run_na
         }
     }
 
-    // Crea un istogramma per visualizzare il numero di eventi con un singolo trackID
     string folder_name = "TrackID_Distribution_plot";
     if (!fs::exists(folder_name)) {
         fs::create_directory(folder_name);
@@ -829,16 +833,16 @@ void plot_trackID_distribution(const vector<muone>& eventi, const string& run_na
     trackID_hist->SetFillColorAlpha(kBlue, 0.3);
     trackID_hist->GetXaxis()->SetTitle("TrackID");
     trackID_hist->GetYaxis()->SetTitle("Conteggio");
-    trackID_hist->SetStats(kFALSE); // Disabilita la casella delle statistiche
+    trackID_hist->SetStats(kFALSE); // Disabilito la casella delle statistiche
     trackID_hist->Draw("HIST");
 
-    // Crea una casella di testo in alto a destra per visualizzare il conteggio di ciascun trackID
+    // Creo una casella di testo in alto a destra per visualizzare il conteggio di ciascun trackID
     TPaveText *pave = new TPaveText(0.7, 0.7, 0.9, 0.9, "NDC");
     pave->SetFillColor(0);
     pave->SetTextAlign(12);
     pave->SetTextSize(0.03);
-    pave->SetBorderSize(1); // Imposta la dimensione del bordo
-    pave->SetFillStyle(1001); // Imposta lo stile di riempimento
+    pave->SetBorderSize(1); // Imposto la dimensione del bordo
+    pave->SetFillStyle(1001); // Imposto lo stile di riempimento
     for (int i = 0; i <= trackID_max; i++) {
         if (trackID_count[i] > 0) {
             pave->AddText(("TrackID " + to_string(i) + ": " + to_string(trackID_count[i])).c_str());
