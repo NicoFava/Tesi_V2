@@ -84,10 +84,12 @@ void print_all_data(const vector<muone>& eventi) {
     }
 }
 
-void save_all_data_to_file(const vector<muone>& eventi, const string& filename = "output.txt"){
-    ofstream file(filename);
+void save_all_data_to_file(const vector<muone>& eventi, const string& filename){
+    string full_filename = filename + ".txt"; // Aggiunge l'estensione .txt
+    ofstream file(full_filename);
+    
     if (!file) {
-        cerr << "Errore: impossibile aprire il file " << filename << " per la scrittura!" << endl;
+        cerr << "Errore: impossibile aprire il file " << full_filename << " per la scrittura!" << endl;
         return;
     }
 

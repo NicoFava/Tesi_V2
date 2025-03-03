@@ -107,6 +107,10 @@ int main(int argc, char* argv[]) {
         plot_muon_rate(eventi_per_file[i], run_names[i], 300);   
         Polar_vs_Azimuthal_angle(eventi_per_file[i], run_names[i]);
         path_distance_histogram(eventi_per_file[i], run_names[i]);
+        // Provo a stampare tutte le informazioni di una run per verificare le varie quantità
+        if(run_names[i] == "RUN3990"){
+            save_all_data_to_file(eventi_per_file[i], run_names[i]);
+        }
         cout << "--------------------------------------------" << endl;
     }
     plot_muon_rate_vs_run(eventi_per_file, run_names);
