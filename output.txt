@@ -487,7 +487,7 @@ Info in <TCanvas::Print>: file Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_
 Info in <TCanvas::Print>: file Path_Distance_plot/Path_Distance_RUN3885.png has been created
 --------------------------------------------
 18) RUN3889: 
-Data di inizio: 2025-02-11 Ora di inizio: 01:09:27
+Data di inizio: 2025-02-11 Ora di inizio: 18:42:53
 Tempo totale della RUN: t = 23151.8 s
 Numero di eventi totali registrati: 145502
 Attenzione: Intervallo di tempo negativo rilevato tra due eventi!

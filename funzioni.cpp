@@ -820,8 +820,8 @@ void plot_trackID_distribution(const vector<muone>& eventi, const string& run_na
         fs::create_directory(folder_name);
     }
 
-    TCanvas *canvas = new TCanvas(("canvas_trackID_" + run_name).c_str(), ("Distribuzione degli eventi con un singolo trackID - " + run_name).c_str(), 800, 600);
-    TH1F *trackID_hist = new TH1F(run_name.c_str(), ("Distribuzione degli eventi con un singolo trackID - " + run_name).c_str(), trackID_max + 1, 0, trackID_max + 1);
+    TCanvas *canvas = new TCanvas(("canvas_trackID_" + run_name).c_str(), ("Distribuzione trackID - " + run_name).c_str(), 800, 600);
+    TH1F *trackID_hist = new TH1F(run_name.c_str(), ("Distribuzione trackID - " + run_name).c_str(), trackID_max + 1, 0, trackID_max + 1);
     gPad->SetLeftMargin(0.12);
     canvas->SetGrid();
 
