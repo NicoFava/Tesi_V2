@@ -98,8 +98,7 @@ Grafico del **rate dei muoni** in funzione dell'indice della run togliendo gli e
 ## :gear: **Dipendenze**  
 Assicurarsi di avere installate le seguenti librerie e strumenti necessari per eseguire il programma:  
 - CERN ROOT  
-- g++  
-- CMake  
+- g++   
 
 ---  
 
