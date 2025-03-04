@@ -138,7 +138,7 @@ void total_PeSum_histogram(const vector<muone>& eventi, const string& run_name) 
     charge->GetXaxis()->SetTitle("Charge [p.e.]");
     charge->GetYaxis()->SetTitle("Counts [a.u.]");
     charge->SetLineWidth(2);
-    charge->SetFillColorAlpha(kBlue, 0.3);
+    charge->SetFillColorAlpha(kBlue, 1);
     charge->Draw();
     
     string filename = folder_name + "/PeSum_" + run_name + ".png";
@@ -198,7 +198,7 @@ void plot_polar_angle_distribution(const vector<muone>& eventi, const string& ru
     
     polar->SetLineColor(kGreen);
     polar->SetLineWidth(2);
-    polar->SetFillColorAlpha(kGreen, 0.3);
+    polar->SetFillColorAlpha(kGreen, 1);
     polar->GetXaxis()->SetTitle("cos(#theta)");
     polar->GetYaxis()->SetTitle("Counts [a.u.]");
     polar->Draw("HIST");
@@ -336,7 +336,7 @@ void PeSum_histograms(const vector<muone>& eventi, const string& run_name) {
     one->GetYaxis()->SetTitle("Counts [a.u.]");
     one->SetLineColor(kRed);
     one->SetLineWidth(2);
-    one->SetFillColorAlpha(kRed, 0.3);
+    one->SetFillColorAlpha(kRed, 1);
     one->Draw();
 
     canvasB->cd(1);
@@ -345,7 +345,7 @@ void PeSum_histograms(const vector<muone>& eventi, const string& run_name) {
     two->GetYaxis()->SetTitle("Counts [a.u.]");
     two->SetLineColor(kRed);
     two->SetLineWidth(2);
-    two->SetFillColorAlpha(kRed, 0.3);
+    two->SetFillColorAlpha(kRed, 1);
     two->Draw();
     canvasB->cd(2);
     gPad->SetGrid();
@@ -353,7 +353,7 @@ void PeSum_histograms(const vector<muone>& eventi, const string& run_name) {
     three->GetYaxis()->SetTitle("Counts [a.u.]");
     three->SetLineColor(kRed);
     three->SetLineWidth(2);
-    three->SetFillColorAlpha(kRed, 0.3);
+    three->SetFillColorAlpha(kRed, 1);
     three->Draw();
     canvasB->cd(3);
     gPad->SetGrid();
@@ -361,7 +361,7 @@ void PeSum_histograms(const vector<muone>& eventi, const string& run_name) {
     four->GetYaxis()->SetTitle("Counts [a.u.]");
     four->SetLineColor(kRed);
     four->SetLineWidth(2);
-    four->SetFillColorAlpha(kRed, 0.3);
+    four->SetFillColorAlpha(kRed, 1);
     four->Draw();
     canvasB->cd(4);
     gPad->SetGrid();
@@ -369,7 +369,7 @@ void PeSum_histograms(const vector<muone>& eventi, const string& run_name) {
     five->GetYaxis()->SetTitle("Counts [a.u.]");
     five->SetLineColor(kRed);
     five->SetLineWidth(2);
-    five->SetFillColorAlpha(kRed, 0.3);
+    five->SetFillColorAlpha(kRed, 1);
     five->Draw();
 
     string filenameA = folder_name_singoli + "/PeSum_singoli_" + run_name + ".png";
@@ -407,7 +407,7 @@ void Distance_histogram(const vector<muone>& eventi, const string& run_name){
     dist->GetXaxis()->SetTitle("Distance [mm]");
     dist->GetYaxis()->SetTitle("Counts [a.u.]");
     dist->SetLineWidth(2);
-    dist->SetFillColorAlpha(kOrange, 0.3);
+    dist->SetFillColorAlpha(kOrange, 1);
     dist->Draw();
     string filename = folder_name + "/Distance_" + run_name + ".png";
     canvas->SaveAs(filename.c_str());
@@ -670,7 +670,7 @@ void plot_azimuthal_angle_distribution(const vector<muone>& eventi, const string
     
     azimuthal->SetLineColor(kBlue);
     azimuthal->SetLineWidth(2);
-    azimuthal->SetFillColorAlpha(kBlue, 0.3);
+    azimuthal->SetFillColorAlpha(kBlue, 1);
     azimuthal->GetXaxis()->SetTitle("Azimuthal Angle [rad]");
     azimuthal->GetYaxis()->SetTitle("Counts [a.u.]");
     azimuthal->Draw("HIST");
@@ -774,7 +774,7 @@ void path_distance_histogram(const vector<muone>& eventi, const string& run_name
     }
     distance_hist->SetLineColor(kViolet);
     distance_hist->SetLineWidth(2);
-    distance_hist->SetFillColorAlpha(kViolet, 0.3);
+    distance_hist->SetFillColorAlpha(kViolet, 1);
     distance_hist->GetXaxis()->SetTitle("Distanza [mm]");
     distance_hist->GetYaxis()->SetTitle("Conteggio");
     distance_hist->Draw("HIST");
@@ -891,7 +891,7 @@ void plot_trackID_distribution(const vector<muone>& eventi, const string& run_na
 
     trackID_hist->SetLineColor(kBlue);
     trackID_hist->SetLineWidth(2);
-    trackID_hist->SetFillColorAlpha(kBlue, 0.3);
+    trackID_hist->SetFillColorAlpha(kBlue, 1);
     trackID_hist->GetXaxis()->SetTitle("TrackID");
     trackID_hist->GetYaxis()->SetTitle("Conteggio");
     trackID_hist->SetStats(kFALSE); // Disabilito la casella delle statistiche
