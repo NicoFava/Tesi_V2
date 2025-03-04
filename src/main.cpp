@@ -8,7 +8,7 @@ int main(int argc, char* argv[]) {
 
     // Reindirizza stdout verso un file e stderr verso un altro file
     freopen("output.txt", "w", stdout);
-    freopen("error.txt", "w", stderr);
+    freopen("error&info.txt", "w", stderr);
 
     // Misura il tempo di inizio
     auto start = std::chrono::high_resolution_clock::now();

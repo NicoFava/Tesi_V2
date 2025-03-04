@@ -26,8 +26,12 @@ Il file **output.txt** contiene una sintesi dei risultati principali dell'analis
 - **Distanza massima del tracciato del muone rispetto all'origine del rivelatore**: viene calcolata la distanza massima tra l'origine e la **retta** che congiunge i punti di **entrata** e di **uscita** di ogni evento.
 - **Eventi nel bordo**: Numero di eventi classificati come eventi **bordo**.   
 - **Rate dopo il taglio**: Rate dei muoni dopo aver sottratto gli eventi di **bordo**.  
+- **Tempo totale di esecuzione**: Il tempo totale impiegato per eseguire l'analisi. 
 
-Inoltre, il file di output include i **messaggi di creazione delle immagini** generate automaticamente durante l'analisi.  
+---
+
+## :page_facing_up: **error&info.txt**  
+Il file **error&info.txt** contiene i messaggi di errore e le informazioni aggiuntive generate durante l'esecuzione del programma. Questo file è utile per diagnosticare eventuali problemi e per avere un registro dettagliato delle operazioni eseguite.
 
 ---
 
