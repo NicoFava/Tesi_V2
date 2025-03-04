@@ -115,7 +115,11 @@ void save_all_data_to_file(const vector<muone>& eventi, const string& filename){
 }
 
 void total_PeSum_histogram(const vector<muone>& eventi, const string& run_name) {
-    string folder_name = "PeSum_plot";
+    string main_folder = "images";
+    string folder_name = main_folder + "/PeSum_plot";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
     if (!fs::exists(folder_name)) {
         fs::create_directory(folder_name);
     }
@@ -168,7 +172,11 @@ void plot_3D_distribution(const vector<muone>& eventi){
 }
 
 void plot_polar_angle_distribution(const vector<muone>& eventi, const string& run_name){
-    string folder_name = "Polar_Angle_plot";
+    string main_folder = "images";
+    string folder_name = main_folder + "/Polar_Angle_plot";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
     if (!fs::exists(folder_name)) {
         fs::create_directory(folder_name);
     }
@@ -271,9 +279,13 @@ void PeSum_histograms(const vector<muone>& eventi, const string& run_name) {
         }
     }
 
-    string folder_name_singoli = "PeSum_single_plot";
-    string folder_name_bundle = "PeSum_bundle_plot";
+    string main_folder = "images";
+    string folder_name_singoli = main_folder + "/PeSum_single_plot";
+    string folder_name_bundle = main_folder + "/PeSum_bundle_plot";
 
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
     if (!fs::exists(folder_name_singoli)) {
         fs::create_directory(folder_name_singoli);
     }
@@ -373,7 +385,11 @@ void PeSum_histograms(const vector<muone>& eventi, const string& run_name) {
 }
 
 void Distance_histogram(const vector<muone>& eventi, const string& run_name){
-    string folder_name = "Distance_plot";
+    string main_folder = "images";
+    string folder_name = main_folder + "/Distance_plot";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
     if (!fs::exists(folder_name)) {
         fs::create_directory(folder_name);
     }
@@ -452,7 +468,11 @@ vector<vector<muone>> load_multiple_root_files(const string& folder_path, vector
 }
 
 void PeSum_vs_polar_angle(const vector<muone>& eventi, const string& run_name) {
-    string folder_name = "PeSum_vs_Polar_Angle_plot";
+    string main_folder = "images";
+    string folder_name = main_folder + "/PeSum_vs_Polar_Angle_plot";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
     if (!fs::exists(folder_name)) {
         fs::create_directory(folder_name);
     }
@@ -510,7 +530,11 @@ vector<RunInfo> load_run_info(const string& filename){
 }
 
 void plot_muon_rate(const vector<muone>& eventi, const string& run_name, double interval_sec) {
-    string folder_name = "MuonRate_plot";
+    string main_folder = "images";
+    string folder_name = main_folder + "/MuonRate_plot";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
     if (!fs::exists(folder_name)) {
         fs::create_directory(folder_name);
     }
@@ -596,6 +620,14 @@ void plot_muon_rate_vs_run(const vector<vector<muone>>& eventi_per_file, const v
         muon_rates.push_back(rate);
     }
 
+    string main_folder = "images";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
+
     TCanvas *canvas = new TCanvas("canvas", "Rate dei Muoni in Funzione della Run", 800, 600);
     TGraph *graph = new TGraph(run_indices.size(), &run_indices[0], &muon_rates[0]);
     canvas->SetGrid();
@@ -605,14 +637,19 @@ void plot_muon_rate_vs_run(const vector<vector<muone>>& eventi_per_file, const v
     graph->SetMarkerSize(1.5);
     graph->Draw("AP");
 
-    canvas->SaveAs("Muon_Rate_vs_Run.png");
+    string filename = main_folder + "/Muon_Rate_vs_Run.png";
+    canvas->SaveAs(filename.c_str());
 
     delete canvas;
     delete graph;
 }
 
 void plot_azimuthal_angle_distribution(const vector<muone>& eventi, const string& run_name) {
-    string folder_name = "Azimuthal_Angle_plot";
+    string main_folder = "images";
+    string folder_name = main_folder + "/Azimuthal_Angle_plot";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
     if (!fs::exists(folder_name)) {
         fs::create_directory(folder_name);
     }
@@ -643,7 +680,11 @@ void plot_azimuthal_angle_distribution(const vector<muone>& eventi, const string
 }   
 
 void Polar_vs_Azimuthal_angle(const vector<muone>& eventi, const string& run_name) {
-    string folder_name = "Polar_vs_Azimuthal_Angle_plot";
+    string main_folder = "images";
+    string folder_name = main_folder + "/Polar_vs_Azimuthal_Angle_plot";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
     if (!fs::exists(folder_name)) {
         fs::create_directory(folder_name);
     }
@@ -713,7 +754,11 @@ double distance_point_to_line(const muone& evento){
 }
 
 void path_distance_histogram(const vector<muone>& eventi, const string& run_name) {
-    string folder_name = "Path_Distance_plot";
+    string main_folder = "images";
+    string folder_name = main_folder + "/Path_Distance_plot";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
     if (!fs::exists(folder_name)) {
         fs::create_directory(folder_name);
     }
@@ -766,6 +811,14 @@ void plot_muon_rate_with_edge_cut_vs_run(const vector<vector<muone>>& eventi_per
         muon_rates.push_back(rate);
     }
 
+    string main_folder = "images";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
+    
     TCanvas *canvas = new TCanvas("canvas", "Rate dei Muoni in Funzione della Run", 800, 600);
     TGraph *graph = new TGraph(run_indices.size(), &run_indices[0], &muon_rates[0]);
     canvas->SetGrid();
@@ -776,7 +829,8 @@ void plot_muon_rate_with_edge_cut_vs_run(const vector<vector<muone>>& eventi_per
     graph->SetMarkerSize(1.5);
     graph->Draw("AP");
 
-    canvas->SaveAs("Muon_Rate_edge_cut_vs_Run.png");
+    string filename = main_folder + "/Muon_Rate_edge_cut_vs_Run.png";
+    canvas->SaveAs(filename.c_str());
 
     delete canvas;
     delete graph;
@@ -815,7 +869,11 @@ void plot_trackID_distribution(const vector<muone>& eventi, const string& run_na
         }
     }
 
-    string folder_name = "TrackID_Distribution_plot";
+    string main_folder = "images";
+    string folder_name = main_folder + "/TrackID_Distribution_plot";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
     if (!fs::exists(folder_name)) {
         fs::create_directory(folder_name);
     }

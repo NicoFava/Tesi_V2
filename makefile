@@ -1,14 +1,18 @@
 LIBS := `root-config --libs`
 INCS := `root-config --cflags`
+OBJDIR := obj
+SRCDIR := src
+SRCS := $(SRCDIR)/main.cpp $(SRCDIR)/funzioni.cpp
+OBJS := $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 
-main: main.o funzioni.o
-	g++ -o main main.o funzioni.o ${LIBS} 
+main: $(OBJS)
+	g++ -o $@ $^ ${LIBS}
 
-main.o: main.cpp funzioni.h
-	g++ -c -o main.o main.cpp ${INCS} 
+$(OBJDIR)/%.o: $(SRCDIR)/%.cpp | $(OBJDIR)
+	g++ -c -o $@ $< ${INCS}
 
-funzioni.o: funzioni.cpp funzioni.h
-	g++ -c -o funzioni.o funzioni.cpp ${INCS} 
+$(OBJDIR):
+	mkdir -p $(OBJDIR)
 
 clean:
-	rm -f *.o main
+	rm -rf $(OBJDIR) main

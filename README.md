@@ -43,43 +43,43 @@ Il file **run_info.txt** contiene le informazioni sulla data e l'ora di inizio d
 ## :bar_chart: **Grafici generati**  
 Oltre all'analisi numerica, il programma produce **grafici** organizzati in diverse cartelle:  
 
-### :one: **:file_folder: Distance_plot**  
+### :bar_chart: **:file_folder: images/Distance_plot**  
 Istogrammi della **distanza percorsa** dal muone (o dal bundle di muoni) per ogni file analizzato.  
 
-### :two: **:file_folder: PeSum_plot**  
+### :bar_chart: **:file_folder: images/PeSum_plot**  
 Istogrammi della **carica in fotoelettroni** prodotta per ogni evento.  
 
-### :three: **:file_folder: PeSum_vs_Polar_Angle_plot**  
+### :bar_chart: **:file_folder: images/PeSum_vs_Polar_Angle_plot**  
 Grafici **bidimensionali** che mostrano la correlazione tra **direzione** e **energia** dei muoni, per ogni run.  
 
-### :four: **:file_folder: Polar_Angle_plot**  
+### :bar_chart: **:file_folder: images/Polar_Angle_plot**  
 Istogrammi della **distribuzione angolare** dei muoni, mostrando il **coseno dell’angolo polare**. 
 
-### :five: **:file_folder: PeSum_single_plot**  
+### :bar_chart: **:file_folder: images/PeSum_single_plot**  
 Istogrammi della **carica in fotoelettroni** per i muoni singoli.  
 
-### :six: **:file_folder: PeSum_bundle_plot**  
+### :bar_chart: **:file_folder: images/PeSum_bundle_plot**  
 Istogrammi della **carica in fotoelettroni** per i muoni bundle.  
 
-### :seven: **:file_folder: Muon_Rate_plot**  
+### :bar_chart: **:file_folder: images/Muon_Rate_plot**  
 Grafici dei rate dei muoni in funzione del tempo calcolato su intervalli di tempo fissati (300 s). 
 
-### :eight: **:file_folder: Polar_vs_azimuth_plot**  
+### :bar_chart: **:file_folder: images/Polar_vs_azimuth_plot**  
 Grafici **bidimensionali** che mostrano la correlazione tra l'angolo **polare** e l'angolo **azimutale**.
 
-### :nine: **:file_folder: Azimuthal_Angle_plot**  
+### :bar_chart: **:file_folder: images/Azimuthal_Angle_plot**  
 Istogramma della distribuzione dell'angolo **azimutale** della direzione dei muoni.
 
-### :one::zero: **:file_folder: Path_Distance_plot**
+### :bar_chart: **:file_folder: images/Path_Distance_plot**
 Istogramma della distanza tra l'origine degli assi cartesiani (**centro del CD**) e la **retta** passante da **entry point** e **exit point**.
 
-### :one::one: **:file_folder: TrackID_Distribution_plot**
+### :bar_chart: **:file_folder: images/TrackID_Distribution_plot**
 Istogrammi della distribuzione del **TrackID** per ogni file analizzato.
 
-### :one::two: **:eight_pointed_black_star: Muon_Rate_vs_Run**  
+### :chart_with_upwards_trend: **:round_pushpin: images/Muon_Rate_vs_Run.png**  
 Grafico del **rate dei muoni** in funzione dell'indice della run.
 
-### :one::three: **:eight_pointed_black_star: Muon_Rate_edge_cut_vs_Run**  
+### :chart_with_upwards_trend: **:round_pushpin: images/Muon_Rate_edge_cut_vs_Run.png**  
 Grafico del **rate dei muoni** in funzione dell'indice della run togliendo gli eventi di **bordo**.
 
 ---  
