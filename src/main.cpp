@@ -5,8 +5,19 @@ int main(int argc, char* argv[]) {
         cerr << "Uso: " << argv[0] << " <folder_name>" << endl;
         return 1;
     }
+
+    // Reindirizza stdout verso un file e stderr verso un altro file
+    freopen("output.txt", "w", stdout);
+    freopen("error.txt", "w", stderr);
+
+    // Misura il tempo di inizio
+    auto start = std::chrono::high_resolution_clock::now();
+
     TApplication app("app", 0, 0);
     string folder_name = argv[1];
+
+    // Abilita la modalità batch di ROOT
+    gROOT->SetBatch(kTRUE);
 
     // Contiene i nomi delle RUN
     vector<string> run_names;
@@ -64,7 +75,7 @@ int main(int argc, char* argv[]) {
         
         cout << "Tempo totale della RUN: t = " << total_run_time(eventi_per_file[i]) << " s" << endl;
         cout << "Numero di eventi totali registrati: " << eventi_per_file[i].size() << endl;
-        delta_t = mean_delta_t(eventi_per_file[i])*1e-9;
+        delta_t = mean_delta_t(eventi_per_file[i], run_names[i])*1e-9;
         rate = 1.0/(delta_t);
         rates = eventi_per_file[i].size()/total_run_time(eventi_per_file[i]);
         cout <<"<delta_t> = " << delta_t << " s | rate (contando gli eventi bundle come unici 1/delta_t) = "<< 1.0/(delta_t) << " Hz" << endl;
@@ -119,6 +130,12 @@ int main(int argc, char* argv[]) {
     cout << "============================================" << endl;
     cout << "FINE ANALISI" << endl;
     cout << "============================================" << endl;
+
+    // Misura il tempo di fine
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed = end - start;
+    cout << "Tempo totale di esecuzione: " << elapsed.count() << " secondi" << endl;
+
     app.Run();
     return 0;
 }

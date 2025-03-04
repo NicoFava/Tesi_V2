@@ -11,6 +11,7 @@
 #include <filesystem>
 #include <algorithm>
 #include <set>
+#include <chrono>
 
 // Librerie di ROOT
 #include "TH1F.h"
@@ -30,6 +31,7 @@
 #include "TGraphErrors.h"
 #include "TString.h"
 #include "TRandom.h"
+#include "TROOT.h"
 
 using namespace std;
 namespace fs = std::filesystem; // Alias per filesystem
@@ -79,7 +81,7 @@ int muon_bundle(const vector<muone>&);
 int Nevents(const vector<muone>&);
 
 // Funzione per calcolare il tempo medio tra un evento e il successivo (inverso della frequenza)
-float mean_delta_t(const vector<muone>&);
+float mean_delta_t(const vector<muone>&, const string&);
 
 // Funzione che mi ordina in maniera crescente in ID
 void sort_events_by_id(vector<muone>&);

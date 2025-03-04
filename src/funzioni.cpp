@@ -2,22 +2,23 @@
 
 vector<muone> load_root_data(const string& filename) {
     vector<muone> eventi;
+    string run_name = get_run_name(filename);
     
     TFile *file = TFile::Open(filename.c_str(), "READ");
     if (!file) {
-        cerr << "Errore: impossibile aprire il file ROOT!" << endl;
+        cerr << "Errore: impossibile aprire il file "<< run_name << "!" << endl;
         return eventi;
     }
 
     TTree *tree = (TTree*)file->Get("MuonEvents");
     if (!tree) {
-        cerr << "Errore: TTree 'MuonEvents' non trovato!" << endl;
+        cerr << "Errore: TTree 'MuonEvents' non trovato nel file "<< run_name << "! " << endl;
         file->Close();
         return eventi;
     }
 
-     if (tree->GetEntries() == 0) {
-        cerr << "Errore: TTree 'MuonEvents' è vuoto!" << endl;
+    if (tree->GetEntries() == 0) {
+        cerr << "Errore: TTree 'MuonEvents' nel file " << run_name <<" è vuoto!" << endl;
         file->Close();
         return eventi;
     }
@@ -238,7 +239,7 @@ int muon_bundle(const vector<muone>& eventi) {
     return bundle_count;
 }
 
-float mean_delta_t(const vector<muone>& eventi){
+float mean_delta_t(const vector<muone>& eventi, const string& run_names){
     int last_entry_time = 0;
     vector<float> intervalli;
     for (size_t i = 1; i < eventi.size(); i++) {
@@ -251,7 +252,7 @@ float mean_delta_t(const vector<muone>& eventi){
 
             // Se l'intervallo è negativo, c'è un errore nell'ordine degli eventi
             if (delta_t < 0) {
-                cerr << "Attenzione: Intervallo di tempo negativo rilevato tra due eventi!" << endl;
+                cerr << "Attenzione: Intervallo di tempo negativo rilevato tra due eventi nel file " << run_names << "! " << endl;
             } else {
                 intervalli.push_back(delta_t);
             }
@@ -539,7 +540,7 @@ void plot_muon_rate(const vector<muone>& eventi, const string& run_name, double 
         fs::create_directory(folder_name);
     }
     if (eventi.empty()) {
-        cerr << "Errore: Nessun evento disponibile per il calcolo del rate!" << endl;
+        cerr << "Errore: Nessun evento disponibile all'interno del file " << run_name << " per il calcolo del rate!" << endl;
         return;
     }
 
@@ -549,7 +550,7 @@ void plot_muon_rate(const vector<muone>& eventi, const string& run_name, double 
     double duration = t_end - t_start;
 
     if (duration <= 0) {
-        cerr << "Errore: Tempo totale della RUN non valido!" << endl;
+        cerr << "Errore: Tempo totale del file " << run_name << " non valido!" << endl;
         return;
     }
 
