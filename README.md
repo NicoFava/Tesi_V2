@@ -40,7 +40,7 @@ Il file **run_info.txt** contiene le informazioni sulla data e l'ora di inizio d
 
 ---  
 
-## :bar_chart: **Grafici generati**  
+## :bar_chart: :chart_with_upwards_trend: **Grafici generati**  
 Oltre all'analisi numerica, il programma produce **grafici** organizzati in diverse cartelle:  
 
 ### :bar_chart: **:file_folder: images/Distance_plot**  
