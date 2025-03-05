@@ -86,8 +86,7 @@ Grafico del **rate dei muoni** in funzione dell'indice della run togliendo gli e
 
 ## :rocket: **Come usare il programma**  
 1. Inserire i file .root da analizzare in una cartella **<nome_cartella>**.  
-2. Creare un file **run_info.txt** con le informazioni sulla data e l'ora di inizio di ogni RUN.  
-3. Eseguire il programma:  
+2. Eseguire il programma:  
    
 ```bash  
    ./main <nome_cartella>  
