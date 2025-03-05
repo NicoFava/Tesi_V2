@@ -35,12 +35,8 @@ Il file **error&info.txt** contiene i messaggi di errore e le informazioni aggiu
 
 ---
 
-## :page_facing_up: **run_info.txt**  
-Il file **run_info.txt** contiene le informazioni sulla data e l'ora di inizio di ogni RUN. Ogni riga del file ha il seguente formato:
-
-```txt
-<nome_run> <data> <ora>
-```
+## :page_facing_up: **BiPo_rate_byfile.txt**
+Il file **BiPo_rate_byfile.txt** contiene le informazioni sulla data e l'ora di inizio di ogni RUN. Le informazioni delle RUN partono dalla RUN3793.
 
 ---  
 

@@ -6,23 +6,23 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    // Reindirizza stdout verso un file e stderr verso un altro file
+    // Reindirizzo stdout verso un file e stderr verso un altro file
     freopen("output.txt", "w", stdout);
     freopen("error&info.txt", "w", stderr);
 
-    // Misura il tempo di inizio
+    // Misuro il tempo di inizio
     auto start = std::chrono::high_resolution_clock::now();
 
     TApplication app("app", 0, 0);
     string folder_name = argv[1];
 
-    // Abilita la modalità batch di ROOT
+    // Abilito la modalità batch di ROOT
     gROOT->SetBatch(kTRUE);
 
     // Contiene i nomi delle RUN
     vector<string> run_names;
 
-    string run_info_file = "run_info.txt";
+    string run_info_file = "BiPo_rate_byfile.txt";
     
     // Carico le informazioni sulle RUN
     vector<RunInfo> run_info_list = load_run_info(run_info_file);
@@ -63,15 +63,15 @@ int main(int argc, char* argv[]) {
          // Trovo le informazioni sulla RUN
          bool found = false;
          for (const auto& info : run_info_list) {
-             if (info.run_name == run_names[i]) {
-                 cout << "Data di inizio: " << info.date << " Ora di inizio: " << info.time << endl;
-                 found = true;
-                 break;
-             }
-         }
-         if (!found) {
-             cout << "Informazioni sulla RUN non trovate." << endl;
-         }
+            if (info.run_name == run_names[i]) {
+                cout << "Data di inizio: " << info.date << " | Ora di inizio: " << info.time <<" | Durata: "<< info.duration << " s. " << endl;
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            cout << "Informazioni sulla RUN non trovate." << endl;
+        }
         
         cout << "Tempo totale della RUN: t = " << total_run_time(eventi_per_file[i]) << " s" << endl;
         cout << "Numero di eventi totali registrati: " << eventi_per_file[i].size() << endl;
@@ -95,13 +95,13 @@ int main(int argc, char* argv[]) {
             cout << "In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle." << endl;
         }
         
-        vector<double> path_distances; // Inizializza il vettore per ogni run
+        vector<double> path_distances; // Inizializzo il vettore per ogni run
         for (const auto& e : eventi_per_file[i]) {
             double distance = distance_point_to_line(e);
             path_distances.push_back(distance);
         }
 
-        // Calcola e stampa la distanza massima
+        // Calcolo e stampo la distanza massima
         double max_dist;
         max_dist = *max_element(path_distances.begin(), path_distances.end());
         max_path_distances.push_back(max_dist);
@@ -131,7 +131,7 @@ int main(int argc, char* argv[]) {
     cout << "FINE ANALISI" << endl;
     cout << "============================================" << endl;
 
-    // Misura il tempo di fine
+    // Misuro il tempo di fine
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = end - start;
     cout << "Tempo totale di esecuzione: " << elapsed.count() << " secondi" << endl;

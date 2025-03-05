@@ -510,7 +510,7 @@ double total_run_time(const vector<muone>& eventi) {
     return total_time;
 }
 
-vector<RunInfo> load_run_info(const string& filename){
+vector<RunInfo> load_run_info(const string& filename) {
     vector<RunInfo> run_info;
     ifstream file(filename);
     if (!file) {
@@ -519,12 +519,39 @@ vector<RunInfo> load_run_info(const string& filename){
     }
 
     string line;
+    // Salta la prima riga
+    getline(file, line);
+
+    RunInfo last_info;
+    string last_run_name;
+    bool first_line = true;
+
     while (getline(file, line)) {
         istringstream iss(line);
         RunInfo info;
-        iss >> info.run_name >> info.date >> info.time;
-        run_info.push_back(info);
+        string date_str;
+        iss >> info.run_name >> info.file >> info.counts >> info.error >> date_str >> info.time >> info.duration >> info.volume >> info.rate >> info.err_rate;
+
+        // Converti la data in formato AAAA-MM-GG
+        stringstream date_ss;
+        date_ss << date_str.substr(0, 4) << "-" << date_str.substr(4, 2) << "-" << date_str.substr(6, 2);
+        info.date = date_ss.str();
+
+        if (first_line) {
+            last_info = info;
+            last_run_name = info.run_name;
+            first_line = false;
+        } else if (info.run_name != last_run_name) {
+            run_info.push_back(last_info);
+            last_info = info;
+            last_run_name = info.run_name;
+        } else {
+            last_info = info;
+        }
     }
+
+    // Aggiungi l'ultima riga memorizzata
+    run_info.push_back(last_info);
 
     file.close();
     return run_info;
@@ -663,7 +690,6 @@ void plot_azimuthal_angle_distribution(const vector<muone>& eventi, const string
     canvas->SetGrid();
     
     for(const auto& e : eventi){
-        //double phi = atan2(e.entry_y, e.entry_x);
         double phi = atan2(e.uy, e.ux);
         azimuthal->Fill(phi);
     }
@@ -673,12 +699,13 @@ void plot_azimuthal_angle_distribution(const vector<muone>& eventi, const string
     azimuthal->SetFillColorAlpha(kBlue, 1);
     azimuthal->GetXaxis()->SetTitle("Azimuthal Angle [rad]");
     azimuthal->GetYaxis()->SetTitle("Counts [a.u.]");
+    azimuthal->SetMinimum(0); // Imposta l'asse Y per partire da 0
     azimuthal->Draw("HIST");
     string filename = folder_name + "/Azimuthal_" + run_name + ".png";
     canvas->SaveAs(filename.c_str());
     delete canvas;
     delete azimuthal;
-}   
+} 
 
 void Polar_vs_Azimuthal_angle(const vector<muone>& eventi, const string& run_name) {
     string main_folder = "images";

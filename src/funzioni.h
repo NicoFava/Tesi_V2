@@ -52,8 +52,15 @@ struct muone {
 
 struct RunInfo {
     string run_name;
+    int file;
+    double counts;
+    double error;
     string date;
     string time;
+    double duration;
+    double volume;
+    double rate;
+    double err_rate;
 };
 
 // Funzione per caricare i dati ROOT in un vettore
