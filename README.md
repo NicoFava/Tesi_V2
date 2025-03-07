@@ -13,7 +13,7 @@ Il file **output.txt** contiene una sintesi dei risultati principali dell'analis
 - Per ogni **run**, viene stampato il **numero di eventi** contenuti al suo interno.  
 
 ### :1234: **Dati di output**  
-- **Data e ora di inizio della RUN**: Informazioni sulla data e l'ora di inizio della RUN, caricate dal file `run_info.txt`.
+- **Data e ora di inizio della RUN**: Informazioni sulla data e l'ora di inizio della RUN, caricate dal file `BiPo_rate_byfile.txt`.
 - **t**: Tempo totale della RUN in secondi.  
 - **<delta_t>**: Tempo medio tra un evento e quello successivo in secondi.  
   - Se viene rilevato un **intervallo di tempo negativo tra due eventi**, verrà stampato un **messaggio di errore** a video e quell'intervallo sarà **ignorato** nel calcolo di <delta_t>.  
