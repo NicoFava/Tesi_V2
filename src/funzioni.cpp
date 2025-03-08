@@ -940,6 +940,7 @@ void plot_trackID_distribution(const vector<muone>& eventi, const string& run_na
 
     string filename = folder_name + "/TrackID_Distribution_" + run_name + ".png";
     canvas->SaveAs(filename.c_str());
+    delete canvas;
     delete trackID_hist;
     delete pave;
 }
