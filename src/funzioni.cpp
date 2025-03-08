@@ -943,3 +943,118 @@ void plot_trackID_distribution(const vector<muone>& eventi, const string& run_na
     delete trackID_hist;
     delete pave;
 }
+
+vector<elisaEvents> load_elisa_data(const string& filename) {
+    vector<elisaEvents> eventi;
+
+    string run_name = get_run_name(filename);
+    
+    TFile *file = TFile::Open(filename.c_str(), "READ");
+    if (!file) {
+        cerr << "Errore: impossibile aprire il file "<< run_name << "!" << endl;
+        return eventi;
+    }
+
+    // Ottieni l'albero (TTree) dal file ROOT
+    TTree *tree = (TTree*)file->Get("Events"); // Sostituisci "tree" con il nome effettivo dell'albero nel file ROOT
+    if (!tree) {
+        cerr << "Errore nell'ottenere l'albero dal file ROOT: " << filename << endl;
+        file->Close();
+        return eventi;
+    }
+
+    // Definisci le variabili per leggere i dati dall'albero
+    elisaEvents event;
+    tree->SetBranchAddress("NPE", &event.NPE);
+    tree->SetBranchAddress("fSec", &event.fSec);
+    tree->SetBranchAddress("fNanoSec", &event.fNanoSec);
+    tree->SetBranchAddress("Recox", &event.Recox);
+    tree->SetBranchAddress("Recoy", &event.Recoy);
+    tree->SetBranchAddress("Recoz", &event.Recoz);
+    tree->SetBranchAddress("RunNumber", &event.RunNumber);
+
+    // Leggi i dati dall'albero e salvali nel vettore
+    Long64_t nentries = tree->GetEntries();
+    for (Long64_t i = 0; i < nentries; i++) {
+        tree->GetEntry(i);
+        eventi.push_back(event);
+    }
+
+    // Chiudi il file ROOT
+    file->Close();
+    return eventi;
+}
+
+vector<vector<elisaEvents>> load_multiple_elisa_files(const string& folder_path, vector<string>& run_names) {
+    vector<vector<elisaEvents>> all_eventi;
+    vector<string> file_paths;
+
+    // Scansiono la cartella e memorizzo i percorsi dei file con estensione .root
+    for (const auto& entry : fs::directory_iterator(folder_path)) {
+        if (entry.path().extension() == ".root") {
+            file_paths.push_back(entry.path().string());
+        }
+    }
+
+    // Ordino i percorsi dei file
+    sort(file_paths.begin(), file_paths.end());
+
+    // Carico i file ordinati
+    for (const auto& file_path : file_paths) {
+        // Estraggo il numero della run dal nome del file e aggiungo il prefisso "RUN"
+        string filename = fs::path(file_path).filename().string();
+        size_t pos1 = filename.find("_");
+        size_t pos2 = filename.find("_", pos1 + 1);
+        string run_number = filename.substr(pos1 + 1, pos2 - pos1 - 1);
+        string run_name = "RUN" + run_number;
+        run_names.push_back(run_name);
+
+        cout << "Caricamento file: " << run_name << endl;
+        vector<elisaEvents> eventi = load_elisa_data(file_path);
+        all_eventi.push_back(eventi);
+    }
+
+    cout << "Numero totale di file di Elisa .root analizzati: " << all_eventi.size() << endl;
+    return all_eventi;
+}
+
+vector<string> find_common_runs(const vector<string>& run_names, const vector<string>& elisa_run_names) {
+    vector<string> common_runs;
+
+    for (const auto& run : run_names) {
+        if (std::find(elisa_run_names.begin(), elisa_run_names.end(), run) != elisa_run_names.end()) {
+            common_runs.push_back(run);
+        }
+    }
+
+    return common_runs;
+}
+
+int count_common_events(const vector<muone>& muone_events, const vector<elisaEvents>& elisa_events) {
+    int common_event_count = 0;
+    size_t muone_index = 0;
+    size_t elisa_index = 0;
+
+    while (muone_index < muone_events.size() && elisa_index < elisa_events.size()) {
+        const auto& muone_event = muone_events[muone_index];
+        const auto& elisa_event = elisa_events[elisa_index];
+
+        if (muone_event.fSec == elisa_event.fSec) {
+            if (muone_event.fNanosec == elisa_event.fNanoSec) {
+                common_event_count++;
+                muone_index++;
+                elisa_index++;
+            } else if (muone_event.fNanosec < elisa_event.fNanoSec) {
+                muone_index++;
+            } else {
+                elisa_index++;
+            }
+        } else if (muone_event.fSec < elisa_event.fSec) {
+            muone_index++;
+        } else {
+            elisa_index++;
+        }
+    }
+
+    return common_event_count;
+}
