@@ -1059,3 +1059,24 @@ int count_common_events(const vector<muone>& muone_events, const vector<elisaEve
 
     return common_event_count;
 }
+
+int count_unique_times(const vector<elisaEvents>& eventi) {
+    vector<int> unique_seconds;
+    vector<int> unique_nanoseconds;
+
+    for (const auto& event : eventi) {
+        bool found = false;
+        for (size_t i = 0; i < unique_seconds.size(); ++i) {
+            if (unique_seconds[i] == event.fSec && unique_nanoseconds[i] == event.fNanoSec) {
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            unique_seconds.push_back(event.fSec);
+            unique_nanoseconds.push_back(event.fNanoSec);
+        }
+    }
+
+    return unique_seconds.size();
+}
