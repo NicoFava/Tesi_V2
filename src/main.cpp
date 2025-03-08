@@ -49,8 +49,10 @@ int main(int argc, char* argv[]) {
     // Trovo le RUN comuni
     vector<string> common_runs = find_common_runs(run_names, elisa_run_names);
     cout << "RUN comuni trovate:" << endl;
+    int i = 0;
     for (const auto& run : common_runs) {
-        cout << run << endl;
+        cout << i+1 << ") " << run << endl;
+        i++;
     }
     
     // Conto gli eventi comuni per ogni run comune

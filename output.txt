@@ -89,7 +89,7 @@ RUN4048: 36147 eventi caricati
 RUN4049: 98734 eventi caricati
 RUN4051: 8140 eventi caricati
 RUN comuni trovate:
-RUN4049
+1) RUN4049
 Analizzando la run: RUN4049
 Numero di eventi muone: 98734
 Numero di eventi elisa: 5744665
@@ -594,4 +594,4 @@ La distanza del tracciato con l'origine massima registrata tra tutti i file è: 
 ============================================
 FINE ANALISI
 ============================================
-Tempo totale di esecuzione: 15.1678 secondi
+Tempo totale di esecuzione: 15.3416 secondi
