@@ -12,7 +12,6 @@
 #include <algorithm>
 #include <set>
 #include <chrono>
-#include <unordered_set>
 
 // Librerie di ROOT
 #include "TH1F.h"
@@ -49,14 +48,6 @@ struct muone {
     float quality;
    // float entry_time, exit_time;
     double distance;
-};
-
-struct elisaEvents {
-    float NPE;
-    Long64_t fSec;
-    Long64_t fNanoSec;
-    float Recox, Recoy, Recoz;
-    Int_t RunNumber;
 };
 
 struct RunInfo {
@@ -152,16 +143,4 @@ void plot_muon_rate_with_edge_cut_vs_run(const vector<vector<muone>>&, const vec
 
 // Funzione per plottare il numero di trackID presenti
 void plot_trackID_distribution(const vector<muone>&, const string&);
-
-// Funzione per caricare i dati ROOT di Elisa in un vettore
-vector<elisaEvents> load_elisa_data(const string&);
-
-// Funzione per caricare più file ROOT di Elisa e salvare i nomi delle RUN
-vector<vector<elisaEvents>> load_multiple_elisa_files(const string&, vector<string>&);
-
-// Funzione per trovare le RUN comuni tra i due set di dati
-vector<string> find_common_runs(const vector<string>&, const vector<string>&);
-
-// Funzione per contare gli eventi comuni tra i due set di dati
-int count_common_events(const vector<muone>&, const vector<elisaEvents>&);
 #endif

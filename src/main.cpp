@@ -19,11 +19,6 @@ int main(int argc, char* argv[]) {
     // Abilito la modalità batch di ROOT
     gROOT->SetBatch(kTRUE);
 
-    // Carico i dati di Elisa
-    vector<string> elisa_run_names;
-    vector<vector<elisaEvents>> elisa_eventi_per_file = load_multiple_elisa_files(folder_name + "/elisa_wp", elisa_run_names);
-    cout << "============================================" << endl;
-
     // Contiene i nomi delle RUN
     vector<string> run_names;
 
@@ -43,29 +38,6 @@ int main(int argc, char* argv[]) {
     // Stampo il numero di eventi caricati per ciascun file con il nome della RUN
     for (size_t i = 0; i < eventi_per_file.size(); i++) {
         cout << run_names[i] << ": " << eventi_per_file[i].size() << " eventi caricati" << endl;
-    }
-
-    // Stampo le RUN comuni
-    // Trovo le RUN comuni
-    vector<string> common_runs = find_common_runs(run_names, elisa_run_names);
-    cout << "RUN comuni trovate:" << endl;
-    for (const auto& run : common_runs) {
-        cout << run << endl;
-    }
-    
-    // Conto gli eventi comuni per ogni run comune
-    for (const auto& run_name : common_runs) {
-        size_t muone_index = std::distance(run_names.begin(), std::find(run_names.begin(), run_names.end(), run_name));
-        size_t elisa_index = std::distance(elisa_run_names.begin(), std::find(elisa_run_names.begin(), elisa_run_names.end(), run_name));
-
-        cout << "Analizzando la run: " << run_name << endl;
-        cout << "Numero di eventi muone: " << eventi_per_file[muone_index].size() << endl;
-        cout << "Numero di eventi elisa: " << elisa_eventi_per_file[elisa_index].size() << endl;
-
-        int common_event_count = count_common_events(eventi_per_file[muone_index], elisa_eventi_per_file[elisa_index]);
-
-        // Stampo il numero di eventi comuni
-        cout << "Run: " << run_name << " - Numero di eventi comuni: " << common_event_count << endl;
     }
     
     cout << "============================================" << endl;
@@ -137,12 +109,12 @@ int main(int argc, char* argv[]) {
         cout << "La distanza massima tra l'origine e il tracciato dei muoni è: " << max_dist << " mm" << endl;
         cout << "I muoni che passano nel bordo (cut = " << cut_distance << " mm ) sono: " << edge_events(eventi_per_file[i], cut_distance) << endl;
         cout << "La frequenza togliendo gli eventi di bordo è: " << ((double )eventi_per_file[i].size() - (double)edge_events(eventi_per_file[i], cut_distance)) / total_run_time(eventi_per_file[i]) << " Hz" << endl;
-        //total_PeSum_histogram(eventi_per_file[i], run_names[i]);
+        total_PeSum_histogram(eventi_per_file[i], run_names[i]);
         plot_polar_angle_distribution(eventi_per_file[i], run_names[i]);
         plot_azimuthal_angle_distribution(eventi_per_file[i], run_names[i]);
         Distance_histogram(eventi_per_file[i], run_names[i]);
-        //PeSum_vs_polar_angle(eventi_per_file[i], run_names[i]);
-        //PeSum_histograms(eventi_per_file[i], run_names[i]);
+        PeSum_vs_polar_angle(eventi_per_file[i], run_names[i]);
+        PeSum_histograms(eventi_per_file[i], run_names[i]);
         plot_trackID_distribution(eventi_per_file[i], run_names[i]);
         plot_muon_rate(eventi_per_file[i], run_names[i], 300);   
         Polar_vs_Azimuthal_angle(eventi_per_file[i], run_names[i]);
