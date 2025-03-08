@@ -62,7 +62,7 @@ int main(int argc, char* argv[]) {
 
         cout << "Analizzando la run: " << run_name << endl;
         cout << "Numero di eventi muone: " << eventi_per_file[muone_index].size() << endl;
-        cout << "Numero di eventi elisa: " << elisa_eventi_per_file[elisa_index].size() << endl;
+        cout << "Numero di eventi totali (elisa): " << elisa_eventi_per_file[elisa_index].size() << endl;
         
         // Calcola e stampa il numero di tempi unici per la run corrente
         int unique_times_count = count_unique_times(elisa_eventi_per_file[elisa_index]);
