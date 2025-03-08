@@ -1058,34 +1058,3 @@ int count_common_events(const vector<muone>& muone_events, const vector<elisaEve
 
     return common_event_count;
 }
-
-void save_elisa_data_to_file(const vector<elisaEvents>& eventi, const string& run_name) {
-    string full_filename = run_name + "_elisa.txt"; // Aggiunge l'estensione .txt
-    ofstream file(full_filename);
-    
-    if (!file) {
-        cerr << "Errore: impossibile aprire il file " << full_filename << " per la scrittura!" << endl;
-        return;
-    }
-
-    file << "============================================\n";
-    file << " STAMPA COMPLETA DEI PRIMI 100.000 EVENTI DI ELISA \n";
-    file << "============================================\n";
-
-    size_t max_events = 1000000;
-    size_t event_count = 0;
-
-    for (const auto& ev : eventi) {
-        if (event_count >= max_events) {
-            break;
-        }
-        file << "Run Number: " << ev.RunNumber << "\n";
-        file << "Tempo Secondi: " << ev.fSec << " | Nanosecondi: " << ev.fNanoSec << "\n";
-        file << "NPE: " << ev.NPE << "\n";
-        file << "Reco (x,y,z): (" << ev.Recox << ", " << ev.Recoy << ", " << ev.Recoz << ")\n";
-        file << "--------------------------------------------\n";
-        event_count++;
-    }
-    file.close();
-    cout << "Dati di Elisa salvati con successo in " << full_filename << "!" << endl;
-}

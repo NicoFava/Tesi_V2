@@ -62,9 +62,6 @@ int main(int argc, char* argv[]) {
         cout << "Numero di eventi muone: " << eventi_per_file[muone_index].size() << endl;
         cout << "Numero di eventi elisa: " << elisa_eventi_per_file[elisa_index].size() << endl;
 
-        // Salva i dati di Elisa per la run corrente
-        save_elisa_data_to_file(elisa_eventi_per_file[elisa_index], run_name);
-
         int common_event_count = count_common_events(eventi_per_file[muone_index], elisa_eventi_per_file[elisa_index]);
 
         // Stampo il numero di eventi comuni

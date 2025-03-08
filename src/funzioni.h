@@ -164,7 +164,4 @@ vector<string> find_common_runs(const vector<string>&, const vector<string>&);
 
 // Funzione per contare gli eventi comuni tra i due set di dati
 int count_common_events(const vector<muone>&, const vector<elisaEvents>&);
-
-// Funzione per salvare i dati di una run in un file
-void save_elisa_data_to_file(const vector<elisaEvents>&, const string&);
 #endif
