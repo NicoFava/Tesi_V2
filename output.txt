@@ -590,4 +590,4 @@ La distanza del tracciato con l'origine massima registrata tra tutti i file è: 
 ============================================
 FINE ANALISI
 ============================================
-Tempo totale di esecuzione: 27.1005 secondi
+Tempo totale di esecuzione: 18.1306 secondi
