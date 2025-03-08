@@ -164,6 +164,7 @@ vector<string> find_common_runs(const vector<string>&, const vector<string>&);
 
 // Funzione per contare gli eventi comuni tra i due set di dati
 int count_common_events(const vector<muone>&, const vector<elisaEvents>&);
+
 // Funzione per calcolare il numero di eventi univoci
 int count_unique_times(const vector<elisaEvents>&);
 #endif
