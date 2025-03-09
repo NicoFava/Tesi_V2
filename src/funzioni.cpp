@@ -614,8 +614,9 @@ void plot_muon_rate(const vector<muone>& eventi, const string& run_name, double 
 
     TCanvas *c_rate = new TCanvas(("RateCanvas_" + run_name).c_str(), "Rate Muoni vs Tempo", 800, 600);
     c_rate->SetGrid();
-    string title = "Rate dei muoni nel tempo - " + run_name + " (Intervallo: " + to_string(interval_sec) + " s)";
-    graph->SetTitle(title.c_str());
+    stringstream title;
+    title << "Rate dei muoni nel tempo - " << run_name << " (Intervallo: " << fixed << setprecision(1) << interval_sec << " s)";
+    graph->SetTitle(title.str().c_str());
     graph->GetXaxis()->SetTitle("Tempo [s]");
     graph->GetYaxis()->SetTitle("Rate [Hz]");
     graph->GetYaxis()->SetRangeUser(0, *max_element(rates.begin(), rates.end()) * 1.1); // Imposta la scala dell'asse Y per partire da 0
