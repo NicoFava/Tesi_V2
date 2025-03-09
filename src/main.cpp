@@ -19,11 +19,6 @@ int main(int argc, char* argv[]) {
     // Abilito la modalità batch di ROOT
     gROOT->SetBatch(kTRUE);
 
-    // Carico i dati di Elisa
-    vector<string> elisa_run_names;
-    vector<vector<elisaEvents>> elisa_eventi_per_file = load_multiple_elisa_files(folder_name + "/elisa_wp", elisa_run_names);
-    cout << "============================================" << endl;
-
     // Contiene i nomi delle RUN
     vector<string> run_names;
 
@@ -45,35 +40,6 @@ int main(int argc, char* argv[]) {
         cout << run_names[i] << ": " << eventi_per_file[i].size() << " eventi caricati" << endl;
     }
 
-    // Stampo le RUN comuni
-    // Trovo le RUN comuni
-    vector<string> common_runs = find_common_runs(run_names, elisa_run_names);
-    cout << "RUN comuni trovate:" << endl;
-    int i = 0;
-    for (const auto& run : common_runs) {
-        cout << i+1 << ") " << run << endl;
-        i++;
-    }
-    
-    // Conto gli eventi comuni per ogni run comune
-    for (const auto& run_name : common_runs) {
-        size_t muone_index = std::distance(run_names.begin(), std::find(run_names.begin(), run_names.end(), run_name));
-        size_t elisa_index = std::distance(elisa_run_names.begin(), std::find(elisa_run_names.begin(), elisa_run_names.end(), run_name));
-
-        cout << "Analizzando la run: " << run_name << endl;
-        cout << "Numero di eventi muone: " << eventi_per_file[muone_index].size() << endl;
-        cout << "Numero di eventi totali (elisa): " << elisa_eventi_per_file[elisa_index].size() << endl;
-        
-        // Calcola e stampa il numero di tempi unici per la run corrente
-        int unique_times_count = count_unique_times(elisa_eventi_per_file[elisa_index]);
-        cout << "Run: " << run_name << " - Numero di tempi unici: " << unique_times_count << endl;
-
-        int common_event_count = count_common_events(eventi_per_file[muone_index], elisa_eventi_per_file[elisa_index]);
-
-        // Stampo il numero di eventi comuni
-        cout << "Run: " << run_name << " - Numero di eventi comuni: " << common_event_count << endl;
-    }
-    
     cout << "============================================" << endl;
     cout << " ALCUNI DATI PER OGNI RUN " << endl;
     cout << "============================================" << endl;

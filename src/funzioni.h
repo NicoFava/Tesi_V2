@@ -54,8 +54,8 @@ struct muone {
 
 struct elisaEvents {
     float NPE;
-    Long64_t fSec;
-    Long64_t fNanoSec;
+    Int_t fSec;
+    Int_t fNanoSec;
     float Recox, Recoy, Recoz;
     Int_t RunNumber;
 };
@@ -168,4 +168,7 @@ int count_common_events(const vector<muone>&, const vector<elisaEvents>&);
 
 // Funzione per calcolare il numero di eventi univoci
 int count_unique_times(const vector<elisaEvents>&);
+
+// Funzione per generare istogrammi di energia per eventi di Elisa
+void NPE_histogram(const vector<elisaEvents>&, const string&);
 #endif

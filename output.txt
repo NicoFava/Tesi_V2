@@ -1,7 +1,3 @@
-Caricamento file: RUN4049
-Caricamento file: RUN4072
-Numero totale di file di Elisa .root analizzati: 2
-============================================
 Caricamento file: RUN3322
 Caricamento file: RUN3326
 Caricamento file: RUN3413
@@ -88,13 +84,6 @@ RUN4045: 98175 eventi caricati
 RUN4048: 36147 eventi caricati
 RUN4049: 98734 eventi caricati
 RUN4051: 8140 eventi caricati
-RUN comuni trovate:
-1) RUN4049
-Analizzando la run: RUN4049
-Numero di eventi muone: 98734
-Numero di eventi totali (elisa): 5744665
-Run: RUN4049 - Numero di tempi unici: 1
-Run: RUN4049 - Numero di eventi comuni: 0
 ============================================
  ALCUNI DATI PER OGNI RUN 
 ============================================
@@ -601,4 +590,4 @@ La distanza del tracciato con l'origine massima registrata tra tutti i file è: 
 ============================================
 FINE ANALISI
 ============================================
-Tempo totale di esecuzione: 19.3601 secondi
+Tempo totale di esecuzione: 16.0806 secondi
