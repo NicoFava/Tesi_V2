@@ -3,7 +3,6 @@ Errore: TTree 'MuonEvents' nel file RUN4013 è vuoto!
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3322.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3322.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3322.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3322.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3322.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3322.png has been created
 Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN3322.png has been created
@@ -11,7 +10,6 @@ Attenzione: Intervallo di tempo negativo rilevato tra due eventi nel file RUN332
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3326.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3326.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3326.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3326.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3326.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3326.png has been created
 Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN3326.png has been created
@@ -19,28 +17,24 @@ Attenzione: Intervallo di tempo negativo rilevato tra due eventi nel file RUN341
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3413.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3413.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3413.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3413.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3413.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3413.png has been created
 Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN3413.png has been created
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3415.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3415.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3415.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3415.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3415.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3415.png has been created
 Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN3415.png has been created
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3416.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3416.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3416.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3416.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3416.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3416.png has been created
 Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN3416.png has been created
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3530.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3530.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3530.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3530.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3530.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3530.png has been created
 Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN3530.png has been created
@@ -48,7 +42,6 @@ Attenzione: Intervallo di tempo negativo rilevato tra due eventi nel file RUN353
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3531.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3531.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3531.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3531.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3531.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3531.png has been created
 Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN3531.png has been created
@@ -85,7 +78,6 @@ Attenzione: Intervallo di tempo negativo rilevato tra due eventi nel file RUN367
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3677.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3677.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3677.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3677.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN3677.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3677.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3677.png has been created
@@ -94,7 +86,6 @@ Attenzione: Intervallo di tempo negativo rilevato tra due eventi nel file RUN369
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3697.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3697.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3697.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3697.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN3697.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3697.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3697.png has been created
@@ -102,7 +93,6 @@ Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN36
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3708.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3708.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3708.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3708.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN3708.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3708.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3708.png has been created
@@ -110,7 +100,6 @@ Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN37
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3709.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3709.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3709.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3709.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN3709.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3709.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3709.png has been created
@@ -118,7 +107,6 @@ Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN37
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3743.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3743.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3743.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3743.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN3743.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3743.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3743.png has been created
@@ -126,7 +114,6 @@ Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN37
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3753.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3753.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3753.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3753.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN3753.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3753.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3753.png has been created
@@ -134,7 +121,6 @@ Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN37
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3793.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3793.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3793.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3793.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN3793.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3793.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3793.png has been created
@@ -142,7 +128,6 @@ Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN37
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3872.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3872.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3872.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3872.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN3872.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3872.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3872.png has been created
@@ -150,7 +135,6 @@ Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN38
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3885.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3885.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3885.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3885.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN3885.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3885.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3885.png has been created
@@ -159,7 +143,6 @@ Attenzione: Intervallo di tempo negativo rilevato tra due eventi nel file RUN388
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3889.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3889.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3889.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3889.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN3889.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3889.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3889.png has been created
@@ -167,7 +150,6 @@ Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN38
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3896.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3896.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3896.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3896.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN3896.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3896.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3896.png has been created
@@ -175,7 +157,6 @@ Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN38
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3937.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3937.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3937.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3937.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN3937.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3937.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3937.png has been created
@@ -183,7 +164,6 @@ Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN39
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3938.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3938.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3938.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3938.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN3938.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3938.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3938.png has been created
@@ -191,7 +171,6 @@ Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN39
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3940.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3940.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3940.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3940.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN3940.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3940.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3940.png has been created
@@ -199,7 +178,6 @@ Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN39
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3945.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3945.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3945.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3945.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN3945.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3945.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3945.png has been created
@@ -207,7 +185,6 @@ Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN39
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3947.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3947.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3947.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3947.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN3947.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3947.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3947.png has been created
@@ -215,7 +192,6 @@ Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN39
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3948.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3948.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3948.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3948.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN3948.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3948.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3948.png has been created
@@ -223,7 +199,6 @@ Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN39
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3949.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3949.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3949.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3949.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN3949.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3949.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3949.png has been created
@@ -231,7 +206,6 @@ Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN39
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3951.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3951.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3951.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3951.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN3951.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3951.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3951.png has been created
@@ -239,7 +213,6 @@ Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN39
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3975.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3975.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3975.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3975.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN3975.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3975.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3975.png has been created
@@ -247,7 +220,6 @@ Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN39
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3976.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3976.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3976.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3976.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN3976.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3976.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3976.png has been created
@@ -255,7 +227,6 @@ Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN39
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3977.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3977.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3977.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3977.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN3977.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3977.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3977.png has been created
@@ -263,7 +234,6 @@ Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN39
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3978.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3978.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3978.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3978.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN3978.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3978.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3978.png has been created
@@ -271,7 +241,6 @@ Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN39
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN3990.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN3990.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN3990.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN3990.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN3990.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN3990.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN3990.png has been created
@@ -279,7 +248,6 @@ Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN39
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN4002.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN4002.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN4002.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN4002.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN4002.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN4002.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN4002.png has been created
@@ -287,7 +255,6 @@ Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN40
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN4005.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN4005.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN4005.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN4005.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN4005.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN4005.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN4005.png has been created
@@ -295,7 +262,6 @@ Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN40
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN4006.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN4006.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN4006.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN4006.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN4006.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN4006.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN4006.png has been created
@@ -303,7 +269,6 @@ Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN40
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN4007.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN4007.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN4007.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN4007.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN4007.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN4007.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN4007.png has been created
@@ -311,7 +276,6 @@ Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN40
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN4036.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN4036.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN4036.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN4036.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN4036.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN4036.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN4036.png has been created
@@ -319,7 +283,6 @@ Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN40
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN4045.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN4045.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN4045.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN4045.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN4045.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN4045.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN4045.png has been created
@@ -327,7 +290,6 @@ Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN40
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN4048.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN4048.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN4048.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN4048.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN4048.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN4048.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN4048.png has been created
@@ -335,7 +297,6 @@ Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN40
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN4049.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN4049.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN4049.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN4049.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN4049.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN4049.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN4049.png has been created
@@ -343,7 +304,6 @@ Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN40
 Info in <TCanvas::Print>: png file images/Polar_Angle_plot/Theta_RUN4051.png has been created
 Info in <TCanvas::Print>: png file images/Azimuthal_Angle_plot/Azimuthal_RUN4051.png has been created
 Info in <TCanvas::Print>: png file images/Distance_plot/Distance_RUN4051.png has been created
-Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN4051.png has been created
 Info in <TCanvas::Print>: png file images/TrackID_Distribution_plot/TrackID_Distribution_RUN4051.png has been created
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN4051.png has been created
 Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs_Azimuthal_Angle_RUN4051.png has been created
@@ -353,3 +313,4 @@ Info in <TCanvas::Print>: png file images/Muon_Rate_edge_cut_vs_Run.png has been
 Info in <TCanvas::Print>: png file images/PeSum_plot/PeSum_RUN4049mod.png has been created
 Info in <TCanvas::Print>: png file images/PeSum_vs_Polar_Angle_plot/PeSum_vs_Polar_Angle_RUN4049mod.png has been created
 Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs_Azimuthal_Angle_RUN4049mod.png has been created
+Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN4049mod.png has been created
