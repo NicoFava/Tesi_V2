@@ -945,3 +945,131 @@ void plot_trackID_distribution(const vector<muone>& eventi, const string& run_na
     delete trackID_hist;
     delete pave;
 }
+
+vector<totalEvents> load_totalEvents_data(const string& filename) {
+    vector<totalEvents> eventi;
+
+    string run_name = get_run_name(filename);
+    
+    TFile *file = TFile::Open(filename.c_str(), "READ");
+    if (!file) {
+        cerr << "Errore: impossibile aprire il file "<< run_name << "!" << endl;
+        return eventi;
+    }
+
+    // Ottieni l'albero (TTree) dal file ROOT
+    TTree *tree = (TTree*)file->Get("Events"); // Sostituisci "tree" con il nome effettivo dell'albero nel file ROOT
+    if (!tree) {
+        cerr << "Errore nell'ottenere l'albero dal file ROOT: " << filename << endl;
+        file->Close();
+        return eventi;
+    }
+
+    // Definisci le variabili per leggere i dati dall'albero
+    totalEvents event;
+    tree->SetBranchAddress("NPE", &event.NPE);
+    tree->SetBranchAddress("fSec", &event.fSec);
+    tree->SetBranchAddress("fNanoSec", &event.fNanoSec);
+    tree->SetBranchAddress("Recox", &event.Recox);
+    tree->SetBranchAddress("Recoy", &event.Recoy);
+    tree->SetBranchAddress("Recoz", &event.Recoz);
+    tree->SetBranchAddress("RunNumber", &event.RunNumber);
+
+    // Leggi i dati dall'albero e salvali nel vettore
+    Long64_t nentries = tree->GetEntries();
+    for (Long64_t i = 0; i < nentries; i++) {
+        tree->GetEntry(i);
+        eventi.push_back(event);
+    }
+
+    // Chiudi il file ROOT
+    file->Close();
+    return eventi;
+}
+
+vector<vector<totalEvents>> load_multiple_totalEvents_files(const string& folder_path, vector<string>& run_names) {
+    vector<vector<totalEvents>> all_eventi;
+    vector<string> file_paths;
+
+    // Scansiono la cartella e memorizzo i percorsi dei file con estensione .root
+    for (const auto& entry : fs::directory_iterator(folder_path)) {
+        if (entry.path().extension() == ".root") {
+            file_paths.push_back(entry.path().string());
+        }
+    }
+
+    // Ordino i percorsi dei file
+    sort(file_paths.begin(), file_paths.end());
+
+    // Carico i file ordinati
+    for (const auto& file_path : file_paths) {
+        // Estraggo il numero della run dal nome del file e aggiungo il prefisso "RUN"
+        string filename = fs::path(file_path).filename().string();
+        size_t pos1 = filename.find("_");
+        size_t pos2 = filename.find("_", pos1 + 1);
+        string run_number = filename.substr(pos1 + 1, pos2 - pos1 - 1);
+        string run_name = "RUN" + run_number;
+        run_names.push_back(run_name);
+
+        cout << "Caricamento file: " << run_name << endl;
+        vector<totalEvents> eventi = load_totalEvents_data(file_path);
+        all_eventi.push_back(eventi);
+    }
+
+    cout << "Numero di file di eventi totali analizzati: " << all_eventi.size() << endl;
+    return all_eventi;
+}
+
+vector<pair<size_t, size_t>> find_common_runs(const vector<string>& run_names, const vector<string>& total_run_names) {
+    vector<pair<size_t, size_t>> common_run_indices;
+
+    for (size_t i = 0; i < run_names.size(); i++) {
+        for (size_t j = 0; j < total_run_names.size(); j++) {
+            if (run_names[i] == total_run_names[j]) {
+                common_run_indices.push_back(make_pair(i, j));
+            }
+        }
+    }
+
+    return common_run_indices;
+}
+
+vector<vector<muone>> create_updated_events_vector(const vector<vector<muone>>& eventi_per_file, const vector<vector<totalEvents>>& total_eventi_per_file, const vector<pair<size_t, size_t>>& common_run_indices, const vector<string>& run_names, vector<string>& run_names_mod) {
+    vector<vector<muone>> updated_eventi_per_file(common_run_indices.size());
+    run_names_mod.clear();
+
+    for (size_t k = 0; k < common_run_indices.size(); ++k) {
+        size_t run_index = common_run_indices[k].first;
+        size_t total_run_index = common_run_indices[k].second;
+
+        const auto& eventi = eventi_per_file[run_index];
+        const auto& total_eventi = total_eventi_per_file[total_run_index];
+
+        size_t i = 0, j = 0;
+
+        while (i < eventi.size() && j < total_eventi.size()) {
+            int ev_time_sec = eventi[i].fSec;
+            int ev_time_nsec = eventi[i].fNanosec;
+            int total_ev_time_sec = total_eventi[j].fSec;
+            int total_ev_time_nsec = total_eventi[j].fNanoSec;
+
+            if (ev_time_sec == total_ev_time_sec && ev_time_nsec == total_ev_time_nsec) {
+                // Crea una nuova struct muone con la carica aggiornata
+                muone updated_event = eventi[i];
+                updated_event.PeSum = total_eventi[j].NPE;
+                updated_eventi_per_file[k].push_back(updated_event);
+                i++;
+                j++;
+            } else if (ev_time_sec < total_ev_time_sec || (ev_time_sec == total_ev_time_sec && ev_time_nsec < total_ev_time_nsec)) {
+                i++;
+            } else {
+                j++;
+            }
+        }
+
+        // Aggiungi il nome della run modificata
+        run_names_mod.push_back(run_names[run_index] + "mod");
+    }
+
+    return updated_eventi_per_file;
+}

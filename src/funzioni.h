@@ -52,7 +52,7 @@ struct muone {
     double distance;
 };
 
-struct elisaEvents {
+struct totalEvents {
     float NPE;
     Int_t fSec;
     Int_t fNanoSec;
@@ -154,21 +154,15 @@ void plot_muon_rate_with_edge_cut_vs_run(const vector<vector<muone>>&, const vec
 // Funzione per plottare il numero di trackID presenti
 void plot_trackID_distribution(const vector<muone>&, const string&);
 
-// Funzione per caricare i dati ROOT di Elisa in un vettore
-vector<elisaEvents> load_elisa_data(const string&);
+// Funzione per caricare i dati ROOT di total in un vettore
+vector<totalEvents> load_totalEvents_data(const string&);
 
-// Funzione per caricare più file ROOT di Elisa e salvare i nomi delle RUN
-vector<vector<elisaEvents>> load_multiple_elisa_files(const string&, vector<string>&);
+// Funzione per caricare più file ROOT di total e salvare i nomi delle RUN
+vector<vector<totalEvents>> load_multiple_totalEvents_files(const string&, vector<string>&);
 
 // Funzione per trovare le RUN comuni tra i due set di dati
-vector<string> find_common_runs(const vector<string>&, const vector<string>&);
+vector<pair<size_t, size_t>> find_common_runs(const vector<string>&, const vector<string>&);
 
-// Funzione per contare gli eventi comuni tra i due set di dati
-int count_common_events(const vector<muone>&, const vector<elisaEvents>&);
-
-// Funzione per calcolare il numero di eventi univoci
-int count_unique_times(const vector<elisaEvents>&);
-
-// Funzione per generare istogrammi di energia per eventi di Elisa
-void NPE_histogram(const vector<elisaEvents>&, const string&);
+// Funzione 
+vector<vector<muone>> create_updated_events_vector(const vector<vector<muone>>&, const vector<vector<totalEvents>>&, const vector<pair<size_t, size_t>>&, const vector<string>&, vector<string>&);
 #endif

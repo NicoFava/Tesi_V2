@@ -1,5 +1,7 @@
 #include "funzioni.h"
 
+using namespace std;
+
 int main(int argc, char* argv[]) {
     if (argc != 2) {
         cerr << "Uso: " << argv[0] << " <folder_name>" << endl;
@@ -39,7 +41,28 @@ int main(int argc, char* argv[]) {
     for (size_t i = 0; i < eventi_per_file.size(); i++) {
         cout << run_names[i] << ": " << eventi_per_file[i].size() << " eventi caricati" << endl;
     }
+    cout << "============================================" << endl;
 
+    // Carico i dati totalEvents
+    vector<string> total_run_names;
+    vector<vector<totalEvents>> total_eventi_per_file = load_multiple_totalEvents_files(folder_name + "/total_wp", total_run_names);
+    cout << "============================================" << endl;
+    // Stampo il numero di eventi caricati per ciascun file con il nome della RUN
+    for (size_t i = 0; i < total_eventi_per_file.size(); i++) {
+        cout << total_run_names[i] << ": " << total_eventi_per_file[i].size() << " eventi caricati" << endl;
+    }
+    cout << "============================================" << endl;
+    
+
+    // Trovo le run comuni e salvo gli indici
+    vector<pair<size_t, size_t>> common_run_indices = find_common_runs(run_names, total_run_names);
+
+    // Stampo le RUN comuni
+    cout << "RUN comuni trovate:" << endl;
+    for (size_t i = 0; i < common_run_indices.size(); i++) {
+        cout << i+1 << ") " << run_names[common_run_indices[i].first] << endl;
+    }
+    
     cout << "============================================" << endl;
     cout << " ALCUNI DATI PER OGNI RUN " << endl;
     cout << "============================================" << endl;
@@ -120,7 +143,7 @@ int main(int argc, char* argv[]) {
         Polar_vs_Azimuthal_angle(eventi_per_file[i], run_names[i]);
         path_distance_histogram(eventi_per_file[i], run_names[i]);
         // Provo a stampare tutte le informazioni di una run per verificare le varie quantità
-        if(run_names[i] == "RUN3990"){
+        if(run_names[i] == "RUN4049"){
             save_all_data_to_file(eventi_per_file[i], run_names[i]);
         }
         cout << "--------------------------------------------" << endl;
@@ -130,6 +153,59 @@ int main(int argc, char* argv[]) {
     cout << "La distanza del tracciato con l'origine massima registrata tra tutti i file è: " << *max_element(max_path_distances.begin(), max_path_distances.end()) << " mm" << endl;
     cout << "============================================" << endl;
     cout << "FINE ANALISI" << endl;
+    cout << "============================================" << endl;
+    
+    // Analisi dei file modificati
+    cout << "============================================" << endl;
+    cout << " ALCUNI DATI PER OGNI RUN MODIFICATA " << endl;
+    cout << "============================================" << endl;
+    // Crea un nuovo vector di vector muone con gli eventi aggiornati
+    vector<string> run_names_mod;
+    vector<vector<muone>> updated_eventi_per_file = create_updated_events_vector(eventi_per_file, total_eventi_per_file, common_run_indices, run_names, run_names_mod);
+    for (size_t i = 0; i < updated_eventi_per_file.size(); i++){
+        if (updated_eventi_per_file[i].empty()) {
+            cout << i+1 << ") " << run_names_mod[i] << ": RUN modificata vuota, salto l'analisi." << endl;
+            cout << "--------------------------------------------" << endl;
+            continue;
+        } else {
+            cout << i+1 << ") " << run_names_mod[i] << ": " << endl;
+        }
+        // Trovo le informazioni sulla RUN
+        bool found = false;
+        for (const auto& info : run_info_list) {
+            if (info.run_name == run_names[common_run_indices[i].first]) {
+                cout << "Data di inizio: " << info.date << " | Ora di inizio: " << info.time <<" | Durata: "<< info.duration << " s. " << endl;
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            cout << "Informazioni sulla RUN non trovate." << endl;
+        }
+
+        cout << "Tempo totale della RUN: t = " << total_run_time(updated_eventi_per_file[i]) << " s" << endl;
+        cout << "Numero di eventi totali registrati: " << updated_eventi_per_file[i].size() << endl;
+        delta_t = mean_delta_t(updated_eventi_per_file[i], run_names[common_run_indices[i].first])*1e-9;
+        rate = 1.0/(delta_t);
+        rates = updated_eventi_per_file[i].size()/total_run_time(updated_eventi_per_file[i]);
+        cout <<"<delta_t> = " << delta_t << " s | rate (contando gli eventi bundle come unici 1/delta_t) = "<< 1.0/(delta_t) << " Hz" << endl;
+        cout << "Il rate dei muoni (righe/t_tot) è: " << rates << " Hz." <<  endl;
+        vector<double> path_distances; // Inizializzo il vettore per ogni run
+        for (const auto& e : updated_eventi_per_file[i]) {
+            double distance = distance_point_to_line(e);
+            path_distances.push_back(distance);
+        }
+        // Calcolo e stampo la distanza massima
+        double max_dist;
+        max_dist = *max_element(path_distances.begin(), path_distances.end());
+        max_path_distances.push_back(max_dist);
+        cout << "La distanza massima tra l'origine e il tracciato dei muoni è: " << max_dist << " mm" << endl;
+        cout << "I muoni che passano nel bordo (cut = " << cut_distance << " mm ) sono: " << edge_events(updated_eventi_per_file[i], cut_distance) << endl;
+        cout << "La frequenza togliendo gli eventi di bordo è: " << ((double )updated_eventi_per_file[i].size() - (double)edge_events(updated_eventi_per_file[i], cut_distance)) / total_run_time(updated_eventi_per_file[i]) << " Hz" << endl;
+        total_PeSum_histogram(updated_eventi_per_file[i], run_names_mod[i]);
+    }
+    cout << "============================================" << endl;
+    cout << "FINE ANALISI DELLE RUN MODIFICATE" << endl;
     cout << "============================================" << endl;
 
     // Misuro il tempo di fine

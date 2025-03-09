@@ -456,3 +456,4 @@ Info in <TCanvas::Print>: png file images/Polar_vs_Azimuthal_Angle_plot/Polar_vs
 Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN4051.png has been created
 Info in <TCanvas::Print>: png file images/Muon_Rate_vs_Run.png has been created
 Info in <TCanvas::Print>: png file images/Muon_Rate_edge_cut_vs_Run.png has been created
+Info in <TCanvas::Print>: png file images/PeSum_plot/PeSum_RUN4049mod.png has been created
