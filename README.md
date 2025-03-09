@@ -24,9 +24,21 @@ Il file **output.txt** contiene una sintesi dei risultati principali dell'analis
 - **Percentuale di eventi bundle**: Percentuale di eventi multipli rispetto al totale.  
   - In caso di **TrackID inesistente** tutte le quantità legate ai muoni bundle non verranno calcolate o rappresentate in un grafico. 
 - **Distanza massima del tracciato del muone rispetto all'origine del rivelatore**: viene calcolata la distanza massima tra l'origine e la **retta** che congiunge i punti di **entrata** e di **uscita** di ogni evento.
-- **Eventi nel bordo**: Numero di eventi classificati come eventi **bordo**.   
+- **Eventi nel bordo**: Numero di eventi classificati come eventi **bordo**.
 - **Rate dopo il taglio**: Rate dei muoni dopo aver sottratto gli eventi di **bordo**.  
-- **Tempo totale di esecuzione**: Il tempo totale impiegato per eseguire l'analisi. 
+
+### :1234: **Dati di output per le RUN modificate**  
+- **Data e ora di inizio della RUN**: Informazioni sulla data e l'ora di inizio della RUN, caricate dal file `BiPo_rate_byfile.txt`.
+- **t**: Tempo totale della RUN in secondi.  
+- **<delta_t>**: Tempo medio tra un evento e quello successivo in secondi.  
+  - Se viene rilevato un **intervallo di tempo negativo tra due eventi**, verrà stampato un **messaggio di errore** a video e quell'intervallo sarà **ignorato** nel calcolo di <delta_t>.  
+- **Rate**: Frequenza dei muoni rilevati.   
+- **Numero di eventi**.
+- **Distanza massima del tracciato del muone rispetto all'origine del rivelatore**: viene calcolata la distanza massima tra l'origine e la **retta** che congiunge i punti di **entrata** e di **uscita** di ogni evento.
+- **Eventi nel bordo**: Numero di eventi classificati come eventi **bordo**.
+- **Rate dopo il taglio**: Rate dei muoni dopo aver sottratto gli eventi di **bordo**.  
+
+Alla fine dell'analisi viene riportato il **Tempo totale di esecuzione**: Il tempo totale impiegato per eseguire l'analisi.
 
 ---
 
@@ -85,11 +97,12 @@ Grafico del **rate dei muoni** in funzione dell'indice della run togliendo gli e
 ---  
 
 ## :rocket: **Come usare il programma**  
-1. Inserire i file .root da analizzare in una cartella **<nome_cartella>**.  
-2. Eseguire il programma:  
+1. Inserire i file .root da analizzare in una cartella **datasets_all_NF**.  
+2. Inserire i file di classificazione totale degli eventi nella cartella **datasets_all_NF/total_wp**.
+3. Eseguire il programma:  
    
 ```bash  
-   ./main <nome_cartella>  
+   ./main datasets_all_NF/ 
 ```  
  
 ---  
