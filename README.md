@@ -126,11 +126,13 @@ Assicurarsi di avere installate le seguenti librerie e strumenti necessari per e
     - Rendere i dati di output più chiari e ordinati. Lo stesso vale per le immagini generate visto che i grafici delle run modificate rientrano nelle stesse cartelle.
 
 ---
+
 ### Appunti
 Ho creato una seconda struct **totalEvents** che serve ad immagazzinare le informazioni dei nuovi file forniti. Questi sono stati prodotti attraverso un software diverso e comprende tutti gli eventi (con una certa soglia) registrati. L'idea è di prendere la totalità degli eventi e confrontarli con gli eventi classificati dal software WpMuonClassifyRecTool. Dal momento che la carica di quest'ultima classificazione risulta poco attendibile ho creato un vector<muone> in cui inserisco la run modifica in cui ho tolto gli eventi ridondanti (stesso timestamp e EventID) e inserito la carica dei file nuovi.
 Sono riuscito ad implementare una funzione che mi permette di modificare ogni evento che ho salvato come evento **muone** inserendo la carica corretta. In questo modo sono riuscito a stampare la distribuzione della carica dei soli eventi con tempi in comune. So che non è molto chiaro ma spero di essermi un minimo spiegato. Questo lavoro l'ho fatto solo per la run 4049 ma punto di farla per più run in quanto ho già preparato l'infrastruttura per farlo per un numero arbitrario di run. Ora sarebbe da capire se è tutto corretto.
 
 La carica sembra molto alta rispetto a quella fornita dai file originali ma soprattutto presenta una lunghissima coda che porta la media ad essere molto alta anche se il picco è molto più basso. Ovviamente il rate dei muoni risulta più bassa in quanto (per forza di cose) ho tolto tutti gli eventi bundle. Quindi è come se analizzassi tutti gli eventi come eventi singoli. La frequenza risulta comunque troppo alta.
+
 ---
 ## :pencil: **Autore**  
 Codice sviluppato da **Nicolò Favagrossa**.
