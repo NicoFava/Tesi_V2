@@ -62,7 +62,10 @@ Istogrammi della **distanza percorsa** dal muone (o dal bundle di muoni) per ogn
 Istogrammi della **carica in fotoelettroni** prodotta per ogni evento.  
 
 ### :bar_chart: **:file_folder: images/PeSum_vs_Polar_Angle_plot**  
-Grafici **bidimensionali** che mostrano la correlazione tra **direzione** e **energia** dei muoni, per ogni run.  
+Grafici **bidimensionali** che mostrano la correlazione tra **direzione** e **energia** dei muoni, per ogni run.
+
+### :bar_chart: **:file_folder: images/PeSum_vs_Azimuthal_Angle_plot**  
+Grafici **bidimensionali** che mostrano la correlazione tra **direzione** e **energia** dei muoni, per ogni run. 
 
 ### :bar_chart: **:file_folder: images/Polar_Angle_plot**  
 Istogrammi della **distribuzione angolare** dei muoni, mostrando il **coseno dell’angolo polare**. 

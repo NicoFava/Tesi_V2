@@ -498,6 +498,36 @@ void PeSum_vs_polar_angle(const vector<muone>& eventi, const string& run_name) {
     delete hist2D;
 }
 
+void PeSum_vs_azimuthal_angle(const vector<muone>& eventi, const string& run_name) {
+    string main_folder = "images";
+    string folder_name = main_folder + "/PeSum_vs_Azimuthal_Angle_plot";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
+    if (!fs::exists(folder_name)) {
+        fs::create_directory(folder_name);
+    }
+    TCanvas *canvas = new TCanvas(("canvas_2D_" + run_name).c_str(), ("Heatmap Energia vs Angolo Azimutale - " + run_name).c_str(), 800, 600);
+    gPad->SetRightMargin(0.12);
+    canvas->SetGrid();
+
+    TH2F *hist2D = new TH2F( run_name.c_str(), ("Carica vs Angolo Azimutale - " + run_name).c_str(), 100, 100, 100, 100, 100, 100);
+
+    for (const auto& ev : eventi) {
+        hist2D->Fill(atan2(ev.uy, ev.ux), ev.PeSum);
+    }
+
+    hist2D->GetXaxis()->SetTitle("#phi [rad]");
+    hist2D->GetYaxis()->SetTitle("PeSum [p.e.]");
+    hist2D->Draw("COLZ");
+
+
+    string filename = folder_name + "/PeSum_vs_Azimuthal_Angle_" + run_name + ".png";
+    canvas->SaveAs(filename.c_str());
+    delete canvas;
+    delete hist2D;
+}
+
 double total_run_time(const vector<muone>& eventi) {
     if (eventi.empty()) {
         return 0.0;

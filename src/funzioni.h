@@ -121,6 +121,9 @@ vector<vector<muone>> load_multiple_root_files(const string&, vector<string>&);
 // Funzione per studiare la correlazione tra la direzione dei muoni e la loro energia
 void PeSum_vs_polar_angle(const vector<muone>&, const string&);
 
+// Funzione per studiare la correlazione tra la direzione dei muoni e la loro energia
+void PeSum_vs_azimuthal_angle(const vector<muone>&, const string&);
+
 // Funzione per calcolare il tempo totale della run
 double total_run_time(const vector<muone>&);
 
