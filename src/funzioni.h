@@ -166,6 +166,21 @@ vector<vector<totalEvents>> load_multiple_totalEvents_files(const string&, vecto
 // Funzione per trovare le RUN comuni tra i due set di dati
 vector<pair<size_t, size_t>> find_common_runs(const vector<string>&, const vector<string>&);
 
-// Funzione 
+// Funzione per creare un nuovo vettore di eventi aggiornato
 vector<vector<muone>> create_updated_events_vector(const vector<vector<muone>>&, const vector<vector<totalEvents>>&, const vector<pair<size_t, size_t>>&, const vector<string>&, vector<string>&);
+
+// Funzione per plottare la differenza di tempo con l'energia dell'envento
+void plot_time_difference_vs_charge(const vector<totalEvents>&, const string&);
+
+// Funzione per creare un istogramma della carica
+void PeSum_histogram_log(const vector<muone>&, const string&);
+
+// Dichiarazione della funzione BinLogX
+void BinLogX(TH1*);
+
+// Dichiarazione della funzione BinLogX
+void BinLogY(TH1*);
+
+// Funzione per creare un istogramma della carica in scala logaritmica degli eventi totali
+void total_PeSum_histogram_log(const vector<totalEvents>&, const string&);
 #endif

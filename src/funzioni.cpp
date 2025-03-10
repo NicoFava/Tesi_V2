@@ -1103,3 +1103,153 @@ vector<vector<muone>> create_updated_events_vector(const vector<vector<muone>>& 
 
     return updated_eventi_per_file;
 }
+
+void plot_time_difference_vs_charge(const vector<totalEvents>& eventi, const string& run_name) {
+    string main_folder = "images";
+    string folder_name = main_folder + "/Time_Difference_vs_Charge_plot";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
+    if (!fs::exists(folder_name)) {
+        fs::create_directory(folder_name);
+    }
+
+    TCanvas *canvas = new TCanvas(("canvas_time_energy_" + run_name).c_str(), ("Time Difference vs Charge - " + run_name).c_str(), 800, 600);
+    gPad->SetRightMargin(0.12);
+    canvas->SetGrid();
+    gStyle->SetPalette(kRainBow);
+
+    // Creazione dell'istogramma bidimensionale con limiti degli assi più appropriati
+    //TH2F *hist2D = new TH2F(run_name.c_str(), ("Time Difference vs Charge - " + run_name).c_str(), 100, 0, 0.06, 100, 0, 3000000);
+    TH2F *hist2D = new TH2F(run_name.c_str(), ("Time Difference vs Charge - " + run_name).c_str(), 100, 100, 100, 100, 100, 100);
+
+    int count = 0;
+    for (size_t i = 1; i < eventi.size(); i++) {
+        double delta_t = ((double)eventi[i].fSec - (double)eventi[i-1].fSec) + ((double)eventi[i].fNanoSec - (double)eventi[i-1].fNanoSec) * 1e-9;
+        double energy = eventi[i-1].NPE; // Energia del primo evento
+        hist2D->Fill(delta_t, energy);
+        count++;
+    }
+
+    hist2D->GetXaxis()->SetTitle("Time Difference [s]");
+    hist2D->GetYaxis()->SetTitle("Charge (first event) [p.e.]");
+    hist2D->Draw("COLZ");
+
+    string filename = folder_name + "/Time_Difference_vs_Charge_" + run_name + ".png";
+    canvas->SaveAs(filename.c_str());
+
+    delete canvas;
+    delete hist2D;
+}
+
+void PeSum_histogram_log(const vector<muone>& eventi, const string& run_name) {
+    string main_folder = "images";
+    string folder_name = main_folder + "/PeSum_log_plot";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
+    if (!fs::exists(folder_name)) {
+        fs::create_directory(folder_name);
+    }
+    
+    TCanvas *canvas = new TCanvas(("canvas_charge_" + run_name).c_str(), ("Istogramma Energia - " + run_name).c_str(), 800, 600);
+    TH1F *charge = new TH1F(("Distribuzione_dell_energia_" + run_name).c_str(), ("Distribuzione dell'energia - " + run_name).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
+    // Applica il binning logaritmico sugli assi X e Y
+    BinLogX(charge);
+    BinLogY(charge);
+    gPad->SetLeftMargin(0.12);
+
+    charge->StatOverflows(kTRUE);
+    canvas->SetGrid();
+
+    for (const auto& ev : eventi) {
+        charge->Fill(ev.PeSum);
+    }
+
+    charge->GetXaxis()->SetTitle("Charge [p.e.]");
+    charge->GetYaxis()->SetTitle("Counts [a.u.]");
+    charge->SetLineWidth(2);
+    charge->SetFillColorAlpha(kBlue, 1);
+    charge->Draw();
+    
+    // Imposto la scala logaritmica sugli assi X e Y
+    canvas->SetLogx();
+    canvas->SetLogy();
+
+    string filename = folder_name + "/PeSum_log_" + run_name + ".png";
+    canvas->SaveAs(filename.c_str());
+    delete canvas;
+    delete charge;
+}
+
+void BinLogX(TH1* h) {
+    TAxis *axis = h->GetXaxis();
+    int bins = axis->GetNbins();
+
+    Axis_t from = axis->GetXmin();
+    Axis_t to = axis->GetXmax();
+    Axis_t width = (to - from) / bins;
+    Axis_t *new_bins = new Axis_t[bins + 1];
+
+    for (int i = 0; i <= bins; i++) {
+        new_bins[i] = TMath::Power(10, from + i * width);
+    }
+    axis->Set(bins, new_bins);
+    delete new_bins;
+}
+
+void BinLogY(TH1* h) {
+    TAxis *axis = h->GetYaxis();
+    int bins = axis->GetNbins();
+
+    Axis_t from = axis->GetXmin();
+    Axis_t to = axis->GetXmax();
+    Axis_t width = (to - from) / bins;
+    Axis_t *new_bins = new Axis_t[bins + 1];
+
+    for (int i = 0; i <= bins; i++) {
+        new_bins[i] = TMath::Power(10, from + i * width);
+    }
+    axis->Set(bins, new_bins);
+    delete new_bins;
+}
+
+void total_PeSum_histogram_log(const vector<totalEvents>& eventi, const string& run_name) {
+    string main_folder = "images";
+    string folder_name = main_folder + "/Total_PeSum_log_plot";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
+    if (!fs::exists(folder_name)) {
+        fs::create_directory(folder_name);
+    }
+    
+    TCanvas *canvas = new TCanvas(("canvas_charge_" + run_name).c_str(), ("Istogramma Energia - " + run_name).c_str(), 800, 600);
+    TH1F *charge = new TH1F(("Distribuzione_dell_energia_" + run_name).c_str(), ("Distribuzione dell'energia - " + run_name).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
+    // Applico il binning logaritmico sugli assi X e Y
+    BinLogX(charge);
+    BinLogY(charge);
+    gPad->SetLeftMargin(0.12);
+
+    charge->StatOverflows(kTRUE);
+    canvas->SetGrid();
+
+    for (const auto& ev : eventi) {
+        charge->Fill(ev.NPE);
+    }
+
+    charge->GetXaxis()->SetTitle("Charge [p.e.]");
+    charge->GetYaxis()->SetTitle("Counts [a.u.]");
+    charge->SetLineWidth(2);
+    charge->SetFillColorAlpha(kBlue, 1);
+    charge->Draw();
+    
+    // Imposta la scala logaritmica sugli assi X e Y
+    canvas->SetLogx();
+    canvas->SetLogy();
+
+    string filename = folder_name + "/total_PeSum_log_" + run_name + ".png";
+    canvas->SaveAs(filename.c_str());
+    delete canvas;
+    delete charge;
+}

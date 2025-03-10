@@ -128,6 +128,9 @@ Assicurarsi di avere installate le seguenti librerie e strumenti necessari per e
 3. **Migliorare la gestione dei dati di output prodotti**:
     - Rendere i dati di output più chiari e ordinati. Lo stesso vale per le immagini generate visto che i grafici delle run modificate rientrano nelle stesse cartelle.
 
+4. **Riscrivere da zero il README.md**:
+    - C'è troppa confusione in questo file. Dovrei spiegare più in dettaglio tutto quanto!
+
 ---
 
 ### Appunti

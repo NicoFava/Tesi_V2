@@ -606,4 +606,4 @@ La frequenza togliendo gli eventi di bordo è: 4.2472 Hz
 ============================================
 FINE ANALISI DELLE RUN MODIFICATE
 ============================================
-Tempo totale di esecuzione: 15.8045 secondi
+Tempo totale di esecuzione: 13.9984 secondi

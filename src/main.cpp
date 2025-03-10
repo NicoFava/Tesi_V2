@@ -203,16 +203,18 @@ int main(int argc, char* argv[]) {
         cout << "La distanza massima tra l'origine e il tracciato dei muoni è: " << max_dist << " mm" << endl;
         cout << "I muoni che passano nel bordo (cut = " << cut_distance << " mm ) sono: " << edge_events(updated_eventi_per_file[i], cut_distance) << endl;
         cout << "La frequenza togliendo gli eventi di bordo è: " << ((double )updated_eventi_per_file[i].size() - (double)edge_events(updated_eventi_per_file[i], cut_distance)) / total_run_time(updated_eventi_per_file[i]) << " Hz" << endl;
-        total_PeSum_histogram(updated_eventi_per_file[i], run_names_mod[i]);
+        PeSum_histogram_log(updated_eventi_per_file[i], run_names_mod[i]);
         PeSum_vs_polar_angle(updated_eventi_per_file[i], run_names_mod[i]);
         PeSum_vs_azimuthal_angle(updated_eventi_per_file[i], run_names_mod[i]);
         plot_muon_rate(updated_eventi_per_file[i], run_names_mod[i], 300);   
-        
+        plot_time_difference_vs_charge(total_eventi_per_file[i], total_run_names[i]);
     }
     cout << "============================================" << endl;
     cout << "FINE ANALISI DELLE RUN MODIFICATE" << endl;
     cout << "============================================" << endl;
-
+    for (size_t i = 0; i < total_eventi_per_file.size(); i++){
+        total_PeSum_histogram_log(total_eventi_per_file[i], total_run_names[i]);
+    }
     // Misuro il tempo di fine
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = end - start;
