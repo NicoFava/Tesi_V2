@@ -115,7 +115,7 @@ void save_all_data_to_file(const vector<muone>& eventi, const string& filename){
     cout << "Dati salvati con successo in " << filename << "!" << endl;
 }
 
-void total_PeSum_histogram(const vector<muone>& eventi, const string& run_name) {
+void PeSum_histogram(const vector<muone>& eventi, const string& run_name) {
     string main_folder = "images";
     string folder_name = main_folder + "/PeSum_plot";
     if (!fs::exists(main_folder)) {

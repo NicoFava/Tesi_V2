@@ -83,7 +83,7 @@ void print_all_data(const vector<muone>&);
 void save_all_data_to_file(const vector<muone>&, const string&);
 
 // Funzione per creare un istogramma della carica
-void total_PeSum_histogram(const vector<muone>&, const string&);
+void PeSum_histogram(const vector<muone>&, const string&);
 
 // Funzione per creare plot tridimensionale dei punti di entrata
 void plot_3D_distribution(const vector<muone>&);
