@@ -186,4 +186,7 @@ void total_PeSum_histogram_log(const vector<totalEvents>&, const string&);
 
 // Funzione per creare un istogramma in cui vengono sovrapposti i due istogrammi
 void total_PeSum_histogram_log(const vector<totalEvents>&, const vector<muone>&, const string&, const string&);
+
+
+void total_PeSum_histogram_log_complementary(const vector<totalEvents>&, const vector<muone>&, const string&, const string&);
 #endif

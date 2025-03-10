@@ -316,4 +316,5 @@ Info in <TCanvas::Print>: png file images/PeSum_vs_Azimuthal_Angle_plot/PeSum_vs
 Info in <TCanvas::Print>: png file images/MuonRate_plot/MuonRate_RUN4049mod.png has been created
 Info in <TCanvas::Print>: png file images/Time_Difference_vs_Charge_plot/Time_Difference_vs_Charge_RUN4049.png has been created
 Info in <TCanvas::Print>: png file images/Total_PeSum_overlap_log_plot/total_PeSum_log_RUN4049_vs_RUN4049mod.png has been created
+Info in <TCanvas::Print>: png file images/Total_PeSum_complementary_log_plot/total_PeSum_complementary_log_RUN4049_vs_RUN4049mod.png has been created
 Info in <TCanvas::Print>: png file images/Total_PeSum_log_plot/total_PeSum_log_RUN4049.png has been created

@@ -209,6 +209,8 @@ int main(int argc, char* argv[]) {
         plot_muon_rate(updated_eventi_per_file[i], run_names_mod[i], 300);   
         plot_time_difference_vs_charge(total_eventi_per_file[i], total_run_names[i]);
         total_PeSum_histogram_log(total_eventi_per_file[i], updated_eventi_per_file[i], total_run_names[i] , run_names_mod[i]);
+        total_PeSum_histogram_log_complementary(total_eventi_per_file[i], updated_eventi_per_file[i], total_run_names[i], run_names_mod[i]); // Aggiungi questa riga
+
     }
     cout << "============================================" << endl;
     cout << "FINE ANALISI DELLE RUN MODIFICATE" << endl;

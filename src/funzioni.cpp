@@ -1318,3 +1318,54 @@ void total_PeSum_histogram_log(const vector<totalEvents>& eventi1, const vector<
     delete charge2;
     delete legend;
 }
+
+void total_PeSum_histogram_log_complementary(const vector<totalEvents>& eventi1, const vector<muone>& eventi2, const string& run_name1, const string& run_name2) {
+    string main_folder = "images";
+    string folder_name = main_folder + "/Total_PeSum_complementary_log_plot";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
+    if (!fs::exists(folder_name)) {
+        fs::create_directory(folder_name);
+    }
+    
+    TCanvas *canvas = new TCanvas(("canvas_charge_complementary_" + run_name1 + "_vs_" + run_name2).c_str(), ("Istogramma Complementare Energia - " + run_name1 + " vs " + run_name2).c_str(), 800, 600);
+    TH1F *charge1 = new TH1F(("Distribuzione_dell_energia_" + run_name1).c_str(), ("Distribuzione della carica 'complementare' - " + run_name1).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
+    
+    // Applica il binning logaritmico sugli assi X e Y
+    BinLogX(charge1);
+    BinLogY(charge1);
+    gPad->SetLeftMargin(0.12);
+
+    charge1->StatOverflows(kTRUE);
+    canvas->SetGrid();
+
+    // Crea un set di tempi (secondi e nanosecondi) per gli eventi di eventi2
+    set<pair<int, int>> eventi2_times;
+    for (const auto& ev : eventi2) {
+        eventi2_times.insert(make_pair(ev.fSec, ev.fNanosec));
+    }
+
+    // Riempie l'istogramma con gli eventi di eventi1 che non sono in eventi2
+    for (const auto& ev : eventi1) {
+        if (eventi2_times.find(make_pair(ev.fSec, ev.fNanoSec)) == eventi2_times.end()) {
+            charge1->Fill(ev.NPE);
+        }
+    }
+
+    charge1->GetXaxis()->SetTitle("Charge [p.e.]");
+    charge1->GetYaxis()->SetTitle("Counts [a.u.]");
+    charge1->SetLineWidth(2);
+    charge1->SetLineColor(kGreen);
+    charge1->SetFillColorAlpha(kGreen, 1);
+    charge1->Draw();
+
+    // Imposta la scala logaritmica sugli assi X e Y
+    canvas->SetLogx();
+    canvas->SetLogy();
+
+    string filename = folder_name + "/total_PeSum_complementary_log_" + run_name1 + "_vs_" + run_name2 + ".png";
+    canvas->SaveAs(filename.c_str());
+    delete canvas;
+    delete charge1;
+}
