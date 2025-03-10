@@ -1253,3 +1253,68 @@ void total_PeSum_histogram_log(const vector<totalEvents>& eventi, const string& 
     delete canvas;
     delete charge;
 }
+
+void total_PeSum_histogram_log(const vector<totalEvents>& eventi1, const vector<muone>& eventi2, const string& run_name1, const string& run_name2) {
+    string main_folder = "images";
+    string folder_name = main_folder + "/Total_PeSum_overlap_log_plot";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
+    if (!fs::exists(folder_name)) {
+        fs::create_directory(folder_name);
+    }
+    
+    TCanvas *canvas = new TCanvas(("canvas_charge_" + run_name1 + "_vs_" + run_name2).c_str(), ("Istogramma Energia - " + run_name1 + " vs " + run_name2).c_str(), 800, 600);
+    TH1F *charge1 = new TH1F(("Distribuzione_dell_energia_" + run_name1).c_str(), ("Distribuzione dell'energia - " + run_name1).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
+    TH1F *charge2 = new TH1F(("Distribuzione_dell_energia_" + run_name2).c_str(), ("Distribuzione dell'energia - " + run_name2).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
+    
+    // Applica il binning logaritmico sugli assi X e Y
+    BinLogX(charge1);
+    BinLogX(charge2);
+    BinLogY(charge1);
+    BinLogY(charge2);
+    gPad->SetLeftMargin(0.12);
+
+    charge1->StatOverflows(kTRUE);
+    charge2->StatOverflows(kTRUE);
+    canvas->SetGrid();
+
+    for (const auto& ev : eventi1) {
+        charge1->Fill(ev.NPE);
+    }
+
+    for (const auto& ev : eventi2) {
+        charge2->Fill(ev.PeSum);
+    }
+
+    charge1->GetXaxis()->SetTitle("Charge [p.e.]");
+    charge1->GetYaxis()->SetTitle("Counts [a.u.]");
+    charge1->SetLineWidth(2);
+    charge1->SetLineColor(kBlue);
+    charge1->SetFillColorAlpha(kBlue, 0.5);
+    charge1->SetStats(kFALSE); // Disabilito la casella delle statistiche
+    charge1->Draw();
+
+    charge2->SetLineWidth(2);
+    charge2->SetLineColor(kRed);
+    charge2->SetFillColorAlpha(kRed, 0.5);
+    charge2->SetStats(kFALSE); // Disabilito la casella delle statistiche
+    charge2->Draw("SAME");
+
+    // Imposta la scala logaritmica sugli assi X e Y
+    canvas->SetLogx();
+    canvas->SetLogy();
+
+    TLegend *legend = new TLegend(0.7, 0.7, 0.9, 0.9);
+    legend->AddEntry(charge1, run_name1.c_str(), "f");
+    string run_name2_legend = run_name1 + " muonclassify";
+    legend->AddEntry(charge2, run_name2_legend.c_str(), "f");
+    legend->Draw();
+
+    string filename = folder_name + "/total_PeSum_log_" + run_name1 + "_vs_" + run_name2 + ".png";
+    canvas->SaveAs(filename.c_str());
+    delete canvas;
+    delete charge1;
+    delete charge2;
+    delete legend;
+}

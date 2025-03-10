@@ -208,6 +208,7 @@ int main(int argc, char* argv[]) {
         PeSum_vs_azimuthal_angle(updated_eventi_per_file[i], run_names_mod[i]);
         plot_muon_rate(updated_eventi_per_file[i], run_names_mod[i], 300);   
         plot_time_difference_vs_charge(total_eventi_per_file[i], total_run_names[i]);
+        total_PeSum_histogram_log(total_eventi_per_file[i], updated_eventi_per_file[i], total_run_names[i] , run_names_mod[i]);
     }
     cout << "============================================" << endl;
     cout << "FINE ANALISI DELLE RUN MODIFICATE" << endl;
