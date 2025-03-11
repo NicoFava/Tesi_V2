@@ -481,7 +481,7 @@ void PeSum_vs_polar_angle(const vector<muone>& eventi, const string& run_name) {
     gPad->SetRightMargin(0.12);
     canvas->SetGrid();
 
-    TH2F *hist2D = new TH2F( run_name.c_str(), ("Carica vs Angolo Polare - " + run_name).c_str(), 100, 100, 100, 100, 100, 100);
+    TH2F *hist2D = new TH2F( run_name.c_str(), ("Carica vs Angolo Polare - " + run_name).c_str(), 100, -1, 0, 100, 0, 150000);
 
     for (const auto& ev : eventi) {
         hist2D->Fill(cos(acos(ev.uz)), ev.PeSum);
@@ -511,7 +511,7 @@ void PeSum_vs_azimuthal_angle(const vector<muone>& eventi, const string& run_nam
     gPad->SetRightMargin(0.12);
     canvas->SetGrid();
 
-    TH2F *hist2D = new TH2F( run_name.c_str(), ("Carica vs Angolo Azimutale - " + run_name).c_str(), 100, 100, 100, 100, 100, 100);
+    TH2F *hist2D = new TH2F( run_name.c_str(), ("Carica vs Angolo Azimutale - " + run_name).c_str(), 100, -M_PI, M_PI, 100, 0, 140000);
 
     for (const auto& ev : eventi) {
         hist2D->Fill(atan2(ev.uy, ev.ux), ev.PeSum);
