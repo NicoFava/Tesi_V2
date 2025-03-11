@@ -125,8 +125,8 @@ void PeSum_histogram(const vector<muone>& eventi, const string& run_name) {
         fs::create_directory(folder_name);
     }
     
-    TCanvas *canvas = new TCanvas(("canvas_charge_" + run_name).c_str(), ("Istogramma Energia - " + run_name).c_str(), 800, 600);
-    TH1F *charge = new TH1F(("Distribuzione_dell_energia_" + run_name).c_str(), ("Distribuzione dell'energia - " + run_name).c_str(), 100, 100, 100);
+    TCanvas *canvas = new TCanvas(("canvas_charge_" + run_name).c_str(), ("Istogramma Carica - " + run_name).c_str(), 800, 600);
+    TH1F *charge = new TH1F(("Distribuzione_della_carica_" + run_name).c_str(), ("Distribuzione della Carica - " + run_name).c_str(), 100, 100, 100);
     gPad->SetLeftMargin(0.12);
     charge->StatOverflows(kTRUE);
     canvas->SetGrid();
@@ -294,15 +294,15 @@ void PeSum_histograms(const vector<muone>& eventi, const string& run_name) {
         fs::create_directory(folder_name_bundle);
     }
 
-    TCanvas *canvasA = new TCanvas(("canvasA_" + run_name).c_str(), ("Istogramma Energia - Muoni Singoli - " + run_name).c_str(), 800, 600);
-    TCanvas *canvasB = new TCanvas(("canvasB_" + run_name).c_str(), ("Istogramma Energia - Muoni Bundle - " + run_name).c_str(), 800, 600);
+    TCanvas *canvasA = new TCanvas(("canvasA_" + run_name).c_str(), ("Istogramma Carica - Muoni Singoli - " + run_name).c_str(), 800, 600);
+    TCanvas *canvasB = new TCanvas(("canvasB_" + run_name).c_str(), ("Istogramma Carica - Muoni Bundle - " + run_name).c_str(), 800, 600);
     canvasB->Divide(2, 2);
 
-    TH1F *one = new TH1F(("1_" + run_name).c_str(), ("Distribuzione Energia - Muoni Singoli - " + run_name).c_str(), 100, 0, 1000);
-    TH1F *two = new TH1F(("2_" + run_name).c_str(), ("Distribuzione Energia - Muoni Doppi - " + run_name).c_str(), 100, 0, 1000);
-    TH1F *three = new TH1F(("3_" + run_name).c_str(), ("Distribuzione Energia - Muoni Tripli - " + run_name).c_str(), 100, 0, 1000);
-    TH1F *four = new TH1F(("4_" + run_name).c_str(), ("Distribuzione Energia - Muoni Quadrupli - " + run_name).c_str(), 100, 0, 1000);
-    TH1F *five = new TH1F(("4>_" + run_name).c_str(), ("Distribuzione Energia - Muoni >= Quintupli - " + run_name).c_str(), 100, 0, 1000);
+    TH1F *one = new TH1F(("1_" + run_name).c_str(), ("Distribuzione Carica - Muoni Singoli - " + run_name).c_str(), 100, 0, 1000);
+    TH1F *two = new TH1F(("2_" + run_name).c_str(), ("Distribuzione Carica - Muoni Doppi - " + run_name).c_str(), 100, 0, 1000);
+    TH1F *three = new TH1F(("3_" + run_name).c_str(), ("Distribuzione Carica - Muoni Tripli - " + run_name).c_str(), 100, 0, 1000);
+    TH1F *four = new TH1F(("4_" + run_name).c_str(), ("Distribuzione Carica - Muoni Quadrupli - " + run_name).c_str(), 100, 0, 1000);
+    TH1F *five = new TH1F(("gt4_" + run_name).c_str(), ("Distribuzione caroca - Muoni gt Quadrupli - " + run_name).c_str(), 100, 0, 1000);
 
     canvasA->SetGrid();
     // Itero attraverso gli eventi, raggruppandoli per eventID
@@ -477,11 +477,11 @@ void PeSum_vs_polar_angle(const vector<muone>& eventi, const string& run_name) {
     if (!fs::exists(folder_name)) {
         fs::create_directory(folder_name);
     }
-    TCanvas *canvas = new TCanvas(("canvas_2D_" + run_name).c_str(), ("Heatmap Energia vs Angolo Polare - " + run_name).c_str(), 800, 600);
+    TCanvas *canvas = new TCanvas(("canvas_2D_" + run_name).c_str(), ("Heatmap Carica vs Angolo Polare - " + run_name).c_str(), 800, 600);
     gPad->SetRightMargin(0.12);
     canvas->SetGrid();
 
-    TH2F *hist2D = new TH2F( run_name.c_str(), ("Carica vs Angolo Polare - " + run_name).c_str(), 100, -1, 0, 100, 0, 150000);
+    TH2F *hist2D = new TH2F( run_name.c_str(), ("Carica vs Angolo Polare - " + run_name).c_str(), 100, 100, 100, 100, 100, 100);
 
     for (const auto& ev : eventi) {
         hist2D->Fill(cos(acos(ev.uz)), ev.PeSum);
@@ -507,11 +507,11 @@ void PeSum_vs_azimuthal_angle(const vector<muone>& eventi, const string& run_nam
     if (!fs::exists(folder_name)) {
         fs::create_directory(folder_name);
     }
-    TCanvas *canvas = new TCanvas(("canvas_2D_" + run_name).c_str(), ("Heatmap Energia vs Angolo Azimutale - " + run_name).c_str(), 800, 600);
+    TCanvas *canvas = new TCanvas(("canvas_2D_" + run_name).c_str(), ("Heatmap Carica vs Angolo Azimutale - " + run_name).c_str(), 800, 600);
     gPad->SetRightMargin(0.12);
     canvas->SetGrid();
 
-    TH2F *hist2D = new TH2F( run_name.c_str(), ("Carica vs Angolo Azimutale - " + run_name).c_str(), 100, -M_PI, M_PI, 100, 0, 140000);
+    TH2F *hist2D = new TH2F( run_name.c_str(), ("Carica vs Angolo Azimutale - " + run_name).c_str(), 100, 100, 100, 100, 100, 100);
 
     for (const auto& ev : eventi) {
         hist2D->Fill(atan2(ev.uy, ev.ux), ev.PeSum);
@@ -549,7 +549,7 @@ vector<RunInfo> load_run_info(const string& filename) {
     }
 
     string line;
-    // Salta la prima riga
+    // Salto la prima riga
     getline(file, line);
 
     RunInfo last_info;
@@ -562,7 +562,7 @@ vector<RunInfo> load_run_info(const string& filename) {
         string date_str;
         iss >> info.run_name >> info.file >> info.counts >> info.error >> date_str >> info.time >> info.duration >> info.volume >> info.rate >> info.err_rate;
 
-        // Converti la data in formato AAAA-MM-GG
+        // Converto la data in formato AAAA-MM-GG
         stringstream date_ss;
         date_ss << date_str.substr(0, 4) << "-" << date_str.substr(4, 2) << "-" << date_str.substr(6, 2);
         info.date = date_ss.str();
@@ -580,7 +580,7 @@ vector<RunInfo> load_run_info(const string& filename) {
         }
     }
 
-    // Aggiungi l'ultima riga memorizzata
+    // Aggiungo l'ultima riga memorizzata
     run_info.push_back(last_info);
 
     file.close();
@@ -728,7 +728,7 @@ void plot_azimuthal_angle_distribution(const vector<muone>& eventi, const string
     azimuthal->SetLineColor(kBlue);
     azimuthal->SetLineWidth(2);
     azimuthal->SetFillColorAlpha(kBlue, 1);
-    azimuthal->GetXaxis()->SetTitle("Azimuthal Angle [rad]");
+    azimuthal->GetXaxis()->SetTitle("#phi [rad]");
     azimuthal->GetYaxis()->SetTitle("Counts [a.u.]");
     azimuthal->SetMinimum(0); // Imposta l'asse Y per partire da 0
     azimuthal->Draw("HIST");
@@ -822,8 +822,8 @@ void path_distance_histogram(const vector<muone>& eventi, const string& run_name
         fs::create_directory(folder_name);
     }
 
-    TCanvas *canvas = new TCanvas(("canvas_distance_" + run_name).c_str(), ("Distribuzione delle distanze origine-retta muone - " + run_name).c_str(), 800, 600);
-    TH1F *distance_hist = new TH1F(run_name.c_str(), ("Distribuzione della distanza origine-retta muone - " + run_name).c_str(), 100, 100, 100); // 100 bins, range 0-100 mm
+    TCanvas *canvas = new TCanvas(("canvas_distance_" + run_name).c_str(), ("Distribuzione delle distanze dall'origine al tracciato del muone - " + run_name).c_str(), 800, 600);
+    TH1F *distance_hist = new TH1F(run_name.c_str(), ("Distribuzione delle distanze dall'origine al tracciato del muone - " + run_name).c_str(), 100, 100, 100); // 100 bins, range 0-100 mm
     gPad->SetLeftMargin(0.12);
     canvas->SetGrid();
     for (const auto& e : eventi) {
@@ -987,15 +987,15 @@ vector<totalEvents> load_totalEvents_data(const string& filename) {
         return eventi;
     }
 
-    // Ottieni l'albero (TTree) dal file ROOT
-    TTree *tree = (TTree*)file->Get("Events"); // Sostituisci "tree" con il nome effettivo dell'albero nel file ROOT
+    // Ottiengo l'albero (TTree) dal file ROOT
+    TTree *tree = (TTree*)file->Get("Events");
     if (!tree) {
         cerr << "Errore nell'ottenere l'albero dal file ROOT: " << filename << endl;
         file->Close();
         return eventi;
     }
 
-    // Definisci le variabili per leggere i dati dall'albero
+    // Definisco le variabili per leggere i dati dall'albero
     totalEvents event;
     tree->SetBranchAddress("NPE", &event.NPE);
     tree->SetBranchAddress("fSec", &event.fSec);
@@ -1005,14 +1005,14 @@ vector<totalEvents> load_totalEvents_data(const string& filename) {
     tree->SetBranchAddress("Recoz", &event.Recoz);
     tree->SetBranchAddress("RunNumber", &event.RunNumber);
 
-    // Leggi i dati dall'albero e salvali nel vettore
+    // Leggo i dati dall'albero e salvali nel vettore
     Long64_t nentries = tree->GetEntries();
     for (Long64_t i = 0; i < nentries; i++) {
         tree->GetEntry(i);
         eventi.push_back(event);
     }
 
-    // Chiudi il file ROOT
+    // Chiudo il file ROOT
     file->Close();
     return eventi;
 }
@@ -1084,7 +1084,7 @@ vector<vector<muone>> create_updated_events_vector(const vector<vector<muone>>& 
             int total_ev_time_nsec = total_eventi[j].fNanoSec;
 
             if (ev_time_sec == total_ev_time_sec && ev_time_nsec == total_ev_time_nsec) {
-                // Trova l'ultimo trackID per lo stesso eventID
+                // Trovo l'ultimo trackID per lo stesso eventID
                 int last_trackID = eventi[i].trackID;
                 size_t temp_i = i;
                 while (temp_i < eventi.size() && eventi[temp_i].eventID == eventi[i].eventID) {
@@ -1092,7 +1092,7 @@ vector<vector<muone>> create_updated_events_vector(const vector<vector<muone>>& 
                     temp_i++;
                 }
 
-                // Crea una nuova struct muone con la carica e il trackID aggiornati
+                // Creo una nuova struct muone con la carica e il trackID aggiornati
                 muone updated_event = eventi[i];
                 updated_event.PeSum = total_eventi[j].NPE;
                 updated_event.trackID = last_trackID;
@@ -1106,11 +1106,8 @@ vector<vector<muone>> create_updated_events_vector(const vector<vector<muone>>& 
                 j++;
             }
         }
-
-        // Aggiungi il nome della run modificata
         run_names_mod.push_back(run_names[run_index] + "mod");
     }
-
     return updated_eventi_per_file;
 }
 
@@ -1124,7 +1121,7 @@ void plot_time_difference_vs_charge(const vector<totalEvents>& eventi, const str
         fs::create_directory(folder_name);
     }
 
-    TCanvas *canvas = new TCanvas(("canvas_time_energy_" + run_name).c_str(), ("Time Difference vs Charge - " + run_name).c_str(), 800, 600);
+    TCanvas *canvas = new TCanvas(run_name.c_str(), ("Time Difference vs Charge - " + run_name).c_str(), 800, 600);
     gPad->SetRightMargin(0.12);
     canvas->SetGrid();
     gStyle->SetPalette(kRainBow);
@@ -1163,8 +1160,8 @@ void PeSum_histogram_log(const vector<muone>& eventi, const string& run_name) {
     }
     
     TCanvas *canvas = new TCanvas(("canvas_charge_" + run_name).c_str(), ("Istogramma Energia - " + run_name).c_str(), 800, 600);
-    TH1F *charge = new TH1F(("Distribuzione_dell_energia_" + run_name).c_str(), ("Distribuzione dell'energia - " + run_name).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
-    // Applica il binning logaritmico sugli assi X e Y
+    TH1F *charge = new TH1F(run_name.c_str(), ("Distribuzione dell'energia - " + run_name).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
+    // Applico il binning logaritmico sugli assi X e Y
     BinLogX(charge);
     BinLogY(charge);
     gPad->SetLeftMargin(0.12);
@@ -1235,7 +1232,7 @@ void total_PeSum_histogram_log(const vector<totalEvents>& eventi, const string& 
     }
     
     TCanvas *canvas = new TCanvas(("canvas_charge_" + run_name).c_str(), ("Istogramma Energia - " + run_name).c_str(), 800, 600);
-    TH1F *charge = new TH1F(("Distribuzione_dell_energia_" + run_name).c_str(), ("Distribuzione dell'energia - " + run_name).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
+    TH1F *charge = new TH1F(run_name.c_str(), ("Distribuzione dell'energia - " + run_name).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
     // Applico il binning logaritmico sugli assi X e Y
     BinLogX(charge);
     BinLogY(charge);
@@ -1254,7 +1251,7 @@ void total_PeSum_histogram_log(const vector<totalEvents>& eventi, const string& 
     charge->SetFillColorAlpha(kBlue, 1);
     charge->Draw();
     
-    // Imposta la scala logaritmica sugli assi X e Y
+    // Imposto la scala logaritmica sugli assi X e Y
     canvas->SetLogx();
     canvas->SetLogy();
 
@@ -1278,7 +1275,7 @@ void total_PeSum_histogram_log(const vector<totalEvents>& eventi1, const vector<
     TH1F *charge1 = new TH1F(("Distribuzione_dell_energia_" + run_name1).c_str(), ("Distribuzione dell'energia - " + run_name1).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
     TH1F *charge2 = new TH1F(("Distribuzione_dell_energia_" + run_name2).c_str(), ("Distribuzione dell'energia - " + run_name2).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
     
-    // Applica il binning logaritmico sugli assi X e Y
+    // Applico il binning logaritmico sugli assi X e Y
     BinLogX(charge1);
     BinLogX(charge2);
     BinLogY(charge1);
@@ -1302,16 +1299,16 @@ void total_PeSum_histogram_log(const vector<totalEvents>& eventi1, const vector<
     charge1->SetLineWidth(2);
     charge1->SetLineColor(kBlue);
     charge1->SetFillColorAlpha(kBlue, 0.5);
-    charge1->SetStats(kFALSE); // Disabilito la casella delle statistiche
+    charge1->SetStats(kFALSE);
     charge1->Draw();
 
     charge2->SetLineWidth(2);
     charge2->SetLineColor(kRed);
     charge2->SetFillColorAlpha(kRed, 0.5);
-    charge2->SetStats(kFALSE); // Disabilito la casella delle statistiche
+    charge2->SetStats(kFALSE);
     charge2->Draw("SAME");
 
-    // Imposta la scala logaritmica sugli assi X e Y
+    // Imposto la scala logaritmica sugli assi X e Y
     canvas->SetLogx();
     canvas->SetLogy();
 
@@ -1340,9 +1337,9 @@ void total_PeSum_histogram_log_complementary(const vector<totalEvents>& eventi1,
     }
     
     TCanvas *canvas = new TCanvas(("canvas_charge_complementary_" + run_name1 + "_vs_" + run_name2).c_str(), ("Istogramma Complementare Energia - " + run_name1 + " vs " + run_name2).c_str(), 800, 600);
-    TH1F *charge1 = new TH1F(("Distribuzione_dell_energia_" + run_name1).c_str(), ("Distribuzione della carica 'complementare' - " + run_name1).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
+    TH1F *charge1 = new TH1F(run_name1.c_str(), ("Distribuzione della carica 'complementare' - " + run_name1).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
     
-    // Applica il binning logaritmico sugli assi X e Y
+    // Applico il binning logaritmico sugli assi X e Y
     BinLogX(charge1);
     BinLogY(charge1);
     gPad->SetLeftMargin(0.12);
@@ -1350,13 +1347,13 @@ void total_PeSum_histogram_log_complementary(const vector<totalEvents>& eventi1,
     charge1->StatOverflows(kTRUE);
     canvas->SetGrid();
 
-    // Crea un set di tempi (secondi e nanosecondi) per gli eventi di eventi2
+    // Creo un set di tempi (secondi e nanosecondi) per gli eventi di eventi2
     set<pair<int, int>> eventi2_times;
     for (const auto& ev : eventi2) {
         eventi2_times.insert(make_pair(ev.fSec, ev.fNanosec));
     }
 
-    // Riempie l'istogramma con gli eventi di eventi1 che non sono in eventi2
+    // Riempio l'istogramma con gli eventi di eventi1 che non sono in eventi2
     for (const auto& ev : eventi1) {
         if (eventi2_times.find(make_pair(ev.fSec, ev.fNanoSec)) == eventi2_times.end()) {
             charge1->Fill(ev.NPE);
@@ -1370,7 +1367,7 @@ void total_PeSum_histogram_log_complementary(const vector<totalEvents>& eventi1,
     charge1->SetFillColorAlpha(kGreen, 1);
     charge1->Draw();
 
-    // Imposta la scala logaritmica sugli assi X e Y
+    // Imposto la scala logaritmica sugli assi X e Y
     canvas->SetLogx();
     canvas->SetLogy();
 
@@ -1393,17 +1390,16 @@ void count_high_energy_events(const vector<totalEvents>& eventi1, const vector<m
     int count_trackID_4 = 0;
     int count_trackID_gt4 = 0;
 
-    // Conta gli eventi di eventi1 con energia superiore alla soglia
+    // Conto gli eventi di eventi1 con energia superiore alla soglia
     for (const auto& ev : eventi1) {
         if (ev.NPE > energy_threshold) {
             count_eventi1++;
         }
     }
 
-    // Conta gli eventi di eventi2 con energia superiore alla soglia e divisi per trackID
+    // Conto gli eventi di eventi2 con energia superiore alla soglia e divisi per trackID
     for (const auto& ev : eventi2) {
         if (ev.PeSum > energy_threshold) {
-            count_eventi2++;
             if (ev.trackID == 0) {
                 count_trackID_0++;
             } else if (ev.trackID == 1) {
@@ -1450,11 +1446,11 @@ void total_PeSum_histogram_log_divided(const vector<totalEvents>& eventi1, const
     }
     
     TCanvas *canvas = new TCanvas(("canvas_charge_" + run_name1 + "_vs_" + run_name2).c_str(), ("Istogramma Carica - " + run_name1 + " vs " + run_name2).c_str(), 800, 600);
-    TH1F *charge1_total = new TH1F(("Distribuzione_dell_energia_totale_" + run_name1).c_str(), ("Distribuzione dell'energia totale - " + run_name1).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
-    TH1F *charge2_single = new TH1F(("Distribuzione_dell_energia_singoli_" + run_name2).c_str(), ("Distribuzione dell'energia singoli - " + run_name2).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
-    TH1F *charge2_bundle = new TH1F(("Distribuzione_dell_energia_bundle_" + run_name2).c_str(), ("Distribuzione dell'energia bundle - " + run_name2).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
+    TH1F *charge1_total = new TH1F(("Distribuzione_dell_energia_totale_" + run_name1).c_str(), ("Distribuzione dell'energia totale - " + run_name1).c_str(), 100, 0, 7);
+    TH1F *charge2_single = new TH1F(("Distribuzione_dell_energia_singoli_" + run_name2).c_str(), ("Distribuzione dell'energia singoli - " + run_name2).c_str(), 100, 0, 7);
+    TH1F *charge2_bundle = new TH1F(("Distribuzione_dell_energia_bundle_" + run_name2).c_str(), ("Distribuzione dell'energia bundle - " + run_name2).c_str(), 100, 0, 7);
     
-    // Applica il binning logaritmico sugli assi X e Y
+    // Applico il binning logaritmico sugli assi X e Y
     BinLogX(charge1_total);
     BinLogX(charge2_single);
     BinLogX(charge2_bundle);
@@ -1468,12 +1464,12 @@ void total_PeSum_histogram_log_divided(const vector<totalEvents>& eventi1, const
     charge2_bundle->StatOverflows(kTRUE);
     canvas->SetGrid();
 
-    // Riempie l'istogramma con gli eventi totali
+    // Riempio l'istogramma con gli eventi totali
     for (const auto& ev : eventi1) {
         charge1_total->Fill(ev.NPE);
     }
 
-    // Riempie gli istogrammi con gli eventi singoli e bundle
+    // Riempio gli istogrammi con gli eventi singoli e bundle
     for (const auto& ev : eventi2) {
         if (ev.trackID == 0) {
             charge2_single->Fill(ev.PeSum);
@@ -1482,30 +1478,30 @@ void total_PeSum_histogram_log_divided(const vector<totalEvents>& eventi1, const
         }
     }
 
-    // Disegna l'istogramma degli eventi totali
+    // Disegno l'istogramma degli eventi totali
     charge1_total->GetXaxis()->SetTitle("Charge [p.e.]");
     charge1_total->GetYaxis()->SetTitle("Counts [a.u.]");
     charge1_total->SetLineWidth(2);
     charge1_total->SetLineColor(kBlue);
     charge1_total->SetFillColorAlpha(kBlue, 0.5);
-    charge1_total->SetStats(kFALSE); // Disabilito la casella delle statistiche
+    charge1_total->SetStats(kFALSE);
     charge1_total->Draw();
 
-    // Disegna l'istogramma degli eventi singoli
+    // Disegno l'istogramma degli eventi singoli
     charge2_single->SetLineWidth(2);
     charge2_single->SetLineColor(kRed);
     charge2_single->SetFillColorAlpha(kRed, 0.5);
-    charge2_single->SetStats(kFALSE); // Disabilito la casella delle statistiche
+    charge2_single->SetStats(kFALSE);
     charge2_single->Draw("SAME");
 
-    // Disegna l'istogramma degli eventi bundle
+    // Disegno l'istogramma degli eventi bundle
     charge2_bundle->SetLineWidth(2);
     charge2_bundle->SetLineColor(kGreen);
     charge2_bundle->SetFillColorAlpha(kGreen, 0.5);
-    charge2_bundle->SetStats(kFALSE); // Disabilito la casella delle statistiche
+    charge2_bundle->SetStats(kFALSE);
     charge2_bundle->Draw("SAME");
 
-    // Imposta la scala logaritmica sugli assi X e Y
+    // Imposto la scala logaritmica sugli assi X e Y
     canvas->SetLogx();
     canvas->SetLogy();
 
@@ -1535,15 +1531,15 @@ void total_PeSum_histogram_log_divided_track(const vector<totalEvents>& eventi1,
     }
     
     TCanvas *canvas = new TCanvas(("canvas_charge_" + run_name1 + "_vs_" + run_name2).c_str(), ("Istogramma Carica - " + run_name1 + " vs " + run_name2).c_str(), 800, 600);
-    TH1F *charge1_total = new TH1F(("Distribuzione_dell_energia_totale_" + run_name1).c_str(), ("Distribuzione dell'energia totale - " + run_name1).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
-    TH1F *charge2_single = new TH1F(("Distribuzione_dell_energia_singoli_" + run_name2).c_str(), ("Distribuzione dell'energia singoli - " + run_name2).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
-    TH1F *charge2_track1 = new TH1F(("Distribuzione_dell_energia_track1_" + run_name2).c_str(), ("Distribuzione dell'energia trackID = 1 - " + run_name2).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
-    TH1F *charge2_track2 = new TH1F(("Distribuzione_dell_energia_track2_" + run_name2).c_str(), ("Distribuzione dell'energia trackID = 2 - " + run_name2).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
-    TH1F *charge2_track3 = new TH1F(("Distribuzione_dell_energia_track3_" + run_name2).c_str(), ("Distribuzione dell'energia trackID = 3 - " + run_name2).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
-    TH1F *charge2_track4 = new TH1F(("Distribuzione_dell_energia_track4_" + run_name2).c_str(), ("Distribuzione dell'energia trackID = 4 - " + run_name2).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
-    TH1F *charge2_track_gt4 = new TH1F(("Distribuzione_dell_energia_track_gt4_" + run_name2).c_str(), ("Distribuzione dell'energia trackID > 4 - " + run_name2).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
+    TH1F *charge1_total = new TH1F(("Distribuzione_dell_energia_totale_" + run_name1).c_str(), ("Distribuzione dell'energia totale - " + run_name1).c_str(), 100, 0, 7);
+    TH1F *charge2_single = new TH1F(("Distribuzione_dell_energia_singoli_" + run_name2).c_str(), ("Distribuzione dell'energia singoli - " + run_name2).c_str(), 100, 0, 7);
+    TH1F *charge2_track1 = new TH1F(("Distribuzione_dell_energia_track1_" + run_name2).c_str(), ("Distribuzione dell'energia trackID = 1 - " + run_name2).c_str(), 100, 0, 7);
+    TH1F *charge2_track2 = new TH1F(("Distribuzione_dell_energia_track2_" + run_name2).c_str(), ("Distribuzione dell'energia trackID = 2 - " + run_name2).c_str(), 100, 0, 7);
+    TH1F *charge2_track3 = new TH1F(("Distribuzione_dell_energia_track3_" + run_name2).c_str(), ("Distribuzione dell'energia trackID = 3 - " + run_name2).c_str(), 100, 0, 7);
+    TH1F *charge2_track4 = new TH1F(("Distribuzione_dell_energia_track4_" + run_name2).c_str(), ("Distribuzione dell'energia trackID = 4 - " + run_name2).c_str(), 100, 0, 7);
+    TH1F *charge2_track_gt4 = new TH1F(("Distribuzione_dell_energia_track_gt4_" + run_name2).c_str(), ("Distribuzione dell'energia trackID gt 4 - " + run_name2).c_str(), 100, 0, 7); 
     
-    // Applica il binning logaritmico sugli assi X e Y
+    // Applico il binning logaritmico sugli assi X e Y
     BinLogX(charge1_total);
     BinLogX(charge2_single);
     BinLogX(charge2_track1);
@@ -1591,7 +1587,7 @@ void total_PeSum_histogram_log_divided_track(const vector<totalEvents>& eventi1,
         }
     }
 
-    // Disegna l'istogramma degli eventi totali
+    // Disegno l'istogramma degli eventi totali
     charge1_total->GetXaxis()->SetTitle("Charge [p.e.]");
     charge1_total->GetYaxis()->SetTitle("Counts [a.u.]");
     charge1_total->SetLineWidth(2);
@@ -1600,49 +1596,49 @@ void total_PeSum_histogram_log_divided_track(const vector<totalEvents>& eventi1,
     charge1_total->SetStats(kFALSE); // Disabilito la casella delle statistiche
     charge1_total->Draw();
 
-    // Disegna l'istogramma degli eventi singoli
+    // Disegno l'istogramma degli eventi singoli
     charge2_single->SetLineWidth(2);
     charge2_single->SetLineColor(kRed);
     charge2_single->SetFillColorAlpha(kRed, 0.5);
     charge2_single->SetStats(kFALSE); // Disabilito la casella delle statistiche
     charge2_single->Draw("SAME");
 
-    // Disegna l'istogramma degli eventi trackID = 1
+    // Disegno l'istogramma degli eventi trackID = 1
     charge2_track1->SetLineWidth(2);
     charge2_track1->SetLineColor(kGreen);
     charge2_track1->SetFillColorAlpha(kGreen, 0.5);
     charge2_track1->SetStats(kFALSE); // Disabilito la casella delle statistiche
     charge2_track1->Draw("SAME");
 
-    // Disegna l'istogramma degli eventi trackID = 2
+    // Disegno l'istogramma degli eventi trackID = 2
     charge2_track2->SetLineWidth(2);
     charge2_track2->SetLineColor(kMagenta);
     charge2_track2->SetFillColorAlpha(kMagenta, 0.5);
     charge2_track2->SetStats(kFALSE); // Disabilito la casella delle statistiche
     charge2_track2->Draw("SAME");
 
-    // Disegna l'istogramma degli eventi trackID = 3
+    // Disegno l'istogramma degli eventi trackID = 3
     charge2_track3->SetLineWidth(2);
     charge2_track3->SetLineColor(kCyan);
     charge2_track3->SetFillColorAlpha(kCyan, 0.5);
     charge2_track3->SetStats(kFALSE); // Disabilito la casella delle statistiche
     charge2_track3->Draw("SAME");
 
-    // Disegna l'istogramma degli eventi trackID = 4
+    // Disegno l'istogramma degli eventi trackID = 4
     charge2_track4->SetLineWidth(2);
     charge2_track4->SetLineColor(kOrange);
     charge2_track4->SetFillColorAlpha(kOrange, 0.5);
     charge2_track4->SetStats(kFALSE); // Disabilito la casella delle statistiche
     charge2_track4->Draw("SAME");
 
-    // Disegna l'istogramma degli eventi trackID > 4
+    // Disegno l'istogramma degli eventi trackID > 4
     charge2_track_gt4->SetLineWidth(2);
     charge2_track_gt4->SetLineColor(kOrange+10);
     charge2_track_gt4->SetFillColorAlpha(kOrange+10, 0.5);
     charge2_track_gt4->SetStats(kFALSE); // Disabilito la casella delle statistiche
     charge2_track_gt4->Draw("SAME");
 
-    // Imposta la scala logaritmica sugli assi X e Y
+    // Imposto la scala logaritmica sugli assi X e Y
     canvas->SetLogx();
     canvas->SetLogy();
 

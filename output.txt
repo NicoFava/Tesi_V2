@@ -106,6 +106,7 @@ In questo file non è presente il TrackID quindi non si può calcolare il numero
 La distanza massima tra l'origine e il tracciato dei muoni è: 20499.9 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 4188
 La frequenza togliendo gli eventi di bordo è: 2.11508 Hz
+Trovato trackID = -1, salto la creazione degli istogrammi bundle per la run RUN3322
 Trovato trackID = -1, salto la creazione dell'istrogramma TrackID per la RUN3322
 --------------------------------------------
 2) RUN3326: 
@@ -119,6 +120,7 @@ In questo file non è presente il TrackID quindi non si può calcolare il numero
 La distanza massima tra l'origine e il tracciato dei muoni è: 20524.5 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 25817
 La frequenza togliendo gli eventi di bordo è: 3.90741 Hz
+Trovato trackID = -1, salto la creazione degli istogrammi bundle per la run RUN3326
 Trovato trackID = -1, salto la creazione dell'istrogramma TrackID per la RUN3326
 --------------------------------------------
 3) RUN3413: 
@@ -132,6 +134,7 @@ In questo file non è presente il TrackID quindi non si può calcolare il numero
 La distanza massima tra l'origine e il tracciato dei muoni è: 20532.5 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 15356
 La frequenza togliendo gli eventi di bordo è: 4.93119 Hz
+Trovato trackID = -1, salto la creazione degli istogrammi bundle per la run RUN3413
 Trovato trackID = -1, salto la creazione dell'istrogramma TrackID per la RUN3413
 --------------------------------------------
 4) RUN3415: 
@@ -145,6 +148,7 @@ In questo file non è presente il TrackID quindi non si può calcolare il numero
 La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 2509
 La frequenza togliendo gli eventi di bordo è: 4.63377 Hz
+Trovato trackID = -1, salto la creazione degli istogrammi bundle per la run RUN3415
 Trovato trackID = -1, salto la creazione dell'istrogramma TrackID per la RUN3415
 --------------------------------------------
 5) RUN3416: 
@@ -158,6 +162,7 @@ In questo file non è presente il TrackID quindi non si può calcolare il numero
 La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 16970
 La frequenza togliendo gli eventi di bordo è: 4.68272 Hz
+Trovato trackID = -1, salto la creazione degli istogrammi bundle per la run RUN3416
 Trovato trackID = -1, salto la creazione dell'istrogramma TrackID per la RUN3416
 --------------------------------------------
 6) RUN3530: 
@@ -171,6 +176,7 @@ In questo file non è presente il TrackID quindi non si può calcolare il numero
 La distanza massima tra l'origine e il tracciato dei muoni è: 20524.5 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 8352
 La frequenza togliendo gli eventi di bordo è: 5.05751 Hz
+Trovato trackID = -1, salto la creazione degli istogrammi bundle per la run RUN3530
 Trovato trackID = -1, salto la creazione dell'istrogramma TrackID per la RUN3530
 --------------------------------------------
 7) RUN3531: 
@@ -184,6 +190,7 @@ In questo file non è presente il TrackID quindi non si può calcolare il numero
 La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 7732
 La frequenza togliendo gli eventi di bordo è: 5.06316 Hz
+Trovato trackID = -1, salto la creazione degli istogrammi bundle per la run RUN3531
 Trovato trackID = -1, salto la creazione dell'istrogramma TrackID per la RUN3531
 --------------------------------------------
 8) RUN3639: RUN vuota, salto l'analisi.
@@ -604,7 +611,7 @@ La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 20329
 La frequenza togliendo gli eventi di bordo è: 4.2472 Hz
 Numero di eventi in RUN4049 con energia superiore a 15000 p.e.: 98789
-Numero di eventi in RUN4049mod con energia superiore a 15000 p.e.: 73159
+Numero di eventi in RUN4049mod con energia superiore a 15000 p.e.: 0
 Numero di eventi con trackID = 0 in RUN4049mod con energia superiore a 15000 p.e.: 58690 (59.4094%)
 Numero di eventi con trackID = 1 in RUN4049mod con energia superiore a 15000 p.e.: 12623 (12.7777%)
 Numero di eventi con trackID = 2 in RUN4049mod con energia superiore a 15000 p.e.: 1455 (1.47284%)
@@ -615,4 +622,4 @@ Dati salvati con successo in RUN4049mod!
 ============================================
 FINE ANALISI DELLE RUN MODIFICATE
 ============================================
-Tempo totale di esecuzione: 20.3956 secondi
+Tempo totale di esecuzione: 26.2685 secondi
