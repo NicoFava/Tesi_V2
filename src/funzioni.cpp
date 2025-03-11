@@ -1084,9 +1084,19 @@ vector<vector<muone>> create_updated_events_vector(const vector<vector<muone>>& 
             int total_ev_time_nsec = total_eventi[j].fNanoSec;
 
             if (ev_time_sec == total_ev_time_sec && ev_time_nsec == total_ev_time_nsec) {
-                // Crea una nuova struct muone con la carica aggiornata
+                // Trova l'ultimo trackID per lo stesso eventID
+                int last_trackID = eventi[i].trackID;
+                size_t temp_i = i;
+                while (temp_i < eventi.size() && eventi[temp_i].eventID == eventi[i].eventID) {
+                    last_trackID = eventi[temp_i].trackID;
+                    temp_i++;
+                }
+
+                // Crea una nuova struct muone con la carica e il trackID aggiornati
                 muone updated_event = eventi[i];
                 updated_event.PeSum = total_eventi[j].NPE;
+                updated_event.trackID = last_trackID;
+                
                 updated_eventi_per_file[k].push_back(updated_event);
                 i++;
                 j++;
@@ -1368,4 +1378,293 @@ void total_PeSum_histogram_log_complementary(const vector<totalEvents>& eventi1,
     canvas->SaveAs(filename.c_str());
     delete canvas;
     delete charge1;
+}
+
+void count_high_energy_events(const vector<totalEvents>& eventi1, const vector<muone>& eventi2, const string& run_name1, const string& run_name2) {
+    const double energy_threshold = 1.5e4; // Soglia di energia
+
+    int count_eventi1 = 0;
+    int count_eventi2 = 0;
+    int count_bundle = 0;
+    int count_trackID_0 = 0;
+    int count_trackID_1 = 0;
+    int count_trackID_2 = 0;
+    int count_trackID_3 = 0;
+    int count_trackID_4 = 0;
+    int count_trackID_gt4 = 0;
+
+    // Conta gli eventi di eventi1 con energia superiore alla soglia
+    for (const auto& ev : eventi1) {
+        if (ev.NPE > energy_threshold) {
+            count_eventi1++;
+        }
+    }
+
+    // Conta gli eventi di eventi2 con energia superiore alla soglia e divisi per trackID
+    for (const auto& ev : eventi2) {
+        if (ev.PeSum > energy_threshold) {
+            count_eventi2++;
+            if (ev.trackID == 0) {
+                count_trackID_0++;
+            } else if (ev.trackID == 1) {
+                count_trackID_1++;
+            } else if (ev.trackID == 2) {
+                count_trackID_2++;
+            } else if (ev.trackID == 3) {
+                count_trackID_3++;
+            } else if (ev.trackID == 4) {
+                count_trackID_4++;
+            } else if (ev.trackID > 4) {
+                count_trackID_gt4++;
+            }
+        }
+    }
+
+    double perc_trackID_0 = (double)count_trackID_0 / count_eventi1 * 100;
+    double perc_trackID_1 = (double)count_trackID_1 / count_eventi1 * 100;
+    double perc_trackID_2 = (double)count_trackID_2 / count_eventi1 * 100;
+    double perc_trackID_3 = (double)count_trackID_3 / count_eventi1 * 100;
+    double perc_trackID_4 = (double)count_trackID_4 / count_eventi1 * 100;
+    double perc_trackID_gt4 = (double)count_trackID_gt4 / count_eventi1 * 100;
+    double perc_bundle = (double)count_bundle / count_eventi1 * 100;
+
+    // Stampa i risultati
+    cout << "Numero di eventi in " << run_name1 << " con energia superiore a " << energy_threshold << " p.e.: " << count_eventi1 << endl;
+    cout << "Numero di eventi in " << run_name2 << " con energia superiore a " << energy_threshold << " p.e.: " << count_eventi2 << endl;
+    cout << "Numero di eventi con trackID = 0 in " << run_name2 << " con energia superiore a " << energy_threshold << " p.e.: " << count_trackID_0 << " (" << perc_trackID_0 << "%)" << endl;
+    cout << "Numero di eventi con trackID = 1 in " << run_name2 << " con energia superiore a " << energy_threshold << " p.e.: " << count_trackID_1 << " (" << perc_trackID_1 << "%)" << endl;
+    cout << "Numero di eventi con trackID = 2 in " << run_name2 << " con energia superiore a " << energy_threshold << " p.e.: " << count_trackID_2 << " (" << perc_trackID_2 << "%)" << endl;
+    cout << "Numero di eventi con trackID = 3 in " << run_name2 << " con energia superiore a " << energy_threshold << " p.e.: " << count_trackID_3 << " (" << perc_trackID_3 << "%)" << endl;
+    cout << "Numero di eventi con trackID = 4 in " << run_name2 << " con energia superiore a " << energy_threshold << " p.e.: " << count_trackID_4 << " (" << perc_trackID_4 << "%)" << endl;
+    cout << "Numero di eventi con trackID > 4 in " << run_name2 << " con energia superiore a " << energy_threshold << " p.e.: " << count_trackID_gt4 << " (" << perc_trackID_gt4 << "%)" << endl;
+}
+
+void total_PeSum_histogram_log_divided(const vector<totalEvents>& eventi1, const vector<muone>& eventi2, const string& run_name1, const string& run_name2) {
+    string main_folder = "images";
+    string folder_name = main_folder + "/Total_PeSum_overlap_log_divided_plot";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
+    if (!fs::exists(folder_name)) {
+        fs::create_directory(folder_name);
+    }
+    
+    TCanvas *canvas = new TCanvas(("canvas_charge_" + run_name1 + "_vs_" + run_name2).c_str(), ("Istogramma Carica - " + run_name1 + " vs " + run_name2).c_str(), 800, 600);
+    TH1F *charge1_total = new TH1F(("Distribuzione_dell_energia_totale_" + run_name1).c_str(), ("Distribuzione dell'energia totale - " + run_name1).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
+    TH1F *charge2_single = new TH1F(("Distribuzione_dell_energia_singoli_" + run_name2).c_str(), ("Distribuzione dell'energia singoli - " + run_name2).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
+    TH1F *charge2_bundle = new TH1F(("Distribuzione_dell_energia_bundle_" + run_name2).c_str(), ("Distribuzione dell'energia bundle - " + run_name2).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
+    
+    // Applica il binning logaritmico sugli assi X e Y
+    BinLogX(charge1_total);
+    BinLogX(charge2_single);
+    BinLogX(charge2_bundle);
+    BinLogY(charge1_total);
+    BinLogY(charge2_single);
+    BinLogY(charge2_bundle);
+    gPad->SetLeftMargin(0.12);
+
+    charge1_total->StatOverflows(kTRUE);
+    charge2_single->StatOverflows(kTRUE);
+    charge2_bundle->StatOverflows(kTRUE);
+    canvas->SetGrid();
+
+    // Riempie l'istogramma con gli eventi totali
+    for (const auto& ev : eventi1) {
+        charge1_total->Fill(ev.NPE);
+    }
+
+    // Riempie gli istogrammi con gli eventi singoli e bundle
+    for (const auto& ev : eventi2) {
+        if (ev.trackID == 0) {
+            charge2_single->Fill(ev.PeSum);
+        } else {
+            charge2_bundle->Fill(ev.PeSum);
+        }
+    }
+
+    // Disegna l'istogramma degli eventi totali
+    charge1_total->GetXaxis()->SetTitle("Charge [p.e.]");
+    charge1_total->GetYaxis()->SetTitle("Counts [a.u.]");
+    charge1_total->SetLineWidth(2);
+    charge1_total->SetLineColor(kBlue);
+    charge1_total->SetFillColorAlpha(kBlue, 0.5);
+    charge1_total->SetStats(kFALSE); // Disabilito la casella delle statistiche
+    charge1_total->Draw();
+
+    // Disegna l'istogramma degli eventi singoli
+    charge2_single->SetLineWidth(2);
+    charge2_single->SetLineColor(kRed);
+    charge2_single->SetFillColorAlpha(kRed, 0.5);
+    charge2_single->SetStats(kFALSE); // Disabilito la casella delle statistiche
+    charge2_single->Draw("SAME");
+
+    // Disegna l'istogramma degli eventi bundle
+    charge2_bundle->SetLineWidth(2);
+    charge2_bundle->SetLineColor(kGreen);
+    charge2_bundle->SetFillColorAlpha(kGreen, 0.5);
+    charge2_bundle->SetStats(kFALSE); // Disabilito la casella delle statistiche
+    charge2_bundle->Draw("SAME");
+
+    // Imposta la scala logaritmica sugli assi X e Y
+    canvas->SetLogx();
+    canvas->SetLogy();
+
+    TLegend *legend = new TLegend(0.7, 0.7, 0.9, 0.9);
+    legend->AddEntry(charge1_total, (run_name1 + " Totale").c_str(), "f");
+    legend->AddEntry(charge2_single, (run_name2 + " Singoli").c_str(), "f");
+    legend->AddEntry(charge2_bundle, (run_name2 + " Bundle").c_str(), "f");
+    legend->Draw();
+
+    string filename = folder_name + "/total_PeSum_log_divided_" + run_name1 + "_vs_" + run_name2 + ".png";
+    canvas->SaveAs(filename.c_str());
+    delete canvas;
+    delete charge1_total;
+    delete charge2_single;
+    delete charge2_bundle;
+    delete legend;
+}
+
+void total_PeSum_histogram_log_divided_track(const vector<totalEvents>& eventi1, const vector<muone>& eventi2, const string& run_name1, const string& run_name2) {
+    string main_folder = "images";
+    string folder_name = main_folder + "/Total_PeSum_overlap_log_divided_track_plot";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
+    if (!fs::exists(folder_name)) {
+        fs::create_directory(folder_name);
+    }
+    
+    TCanvas *canvas = new TCanvas(("canvas_charge_" + run_name1 + "_vs_" + run_name2).c_str(), ("Istogramma Carica - " + run_name1 + " vs " + run_name2).c_str(), 800, 600);
+    TH1F *charge1_total = new TH1F(("Distribuzione_dell_energia_totale_" + run_name1).c_str(), ("Distribuzione dell'energia totale - " + run_name1).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
+    TH1F *charge2_single = new TH1F(("Distribuzione_dell_energia_singoli_" + run_name2).c_str(), ("Distribuzione dell'energia singoli - " + run_name2).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
+    TH1F *charge2_track1 = new TH1F(("Distribuzione_dell_energia_track1_" + run_name2).c_str(), ("Distribuzione dell'energia trackID = 1 - " + run_name2).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
+    TH1F *charge2_track2 = new TH1F(("Distribuzione_dell_energia_track2_" + run_name2).c_str(), ("Distribuzione dell'energia trackID = 2 - " + run_name2).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
+    TH1F *charge2_track3 = new TH1F(("Distribuzione_dell_energia_track3_" + run_name2).c_str(), ("Distribuzione dell'energia trackID = 3 - " + run_name2).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
+    TH1F *charge2_track4 = new TH1F(("Distribuzione_dell_energia_track4_" + run_name2).c_str(), ("Distribuzione dell'energia trackID = 4 - " + run_name2).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
+    TH1F *charge2_track_gt4 = new TH1F(("Distribuzione_dell_energia_track_gt4_" + run_name2).c_str(), ("Distribuzione dell'energia trackID > 4 - " + run_name2).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
+    
+    // Applica il binning logaritmico sugli assi X e Y
+    BinLogX(charge1_total);
+    BinLogX(charge2_single);
+    BinLogX(charge2_track1);
+    BinLogX(charge2_track2);
+    BinLogX(charge2_track3);
+    BinLogX(charge2_track4);
+    BinLogX(charge2_track_gt4);
+    BinLogY(charge1_total);
+    BinLogY(charge2_single);
+    BinLogY(charge2_track1);
+    BinLogY(charge2_track2);
+    BinLogY(charge2_track3);
+    BinLogY(charge2_track4);
+    BinLogY(charge2_track_gt4);
+    gPad->SetLeftMargin(0.12);
+
+    charge1_total->StatOverflows(kTRUE);
+    charge2_single->StatOverflows(kTRUE);
+    charge2_track1->StatOverflows(kTRUE);
+    charge2_track2->StatOverflows(kTRUE);
+    charge2_track3->StatOverflows(kTRUE);
+    charge2_track4->StatOverflows(kTRUE);
+    charge2_track_gt4->StatOverflows(kTRUE);
+    canvas->SetGrid();
+
+    // Riempie l'istogramma con gli eventi totali
+    for (const auto& ev : eventi1) {
+        charge1_total->Fill(ev.NPE);
+    }
+
+    // Riempie gli istogrammi con gli eventi singoli e bundle
+    for (const auto& ev : eventi2) {
+        if (ev.trackID == 0) {
+            charge2_single->Fill(ev.PeSum);
+        } else if (ev.trackID == 1) {
+            charge2_track1->Fill(ev.PeSum);
+        } else if (ev.trackID == 2) {
+            charge2_track2->Fill(ev.PeSum);
+        } else if (ev.trackID == 3) {
+            charge2_track3->Fill(ev.PeSum);
+        } else if (ev.trackID == 4) {
+            charge2_track4->Fill(ev.PeSum);
+        } else {
+            charge2_track_gt4->Fill(ev.PeSum);
+        }
+    }
+
+    // Disegna l'istogramma degli eventi totali
+    charge1_total->GetXaxis()->SetTitle("Charge [p.e.]");
+    charge1_total->GetYaxis()->SetTitle("Counts [a.u.]");
+    charge1_total->SetLineWidth(2);
+    charge1_total->SetLineColor(kBlue);
+    charge1_total->SetFillColorAlpha(kBlue, 0.5);
+    charge1_total->SetStats(kFALSE); // Disabilito la casella delle statistiche
+    charge1_total->Draw();
+
+    // Disegna l'istogramma degli eventi singoli
+    charge2_single->SetLineWidth(2);
+    charge2_single->SetLineColor(kRed);
+    charge2_single->SetFillColorAlpha(kRed, 0.5);
+    charge2_single->SetStats(kFALSE); // Disabilito la casella delle statistiche
+    charge2_single->Draw("SAME");
+
+    // Disegna l'istogramma degli eventi trackID = 1
+    charge2_track1->SetLineWidth(2);
+    charge2_track1->SetLineColor(kGreen);
+    charge2_track1->SetFillColorAlpha(kGreen, 0.5);
+    charge2_track1->SetStats(kFALSE); // Disabilito la casella delle statistiche
+    charge2_track1->Draw("SAME");
+
+    // Disegna l'istogramma degli eventi trackID = 2
+    charge2_track2->SetLineWidth(2);
+    charge2_track2->SetLineColor(kMagenta);
+    charge2_track2->SetFillColorAlpha(kMagenta, 0.5);
+    charge2_track2->SetStats(kFALSE); // Disabilito la casella delle statistiche
+    charge2_track2->Draw("SAME");
+
+    // Disegna l'istogramma degli eventi trackID = 3
+    charge2_track3->SetLineWidth(2);
+    charge2_track3->SetLineColor(kCyan);
+    charge2_track3->SetFillColorAlpha(kCyan, 0.5);
+    charge2_track3->SetStats(kFALSE); // Disabilito la casella delle statistiche
+    charge2_track3->Draw("SAME");
+
+    // Disegna l'istogramma degli eventi trackID = 4
+    charge2_track4->SetLineWidth(2);
+    charge2_track4->SetLineColor(kOrange);
+    charge2_track4->SetFillColorAlpha(kOrange, 0.5);
+    charge2_track4->SetStats(kFALSE); // Disabilito la casella delle statistiche
+    charge2_track4->Draw("SAME");
+
+    // Disegna l'istogramma degli eventi trackID > 4
+    charge2_track_gt4->SetLineWidth(2);
+    charge2_track_gt4->SetLineColor(kOrange+10);
+    charge2_track_gt4->SetFillColorAlpha(kOrange+10, 0.5);
+    charge2_track_gt4->SetStats(kFALSE); // Disabilito la casella delle statistiche
+    charge2_track_gt4->Draw("SAME");
+
+    // Imposta la scala logaritmica sugli assi X e Y
+    canvas->SetLogx();
+    canvas->SetLogy();
+
+    TLegend *legend = new TLegend(0.7, 0.7, 0.9, 0.9);
+    legend->AddEntry(charge1_total, (run_name1 + " Totale").c_str(), "f");
+    legend->AddEntry(charge2_single, (run_name2 + " Singoli").c_str(), "f");
+    legend->AddEntry(charge2_track1, (run_name2 + " trackID = 1").c_str(), "f");
+    legend->AddEntry(charge2_track2, (run_name2 + " trackID = 2").c_str(), "f");
+    legend->AddEntry(charge2_track3, (run_name2 + " trackID = 3").c_str(), "f");
+    legend->AddEntry(charge2_track4, (run_name2 + " trackID = 4").c_str(), "f");
+    legend->AddEntry(charge2_track_gt4, (run_name2 + " trackID > 4").c_str(), "f");
+    legend->Draw();
+
+    string filename = folder_name + "/total_PeSum_log_divided_" + run_name1 + "_vs_" + run_name2 + ".png";
+    canvas->SaveAs(filename.c_str());
+    delete canvas;
+    delete charge1_total;
+    delete charge2_single;
+    delete charge2_track1;
+    delete charge2_track2;
+    delete charge2_track3;
+    delete charge2_track4;
+    delete charge2_track_gt4;
+    delete legend;
 }

@@ -189,4 +189,13 @@ void total_PeSum_histogram_log(const vector<totalEvents>&, const vector<muone>&,
 
 
 void total_PeSum_histogram_log_complementary(const vector<totalEvents>&, const vector<muone>&, const string&, const string&);
+
+
+void count_high_energy_events(const vector<totalEvents>&, const vector<muone>&, const string&, const string&);
+
+
+void total_PeSum_histogram_log_divided(const vector<totalEvents>&, const vector<muone>&, const string&, const string&);
+
+
+void total_PeSum_histogram_log_divided_track(const vector<totalEvents>&, const vector<muone>&, const string&, const string&);
 #endif

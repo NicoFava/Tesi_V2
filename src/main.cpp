@@ -209,7 +209,11 @@ int main(int argc, char* argv[]) {
         plot_muon_rate(updated_eventi_per_file[i], run_names_mod[i], 300);   
         plot_time_difference_vs_charge(total_eventi_per_file[i], total_run_names[i]);
         total_PeSum_histogram_log(total_eventi_per_file[i], updated_eventi_per_file[i], total_run_names[i] , run_names_mod[i]);
-        total_PeSum_histogram_log_complementary(total_eventi_per_file[i], updated_eventi_per_file[i], total_run_names[i], run_names_mod[i]); // Aggiungi questa riga
+        total_PeSum_histogram_log_complementary(total_eventi_per_file[i], updated_eventi_per_file[i], total_run_names[i], run_names_mod[i]);
+        count_high_energy_events(total_eventi_per_file[i], updated_eventi_per_file[i], total_run_names[i], run_names_mod[i]);
+        save_all_data_to_file(updated_eventi_per_file[i], run_names_mod[i]);
+        total_PeSum_histogram_log_divided(total_eventi_per_file[i], updated_eventi_per_file[i], total_run_names[i] , run_names_mod[i]);
+        total_PeSum_histogram_log_divided_track(total_eventi_per_file[i], updated_eventi_per_file[i], total_run_names[i] , run_names_mod[i]);
 
     }
     cout << "============================================" << endl;
