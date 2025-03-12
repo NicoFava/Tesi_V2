@@ -1400,6 +1400,7 @@ void count_high_energy_events(const vector<totalEvents>& eventi1, const vector<m
     // Conto gli eventi di eventi2 con energia superiore alla soglia e divisi per trackID
     for (const auto& ev : eventi2) {
         if (ev.PeSum > energy_threshold) {
+            count_eventi2++;
             if (ev.trackID == 0) {
                 count_trackID_0++;
             } else if (ev.trackID == 1) {
@@ -1663,4 +1664,30 @@ void total_PeSum_histogram_log_divided_track(const vector<totalEvents>& eventi1,
     delete charge2_track4;
     delete charge2_track_gt4;
     delete legend;
+}
+
+int count_common_events(const vector<totalEvents>& eventi1, const vector<totalEvents>& eventi2) {
+    int common_event_count = 0;
+    double d = 5; // Metri percorsi (da verificare)
+    // gamma >> 1 quindi posso approssimare la velocità del muone a quella della luce (conti sul quaderno)
+    double tolerance_ns = d / 3e8 * 1e9; // Tolleranza in nanosecondi
+    size_t i = 0, j = 0;
+
+    while (i < eventi1.size() && j < eventi2.size()) {
+        double ev_time1 = eventi1[i].fSec * 1e9 + eventi1[i].fNanoSec;
+        double ev_time2 = eventi2[j].fSec * 1e9 + eventi2[j].fNanoSec;
+
+        if (abs(ev_time1 - ev_time2) <= tolerance_ns) {
+            common_event_count++;
+            i++;
+            j++;
+        } else if (ev_time1 < ev_time2) {
+            i++;
+        } else {
+            j++;
+        }
+    }
+    cout << "Tolleranza di " << tolerance_ns << " ns" << endl;
+
+    return common_event_count;
 }

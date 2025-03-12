@@ -198,4 +198,7 @@ void total_PeSum_histogram_log_divided(const vector<totalEvents>&, const vector<
 
 
 void total_PeSum_histogram_log_divided_track(const vector<totalEvents>&, const vector<muone>&, const string&, const string&);
+
+
+int count_common_events(const vector<totalEvents>&, const vector<totalEvents>&);
 #endif

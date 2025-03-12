@@ -1,3 +1,6 @@
+============================================
+ CARICAMENTO DATI WPMUONCLASSIFY 
+============================================
 Caricamento file: RUN3322
 Caricamento file: RUN3326
 Caricamento file: RUN3413
@@ -85,12 +88,24 @@ RUN4048: 36147 eventi caricati
 RUN4049: 98734 eventi caricati
 RUN4051: 8140 eventi caricati
 ============================================
+ CARICAMENTO DATI TOTALI DA WP 
+============================================
 Caricamento file: RUN4049
 Numero di file di eventi totali analizzati: 1
 ============================================
 RUN4049: 5744665 eventi caricati
 ============================================
-RUN comuni trovate:
+ CARICAMENTO DATI TOTALI DA CD 
+============================================
+Caricamento file: RUN4049
+Numero di file di eventi totali analizzati: 1
+============================================
+RUN4049: 5009556 eventi caricati
+============================================
+RUN comuni tra wpclassify e wp_total:
+1) RUN4049
+--------------------------------------------
+RUN comuni tra wpclassify e cd_total:
 1) RUN4049
 ============================================
  ALCUNI DATI PER OGNI RUN 
@@ -611,7 +626,7 @@ La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 20329
 La frequenza togliendo gli eventi di bordo è: 4.2472 Hz
 Numero di eventi in RUN4049 con energia superiore a 15000 p.e.: 98789
-Numero di eventi in RUN4049mod con energia superiore a 15000 p.e.: 0
+Numero di eventi in RUN4049mod con energia superiore a 15000 p.e.: 73159
 Numero di eventi con trackID = 0 in RUN4049mod con energia superiore a 15000 p.e.: 58690 (59.4094%)
 Numero di eventi con trackID = 1 in RUN4049mod con energia superiore a 15000 p.e.: 12623 (12.7777%)
 Numero di eventi con trackID = 2 in RUN4049mod con energia superiore a 15000 p.e.: 1455 (1.47284%)
@@ -622,4 +637,16 @@ Dati salvati con successo in RUN4049mod!
 ============================================
 FINE ANALISI DELLE RUN MODIFICATE
 ============================================
-Tempo totale di esecuzione: 26.2685 secondi
+============================================
+CONFRONTO TRA TOTALEVENTS WP E CD
+============================================
+RUN: RUN4049
+Numero di eventi totali registrati da WP: 5744665
+Numero di eventi totali registrati da CD: 5009556
+--------------------------------------------
+Il numero di eventi con lo stesso tempo registrati da WP e CD è: Taglio di 16.6667 ns
+58631
+============================================
+FINE CONFRONTO WP e CD
+============================================
+Tempo totale di esecuzione: 26.2323 secondi
