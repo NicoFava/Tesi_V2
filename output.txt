@@ -644,9 +644,9 @@ RUN: RUN4049
 Numero di eventi totali registrati da WP: 5744665
 Numero di eventi totali registrati da CD: 5009556
 --------------------------------------------
-Il numero di eventi con lo stesso tempo registrati da WP e CD è: Taglio di 16.6667 ns
+Il numero di eventi con lo stesso tempo registrati da WP e CD con una tollaeranza di 16.6667 ns è: 
 58631
 ============================================
 FINE CONFRONTO WP e CD
 ============================================
-Tempo totale di esecuzione: 26.2323 secondi
+Tempo totale di esecuzione: 29.6511 secondi

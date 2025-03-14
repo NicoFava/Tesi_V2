@@ -201,4 +201,7 @@ void total_PeSum_histogram_log_divided_track(const vector<totalEvents>&, const v
 
 
 int count_common_events(const vector<totalEvents>&, const vector<totalEvents>&);
+
+
+void plot_common_events_NPE(const vector<totalEvents>&, const vector<totalEvents>&, double, const string&, const string&);
 #endif

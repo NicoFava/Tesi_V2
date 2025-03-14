@@ -249,8 +249,11 @@ int main(int argc, char* argv[]) {
         cout << "Numero di eventi totali registrati da WP: " << total_eventi_per_file_wp[i].size() << endl;
         cout << "Numero di eventi totali registrati da CD: " << total_eventi_per_file_cd[i].size() << endl;
         cout << "--------------------------------------------" << endl;
-        cout << "Il numero di eventi con lo stesso tempo registrati da WP e CD è: " << count_common_events(total_eventi_per_file_wp[i], total_eventi_per_file_cd[i]) << endl;
-
+        cout << "Il numero di eventi con lo stesso tempo registrati da WP e CD" << count_common_events(total_eventi_per_file_wp[i], total_eventi_per_file_cd[i]) << endl;
+        // Aggiungo il ciclo per la tolleranza
+        for (double tolerance_ns = 100000.0; tolerance_ns >= 10.0; tolerance_ns /= 2) {
+            plot_common_events_NPE(total_eventi_per_file_wp[i], total_eventi_per_file_cd[i], tolerance_ns, total_run_names_wp[i], total_run_names_cd[i]);
+        }
     }
     cout << "============================================" << endl;
     cout << "FINE CONFRONTO WP e CD" << endl;

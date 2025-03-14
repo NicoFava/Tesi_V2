@@ -1687,7 +1687,95 @@ int count_common_events(const vector<totalEvents>& eventi1, const vector<totalEv
             j++;
         }
     }
-    cout << "Tolleranza di " << tolerance_ns << " ns" << endl;
+    cout << " con una tollaeranza di " << tolerance_ns << " ns" << " è: " << endl;
 
     return common_event_count;
+}
+
+void plot_common_events_NPE(const vector<totalEvents>& eventi1, const vector<totalEvents>& eventi2, double tolerance_ns, const string& run_name1, const string& run_name2) {
+    vector<double> common_NPE1;
+    vector<double> common_NPE2;
+
+    size_t i = 0, j = 0;
+    std::ostringstream oss;
+    oss << std::fixed << std::setprecision(2) << tolerance_ns;
+    while (i < eventi1.size() && j < eventi2.size()) {
+        double ev_time1 = eventi1[i].fSec * 1e9 + eventi1[i].fNanoSec;
+        double ev_time2 = eventi2[j].fSec * 1e9 + eventi2[j].fNanoSec;
+
+        if (abs(ev_time1 - ev_time2) <= tolerance_ns) {
+            common_NPE1.push_back(eventi1[i].NPE);
+            common_NPE2.push_back(eventi2[j].NPE);
+            i++;
+            j++;
+        } else if (ev_time1 < ev_time2) {
+            i++;
+        } else {
+            j++;
+        }
+    }
+
+    string main_folder = "images";
+    string folder_name = main_folder + "/Time_CD_WP_Events_NPE_plot";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
+    if (!fs::exists(folder_name)) {
+        fs::create_directory(folder_name);
+    }
+
+    // Istogramma per l'energia del CD
+    TCanvas *canvas1 = new TCanvas(run_name1.c_str(), "Istogramma Carica WP", 800, 600);
+    TH1F *hist1 = new TH1F(run_name1.c_str(), ("Istogramma Carica WP (Tolleranza: " + oss.str() + " ns)").c_str(), 100, 0, 7);
+    canvas1->SetGrid();
+    BinLogX(hist1);
+    BinLogY(hist1);
+
+    for (const auto& npe : common_NPE1) {
+        hist1->Fill(npe);
+    }
+    // Imposto la scala logaritmica sugli assi X e Y
+    canvas1->SetLogx();
+    canvas1->SetLogy();
+
+    hist1->GetXaxis()->SetTitle("Charge [p.e.]");
+    hist1->GetYaxis()->SetTitle("Counts [a.u.]");
+    hist1->SetLineWidth(2);
+    hist1->SetLineColor(kBlue);
+    hist1->SetFillColorAlpha(kBlue, 1);
+    hist1->Draw();
+
+    string filename1 = folder_name + "/WP_" + run_name1 + "_tolerance_" + oss.str() + ".png";
+    canvas1->SaveAs(filename1.c_str());
+
+    delete canvas1;
+    delete hist1;
+
+    // Istogramma per l'energia del WP
+    TCanvas *canvas2 = new TCanvas(run_name1.c_str(), "Istogramma Carica CD", 800, 600);
+    TH1F *hist2 = new TH1F(run_name1.c_str(), ("Istogramma Carica CD (Tolleranza: " + oss.str() + " ns)").c_str(), 100, 0, 8);
+    canvas2->SetGrid();
+    BinLogX(hist2);
+    BinLogY(hist2);
+
+    for (const auto& npe : common_NPE2) {
+        hist2->Fill(npe);
+    }
+    
+    // Imposto la scala logaritmica sugli assi X e Y
+    canvas2->SetLogx();
+    canvas2->SetLogy();
+
+    hist2->GetXaxis()->SetTitle("Charge [p.e.]");
+    hist2->GetYaxis()->SetTitle("Counts [a.u.]");
+    hist2->SetLineWidth(2);
+    hist2->SetLineColor(kRed);
+    hist2->SetFillColorAlpha(kRed, 1);
+    hist2->Draw();
+
+    string filename2 = folder_name + "/CD_" + run_name1 + "_tolerance_" + oss.str() + ".png";
+    canvas2->SaveAs(filename2.c_str());
+
+    delete canvas2;
+    delete hist2;
 }
