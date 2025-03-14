@@ -204,4 +204,10 @@ int count_common_events(const vector<totalEvents>&, const vector<totalEvents>&);
 
 
 void plot_common_events_NPE(const vector<totalEvents>&, const vector<totalEvents>&, double, const string&, const string&);
+
+
+void plot_common_events_NPE_all(const vector<totalEvents>&, const vector<totalEvents>&, double, const string&, const string&);
+
+
+void plot_common_events_NPE_muon(const vector<totalEvents>&, const vector<totalEvents>&, const vector<muone>&, double, const string&, const string&);
 #endif

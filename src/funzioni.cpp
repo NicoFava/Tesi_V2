@@ -1779,3 +1779,323 @@ void plot_common_events_NPE(const vector<totalEvents>& eventi1, const vector<tot
     delete canvas2;
     delete hist2;
 }
+
+void plot_common_events_NPE_all(const vector<totalEvents>& eventi1, const vector<totalEvents>& eventi2, double tolerance_ns, const string& run_name1, const string& run_name2) {
+    vector<double> common_NPE1;
+    vector<double> common_NPE2;
+    vector<double> all_NPE1;
+    vector<double> all_NPE2;
+
+    size_t i = 0, j = 0;
+    std::ostringstream oss;
+    oss << std::fixed << std::setprecision(2) << tolerance_ns;
+
+    // Riempio i vettori con tutti gli eventi
+    for (const auto& ev : eventi1) {
+        all_NPE1.push_back(ev.NPE);
+    }
+    for (const auto& ev : eventi2) {
+        all_NPE2.push_back(ev.NPE);
+    }
+
+    // Riempio i vettori con gli eventi comuni entro la tolleranza
+    while (i < eventi1.size() && j < eventi2.size()) {
+        double ev_time1 = eventi1[i].fSec * 1e9 + eventi1[i].fNanoSec;
+        double ev_time2 = eventi2[j].fSec * 1e9 + eventi2[j].fNanoSec;
+
+        if (abs(ev_time1 - ev_time2) <= tolerance_ns) {
+            common_NPE1.push_back(eventi1[i].NPE);
+            common_NPE2.push_back(eventi2[j].NPE);
+            i++;
+            j++;
+        } else if (ev_time1 < ev_time2) {
+            i++;
+        } else {
+            j++;
+        }
+    }
+
+    string main_folder = "images";
+    string folder_name = main_folder + "/Time_CD_WP_Events_comparison_NPE_plot";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
+    if (!fs::exists(folder_name)) {
+        fs::create_directory(folder_name);
+    }
+
+    // Istogramma per l'energia del CD
+    TCanvas *canvas1 = new TCanvas(run_name1.c_str(), "Istogramma Carica WP", 800, 600);
+    TH1F *hist1 = new TH1F(run_name1.c_str(), ("Istogramma Carica WP (Tolleranza: " + oss.str() + " ns)").c_str(), 100, 0, 7);
+    TH1F *hist_all1 = new TH1F((run_name1 + "_all").c_str(), ("Istogramma Carica WP (tutti gli eventi vs eventi accoppiati) Tolleranza: " + oss.str() + " ns").c_str(), 100, 0, 7);
+    canvas1->SetGrid();
+    BinLogX(hist1);
+    BinLogY(hist1);
+    BinLogX(hist_all1);
+    BinLogY(hist_all1);
+
+    for (const auto& npe : all_NPE1) {
+        hist_all1->Fill(npe);
+    }
+    
+    for (const auto& npe : common_NPE1) {
+        hist1->Fill(npe);
+    }
+
+    // Imposto la scala logaritmica sugli assi X e Y
+    canvas1->SetLogx();
+    canvas1->SetLogy();
+
+    hist_all1->SetLineWidth(2);
+    hist_all1->SetLineColor(kBlue);
+    hist_all1->SetFillColorAlpha(kBlue, 0.5);
+    hist_all1->SetStats(kFALSE);
+    hist_all1->Draw();
+
+    hist1->GetXaxis()->SetTitle("Charge [p.e.]");
+    hist1->GetYaxis()->SetTitle("Counts [a.u.]");
+    hist1->SetLineWidth(2);
+    hist1->SetStats(kFALSE);
+    hist1->SetLineColor(kRed);
+    hist1->SetFillColorAlpha(kRed, 0.5);
+    hist1->Draw("SAME");
+
+    TLegend *legend1 = new TLegend(0.7, 0.7, 0.9, 0.9);
+    legend1->AddEntry(hist_all1, "Eventi totali", "f");
+    legend1->AddEntry(hist1, "Eventi accoppiati", "f");
+    legend1->Draw();
+
+    string filename1 = folder_name + "/WP_" + run_name1 + "_tolerance_" + oss.str() + ".png";
+    canvas1->SaveAs(filename1.c_str());
+
+    delete canvas1;
+    delete hist1;
+    delete hist_all1;
+    delete legend1;
+
+    // Istogramma per l'energia del WP
+    TCanvas *canvas2 = new TCanvas(run_name1.c_str(), "Istogramma Carica CD", 800, 600);
+    TH1F *hist2 = new TH1F(run_name1.c_str(), ("Istogramma Carica CD (Tolleranza: " + oss.str() + " ns)").c_str(), 100, 0, 8);
+    TH1F *hist_all2 = new TH1F((run_name1 + "_all").c_str(), ("Istogramma Carica CD (tutti gli eventi vs eventi accoppiati) Tolleranza: " + oss.str() + " ns").c_str(), 100, 0, 8);
+    canvas2->SetGrid();
+    BinLogX(hist2);
+    BinLogY(hist2);
+    BinLogX(hist_all2);
+    BinLogY(hist_all2);
+
+    for (const auto& npe : all_NPE2) {
+        hist_all2->Fill(npe);
+    }
+    
+    for (const auto& npe : common_NPE2) {
+        hist2->Fill(npe);
+    }
+
+    // Imposto la scala logaritmica sugli assi X e Y
+    canvas2->SetLogx();
+    canvas2->SetLogy();
+
+    hist_all2->SetLineWidth(2);
+    hist_all2->SetStats(kFALSE);
+    hist_all2->SetLineColor(kBlue);
+    hist_all2->SetFillColorAlpha(kBlue, 0.5);
+    hist_all2->Draw();
+
+    hist2->GetXaxis()->SetTitle("Charge [p.e.]");
+    hist2->GetYaxis()->SetTitle("Counts [a.u.]");
+    hist2->SetLineWidth(2);
+    hist2->SetStats(kFALSE);
+    hist2->SetLineColor(kRed);
+    hist2->SetFillColorAlpha(kRed, 0.5);
+    hist2->Draw("SAME");
+
+    TLegend *legend2 = new TLegend(0.7, 0.7, 0.9, 0.9);
+    legend2->AddEntry(hist_all2, "Eventi totali", "f");
+    legend2->AddEntry(hist2, "Eventi accoppiati", "f");
+    legend2->Draw();
+
+    string filename2 = folder_name + "/CD_" + run_name1 + "_tolerance_" + oss.str() + ".png";
+    canvas2->SaveAs(filename2.c_str());
+
+    delete canvas2;
+    delete hist2;
+    delete hist_all2;
+    delete legend2;
+}
+
+void plot_common_events_NPE_muon(const vector<totalEvents>& eventi1, const vector<totalEvents>& eventi2, const vector<muone>& eventi_muone, double tolerance_ns, const string& run_name1, const string& run_name2) {
+    vector<double> common_NPE1;
+    vector<double> common_NPE2;
+    vector<double> all_NPE1;
+    vector<double> all_NPE2;
+    vector<double> all_NPE_muone;
+
+    size_t i = 0, j = 0;
+    std::ostringstream oss;
+    oss << std::fixed << std::setprecision(2) << tolerance_ns;
+
+    // Riempio i vettori con tutti gli eventi
+    for (const auto& ev : eventi1) {
+        all_NPE1.push_back(ev.NPE);
+    }
+    for (const auto& ev : eventi2) {
+        all_NPE2.push_back(ev.NPE);
+    }
+    for (const auto& ev : eventi_muone) {
+        all_NPE_muone.push_back(ev.PeSum);
+    }
+
+    // Riempio i vettori con gli eventi comuni entro la tolleranza
+    while (i < eventi1.size() && j < eventi2.size()) {
+        double ev_time1 = eventi1[i].fSec * 1e9 + eventi1[i].fNanoSec;
+        double ev_time2 = eventi2[j].fSec * 1e9 + eventi2[j].fNanoSec;
+
+        if (abs(ev_time1 - ev_time2) <= tolerance_ns) {
+            common_NPE1.push_back(eventi1[i].NPE);
+            common_NPE2.push_back(eventi2[j].NPE);
+            i++;
+            j++;
+        } else if (ev_time1 < ev_time2) {
+            i++;
+        } else {
+            j++;
+        }
+    }
+
+    string main_folder = "images";
+    string folder_name = main_folder + "/Time_CD_WP_Muon_Events_comparison_NPE_plot";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
+    if (!fs::exists(folder_name)) {
+        fs::create_directory(folder_name);
+    }
+
+    // Istogramma per l'energia del WP
+    TCanvas *canvas1 = new TCanvas(run_name1.c_str(), "Istogramma Carica WP", 800, 600);
+    TH1F *hist1 = new TH1F(run_name1.c_str(), ("Istogramma Carica WP (Tolleranza: " + oss.str() + " ns)").c_str(), 100, 0, 7);
+    TH1F *hist_all1 = new TH1F((run_name1 + "_all").c_str(), ("Istogramma Carica WP (tutti gli eventi vs eventi accoppiati) Tolleranza: " + oss.str() + " ns").c_str(), 100, 0, 7);
+    TH1F *hist_muone1 = new TH1F((run_name1 + "_muone").c_str(), "Istogramma Carica WP (muone)", 100, 0, 7);
+    canvas1->SetGrid();
+    BinLogX(hist1);
+    BinLogY(hist1);
+    BinLogX(hist_all1);
+    BinLogY(hist_all1);
+    BinLogX(hist_muone1);
+    BinLogY(hist_muone1);
+
+    for (const auto& npe : all_NPE1) {
+        hist_all1->Fill(npe);
+    }
+    
+    for (const auto& npe : common_NPE1) {
+        hist1->Fill(npe);
+    }
+
+    for (const auto& npe : all_NPE_muone) {
+        hist_muone1->Fill(npe);
+    }
+
+    // Imposto la scala logaritmica sugli assi X e Y
+    canvas1->SetLogx();
+    canvas1->SetLogy();
+
+    hist_all1->SetLineWidth(2);
+    hist_all1->SetLineColor(kBlue);
+    hist_all1->SetFillColorAlpha(kBlue, 0.5);
+    hist_all1->SetStats(kFALSE);
+    hist_all1->Draw();
+
+    hist1->GetXaxis()->SetTitle("Charge [p.e.]");
+    hist1->GetYaxis()->SetTitle("Counts [a.u.]");
+    hist1->SetLineWidth(2);
+    hist1->SetStats(kFALSE);
+    hist1->SetLineColor(kRed);
+    hist1->SetFillColorAlpha(kRed, 0.5);
+    hist1->Draw("SAME");
+
+    hist_muone1->SetLineWidth(2);
+    hist_muone1->SetLineColor(kGreen);
+    hist_muone1->SetFillColorAlpha(kGreen, 0.5);
+    hist_muone1->SetStats(kFALSE);
+    hist_muone1->Draw("SAME");
+
+    TLegend *legend1 = new TLegend(0.7, 0.7, 0.9, 0.9);
+    legend1->AddEntry(hist_all1, "Eventi totali WP", "f");
+    legend1->AddEntry(hist1, "Eventi comuni WP", "f");
+    legend1->AddEntry(hist_muone1, "Eventi wp-classifytool", "f");
+    legend1->Draw();
+
+    string filename1 = folder_name + "/WP_" + run_name1 + "_tolerance_" + oss.str() + ".png";
+    canvas1->SaveAs(filename1.c_str());
+
+    delete canvas1;
+    delete hist1;
+    delete hist_all1;
+    delete hist_muone1;
+    delete legend1;
+
+    // Istogramma per l'energia del CD
+    TCanvas *canvas2 = new TCanvas(run_name1.c_str(), "Istogramma Carica CD", 800, 600);
+    TH1F *hist2 = new TH1F(run_name1.c_str(), ("Istogramma Carica CD (Tolleranza: " + oss.str() + " ns)").c_str(), 100, 0, 8);
+    TH1F *hist_all2 = new TH1F((run_name1 + "_all").c_str(), ("Istogramma Carica CD (tutti gli eventi vs eventi accoppiati) Tolleranza: " + oss.str() + " ns").c_str(), 100, 0, 8);
+    TH1F *hist_muone2 = new TH1F((run_name1 + "_muone").c_str(), "Istogramma Carica CD (muone)", 100, 0, 8);
+    canvas2->SetGrid();
+    BinLogX(hist2);
+    BinLogY(hist2);
+    BinLogX(hist_all2);
+    BinLogY(hist_all2);
+    BinLogX(hist_muone2);
+    BinLogY(hist_muone2);
+
+    for (const auto& npe : all_NPE2) {
+        hist_all2->Fill(npe);
+    }
+    
+    for (const auto& npe : common_NPE2) {
+        hist2->Fill(npe);
+    }
+
+    for (const auto& npe : all_NPE_muone) {
+        hist_muone2->Fill(npe);
+    }
+
+    // Imposto la scala logaritmica sugli assi X e Y
+    canvas2->SetLogx();
+    canvas2->SetLogy();
+
+    hist_all2->SetLineWidth(2);
+    hist_all2->SetStats(kFALSE);
+    hist_all2->SetLineColor(kBlue);
+    hist_all2->SetFillColorAlpha(kBlue, 0.5);
+    hist_all2->Draw();
+
+    hist2->GetXaxis()->SetTitle("Charge [p.e.]");
+    hist2->GetYaxis()->SetTitle("Counts [a.u.]");
+    hist2->SetLineWidth(2);
+    hist2->SetStats(kFALSE);
+    hist2->SetLineColor(kRed);
+    hist2->SetFillColorAlpha(kRed, 0.5);
+    hist2->Draw("SAME");
+
+    hist_muone2->SetLineWidth(2);
+    hist_muone2->SetLineColor(kGreen);
+    hist_muone2->SetFillColorAlpha(kGreen, 0.5);
+    hist_muone2->SetStats(kFALSE);
+    hist_muone2->Draw("SAME");
+
+    TLegend *legend2 = new TLegend(0.7, 0.7, 0.9, 0.9);
+    legend2->AddEntry(hist_all2, "Eventi totali CD", "f");
+    legend2->AddEntry(hist2, "Eventi comuni CD", "f");
+    legend2->AddEntry(hist_muone2, "Eventi wp-classifytool", "f");
+    legend2->Draw();
+
+    string filename2 = folder_name + "/CD_" + run_name1 + "_tolerance_" + oss.str() + ".png";
+    canvas2->SaveAs(filename2.c_str());
+
+    delete canvas2;
+    delete hist2;
+    delete hist_all2;
+    delete hist_muone2;
+    delete legend2;
+}

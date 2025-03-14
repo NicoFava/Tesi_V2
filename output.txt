@@ -649,4 +649,4 @@ Il numero di eventi con lo stesso tempo registrati da WP e CD con una tollaeranz
 ============================================
 FINE CONFRONTO WP e CD
 ============================================
-Tempo totale di esecuzione: 29.6511 secondi
+Tempo totale di esecuzione: 41.5784 secondi
