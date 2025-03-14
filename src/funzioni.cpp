@@ -1666,11 +1666,10 @@ void total_PeSum_histogram_log_divided_track(const vector<totalEvents>& eventi1,
     delete legend;
 }
 
-int count_common_events(const vector<totalEvents>& eventi1, const vector<totalEvents>& eventi2) {
+int count_common_events(const vector<totalEvents>& eventi1, const vector<totalEvents>& eventi2, double tolerance_ns) {
     int common_event_count = 0;
     double d = 5; // Metri percorsi (da verificare)
     // gamma >> 1 quindi posso approssimare la velocità del muone a quella della luce (conti sul quaderno)
-    double tolerance_ns = d / 3e8 * 1e9; // Tolleranza in nanosecondi
     size_t i = 0, j = 0;
 
     while (i < eventi1.size() && j < eventi2.size()) {
@@ -1923,7 +1922,7 @@ void plot_common_events_NPE_all(const vector<totalEvents>& eventi1, const vector
     delete legend2;
 }
 
-void plot_common_events_NPE_muon(const vector<totalEvents>& eventi1, const vector<totalEvents>& eventi2, const vector<muone>& eventi_muone, double tolerance_ns, const string& run_name1, const string& run_name2) {
+void plot_common_events_NPE_muon(const vector<totalEvents>& eventi1, const vector<totalEvents>& eventi2, const vector<muone>& eventi_muone, double tolerance_ns, const string& run_name1, const string& run_name2, double& overlap_area) {
     vector<double> common_NPE1;
     vector<double> common_NPE2;
     vector<double> all_NPE1;
@@ -1964,11 +1963,19 @@ void plot_common_events_NPE_muon(const vector<totalEvents>& eventi1, const vecto
 
     string main_folder = "images";
     string folder_name = main_folder + "/Time_CD_WP_Muon_Events_comparison_NPE_plot";
+    string wp_folder = folder_name + "/WPplot";
+    string cd_folder = folder_name + "/CDplot";
     if (!fs::exists(main_folder)) {
         fs::create_directory(main_folder);
     }
     if (!fs::exists(folder_name)) {
         fs::create_directory(folder_name);
+    }
+    if (!fs::exists(wp_folder)) {
+        fs::create_directory(wp_folder);
+    }
+    if (!fs::exists(cd_folder)) {
+        fs::create_directory(cd_folder);
     }
 
     // Istogramma per l'energia del WP
@@ -2000,6 +2007,8 @@ void plot_common_events_NPE_muon(const vector<totalEvents>& eventi1, const vecto
     canvas1->SetLogx();
     canvas1->SetLogy();
 
+    hist_all1->GetXaxis()->SetTitle("Charge [p.e.]");
+    hist_all1->GetYaxis()->SetTitle("Counts [a.u.]");
     hist_all1->SetLineWidth(2);
     hist_all1->SetLineColor(kBlue);
     hist_all1->SetFillColorAlpha(kBlue, 0.5);
@@ -2026,8 +2035,16 @@ void plot_common_events_NPE_muon(const vector<totalEvents>& eventi1, const vecto
     legend1->AddEntry(hist_muone1, "Eventi wp-classifytool", "f");
     legend1->Draw();
 
-    string filename1 = folder_name + "/WP_" + run_name1 + "_tolerance_" + oss.str() + ".png";
+    string filename1 = wp_folder + "/WP_" + run_name1 + "_tolerance_" + oss.str() + ".png";
     canvas1->SaveAs(filename1.c_str());
+
+    // Calcolo l'area di sovrapposizione tra gli istogrammi WP e muone
+    overlap_area = 0.0;
+    for (int bin = 1; bin <= hist1->GetNbinsX(); ++bin) {
+        double bin_content1 = hist1->GetBinContent(bin);
+        double bin_content2 = hist_muone1->GetBinContent(bin);
+        overlap_area += std::min(bin_content1, bin_content2);
+    }
 
     delete canvas1;
     delete hist1;
@@ -2064,6 +2081,8 @@ void plot_common_events_NPE_muon(const vector<totalEvents>& eventi1, const vecto
     canvas2->SetLogx();
     canvas2->SetLogy();
 
+    hist_all2->GetXaxis()->SetTitle("Charge [p.e.]");
+    hist_all2->GetYaxis()->SetTitle("Counts [a.u.]");
     hist_all2->SetLineWidth(2);
     hist_all2->SetStats(kFALSE);
     hist_all2->SetLineColor(kBlue);
@@ -2090,7 +2109,7 @@ void plot_common_events_NPE_muon(const vector<totalEvents>& eventi1, const vecto
     legend2->AddEntry(hist_muone2, "Eventi wp-classifytool", "f");
     legend2->Draw();
 
-    string filename2 = folder_name + "/CD_" + run_name1 + "_tolerance_" + oss.str() + ".png";
+    string filename2 = cd_folder + "/CD_" + run_name1 + "_tolerance_" + oss.str() + ".png";
     canvas2->SaveAs(filename2.c_str());
 
     delete canvas2;

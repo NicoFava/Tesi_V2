@@ -633,7 +633,6 @@ Numero di eventi con trackID = 2 in RUN4049mod con energia superiore a 15000 p.e
 Numero di eventi con trackID = 3 in RUN4049mod con energia superiore a 15000 p.e.: 304 (0.307727%)
 Numero di eventi con trackID = 4 in RUN4049mod con energia superiore a 15000 p.e.: 70 (0.0708581%)
 Numero di eventi con trackID > 4 in RUN4049mod con energia superiore a 15000 p.e.: 17 (0.0172084%)
-Dati salvati con successo in RUN4049mod!
 ============================================
 FINE ANALISI DELLE RUN MODIFICATE
 ============================================
@@ -643,10 +642,31 @@ CONFRONTO TRA TOTALEVENTS WP E CD
 RUN: RUN4049
 Numero di eventi totali registrati da WP: 5744665
 Numero di eventi totali registrati da CD: 5009556
---------------------------------------------
-Il numero di eventi con lo stesso tempo registrati da WP e CD con una tollaeranza di 16.6667 ns è: 
+Prendendo un intervallo di tolleranza di 1 ns
+Il numero di eventi con lo stesso tempo registrati da WP e CD:  con una tollaeranza di 1 ns è: 
 58631
+Prendendo un intervallo di tolleranza di 10 ns
+Il numero di eventi con lo stesso tempo registrati da WP e CD:  con una tollaeranza di 10 ns è: 
+58631
+Prendendo un intervallo di tolleranza di 100 ns
+Il numero di eventi con lo stesso tempo registrati da WP e CD:  con una tollaeranza di 100 ns è: 
+58631
+Prendendo un intervallo di tolleranza di 1000 ns
+Il numero di eventi con lo stesso tempo registrati da WP e CD:  con una tollaeranza di 1000 ns è: 
+76858
+Prendendo un intervallo di tolleranza di 10000 ns
+Il numero di eventi con lo stesso tempo registrati da WP e CD:  con una tollaeranza di 10000 ns è: 
+111715
+Prendendo un intervallo di tolleranza di 100000 ns
+Il numero di eventi con lo stesso tempo registrati da WP e CD:  con una tollaeranza di 100000 ns è: 
+427456
+Prendendo un intervallo di tolleranza di 1e+06 ns
+Il numero di eventi con lo stesso tempo registrati da WP e CD:  con una tollaeranza di 1e+06 ns è: 
+2236106
+Prendendo un intervallo di tolleranza di 1e+07 ns
+Il numero di eventi con lo stesso tempo registrati da WP e CD:  con una tollaeranza di 1e+07 ns è: 
+4457246
 ============================================
 FINE CONFRONTO WP e CD
 ============================================
-Tempo totale di esecuzione: 41.5784 secondi
+Tempo totale di esecuzione: 52.1235 secondi

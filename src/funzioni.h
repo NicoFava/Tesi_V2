@@ -200,7 +200,7 @@ void total_PeSum_histogram_log_divided(const vector<totalEvents>&, const vector<
 void total_PeSum_histogram_log_divided_track(const vector<totalEvents>&, const vector<muone>&, const string&, const string&);
 
 
-int count_common_events(const vector<totalEvents>&, const vector<totalEvents>&);
+int count_common_events(const vector<totalEvents>&, const vector<totalEvents>&, double);
 
 
 void plot_common_events_NPE(const vector<totalEvents>&, const vector<totalEvents>&, double, const string&, const string&);
@@ -209,5 +209,5 @@ void plot_common_events_NPE(const vector<totalEvents>&, const vector<totalEvents
 void plot_common_events_NPE_all(const vector<totalEvents>&, const vector<totalEvents>&, double, const string&, const string&);
 
 
-void plot_common_events_NPE_muon(const vector<totalEvents>&, const vector<totalEvents>&, const vector<muone>&, double, const string&, const string&);
+void plot_common_events_NPE_muon(const vector<totalEvents>&, const vector<totalEvents>&, const vector<muone>&, double, const string&, const string&, double&);
 #endif
