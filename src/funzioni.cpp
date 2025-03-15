@@ -1666,10 +1666,9 @@ void total_PeSum_histogram_log_divided_track(const vector<totalEvents>& eventi1,
     delete legend;
 }
 
+// Restituisce il numero di eventi in comune (entro una certa tolleranza in nanoseconti) tra WP (eventi1) e CD (eventi 2)
 int count_common_events(const vector<totalEvents>& eventi1, const vector<totalEvents>& eventi2, double tolerance_ns) {
     int common_event_count = 0;
-    double d = 5; // Metri percorsi (da verificare)
-    // gamma >> 1 quindi posso approssimare la velocità del muone a quella della luce (conti sul quaderno)
     size_t i = 0, j = 0;
 
     while (i < eventi1.size() && j < eventi2.size()) {
@@ -1714,14 +1713,22 @@ void plot_common_events_NPE(const vector<totalEvents>& eventi1, const vector<tot
 
     string main_folder = "images";
     string folder_name = main_folder + "/Time_CD_WP_Events_NPE_plot";
+    string wp_folder = folder_name + "/WPplot";
+    string cd_folder = folder_name + "/CDplot";
     if (!fs::exists(main_folder)) {
         fs::create_directory(main_folder);
     }
     if (!fs::exists(folder_name)) {
         fs::create_directory(folder_name);
     }
+    if (!fs::exists(wp_folder)) {
+        fs::create_directory(wp_folder);
+    }
+    if (!fs::exists(cd_folder)) {
+        fs::create_directory(cd_folder);
+    }
 
-    // Istogramma per l'energia del CD
+    // Istogramma per l'energia del WP
     TCanvas *canvas1 = new TCanvas(run_name1.c_str(), "Istogramma Carica WP", 800, 600);
     TH1F *hist1 = new TH1F(run_name1.c_str(), ("Istogramma Carica WP (Tolleranza: " + oss.str() + " ns)").c_str(), 100, 0, 7);
     canvas1->SetGrid();
@@ -1742,13 +1749,13 @@ void plot_common_events_NPE(const vector<totalEvents>& eventi1, const vector<tot
     hist1->SetFillColorAlpha(kBlue, 1);
     hist1->Draw();
 
-    string filename1 = folder_name + "/WP_" + run_name1 + "_tolerance_" + oss.str() + ".png";
+    string filename1 = wp_folder + "/WP_" + run_name1 + "_tolerance_" + oss.str() + ".png";
     canvas1->SaveAs(filename1.c_str());
 
     delete canvas1;
     delete hist1;
 
-    // Istogramma per l'energia del WP
+    // Istogramma per l'energia del CD
     TCanvas *canvas2 = new TCanvas(run_name1.c_str(), "Istogramma Carica CD", 800, 600);
     TH1F *hist2 = new TH1F(run_name1.c_str(), ("Istogramma Carica CD (Tolleranza: " + oss.str() + " ns)").c_str(), 100, 0, 8);
     canvas2->SetGrid();
@@ -1770,7 +1777,7 @@ void plot_common_events_NPE(const vector<totalEvents>& eventi1, const vector<tot
     hist2->SetFillColorAlpha(kRed, 1);
     hist2->Draw();
 
-    string filename2 = folder_name + "/CD_" + run_name1 + "_tolerance_" + oss.str() + ".png";
+    string filename2 = cd_folder + "/CD_" + run_name1 + "_tolerance_" + oss.str() + ".png";
     canvas2->SaveAs(filename2.c_str());
 
     delete canvas2;
@@ -1814,11 +1821,19 @@ void plot_common_events_NPE_all(const vector<totalEvents>& eventi1, const vector
 
     string main_folder = "images";
     string folder_name = main_folder + "/Time_CD_WP_Events_comparison_NPE_plot";
+    string wp_folder = folder_name + "/WPplot";
+    string cd_folder = folder_name + "/CDplot";
     if (!fs::exists(main_folder)) {
         fs::create_directory(main_folder);
     }
     if (!fs::exists(folder_name)) {
         fs::create_directory(folder_name);
+    }
+    if (!fs::exists(wp_folder)) {
+        fs::create_directory(wp_folder);
+    }
+    if (!fs::exists(cd_folder)) {
+        fs::create_directory(cd_folder);
     }
 
     // Istogramma per l'energia del CD
@@ -1862,7 +1877,7 @@ void plot_common_events_NPE_all(const vector<totalEvents>& eventi1, const vector
     legend1->AddEntry(hist1, "Eventi accoppiati", "f");
     legend1->Draw();
 
-    string filename1 = folder_name + "/WP_" + run_name1 + "_tolerance_" + oss.str() + ".png";
+    string filename1 = wp_folder + "/WP_" + run_name1 + "_tolerance_" + oss.str() + ".png";
     canvas1->SaveAs(filename1.c_str());
 
     delete canvas1;
@@ -1911,7 +1926,7 @@ void plot_common_events_NPE_all(const vector<totalEvents>& eventi1, const vector
     legend2->AddEntry(hist2, "Eventi accoppiati", "f");
     legend2->Draw();
 
-    string filename2 = folder_name + "/CD_" + run_name1 + "_tolerance_" + oss.str() + ".png";
+    string filename2 = cd_folder + "/CD_" + run_name1 + "_tolerance_" + oss.str() + ".png";
     canvas2->SaveAs(filename2.c_str());
 
     delete canvas2;
@@ -2102,7 +2117,7 @@ void plot_common_events_NPE_muon(const vector<totalEvents>& eventi1, const vecto
     delete legend2;
 }
 
-void analyze_overlap_area(const vector<vector<totalEvents>>& total_eventi_per_file_wp, const vector<vector<totalEvents>>& total_eventi_per_file_cd, const vector<vector<muone>>& updated_eventi_per_file, const vector<string>& total_run_names_wp, const vector<string>& total_run_names_cd, const vector<string>& run_names_mod) {
+void analyze_total_wp_cd(const vector<vector<totalEvents>>& total_eventi_per_file_wp, const vector<vector<totalEvents>>& total_eventi_per_file_cd, const vector<vector<muone>>& updated_eventi_per_file, const vector<string>& total_run_names_wp, const vector<string>& total_run_names_cd, const vector<string>& run_names_mod) {
     vector<double> tolerances;
     vector<double> overlap_areas;
 
@@ -2115,40 +2130,170 @@ void analyze_overlap_area(const vector<vector<totalEvents>>& total_eventi_per_fi
             plot_common_events_NPE(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], tolerance_ns, total_run_names_wp[j], total_run_names_cd[j]);
             plot_common_events_NPE_all(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], tolerance_ns, total_run_names_wp[j], total_run_names_cd[j]);
             plot_common_events_NPE_muon(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], updated_eventi_per_file[j], tolerance_ns, total_run_names_wp[j], total_run_names_cd[j], overlap_area);
-
             tolerances.push_back(tolerance_ns);
             overlap_areas.push_back(overlap_area);
         }
+        analyze_common_events(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], total_run_names_wp[j], total_run_names_cd[j]);
+        analyze_common_events_with_energy_cut(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], total_run_names_wp[j], total_run_names_cd[j], 5e4);
+        // Creazione del grafico dell'area di sovrapposizione in funzione della tolleranza
+        TCanvas *c_overlap = new TCanvas("c_overlap", "Overlap Area totalWP & WP-classify vs Tolerance", 800, 600);
+        TGraph *graph_overlap = new TGraph(tolerances.size(), &tolerances[0], &overlap_areas[0]);
+        c_overlap->SetGrid();
+        // Aggiungi margini al canvas
+        c_overlap->SetLeftMargin(0.15);
+        c_overlap->SetBottomMargin(0.15);
+        graph_overlap->SetTitle("Overlap totalWP & WP-classify Ev. vs Tolerance;Tolerance [ns];Overlap Area");
+        graph_overlap->GetXaxis()->SetTitleOffset(1.4); // Sposta il titolo dell'asse X
+        graph_overlap->GetYaxis()->SetTitleOffset(1.6); // Sposta il titolo dell'asse Y
+        graph_overlap->SetMarkerStyle(21);
+        graph_overlap->SetMarkerSize(1.5);
+        graph_overlap->Draw("AP");
+        c_overlap->SetLogx();
+
+        string main_folder = "images";
+        string folder_im2= main_folder + "/Overlap_Area_vs_Tolerance_plot";
+        if (!fs::exists(main_folder)) {
+            fs::create_directory(main_folder);
+        }
+        if (!fs::exists(folder_im2)) {
+            fs::create_directory(folder_im2);
+        }
+
+        string filename_overlap2 = folder_im2 + "/Overlap_Area_vs_Tolerance_"+ total_run_names_wp[j] + "_plot.png";
+        c_overlap->SaveAs(filename_overlap2.c_str());
+
+        delete c_overlap;
+        delete graph_overlap;
+
+
 
     }
-    // Creazione del grafico dell'area di sovrapposizione in funzione della tolleranza
-    TCanvas *c_overlap = new TCanvas("c_overlap", "Overlap Area vs Tolerance", 800, 600);
-    TGraph *graph_overlap = new TGraph(tolerances.size(), &tolerances[0], &overlap_areas[0]);
-    c_overlap->SetGrid();
-    // Aggiungi margini al canvas
-    c_overlap->SetLeftMargin(0.15);
-    c_overlap->SetBottomMargin(0.15);
-    graph_overlap->SetTitle("Overlap Area vs Tolerance;Tolerance [ns];Overlap Area");
-    graph_overlap->GetXaxis()->SetTitleOffset(1.4); // Sposta il titolo dell'asse X
-    graph_overlap->GetYaxis()->SetTitleOffset(1.6); // Sposta il titolo dell'asse Y
-    graph_overlap->SetMarkerStyle(21);
-    graph_overlap->SetMarkerSize(1.5);
-    graph_overlap->Draw("AP");
-    c_overlap->SetLogx();
+    cout << "=============================================" << endl;
+}
+
+void analyze_common_events(const vector<totalEvents>& eventi1, const vector<totalEvents>& eventi2, const string& run_name1, const string& run_name2) {
+    vector<double> tolerances;
+    vector<double> common_event_frequencies;
+
+    // Calcolo la durata della run
+    double start_time = min(eventi1.front().fSec + eventi1.front().fNanoSec * 1e-9, eventi2.front().fSec + eventi2.front().fNanoSec * 1e-9);
+    double end_time = max(eventi1.back().fSec + eventi1.back().fNanoSec * 1e-9, eventi2.back().fSec + eventi2.back().fNanoSec * 1e-9);
+    double run_duration = end_time - start_time;
+
+    for (double tolerance_ns = 1.0; tolerance_ns <= 100000000.0; tolerance_ns *= 5.0) {
+        int common_event_count = count_common_events(eventi1, eventi2, tolerance_ns);
+        double common_event_frequency = common_event_count / run_duration;
+        tolerances.push_back(tolerance_ns);
+        common_event_frequencies.push_back(common_event_frequency);
+    }
+
+    // Creazione del grafico della frequenza degli eventi comuni in funzione della tolleranza
+    TCanvas *c_common_events = new TCanvas("c_common_events", "Common Events Rate vs Tolerance", 800, 600);
+    int n = tolerances.size();
+    double* x = &tolerances[0];
+    double* y = new double[common_event_frequencies.size()];
+    for (size_t i = 0; i < common_event_frequencies.size(); ++i) {
+        y[i] = static_cast<double>(common_event_frequencies[i]);
+    }
+    TGraph *graph_common_events = new TGraph(n, x, y);
+    delete[] y;
+    c_common_events->SetGrid();
+    c_common_events->SetLeftMargin(0.15);
+    c_common_events->SetBottomMargin(0.15);
+    graph_common_events->SetTitle("Common Events Rate vs Tolerance;Tolerance [ns];Rate [Hz]");
+    graph_common_events->GetXaxis()->SetTitleOffset(1.4);
+    graph_common_events->GetYaxis()->SetTitleOffset(1.6);
+    graph_common_events->SetMarkerStyle(21);
+    graph_common_events->SetMarkerSize(1.5);
+    graph_common_events->Draw("AP");
+    c_common_events->SetLogx();
 
     string main_folder = "images";
-    string folder_im= main_folder + "/Overlap_Area_vs_Tolerance_plot";
+    string folder_common_events = main_folder + "/Common_Events_vs_Tolerance_plot";
     if (!fs::exists(main_folder)) {
         fs::create_directory(main_folder);
     }
-    if (!fs::exists(folder_im)) {
-        fs::create_directory(folder_im);
+    if (!fs::exists(folder_common_events)) {
+        fs::create_directory(folder_common_events);
     }
 
-    string filename_overlap = folder_im + "/Overlap_Area_vs_Tolerance.png";
-    c_overlap->SaveAs(filename_overlap.c_str());
+    string filename_common_events = folder_common_events + "/Common_Events_vs_Tolerance_" + run_name1 + "_rate_plot.png";
+    c_common_events->SaveAs(filename_common_events.c_str());
 
-    delete c_overlap;
-    delete graph_overlap;
-    cout << "=============================================" << endl;
+    delete c_common_events;
+    delete graph_common_events;
+}
+
+void analyze_common_events_with_energy_cut(const vector<totalEvents>& eventi1, const vector<totalEvents>& eventi2, const string& run_name1, const string& run_name2, double energy_cut) {
+    vector<double> tolerances;
+    vector<double> common_event_frequencies;
+
+    // Calcolo la durata della run
+    double start_time = min(eventi1.front().fSec + eventi1.front().fNanoSec * 1e-9, eventi2.front().fSec + eventi2.front().fNanoSec * 1e-9);
+    double end_time = max(eventi1.back().fSec + eventi1.back().fNanoSec * 1e-9, eventi2.back().fSec + eventi2.back().fNanoSec * 1e-9);
+    double run_duration = end_time - start_time;
+
+    for (double tolerance_ns = 1.0; tolerance_ns <= 100000000.0; tolerance_ns *= 5.0) {
+        int common_event_count = count_common_events_with_energy_cut(eventi1, eventi2, tolerance_ns, energy_cut);
+        double common_event_frequency = common_event_count / run_duration;
+        tolerances.push_back(tolerance_ns);
+        common_event_frequencies.push_back(common_event_frequency);
+    }
+
+    // Creazione del grafico della frequenza degli eventi comuni in funzione della tolleranza
+    TCanvas *c_common_events = new TCanvas("c_common_events", "Common Events Rate vs Tolerance", 800, 600);
+    int n = tolerances.size();
+    double* x = &tolerances[0];
+    double* y = new double[common_event_frequencies.size()];
+    for (size_t i = 0; i < common_event_frequencies.size(); ++i) {
+        y[i] = static_cast<double>(common_event_frequencies[i]);
+    }
+    TGraph *graph_common_events = new TGraph(n, x, y);
+    delete[] y;
+    c_common_events->SetGrid();
+    c_common_events->SetLeftMargin(0.15);
+    c_common_events->SetBottomMargin(0.15);
+    graph_common_events->SetTitle("Common Events Rate vs Tolerance;Tolerance [ns];Rate [Hz]");
+    graph_common_events->GetXaxis()->SetTitleOffset(1.4);
+    graph_common_events->GetYaxis()->SetTitleOffset(1.6);
+    graph_common_events->SetMarkerStyle(21);
+    graph_common_events->SetMarkerSize(1.5);
+    graph_common_events->Draw("AP");
+    c_common_events->SetLogx();
+
+    string main_folder = "images";
+    string folder_common_events = main_folder + "/Common_Events_vs_Tolerance_with_cut_plot";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
+    if (!fs::exists(folder_common_events)) {
+        fs::create_directory(folder_common_events);
+    }
+
+    string filename_common_events = folder_common_events + "/Common_Events_vs_Tolerance_" + run_name1 + "_rate_plot.png";
+    c_common_events->SaveAs(filename_common_events.c_str());
+
+    delete c_common_events;
+    delete graph_common_events;
+}
+
+int count_common_events_with_energy_cut(const vector<totalEvents>& eventi1, const vector<totalEvents>& eventi2, double tolerance_ns, double energy_cut) {
+    int common_event_count = 0;
+    size_t i = 0, j = 0;
+
+    while (i < eventi1.size() && j < eventi2.size()) {
+        double ev_time1 = eventi1[i].fSec * 1e9 + eventi1[i].fNanoSec;
+        double ev_time2 = eventi2[j].fSec * 1e9 + eventi2[j].fNanoSec;
+
+        if (abs(ev_time1 - ev_time2) <= tolerance_ns && eventi2[j].NPE >= energy_cut) {
+            common_event_count++;
+            i++;
+            j++;
+        } else if (ev_time1 < ev_time2) {
+            i++;
+        } else {
+            j++;
+        }
+    }
+    return common_event_count;
 }

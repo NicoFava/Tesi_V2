@@ -128,6 +128,7 @@ int main(int argc, char* argv[]) {
         cout <<"<delta_t> = " << delta_t << " s | rate (contando gli eventi bundle come unici 1/delta_t) = "<< 1.0/(delta_t) << " Hz" << endl;
         cout << "Il rate dei muoni (righe/t_tot) è: " << rates << " Hz." <<  endl;
         cout << "Il numero di eventi univoci per EventID: " << Nevents(eventi_per_file[i]) << endl;
+        cout << "La frequenza calcolata solo con gli eventi univoci è: " << Nevents(eventi_per_file[i])/total_run_time(eventi_per_file[i]) << " Hz" << endl;
         
         bool TrackID = false;
         for (const auto& e : eventi_per_file[i]) {
@@ -258,8 +259,7 @@ int main(int argc, char* argv[]) {
     cout << "CONFRONTO TRA TOTALEVENTS WP E CD" << endl;
     cout << "============================================" << endl;
     
-    analyze_overlap_area(total_eventi_per_file_wp, total_eventi_per_file_cd, updated_eventi_per_file, total_run_names_wp, total_run_names_cd, run_names_mod);
-
+    analyze_total_wp_cd(total_eventi_per_file_wp, total_eventi_per_file_cd, updated_eventi_per_file, total_run_names_wp, total_run_names_cd, run_names_mod);
 
     cout << "============================================" << endl;
     cout << "FINE CONFRONTO WP e CD" << endl;
