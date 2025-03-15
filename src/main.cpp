@@ -252,69 +252,18 @@ int main(int argc, char* argv[]) {
     //Da qui in poi invece avendo aggiunto anche i file CD non è automatico analizzare più file WP WPmuonclassifytool e CD
     //Per ora so che c'è solo una run (la RUN4049) in comune tra WPmuonclassifytool WP e CD
     //Quindi per ora analizzo solo quella run
-
+    // Una volta ottenuti diversi file potrei tenere solo quelli "in comune" ed eliminare gli altri tenendo magari i grafici essenziali
+    // Oppure creo una seconda cartella inserendo i datasets wpclassify, CD e WP in maniera analoga ad ora ma mettendo solo quelli che hanno run in comune e le analizzo in maniera autonoma
     cout << "============================================" << endl;
     cout << "CONFRONTO TRA TOTALEVENTS WP E CD" << endl;
     cout << "============================================" << endl;
+    
+    analyze_overlap_area(total_eventi_per_file_wp, total_eventi_per_file_cd, updated_eventi_per_file, total_run_names_wp, total_run_names_cd, run_names_mod);
 
-    vector<double> tolerances;
-    vector<double> overlap_areas;
-    //Infatti per rendere tutto automatico questo for rischia di fare tanti casini! Assolutamente da togliere.
-    for (size_t i = 0; i < updated_eventi_per_file.size(); i++) {
-        for (size_t j = 0; j < total_eventi_per_file_wp.size(); j++) {
-            cout << "RUN: " << total_run_names_wp[j] << endl;
-            cout << "Numero di eventi totali registrati da WP: " << total_eventi_per_file_wp[j].size() << endl;
-            cout << "Numero di eventi totali registrati da CD: " << total_eventi_per_file_cd[j].size() << endl;
-            // Aggiungo il ciclo per la tolleranza
-            for (double tolerance_ns = 1.0; tolerance_ns <= 10000000.0; tolerance_ns *= 10) {
-                cout << "Prendendo un intervallo di tolleranza di " << tolerance_ns << " ns" << endl;
-                cout << "Il numero di eventi con lo stesso tempo registrati da WP e CD: " << count_common_events(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], tolerance_ns) << endl;
-            
-                double overlap_area;
-                plot_common_events_NPE(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], tolerance_ns, total_run_names_wp[j], total_run_names_cd[j]);
-                plot_common_events_NPE_all(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], tolerance_ns, total_run_names_wp[j], total_run_names_cd[j]);
-                plot_common_events_NPE_muon(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], updated_eventi_per_file[i], tolerance_ns, total_run_names_wp[j], total_run_names_cd[j], overlap_area);
-
-                tolerances.push_back(tolerance_ns);
-                overlap_areas.push_back(overlap_area);
-            }
-        }
-    }
 
     cout << "============================================" << endl;
     cout << "FINE CONFRONTO WP e CD" << endl;
     cout << "============================================" << endl;
-
-    // Creazione del grafico dell'area di sovrapposizione in funzione della tolleranza
-    TCanvas *c_overlap = new TCanvas("c_overlap", "Overlap Area vs Tolerance", 800, 600);
-    TGraph *graph_overlap = new TGraph(tolerances.size(), &tolerances[0], &overlap_areas[0]);
-    c_overlap->SetGrid();
-    // Aggiungi margini al canvas
-    c_overlap->SetLeftMargin(0.15);
-    c_overlap->SetBottomMargin(0.15);
-    graph_overlap->SetTitle("Overlap Area vs Tolerance;Tolerance [ns];Overlap Area");
-    graph_overlap->GetXaxis()->SetTitleOffset(1.4); // Sposta il titolo dell'asse X
-    graph_overlap->GetYaxis()->SetTitleOffset(1.6); // Sposta il titolo dell'asse Y
-    graph_overlap->SetMarkerStyle(21);
-    graph_overlap->SetMarkerSize(1.5);
-    graph_overlap->Draw("AP");
-    c_overlap->SetLogx();
-
-    string main_folder = "images";
-    string folder_im= main_folder + "/Overlap_Area_vs_Tolerance_plot";
-    if (!fs::exists(main_folder)) {
-        fs::create_directory(main_folder);
-    }
-    if (!fs::exists(folder_im)) {
-        fs::create_directory(folder_im);
-    }
-
-    string filename_overlap = folder_im + "/Overlap_Area_vs_Tolerance.png";
-    c_overlap->SaveAs(filename_overlap.c_str());
-
-    delete c_overlap;
-    delete graph_overlap;
-
     // Misuro il tempo di fine
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = end - start;

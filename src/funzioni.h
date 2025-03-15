@@ -210,4 +210,10 @@ void plot_common_events_NPE_all(const vector<totalEvents>&, const vector<totalEv
 
 
 void plot_common_events_NPE_muon(const vector<totalEvents>&, const vector<totalEvents>&, const vector<muone>&, double, const string&, const string&, double&);
+
+
+void analyze_overlap_area(const vector<vector<totalEvents>>&, const vector<vector<totalEvents>>&, const vector<vector<muone>>&, const vector<string>&, const vector<string>&, const vector<string>&);
+
+
+void plot_common_events_histogram(const vector<totalEvents>&, const vector<totalEvents>&, const string&, const string&);
 #endif

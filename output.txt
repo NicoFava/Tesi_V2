@@ -639,34 +639,29 @@ FINE ANALISI DELLE RUN MODIFICATE
 ============================================
 CONFRONTO TRA TOTALEVENTS WP E CD
 ============================================
-RUN: RUN4049
-Numero di eventi totali registrati da WP: 5744665
-Numero di eventi totali registrati da CD: 5009556
+Analisi del file RUN4049
 Prendendo un intervallo di tolleranza di 1 ns
-Il numero di eventi con lo stesso tempo registrati da WP e CD:  con una tollaeranza di 1 ns è: 
-58631
+Il numero di eventi con lo stesso tempo registrati da WP e CD: 58631
 Prendendo un intervallo di tolleranza di 10 ns
-Il numero di eventi con lo stesso tempo registrati da WP e CD:  con una tollaeranza di 10 ns è: 
-58631
+Il numero di eventi con lo stesso tempo registrati da WP e CD: 58631
 Prendendo un intervallo di tolleranza di 100 ns
-Il numero di eventi con lo stesso tempo registrati da WP e CD:  con una tollaeranza di 100 ns è: 
-58631
+Il numero di eventi con lo stesso tempo registrati da WP e CD: 58631
 Prendendo un intervallo di tolleranza di 1000 ns
-Il numero di eventi con lo stesso tempo registrati da WP e CD:  con una tollaeranza di 1000 ns è: 
-76858
+Il numero di eventi con lo stesso tempo registrati da WP e CD: 76858
 Prendendo un intervallo di tolleranza di 10000 ns
-Il numero di eventi con lo stesso tempo registrati da WP e CD:  con una tollaeranza di 10000 ns è: 
-111715
+Il numero di eventi con lo stesso tempo registrati da WP e CD: 111715
 Prendendo un intervallo di tolleranza di 100000 ns
-Il numero di eventi con lo stesso tempo registrati da WP e CD:  con una tollaeranza di 100000 ns è: 
-427456
+Il numero di eventi con lo stesso tempo registrati da WP e CD: 427456
 Prendendo un intervallo di tolleranza di 1e+06 ns
-Il numero di eventi con lo stesso tempo registrati da WP e CD:  con una tollaeranza di 1e+06 ns è: 
-2236106
+Il numero di eventi con lo stesso tempo registrati da WP e CD: 2236106
 Prendendo un intervallo di tolleranza di 1e+07 ns
-Il numero di eventi con lo stesso tempo registrati da WP e CD:  con una tollaeranza di 1e+07 ns è: 
-4457246
+Il numero di eventi con lo stesso tempo registrati da WP e CD: 4457246
+Prendendo un intervallo di tolleranza di 1e+08 ns
+Il numero di eventi con lo stesso tempo registrati da WP e CD: 4826558
+Prendendo un intervallo di tolleranza di 1e+09 ns
+Il numero di eventi con lo stesso tempo registrati da WP e CD: 4983670
+=============================================
 ============================================
 FINE CONFRONTO WP e CD
 ============================================
-Tempo totale di esecuzione: 52.1235 secondi
+Tempo totale di esecuzione: 59.6293 secondi

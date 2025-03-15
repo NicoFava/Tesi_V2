@@ -1686,8 +1686,6 @@ int count_common_events(const vector<totalEvents>& eventi1, const vector<totalEv
             j++;
         }
     }
-    cout << " con una tollaeranza di " << tolerance_ns << " ns" << " è: " << endl;
-
     return common_event_count;
 }
 
@@ -2056,14 +2054,11 @@ void plot_common_events_NPE_muon(const vector<totalEvents>& eventi1, const vecto
     TCanvas *canvas2 = new TCanvas(run_name1.c_str(), "Istogramma Carica CD", 800, 600);
     TH1F *hist2 = new TH1F(run_name1.c_str(), ("Istogramma Carica CD (Tolleranza: " + oss.str() + " ns)").c_str(), 100, 0, 8);
     TH1F *hist_all2 = new TH1F((run_name1 + "_all").c_str(), ("Istogramma Carica CD (tutti gli eventi vs eventi accoppiati) Tolleranza: " + oss.str() + " ns").c_str(), 100, 0, 8);
-    TH1F *hist_muone2 = new TH1F((run_name1 + "_muone").c_str(), "Istogramma Carica CD (muone)", 100, 0, 8);
     canvas2->SetGrid();
     BinLogX(hist2);
     BinLogY(hist2);
     BinLogX(hist_all2);
     BinLogY(hist_all2);
-    BinLogX(hist_muone2);
-    BinLogY(hist_muone2);
 
     for (const auto& npe : all_NPE2) {
         hist_all2->Fill(npe);
@@ -2071,10 +2066,6 @@ void plot_common_events_NPE_muon(const vector<totalEvents>& eventi1, const vecto
     
     for (const auto& npe : common_NPE2) {
         hist2->Fill(npe);
-    }
-
-    for (const auto& npe : all_NPE_muone) {
-        hist_muone2->Fill(npe);
     }
 
     // Imposto la scala logaritmica sugli assi X e Y
@@ -2097,16 +2088,9 @@ void plot_common_events_NPE_muon(const vector<totalEvents>& eventi1, const vecto
     hist2->SetFillColorAlpha(kRed, 0.5);
     hist2->Draw("SAME");
 
-    hist_muone2->SetLineWidth(2);
-    hist_muone2->SetLineColor(kGreen);
-    hist_muone2->SetFillColorAlpha(kGreen, 0.5);
-    hist_muone2->SetStats(kFALSE);
-    hist_muone2->Draw("SAME");
-
     TLegend *legend2 = new TLegend(0.7, 0.7, 0.9, 0.9);
     legend2->AddEntry(hist_all2, "Eventi totali CD", "f");
     legend2->AddEntry(hist2, "Eventi comuni CD", "f");
-    legend2->AddEntry(hist_muone2, "Eventi wp-classifytool", "f");
     legend2->Draw();
 
     string filename2 = cd_folder + "/CD_" + run_name1 + "_tolerance_" + oss.str() + ".png";
@@ -2115,6 +2099,56 @@ void plot_common_events_NPE_muon(const vector<totalEvents>& eventi1, const vecto
     delete canvas2;
     delete hist2;
     delete hist_all2;
-    delete hist_muone2;
     delete legend2;
+}
+
+void analyze_overlap_area(const vector<vector<totalEvents>>& total_eventi_per_file_wp, const vector<vector<totalEvents>>& total_eventi_per_file_cd, const vector<vector<muone>>& updated_eventi_per_file, const vector<string>& total_run_names_wp, const vector<string>& total_run_names_cd, const vector<string>& run_names_mod) {
+    vector<double> tolerances;
+    vector<double> overlap_areas;
+
+    for (size_t j = 0; j < total_eventi_per_file_wp.size(); j++) {
+        cout << "Analisi del file " << total_run_names_wp[j] << endl;
+        for (double tolerance_ns = 1.0; tolerance_ns <= 1000000000.0; tolerance_ns *= 10) {
+            cout << "Prendendo un intervallo di tolleranza di " << tolerance_ns << " ns" << endl;
+            cout << "Il numero di eventi con lo stesso tempo registrati da WP e CD: " << count_common_events(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], tolerance_ns) << endl;
+            double overlap_area;
+            plot_common_events_NPE(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], tolerance_ns, total_run_names_wp[j], total_run_names_cd[j]);
+            plot_common_events_NPE_all(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], tolerance_ns, total_run_names_wp[j], total_run_names_cd[j]);
+            plot_common_events_NPE_muon(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], updated_eventi_per_file[j], tolerance_ns, total_run_names_wp[j], total_run_names_cd[j], overlap_area);
+
+            tolerances.push_back(tolerance_ns);
+            overlap_areas.push_back(overlap_area);
+        }
+
+    }
+    // Creazione del grafico dell'area di sovrapposizione in funzione della tolleranza
+    TCanvas *c_overlap = new TCanvas("c_overlap", "Overlap Area vs Tolerance", 800, 600);
+    TGraph *graph_overlap = new TGraph(tolerances.size(), &tolerances[0], &overlap_areas[0]);
+    c_overlap->SetGrid();
+    // Aggiungi margini al canvas
+    c_overlap->SetLeftMargin(0.15);
+    c_overlap->SetBottomMargin(0.15);
+    graph_overlap->SetTitle("Overlap Area vs Tolerance;Tolerance [ns];Overlap Area");
+    graph_overlap->GetXaxis()->SetTitleOffset(1.4); // Sposta il titolo dell'asse X
+    graph_overlap->GetYaxis()->SetTitleOffset(1.6); // Sposta il titolo dell'asse Y
+    graph_overlap->SetMarkerStyle(21);
+    graph_overlap->SetMarkerSize(1.5);
+    graph_overlap->Draw("AP");
+    c_overlap->SetLogx();
+
+    string main_folder = "images";
+    string folder_im= main_folder + "/Overlap_Area_vs_Tolerance_plot";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
+    if (!fs::exists(folder_im)) {
+        fs::create_directory(folder_im);
+    }
+
+    string filename_overlap = folder_im + "/Overlap_Area_vs_Tolerance.png";
+    c_overlap->SaveAs(filename_overlap.c_str());
+
+    delete c_overlap;
+    delete graph_overlap;
+    cout << "=============================================" << endl;
 }
