@@ -568,5 +568,7 @@ Info in <TCanvas::Print>: png file images/Time_CD_WP_Events_comparison_NPE_plot/
 Info in <TCanvas::Print>: png file images/Time_CD_WP_Muon_Events_comparison_NPE_plot/WPplot/WP_RUN4049_tolerance_1000000000.00.png has been created
 Info in <TCanvas::Print>: png file images/Time_CD_WP_Muon_Events_comparison_NPE_plot/CDplot/CD_RUN4049_tolerance_1000000000.00.png has been created
 Info in <TCanvas::Print>: png file images/Common_Events_vs_Tolerance_plot/Common_Events_vs_Tolerance_RUN4049_rate_plot.png has been created
-Info in <TCanvas::Print>: png file images/Common_Events_vs_Tolerance_with_cut_plot/Common_Events_vs_Tolerance_RUN4049_rate_plot.png has been created
+Info in <TCanvas::Print>: png file images/Common_Events_vs_Tolerance_hist/Common_Events_vs_Tolerance_RUN4049_plot.png has been created
+Info in <TCanvas::Print>: png file images/Common_Events_vs_Tolerance_with_cut_plot/Common_Events_vs_Tolerance_RUN4049_rate__cut_CD_plot.png has been created
+Info in <TCanvas::Print>: png file images/Common_Events_vs_Tolerance_with_cut_plot/Common_Events_vs_Tolerance_RUN4049_rate__cut_WP_plot.png has been created
 Info in <TCanvas::Print>: png file images/Overlap_Area_vs_Tolerance_plot/Overlap_Area_vs_Tolerance_RUN4049_plot.png has been created

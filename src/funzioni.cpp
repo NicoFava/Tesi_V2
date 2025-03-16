@@ -2053,10 +2053,17 @@ void plot_common_events_NPE_muon(const vector<totalEvents>& eventi1, const vecto
 
     // Calcolo l'area di sovrapposizione tra gli istogrammi WP e muone
     overlap_area = 0.0;
+    double total_muon_area = 0.0;
     for (int bin = 1; bin <= hist1->GetNbinsX(); ++bin) {
         double bin_content1 = hist1->GetBinContent(bin);
         double bin_content2 = hist_muone1->GetBinContent(bin);
         overlap_area += std::min(bin_content1, bin_content2);
+        total_muon_area += bin_content2;
+    }
+
+    // Normalizzo l'area di sovrapposizione all'area totale degli eventi muoni
+    if (total_muon_area > 0) {
+        overlap_area /= total_muon_area;
     }
 
     delete canvas1;
@@ -2134,7 +2141,8 @@ void analyze_total_wp_cd(const vector<vector<totalEvents>>& total_eventi_per_fil
             overlap_areas.push_back(overlap_area);
         }
         analyze_common_events(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], total_run_names_wp[j], total_run_names_cd[j]);
-        analyze_common_events_with_energy_cut(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], total_run_names_wp[j], total_run_names_cd[j], 5e4);
+        analyze_common_events_with_energy_cut_cd(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], total_run_names_wp[j], total_run_names_cd[j], 5e4);
+        analyze_common_events_with_energy_cut_wp(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], total_run_names_wp[j], total_run_names_cd[j], 5e3);
         // Creazione del grafico dell'area di sovrapposizione in funzione della tolleranza
         TCanvas *c_overlap = new TCanvas("c_overlap", "Overlap Area totalWP & WP-classify vs Tolerance", 800, 600);
         TGraph *graph_overlap = new TGraph(tolerances.size(), &tolerances[0], &overlap_areas[0]);
@@ -2142,7 +2150,7 @@ void analyze_total_wp_cd(const vector<vector<totalEvents>>& total_eventi_per_fil
         // Aggiungi margini al canvas
         c_overlap->SetLeftMargin(0.15);
         c_overlap->SetBottomMargin(0.15);
-        graph_overlap->SetTitle("Overlap totalWP & WP-classify Ev. vs Tolerance;Tolerance [ns];Overlap Area");
+        graph_overlap->SetTitle("Normalized Overlap Area totalWP & WP-classify Ev. vs Tolerance;Tolerance [ns];Normalized Overlap Area");
         graph_overlap->GetXaxis()->SetTitleOffset(1.4); // Sposta il titolo dell'asse X
         graph_overlap->GetYaxis()->SetTitleOffset(1.6); // Sposta il titolo dell'asse Y
         graph_overlap->SetMarkerStyle(21);
@@ -2222,9 +2230,11 @@ void analyze_common_events(const vector<totalEvents>& eventi1, const vector<tota
 
     delete c_common_events;
     delete graph_common_events;
+
+    plot_common_events_vs_tolerance(eventi1, eventi2, run_name1, run_name2);
 }
 
-void analyze_common_events_with_energy_cut(const vector<totalEvents>& eventi1, const vector<totalEvents>& eventi2, const string& run_name1, const string& run_name2, double energy_cut) {
+void analyze_common_events_with_energy_cut_cd(const vector<totalEvents>& eventi1, const vector<totalEvents>& eventi2, const string& run_name1, const string& run_name2, double energy_cut) {
     vector<double> tolerances;
     vector<double> common_event_frequencies;
 
@@ -2234,7 +2244,7 @@ void analyze_common_events_with_energy_cut(const vector<totalEvents>& eventi1, c
     double run_duration = end_time - start_time;
 
     for (double tolerance_ns = 1.0; tolerance_ns <= 100000000.0; tolerance_ns *= 5.0) {
-        int common_event_count = count_common_events_with_energy_cut(eventi1, eventi2, tolerance_ns, energy_cut);
+        int common_event_count = count_common_events_with_energy_cut_cd(eventi1, eventi2, tolerance_ns, energy_cut);
         double common_event_frequency = common_event_count / run_duration;
         tolerances.push_back(tolerance_ns);
         common_event_frequencies.push_back(common_event_frequency);
@@ -2253,7 +2263,7 @@ void analyze_common_events_with_energy_cut(const vector<totalEvents>& eventi1, c
     c_common_events->SetGrid();
     c_common_events->SetLeftMargin(0.15);
     c_common_events->SetBottomMargin(0.15);
-    graph_common_events->SetTitle("Common Events Rate vs Tolerance;Tolerance [ns];Rate [Hz]");
+    graph_common_events->SetTitle("Common Events Rate vs Tolerance with charge cut on CD;Tolerance [ns];Rate [Hz]");
     graph_common_events->GetXaxis()->SetTitleOffset(1.4);
     graph_common_events->GetYaxis()->SetTitleOffset(1.6);
     graph_common_events->SetMarkerStyle(21);
@@ -2270,14 +2280,14 @@ void analyze_common_events_with_energy_cut(const vector<totalEvents>& eventi1, c
         fs::create_directory(folder_common_events);
     }
 
-    string filename_common_events = folder_common_events + "/Common_Events_vs_Tolerance_" + run_name1 + "_rate_plot.png";
+    string filename_common_events = folder_common_events + "/Common_Events_vs_Tolerance_" + run_name1 + "_rate__cut_CD_plot.png";
     c_common_events->SaveAs(filename_common_events.c_str());
 
     delete c_common_events;
     delete graph_common_events;
 }
 
-int count_common_events_with_energy_cut(const vector<totalEvents>& eventi1, const vector<totalEvents>& eventi2, double tolerance_ns, double energy_cut) {
+int count_common_events_with_energy_cut_cd(const vector<totalEvents>& eventi1, const vector<totalEvents>& eventi2, double tolerance_ns, double energy_cut) {
     int common_event_count = 0;
     size_t i = 0, j = 0;
 
@@ -2296,4 +2306,136 @@ int count_common_events_with_energy_cut(const vector<totalEvents>& eventi1, cons
         }
     }
     return common_event_count;
+}
+
+void analyze_common_events_with_energy_cut_wp(const vector<totalEvents>& eventi1, const vector<totalEvents>& eventi2, const string& run_name1, const string& run_name2, double energy_cut) {
+    vector<double> tolerances;
+    vector<double> common_event_frequencies;
+
+    // Calcolo la durata della run
+    double start_time = min(eventi1.front().fSec + eventi1.front().fNanoSec * 1e-9, eventi2.front().fSec + eventi2.front().fNanoSec * 1e-9);
+    double end_time = max(eventi1.back().fSec + eventi1.back().fNanoSec * 1e-9, eventi2.back().fSec + eventi2.back().fNanoSec * 1e-9);
+    double run_duration = end_time - start_time;
+
+    for (double tolerance_ns = 1.0; tolerance_ns <= 100000000.0; tolerance_ns *= 5.0) {
+        int common_event_count = count_common_events_with_energy_cut_wp(eventi1, eventi2, tolerance_ns, energy_cut);
+        double common_event_frequency = common_event_count / run_duration;
+        tolerances.push_back(tolerance_ns);
+        common_event_frequencies.push_back(common_event_frequency);
+    }
+
+    // Creazione del grafico della frequenza degli eventi comuni in funzione della tolleranza
+    TCanvas *c_common_events = new TCanvas("c_common_events", "Common Events Rate vs Tolerance", 800, 600);
+    int n = tolerances.size();
+    double* x = &tolerances[0];
+    double* y = new double[common_event_frequencies.size()];
+    for (size_t i = 0; i < common_event_frequencies.size(); ++i) {
+        y[i] = static_cast<double>(common_event_frequencies[i]);
+    }
+    TGraph *graph_common_events = new TGraph(n, x, y);
+    delete[] y;
+    c_common_events->SetGrid();
+    c_common_events->SetLeftMargin(0.15);
+    c_common_events->SetBottomMargin(0.15);
+    graph_common_events->SetTitle("Common Events Rate vs Tolerance with charge cut on WP;Tolerance [ns];Rate [Hz]");
+    graph_common_events->GetXaxis()->SetTitleOffset(1.4);
+    graph_common_events->GetYaxis()->SetTitleOffset(1.6);
+    graph_common_events->SetMarkerStyle(21);
+    graph_common_events->SetMarkerSize(1.5);
+    graph_common_events->Draw("AP");
+    c_common_events->SetLogx();
+
+    string main_folder = "images";
+    string folder_common_events = main_folder + "/Common_Events_vs_Tolerance_with_cut_plot";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
+    if (!fs::exists(folder_common_events)) {
+        fs::create_directory(folder_common_events);
+    }
+
+    string filename_common_events = folder_common_events + "/Common_Events_vs_Tolerance_" + run_name1 + "_rate__cut_WP_plot.png";
+    c_common_events->SaveAs(filename_common_events.c_str());
+
+    delete c_common_events;
+    delete graph_common_events;
+}
+
+int count_common_events_with_energy_cut_wp(const vector<totalEvents>& eventi1, const vector<totalEvents>& eventi2, double tolerance_ns, double energy_cut) {
+    int common_event_count = 0;
+    size_t i = 0, j = 0;
+
+    while (i < eventi1.size() && j < eventi2.size()) {
+        double ev_time1 = eventi1[i].fSec * 1e9 + eventi1[i].fNanoSec;
+        double ev_time2 = eventi2[j].fSec * 1e9 + eventi2[j].fNanoSec;
+
+        if (abs(ev_time1 - ev_time2) <= tolerance_ns && eventi1[i].NPE >= energy_cut) {
+            common_event_count++;
+            i++;
+            j++;
+        } else if (ev_time1 < ev_time2) {
+            i++;
+        } else {
+            j++;
+        }
+    }
+    return common_event_count;
+}
+
+void plot_common_events_vs_tolerance(const vector<totalEvents>& eventi1, const vector<totalEvents>& eventi2, const string& run_name1, const string& run_name2) {
+    vector<double> tolerances;
+    vector<int> common_event_counts;
+
+    // Definisci i valori di tolleranza da analizzare
+    for (double tolerance_ns = 1.0; tolerance_ns <= 100000000.0; tolerance_ns *= 10.0) {
+        tolerances.push_back(tolerance_ns);
+    }
+
+    // Calcola il numero di eventi in comune per ciascuna tolleranza
+    for (double tolerance_ns : tolerances) {
+        int common_event_count = count_common_events(eventi1, eventi2, tolerance_ns);
+        common_event_counts.push_back(common_event_count);
+    }
+
+    // Creazione dell'istogramma
+    TCanvas *c_common_events = new TCanvas("c_common_events", "Common Events vs Tolerance", 800, 600);
+    TH1F *hist_common_events = new TH1F("hist_common_events", "Common Events vs Tolerance;Tolerance [ns];Number of Common Events", tolerances.size(), 0, tolerances.size());
+
+    for (size_t i = 0; i < tolerances.size(); ++i) {
+        hist_common_events->SetBinContent(i + 1, common_event_counts[i]);
+        std::ostringstream oss;
+        oss << "10^" << static_cast<int>(log10(tolerances[i]));
+        hist_common_events->GetXaxis()->SetBinLabel(i + 1, oss.str().c_str());
+    }
+
+    // Rimuovi il riquadro delle informazioni
+    hist_common_events->SetStats(0);
+
+    // Riempie di colore l'istogramma
+    hist_common_events->SetFillColor(kBlue);
+    hist_common_events->SetFillStyle(3001);
+
+    c_common_events->SetGrid();
+    c_common_events->SetLeftMargin(0.15);
+    c_common_events->SetBottomMargin(0.15);
+    hist_common_events->GetXaxis()->SetTitleOffset(1.4);
+    hist_common_events->GetYaxis()->SetTitleOffset(1.6);
+    hist_common_events->SetMarkerStyle(21);
+    hist_common_events->SetMarkerSize(1.5);
+    hist_common_events->Draw("HIST");
+
+    string main_folder = "images";
+    string folder_common_events = main_folder + "/Common_Events_vs_Tolerance_hist";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
+    if (!fs::exists(folder_common_events)) {
+        fs::create_directory(folder_common_events);
+    }
+
+    string filename_common_events = folder_common_events + "/Common_Events_vs_Tolerance_" + run_name1 + "_plot.png";
+    c_common_events->SaveAs(filename_common_events.c_str());
+
+    delete c_common_events;
+    delete hist_common_events;
 }

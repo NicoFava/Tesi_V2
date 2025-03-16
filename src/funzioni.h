@@ -221,6 +221,11 @@ void plot_common_events_histogram(const vector<totalEvents>&, const vector<total
 void analyze_common_events(const vector<totalEvents>&, const vector<totalEvents>&, const string&, const string&);
 
 
-void analyze_common_events_with_energy_cut(const vector<totalEvents>&, const vector<totalEvents>&, const string&, const string&, double);
-int count_common_events_with_energy_cut(const vector<totalEvents>&, const vector<totalEvents>&, double, double);
+void analyze_common_events_with_energy_cut_cd(const vector<totalEvents>&, const vector<totalEvents>&, const string&, const string&, double);
+int count_common_events_with_energy_cut_cd(const vector<totalEvents>&, const vector<totalEvents>&, double, double);
+
+void analyze_common_events_with_energy_cut_wp(const vector<totalEvents>&, const vector<totalEvents>&, const string&, const string&, double);
+int count_common_events_with_energy_cut_wp(const vector<totalEvents>&, const vector<totalEvents>&, double, double);
+
+void plot_common_events_vs_tolerance(const vector<totalEvents>&, const vector<totalEvents>&, const string&, const string&);
 #endif
