@@ -2232,6 +2232,7 @@ void analyze_common_events(const vector<totalEvents>& eventi1, const vector<tota
     delete graph_common_events;
 
     plot_common_events_vs_tolerance(eventi1, eventi2, run_name1, run_name2);
+    plot_frequency_vs_tolerance_and_charge_cut_cd(eventi1, eventi2, run_name1, run_name2);
 }
 
 void analyze_common_events_with_energy_cut_cd(const vector<totalEvents>& eventi1, const vector<totalEvents>& eventi2, const string& run_name1, const string& run_name2, double energy_cut) {
@@ -2438,4 +2439,54 @@ void plot_common_events_vs_tolerance(const vector<totalEvents>& eventi1, const v
 
     delete c_common_events;
     delete hist_common_events;
+}
+
+void plot_frequency_vs_tolerance_and_charge_cut_cd(const vector<totalEvents>& eventi1, const vector<totalEvents>& eventi2, const string& run_name1, const string& run_name2) {
+    vector<double> tolerances;
+    vector<double> charge_cuts;
+    vector<double> frequencies;
+
+    // Definisci i valori di tolleranza e taglio in carica da analizzare
+    for (double tolerance_ns = 1.0; tolerance_ns <= 100000000.0; tolerance_ns *= 10.0) {
+        for (double charge_cut = 40000.0; charge_cut <= 60000.0; charge_cut += 1000.0) {
+            tolerances.push_back(tolerance_ns);
+            charge_cuts.push_back(charge_cut);
+
+            // Calcola la frequenza degli eventi comuni
+            int common_event_count = count_common_events_with_energy_cut_cd(eventi1, eventi2, tolerance_ns, charge_cut);
+            double start_time = min(eventi1.front().fSec + eventi1.front().fNanoSec * 1e-9, eventi2.front().fSec + eventi2.front().fNanoSec * 1e-9);
+            double end_time = max(eventi1.back().fSec + eventi1.back().fNanoSec * 1e-9, eventi2.back().fSec + eventi2.back().fNanoSec * 1e-9);
+            double run_duration = end_time - start_time;
+            double frequency = common_event_count / run_duration;
+            frequencies.push_back(frequency);
+        }
+    }
+
+    // Creazione del grafico 3D
+    TCanvas *c_frequency_vs_tolerance_and_charge_cut = new TCanvas("c_frequency_vs_tolerance_and_charge_cut", "Frequency vs Tolerance and Charge Cut", 800, 600);
+    TGraph2D *graph_frequency_vs_tolerance_and_charge_cut = new TGraph2D(tolerances.size());
+
+    for (size_t i = 0; i < tolerances.size(); ++i) {
+        graph_frequency_vs_tolerance_and_charge_cut->SetPoint(i, tolerances[i], charge_cuts[i], frequencies[i]);
+    }
+
+    graph_frequency_vs_tolerance_and_charge_cut->SetTitle("Frequency vs Tolerance and Charge Cut;Tolerance [ns];Charge Cut CD [p.e.];Frequency [Hz]");
+    graph_frequency_vs_tolerance_and_charge_cut->GetXaxis()->SetTitleOffset(1.4);
+    graph_frequency_vs_tolerance_and_charge_cut->GetYaxis()->SetTitleOffset(1.6);
+    graph_frequency_vs_tolerance_and_charge_cut->Draw("surf1");
+
+    string main_folder = "images";
+    string folder_frequency_vs_tolerance_and_charge_cut = main_folder + "/Frequency_vs_Tolerance_and_Charge_Cut_plot";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
+    if (!fs::exists(folder_frequency_vs_tolerance_and_charge_cut)) {
+        fs::create_directory(folder_frequency_vs_tolerance_and_charge_cut);
+    }
+
+    string filename_frequency_vs_tolerance_and_charge_cut = folder_frequency_vs_tolerance_and_charge_cut + "/Frequency_vs_Tolerance_and_Charge_Cut_" + run_name1 + "_plot.png";
+    c_frequency_vs_tolerance_and_charge_cut->SaveAs(filename_frequency_vs_tolerance_and_charge_cut.c_str());
+
+    delete c_frequency_vs_tolerance_and_charge_cut;
+    delete graph_frequency_vs_tolerance_and_charge_cut;
 }

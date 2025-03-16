@@ -228,4 +228,7 @@ void analyze_common_events_with_energy_cut_wp(const vector<totalEvents>&, const 
 int count_common_events_with_energy_cut_wp(const vector<totalEvents>&, const vector<totalEvents>&, double, double);
 
 void plot_common_events_vs_tolerance(const vector<totalEvents>&, const vector<totalEvents>&, const string&, const string&);
+
+void plot_frequency_vs_tolerance_and_charge_cut_cd(const vector<totalEvents>&, const vector<totalEvents>&, const string&, const string&);
+
 #endif

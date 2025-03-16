@@ -704,4 +704,4 @@ Il numero di eventi con lo stesso tempo registrati da WP e CD: 4983670
 ============================================
 FINE CONFRONTO WP e CD
 ============================================
-Tempo totale di esecuzione: 68.1494 secondi
+Tempo totale di esecuzione: 113.166 secondi
