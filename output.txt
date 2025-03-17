@@ -159,7 +159,7 @@ Trovato trackID = -1, salto la creazione dell'istrogramma TrackID per la RUN3413
 Informazioni sulla RUN non trovate.
 Tempo totale della RUN: t = 1732.28 s
 Numero di eventi totali registrati: 10536
-<delta_t> = 0.194967 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.12908 Hz
+<delta_t> = 0.194967 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.12907 Hz
 Il rate dei muoni (righe/t_tot) è: 6.08215 Hz.
 Il numero di eventi univoci per EventID: 8886
 La frequenza calcolata solo con gli eventi univoci è: 5.12965 Hz
@@ -174,7 +174,7 @@ Trovato trackID = -1, salto la creazione dell'istrogramma TrackID per la RUN3415
 Informazioni sulla RUN non trovate.
 Tempo totale della RUN: t = 11511.9 s
 Numero di eventi totali registrati: 70877
-<delta_t> = 0.192661 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.19045 Hz
+<delta_t> = 0.192661 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.19046 Hz
 Il rate dei muoni (righe/t_tot) è: 6.15685 Hz.
 Il numero di eventi univoci per EventID: 59753
 La frequenza calcolata solo con gli eventi univoci è: 5.19054 Hz
@@ -189,7 +189,7 @@ Trovato trackID = -1, salto la creazione dell'istrogramma TrackID per la RUN3416
 Informazioni sulla RUN non trovate.
 Tempo totale della RUN: t = 5253.97 s
 Numero di eventi totali registrati: 34924
-<delta_t> = 0.177473 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.63465 Hz
+<delta_t> = 0.182495 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.47959 Hz
 Il rate dei muoni (righe/t_tot) è: 6.64717 Hz.
 Il numero di eventi univoci per EventID: 29429
 La frequenza calcolata solo con gli eventi univoci è: 5.60129 Hz
@@ -204,7 +204,7 @@ Trovato trackID = -1, salto la creazione dell'istrogramma TrackID per la RUN3530
 Informazioni sulla RUN non trovate.
 Tempo totale della RUN: t = 4842.63 s
 Numero di eventi totali registrati: 32251
-<delta_t> = 0.187633 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.32954 Hz
+<delta_t> = 0.187711 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.32733 Hz
 Il rate dei muoni (righe/t_tot) è: 6.65981 Hz.
 Il numero di eventi univoci per EventID: 27104
 La frequenza calcolata solo con gli eventi univoci è: 5.59696 Hz
@@ -221,7 +221,7 @@ Trovato trackID = -1, salto la creazione dell'istrogramma TrackID per la RUN3531
 Informazioni sulla RUN non trovate.
 Tempo totale della RUN: t = 12862.4 s
 Numero di eventi totali registrati: 138330
-<delta_t> = 0.281893 s | rate (contando gli eventi bundle come unici 1/delta_t) = 3.54744 Hz
+<delta_t> = 0.276882 s | rate (contando gli eventi bundle come unici 1/delta_t) = 3.61164 Hz
 Il rate dei muoni (righe/t_tot) è: 10.7546 Hz.
 Il numero di eventi univoci per EventID: 116557
 La frequenza calcolata solo con gli eventi univoci è: 9.06181 Hz
@@ -234,7 +234,7 @@ La frequenza togliendo gli eventi di bordo è: 8.17909 Hz
 Informazioni sulla RUN non trovate.
 Tempo totale della RUN: t = 20473.9 s
 Numero di eventi totali registrati: 171223
-<delta_t> = 0.291391 s | rate (contando gli eventi bundle come unici 1/delta_t) = 3.43181 Hz
+<delta_t> = 0.291017 s | rate (contando gli eventi bundle come unici 1/delta_t) = 3.43622 Hz
 Il rate dei muoni (righe/t_tot) è: 8.36298 Hz.
 Il numero di eventi univoci per EventID: 137728
 La frequenza calcolata solo con gli eventi univoci è: 6.727 Hz
@@ -247,7 +247,7 @@ La frequenza togliendo gli eventi di bordo è: 5.39667 Hz
 Informazioni sulla RUN non trovate.
 Tempo totale della RUN: t = 1693.94 s
 Numero di eventi totali registrati: 11342
-<delta_t> = 0.189651 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.27283 Hz
+<delta_t> = 0.179804 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.5616 Hz
 Il rate dei muoni (righe/t_tot) è: 6.69564 Hz.
 Il numero di eventi univoci per EventID: 9422
 La frequenza calcolata solo con gli eventi univoci è: 5.56219 Hz
@@ -260,7 +260,7 @@ La frequenza togliendo gli eventi di bordo è: 4.89392 Hz
 Informazioni sulla RUN non trovate.
 Tempo totale della RUN: t = 3980.92 s
 Numero di eventi totali registrati: 16430
-<delta_t> = 0.294628 s | rate (contando gli eventi bundle come unici 1/delta_t) = 3.39411 Hz
+<delta_t> = 0.294273 s | rate (contando gli eventi bundle come unici 1/delta_t) = 3.39821 Hz
 Il rate dei muoni (righe/t_tot) è: 4.12718 Hz.
 Il numero di eventi univoci per EventID: 13529
 La frequenza calcolata solo con gli eventi univoci è: 3.39846 Hz
@@ -273,7 +273,7 @@ La frequenza togliendo gli eventi di bordo è: 2.987 Hz
 Informazioni sulla RUN non trovate.
 Tempo totale della RUN: t = 7781.32 s
 Numero di eventi totali registrati: 52329
-<delta_t> = 0.180088 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.55283 Hz
+<delta_t> = 0.178877 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.59044 Hz
 Il rate dei muoni (righe/t_tot) è: 6.72495 Hz.
 Il numero di eventi univoci per EventID: 43502
 La frequenza calcolata solo con gli eventi univoci è: 5.59057 Hz
@@ -286,7 +286,7 @@ La frequenza togliendo gli eventi di bordo è: 4.9633 Hz
 Informazioni sulla RUN non trovate.
 Tempo totale della RUN: t = 6043.41 s
 Numero di eventi totali registrati: 40160
-<delta_t> = 0.178608 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.59885 Hz
+<delta_t> = 0.178493 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.60246 Hz
 Il rate dei muoni (righe/t_tot) è: 6.64525 Hz.
 Il numero di eventi univoci per EventID: 33859
 La frequenza calcolata solo con gli eventi univoci è: 5.60263 Hz
@@ -299,7 +299,7 @@ La frequenza togliendo gli eventi di bordo è: 5.05261 Hz
 Data di inizio: 2025-02-10 | Ora di inizio: 00:00 | Durata: 20929.6 s. 
 Tempo totale della RUN: t = 32650.6 s
 Numero di eventi totali registrati: 209297
-<delta_t> = 0.186054 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.37479 Hz
+<delta_t> = 0.185713 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.38465 Hz
 Il rate dei muoni (righe/t_tot) è: 6.4102 Hz.
 Il numero di eventi univoci per EventID: 175813
 La frequenza calcolata solo con gli eventi univoci è: 5.38468 Hz
@@ -312,7 +312,7 @@ La frequenza togliendo gli eventi di bordo è: 4.81764 Hz
 Data di inizio: 2025-02-10 | Ora di inizio: 21:30 | Durata: 8937.55 s. 
 Tempo totale della RUN: t = 20655.3 s
 Numero di eventi totali registrati: 129659
-<delta_t> = 0.188657 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.30063 Hz
+<delta_t> = 0.189018 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.2905 Hz
 Il rate dei muoni (righe/t_tot) è: 6.27726 Hz.
 Il numero di eventi univoci per EventID: 109278
 La frequenza calcolata solo con gli eventi univoci è: 5.29054 Hz
@@ -325,7 +325,7 @@ La frequenza togliendo gli eventi di bordo è: 4.69733 Hz
 Data di inizio: 2025-02-11 | Ora di inizio: 03:34 | Durata: 54190.6 s. 
 Tempo totale della RUN: t = 54190.6 s
 Numero di eventi totali registrati: 340561
-<delta_t> = 0.188914 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.29341 Hz
+<delta_t> = 0.189053 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.28953 Hz
 Il rate dei muoni (righe/t_tot) è: 6.2845 Hz.
 Il numero di eventi univoci per EventID: 286644
 La frequenza calcolata solo con gli eventi univoci è: 5.28955 Hz
@@ -338,7 +338,7 @@ La frequenza togliendo gli eventi di bordo è: 4.69456 Hz
 Data di inizio: 2025-02-11 | Ora di inizio: 18:42 | Durata: 18963.3 s. 
 Tempo totale della RUN: t = 23151.8 s
 Numero di eventi totali registrati: 145502
-<delta_t> = 0.191462 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.22298 Hz
+<delta_t> = 0.191577 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.21982 Hz
 Il rate dei muoni (righe/t_tot) è: 6.28469 Hz.
 Il numero di eventi univoci per EventID: 122035
 La frequenza calcolata solo con gli eventi univoci è: 5.27107 Hz
@@ -351,7 +351,7 @@ La frequenza togliendo gli eventi di bordo è: 4.70978 Hz
 Data di inizio: 2025-02-12 | Ora di inizio: 07:58 | Durata: 30031.9 s. 
 Tempo totale della RUN: t = 30031.6 s
 Numero di eventi totali registrati: 187385
-<delta_t> = 0.190327 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.25411 Hz
+<delta_t> = 0.190771 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.24188 Hz
 Il rate dei muoni (righe/t_tot) è: 6.2396 Hz.
 Il numero di eventi univoci per EventID: 157423
 La frequenza calcolata solo con gli eventi univoci è: 5.24191 Hz
@@ -364,7 +364,7 @@ La frequenza togliendo gli eventi di bordo è: 4.65516 Hz
 Data di inizio: 2025-02-14 | Ora di inizio: 00:00 | Durata: 30613.2 s. 
 Tempo totale della RUN: t = 30613 s
 Numero di eventi totali registrati: 190515
-<delta_t> = 0.189966 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.26409 Hz
+<delta_t> = 0.190599 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.24663 Hz
 Il rate dei muoni (righe/t_tot) è: 6.22334 Hz.
 Il numero di eventi univoci per EventID: 160616
 La frequenza calcolata solo con gli eventi univoci è: 5.24666 Hz
@@ -377,7 +377,7 @@ La frequenza togliendo gli eventi di bordo è: 4.6496 Hz
 Data di inizio: 2025-02-14 | Ora di inizio: 08:39 | Durata: 11747.8 s. 
 Tempo totale della RUN: t = 11804.6 s
 Numero di eventi totali registrati: 74006
-<delta_t> = 0.189952 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.26449 Hz
+<delta_t> = 0.189709 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.27124 Hz
 Il rate dei muoni (righe/t_tot) è: 6.26924 Hz.
 Il numero di eventi univoci per EventID: 62226
 La frequenza calcolata solo con gli eventi univoci è: 5.27133 Hz
@@ -390,7 +390,7 @@ La frequenza togliendo gli eventi di bordo è: 4.70282 Hz
 Data di inizio: 2025-02-14 | Ora di inizio: 12:11 | Durata: 14195.3 s. 
 Tempo totale della RUN: t = 14263.7 s
 Numero di eventi totali registrati: 88993
-<delta_t> = 0.189244 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.28418 Hz
+<delta_t> = 0.192204 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.20281 Hz
 Il rate dei muoni (righe/t_tot) è: 6.23912 Hz.
 Il numero di eventi univoci per EventID: 74805
 La frequenza calcolata solo con gli eventi univoci è: 5.24443 Hz
@@ -403,7 +403,7 @@ La frequenza togliendo gli eventi di bordo è: 4.66548 Hz
 Data di inizio: 2025-02-14 | Ora di inizio: 17:10 | Durata: 13698.9 s. 
 Tempo totale della RUN: t = 13698.5 s
 Numero di eventi totali registrati: 88813
-<delta_t> = 0.187505 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.3332 Hz
+<delta_t> = 0.186885 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.35087 Hz
 Il rate dei muoni (righe/t_tot) è: 6.4834 Hz.
 Il numero di eventi univoci per EventID: 73300
 La frequenza calcolata solo con gli eventi univoci è: 5.35094 Hz
@@ -416,7 +416,7 @@ La frequenza togliendo gli eventi di bordo è: 4.8452 Hz
 Data di inizio: 2025-02-14 | Ora di inizio: 21:21 | Durata: 9457.48 s. 
 Tempo totale della RUN: t = 14397.4 s
 Numero di eventi totali registrati: 93004
-<delta_t> = 0.18815 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.31491 Hz
+<delta_t> = 0.18771 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.32735 Hz
 Il rate dei muoni (righe/t_tot) è: 6.45978 Hz.
 Il numero di eventi univoci per EventID: 76701
 La frequenza calcolata solo con gli eventi univoci è: 5.32742 Hz
@@ -429,7 +429,7 @@ La frequenza togliendo gli eventi di bordo è: 4.8488 Hz
 Informazioni sulla RUN non trovate.
 Tempo totale della RUN: t = 14294.9 s
 Numero di eventi totali registrati: 91576
-<delta_t> = 0.189064 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.2892 Hz
+<delta_t> = 0.189082 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.28872 Hz
 Il rate dei muoni (righe/t_tot) è: 6.40618 Hz.
 Il numero di eventi univoci per EventID: 75603
 La frequenza calcolata solo con gli eventi univoci è: 5.28879 Hz
@@ -442,7 +442,7 @@ La frequenza togliendo gli eventi di bordo è: 4.78491 Hz
 Data di inizio: 2025-02-15 | Ora di inizio: 05:39 | Durata: 12140.3 s. 
 Tempo totale della RUN: t = 12140.2 s
 Numero di eventi totali registrati: 77459
-<delta_t> = 0.188952 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.29235 Hz
+<delta_t> = 0.189664 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.27248 Hz
 Il rate dei muoni (righe/t_tot) è: 6.38037 Hz.
 Il numero di eventi univoci per EventID: 64010
 La frequenza calcolata solo con gli eventi univoci è: 5.27256 Hz
@@ -455,7 +455,7 @@ La frequenza togliendo gli eventi di bordo è: 4.77241 Hz
 Data di inizio: 2025-02-15 | Ora di inizio: 10:15 | Durata: 13366.5 s. 
 Tempo totale della RUN: t = 13366.3 s
 Numero di eventi totali registrati: 86267
-<delta_t> = 0.187031 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.3467 Hz
+<delta_t> = 0.187518 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.33282 Hz
 Il rate dei muoni (righe/t_tot) è: 6.45407 Hz.
 Il numero di eventi univoci per EventID: 71281
 La frequenza calcolata solo con gli eventi univoci è: 5.33289 Hz
@@ -468,7 +468,7 @@ La frequenza togliendo gli eventi di bordo è: 4.82872 Hz
 Data di inizio: 2025-02-15 | Ora di inizio: 21:17 | Durata: 7545.1 s. 
 Tempo totale della RUN: t = 7616.1 s
 Numero di eventi totali registrati: 50306
-<delta_t> = 0.182065 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.49255 Hz
+<delta_t> = 0.183635 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.44559 Hz
 Il rate dei muoni (righe/t_tot) è: 6.60522 Hz.
 Il numero di eventi univoci per EventID: 41520
 La frequenza calcolata solo con gli eventi univoci è: 5.45161 Hz
@@ -481,7 +481,7 @@ La frequenza togliendo gli eventi di bordo è: 4.95661 Hz
 Data di inizio: 2025-02-16 | Ora di inizio: 00:18 | Durata: 14300.3 s. 
 Tempo totale della RUN: t = 14300.2 s
 Numero di eventi totali registrati: 92965
-<delta_t> = 0.186139 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.37232 Hz
+<delta_t> = 0.189214 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.28503 Hz
 Il rate dei muoni (righe/t_tot) è: 6.50097 Hz.
 Il numero di eventi univoci per EventID: 76791
 La frequenza calcolata solo con gli eventi univoci è: 5.36994 Hz
@@ -494,7 +494,7 @@ La frequenza togliendo gli eventi di bordo è: 4.90183 Hz
 Data di inizio: 2025-02-16 | Ora di inizio: 04:22 | Durata: 14643.6 s. 
 Tempo totale della RUN: t = 14643.3 s
 Numero di eventi totali registrati: 94854
-<delta_t> = 0.187445 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.33491 Hz
+<delta_t> = 0.187178 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.34252 Hz
 Il rate dei muoni (righe/t_tot) è: 6.47763 Hz.
 Il numero di eventi univoci per EventID: 78456
 La frequenza calcolata solo con gli eventi univoci è: 5.3578 Hz
@@ -507,7 +507,7 @@ La frequenza togliendo gli eventi di bordo è: 4.8668 Hz
 Data di inizio: 2025-02-16 | Ora di inizio: 08:31 | Durata: 14384.9 s. 
 Tempo totale della RUN: t = 14384.8 s
 Numero di eventi totali registrati: 93187
-<delta_t> = 0.185868 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.38015 Hz
+<delta_t> = 0.187918 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.32147 Hz
 Il rate dei muoni (righe/t_tot) è: 6.47816 Hz.
 Il numero di eventi univoci per EventID: 76903
 La frequenza calcolata solo con gli eventi univoci è: 5.34613 Hz
@@ -520,7 +520,7 @@ La frequenza togliendo gli eventi di bordo è: 4.85151 Hz
 Data di inizio: 2025-02-16 | Ora di inizio: 17:31 | Durata: 13778.6 s. 
 Tempo totale della RUN: t = 13778.3 s
 Numero di eventi totali registrati: 89077
-<delta_t> = 0.186837 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.35227 Hz
+<delta_t> = 0.187304 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.33891 Hz
 Il rate dei muoni (righe/t_tot) è: 6.46503 Hz.
 Il numero di eventi univoci per EventID: 73562
 La frequenza calcolata solo con gli eventi univoci è: 5.33898 Hz
@@ -533,7 +533,7 @@ La frequenza togliendo gli eventi di bordo è: 4.85416 Hz
 Data di inizio: 2025-02-16 | Ora di inizio: 21:37 | Durata: 8544.52 s. 
 Tempo totale della RUN: t = 8544.48 s
 Numero di eventi totali registrati: 55300
-<delta_t> = 0.186586 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.35945 Hz
+<delta_t> = 0.187096 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.34485 Hz
 Il rate dei muoni (righe/t_tot) è: 6.47201 Hz.
 Il numero di eventi univoci per EventID: 45670
 La frequenza calcolata solo con gli eventi univoci è: 5.34497 Hz
@@ -546,7 +546,7 @@ La frequenza togliendo gli eventi di bordo è: 4.84675 Hz
 Data di inizio: 2025-02-17 | Ora di inizio: 01:43 | Durata: 14382.2 s. 
 Tempo totale della RUN: t = 14381.9 s
 Numero di eventi totali registrati: 92924
-<delta_t> = 0.188861 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.29489 Hz
+<delta_t> = 0.188218 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.313 Hz
 Il rate dei muoni (righe/t_tot) è: 6.46118 Hz.
 Il numero di eventi univoci per EventID: 76412
 La frequenza calcolata solo con gli eventi univoci è: 5.31307 Hz
@@ -559,7 +559,7 @@ La frequenza togliendo gli eventi di bordo è: 4.83017 Hz
 Data di inizio: 2025-02-17 | Ora di inizio: 08:37 | Durata: 14383.9 s. 
 Tempo totale della RUN: t = 14383.4 s
 Numero di eventi totali registrati: 93490
-<delta_t> = 0.185586 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.38834 Hz
+<delta_t> = 0.186751 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.35472 Hz
 Il rate dei muoni (righe/t_tot) è: 6.49986 Hz.
 Il numero di eventi univoci per EventID: 77020
 La frequenza calcolata solo con gli eventi univoci è: 5.35479 Hz
@@ -572,7 +572,7 @@ La frequenza togliendo gli eventi di bordo è: 4.87681 Hz
 Data di inizio: 2025-02-17 | Ora di inizio: 09:55 | Durata: 14164.8 s. 
 Tempo totale della RUN: t = 14164.4 s
 Numero di eventi totali registrati: 91522
-<delta_t> = 0.187296 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.33914 Hz
+<delta_t> = 0.187404 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.33605 Hz
 Il rate dei muoni (righe/t_tot) è: 6.46141 Hz.
 Il numero di eventi univoci per EventID: 75583
 La frequenza calcolata solo con gli eventi univoci è: 5.33612 Hz
@@ -587,7 +587,7 @@ La frequenza togliendo gli eventi di bordo è: 4.84101 Hz
 Data di inizio: 2025-02-17 | Ora di inizio: 21:29 | Durata: 8917.25 s. 
 Tempo totale della RUN: t = 8917.12 s
 Numero di eventi totali registrati: 61532
-<delta_t> = 0.176044 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.6804 Hz
+<delta_t> = 0.175721 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.69085 Hz
 Il rate dei muoni (righe/t_tot) è: 6.90043 Hz.
 Il numero di eventi univoci per EventID: 50747
 La frequenza calcolata solo con gli eventi univoci è: 5.69096 Hz
@@ -600,7 +600,7 @@ La frequenza togliendo gli eventi di bordo è: 5.24855 Hz
 Data di inizio: 2025-02-18 | Ora di inizio: 01:40 | Durata: 14363 s. 
 Tempo totale della RUN: t = 14362.8 s
 Numero di eventi totali registrati: 98175
-<delta_t> = 0.17584 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.687 Hz
+<delta_t> = 0.17669 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.65964 Hz
 Il rate dei muoni (righe/t_tot) è: 6.83539 Hz.
 Il numero di eventi univoci per EventID: 81289
 La frequenza calcolata solo con gli eventi univoci è: 5.65971 Hz
@@ -613,7 +613,7 @@ La frequenza togliendo gli eventi di bordo è: 5.18313 Hz
 Informazioni sulla RUN non trovate.
 Tempo totale della RUN: t = 5288.74 s
 Numero di eventi totali registrati: 36147
-<delta_t> = 0.175611 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.69439 Hz
+<delta_t> = 0.177833 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.62327 Hz
 Il rate dei muoni (righe/t_tot) è: 6.83471 Hz.
 Il numero di eventi univoci per EventID: 29741
 La frequenza calcolata solo con gli eventi univoci è: 5.62346 Hz
@@ -626,7 +626,7 @@ La frequenza togliendo gli eventi di bordo è: 5.19689 Hz
 Data di inizio: 2025-02-18 | Ora di inizio: 08:08 | Durata: 14383.1 s. 
 Tempo totale della RUN: t = 14382.4 s
 Numero di eventi totali registrati: 98734
-<delta_t> = 0.177258 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.6415 Hz
+<delta_t> = 0.17666 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.66059 Hz
 Il rate dei muoni (righe/t_tot) è: 6.86491 Hz.
 Il numero di eventi univoci per EventID: 81414
 La frequenza calcolata solo con gli eventi univoci è: 5.66066 Hz
@@ -640,7 +640,7 @@ Dati salvati con successo in RUN4049!
 Informazioni sulla RUN non trovate.
 Tempo totale della RUN: t = 1195.62 s
 Numero di eventi totali registrati: 8140
-<delta_t> = 0.183361 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.45373 Hz
+<delta_t> = 0.177234 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.64227 Hz
 Il rate dei muoni (righe/t_tot) è: 6.8082 Hz.
 Il numero di eventi univoci per EventID: 6747
 La frequenza calcolata solo con gli eventi univoci è: 5.64311 Hz
@@ -660,7 +660,7 @@ FINE ANALISI
 Data di inizio: 2025-02-18 | Ora di inizio: 08:08 | Durata: 14383.1 s. 
 Tempo totale della RUN: t = 14382.4 s
 Numero di eventi totali registrati: 81414
-<delta_t> = 0.177258 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.6415 Hz
+<delta_t> = 0.17666 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.66059 Hz
 Il rate dei muoni (righe/t_tot) è: 5.66066 Hz.
 La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 20329
@@ -681,19 +681,19 @@ CONFRONTO TRA TOTALEVENTS WP E CD
 ============================================
 Analisi del file RUN4049
 Prendendo un intervallo di tolleranza di 1 ns
-Il numero di eventi con lo stesso tempo registrati da WP e CD: 58631
+Il numero di eventi con lo stesso tempo registrati da WP e CD: 6803
 Prendendo un intervallo di tolleranza di 10 ns
-Il numero di eventi con lo stesso tempo registrati da WP e CD: 58631
+Il numero di eventi con lo stesso tempo registrati da WP e CD: 6814
 Prendendo un intervallo di tolleranza di 100 ns
-Il numero di eventi con lo stesso tempo registrati da WP e CD: 58631
+Il numero di eventi con lo stesso tempo registrati da WP e CD: 66394
 Prendendo un intervallo di tolleranza di 1000 ns
-Il numero di eventi con lo stesso tempo registrati da WP e CD: 76858
+Il numero di eventi con lo stesso tempo registrati da WP e CD: 77289
 Prendendo un intervallo di tolleranza di 10000 ns
-Il numero di eventi con lo stesso tempo registrati da WP e CD: 111715
+Il numero di eventi con lo stesso tempo registrati da WP e CD: 111335
 Prendendo un intervallo di tolleranza di 100000 ns
-Il numero di eventi con lo stesso tempo registrati da WP e CD: 427456
+Il numero di eventi con lo stesso tempo registrati da WP e CD: 427578
 Prendendo un intervallo di tolleranza di 1e+06 ns
-Il numero di eventi con lo stesso tempo registrati da WP e CD: 2236106
+Il numero di eventi con lo stesso tempo registrati da WP e CD: 2236031
 Prendendo un intervallo di tolleranza di 1e+07 ns
 Il numero di eventi con lo stesso tempo registrati da WP e CD: 4457246
 Prendendo un intervallo di tolleranza di 1e+08 ns
@@ -704,4 +704,4 @@ Il numero di eventi con lo stesso tempo registrati da WP e CD: 4983670
 ============================================
 FINE CONFRONTO WP e CD
 ============================================
-Tempo totale di esecuzione: 113.166 secondi
+Tempo totale di esecuzione: 78.2166 secondi

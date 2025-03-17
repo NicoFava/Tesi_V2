@@ -98,7 +98,7 @@ int muon_bundle(const vector<muone>&);
 int Nevents(const vector<muone>&);
 
 // Funzione per calcolare il tempo medio tra un evento e il successivo (inverso della frequenza)
-float mean_delta_t(const vector<muone>&, const string&);
+long double mean_delta_t(const vector<muone>&, const string&);
 
 // Funzione che mi ordina in maniera crescente in ID
 void sort_events_by_id(vector<muone>&);
@@ -125,7 +125,7 @@ void PeSum_vs_polar_angle(const vector<muone>&, const string&);
 void PeSum_vs_azimuthal_angle(const vector<muone>&, const string&);
 
 // Funzione per calcolare il tempo totale della run
-double total_run_time(const vector<muone>&);
+long double total_run_time(const vector<muone>&);
 
 // Funzione per estrarre le informazioni sulla run
 vector<RunInfo> load_run_info(const string&);
@@ -228,7 +228,4 @@ void analyze_common_events_with_energy_cut_wp(const vector<totalEvents>&, const 
 int count_common_events_with_energy_cut_wp(const vector<totalEvents>&, const vector<totalEvents>&, double, double);
 
 void plot_common_events_vs_tolerance(const vector<totalEvents>&, const vector<totalEvents>&, const string&, const string&);
-
-void plot_frequency_vs_tolerance_and_charge_cut_cd(const vector<totalEvents>&, const vector<totalEvents>&, const string&, const string&);
-
 #endif

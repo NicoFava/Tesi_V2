@@ -94,7 +94,7 @@ int main(int argc, char* argv[]) {
     vector<double> muon_rates;
     vector<double> path_distances;
     vector<double> max_path_distances;
-    double delta_t = 0;
+    long double delta_t = 0;
     double rate = 0;
     double rates = 0;
     double cut_distance = 2800; // Distanza di taglio per gli eventi di bordo

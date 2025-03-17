@@ -239,16 +239,16 @@ int muon_bundle(const vector<muone>& eventi) {
     return bundle_count;
 }
 
-float mean_delta_t(const vector<muone>& eventi, const string& run_names){
+long double mean_delta_t(const vector<muone>& eventi, const string& run_names){
     int last_entry_time = 0;
-    vector<float> intervalli;
+    vector<long double> intervalli;
     for (size_t i = 1; i < eventi.size(); i++) {
         last_entry_time = eventi[i - 1].fSec + eventi[i - 1].fNanosec;
         if(eventi[i].fSec+eventi[i].fNanosec!=last_entry_time){
             // Converto il tempo in nanosecondi e calcola la differenza
-            float t1 = eventi[i - 1].fSec * 1e9 + eventi[i - 1].fNanosec;
-            float t2 = eventi[i].fSec * 1e9 + eventi[i].fNanosec;
-            float delta_t = t2 - t1;
+            long double t1 = (long double) eventi[i - 1].fSec * 1e9 + (long double) eventi[i - 1].fNanosec;
+            long double t2 = (long double) eventi[i].fSec * 1e9 + (long double) eventi[i].fNanosec;
+            long double delta_t = t2 - t1;
 
             // Se l'intervallo è negativo, c'è un errore nell'ordine degli eventi
             if (delta_t < 0) {
@@ -259,8 +259,8 @@ float mean_delta_t(const vector<muone>& eventi, const string& run_names){
         }
     }
 
-    double somma = accumulate(intervalli.begin(), intervalli.end(), 0.0);
-    double media = somma / intervalli.size();
+    long double somma = accumulate(intervalli.begin(), intervalli.end(), 0.0);
+    long double media = somma / intervalli.size();
     return media;
 }
 
@@ -528,14 +528,14 @@ void PeSum_vs_azimuthal_angle(const vector<muone>& eventi, const string& run_nam
     delete hist2D;
 }
 
-double total_run_time(const vector<muone>& eventi) {
+long double total_run_time(const vector<muone>& eventi) {
     if (eventi.empty()) {
         return 0.0;
     }
 
-    double start_time = eventi.front().fSec + eventi.front().fNanosec * 1e-9;
-    double end_time = eventi.back().fSec + eventi.back().fNanosec * 1e-9;
-    double total_time = end_time - start_time;
+    long double start_time = (long double) eventi.front().fSec + (long double) eventi.front().fNanosec * 1e-9;
+    long double end_time = (long double) eventi.back().fSec + (long double) eventi.back().fNanosec * 1e-9;
+    long double total_time = end_time - start_time;
 
     return total_time;
 }
@@ -602,9 +602,9 @@ void plot_muon_rate(const vector<muone>& eventi, const string& run_name, double 
     }
 
     // Trovo il tempo iniziale e finale della RUN
-    double t_start = eventi.front().fSec + eventi.front().fNanosec * 1e-9;
-    double t_end = eventi.back().fSec + eventi.back().fNanosec * 1e-9;
-    double duration = t_end - t_start;
+    long double t_start = (long double) eventi.front().fSec + (long double) eventi.front().fNanosec * 1e-9;
+    long double t_end = (long double) eventi.back().fSec + (long double) eventi.back().fNanosec * 1e-9;
+    long double duration = (long double) t_end - (long double) t_start;
 
     if (duration <= 0) {
         cerr << "Errore: Tempo totale del file " << run_name << " non valido!" << endl;
@@ -672,8 +672,8 @@ void plot_muon_rate_vs_run(const vector<vector<muone>>& eventi_per_file, const v
             continue;
         }
 
-        double total_time = total_run_time(eventi_per_file[i]);
-        double rate = eventi_per_file[i].size() / total_time;
+        long double total_time = total_run_time(eventi_per_file[i]);
+        double rate = eventi_per_file[i].size() / (long double) total_time;
 
         run_indices.push_back(i + 1);
         muon_rates.push_back(rate);
@@ -863,8 +863,8 @@ void plot_muon_rate_with_edge_cut_vs_run(const vector<vector<muone>>& eventi_per
             continue;
         }
 
-        double total_time = total_run_time(eventi_per_file[i]);
-        double rate = ((double )eventi_per_file[i].size() - (double)edge_events(eventi_per_file[i], cut_distance)) / total_time;
+        long double total_time = total_run_time(eventi_per_file[i]);
+        double rate = ((double )eventi_per_file[i].size() - (double)edge_events(eventi_per_file[i], cut_distance)) / (long double) total_time;
 
         run_indices.push_back(i + 1);
         muon_rates.push_back(rate);
@@ -1672,8 +1672,8 @@ int count_common_events(const vector<totalEvents>& eventi1, const vector<totalEv
     size_t i = 0, j = 0;
 
     while (i < eventi1.size() && j < eventi2.size()) {
-        double ev_time1 = eventi1[i].fSec * 1e9 + eventi1[i].fNanoSec;
-        double ev_time2 = eventi2[j].fSec * 1e9 + eventi2[j].fNanoSec;
+        long double ev_time1 = (long double) eventi1[i].fSec * 1e9 + (long double) eventi1[i].fNanoSec;
+        long double ev_time2 = (long double) eventi2[j].fSec * 1e9 + (long double) eventi2[j].fNanoSec;
 
         if (abs(ev_time1 - ev_time2) <= tolerance_ns) {
             common_event_count++;
@@ -1696,8 +1696,8 @@ void plot_common_events_NPE(const vector<totalEvents>& eventi1, const vector<tot
     std::ostringstream oss;
     oss << std::fixed << std::setprecision(2) << tolerance_ns;
     while (i < eventi1.size() && j < eventi2.size()) {
-        double ev_time1 = eventi1[i].fSec * 1e9 + eventi1[i].fNanoSec;
-        double ev_time2 = eventi2[j].fSec * 1e9 + eventi2[j].fNanoSec;
+        long double ev_time1 = (long double) eventi1[i].fSec * 1e9 + (long double) eventi1[i].fNanoSec;
+        long double ev_time2 = (long double) eventi2[j].fSec * 1e9 + (long double) eventi2[j].fNanoSec;
 
         if (abs(ev_time1 - ev_time2) <= tolerance_ns) {
             common_NPE1.push_back(eventi1[i].NPE);
@@ -1804,8 +1804,8 @@ void plot_common_events_NPE_all(const vector<totalEvents>& eventi1, const vector
 
     // Riempio i vettori con gli eventi comuni entro la tolleranza
     while (i < eventi1.size() && j < eventi2.size()) {
-        double ev_time1 = eventi1[i].fSec * 1e9 + eventi1[i].fNanoSec;
-        double ev_time2 = eventi2[j].fSec * 1e9 + eventi2[j].fNanoSec;
+        long double ev_time1 = (long double) eventi1[i].fSec * 1e9 + (long double) eventi1[i].fNanoSec;
+        long double ev_time2 = (long double) eventi2[j].fSec * 1e9 + (long double) eventi2[j].fNanoSec;
 
         if (abs(ev_time1 - ev_time2) <= tolerance_ns) {
             common_NPE1.push_back(eventi1[i].NPE);
@@ -1959,8 +1959,8 @@ void plot_common_events_NPE_muon(const vector<totalEvents>& eventi1, const vecto
 
     // Riempio i vettori con gli eventi comuni entro la tolleranza
     while (i < eventi1.size() && j < eventi2.size()) {
-        double ev_time1 = eventi1[i].fSec * 1e9 + eventi1[i].fNanoSec;
-        double ev_time2 = eventi2[j].fSec * 1e9 + eventi2[j].fNanoSec;
+        long double ev_time1 = (long double) eventi1[i].fSec * 1e9 + (long double) eventi1[i].fNanoSec;
+        long double ev_time2 = (long double) eventi2[j].fSec * 1e9 + (long double) eventi2[j].fNanoSec;
 
         if (abs(ev_time1 - ev_time2) <= tolerance_ns) {
             common_NPE1.push_back(eventi1[i].NPE);
@@ -2184,13 +2184,17 @@ void analyze_common_events(const vector<totalEvents>& eventi1, const vector<tota
     vector<double> common_event_frequencies;
 
     // Calcolo la durata della run
-    double start_time = min(eventi1.front().fSec + eventi1.front().fNanoSec * 1e-9, eventi2.front().fSec + eventi2.front().fNanoSec * 1e-9);
-    double end_time = max(eventi1.back().fSec + eventi1.back().fNanoSec * 1e-9, eventi2.back().fSec + eventi2.back().fNanoSec * 1e-9);
-    double run_duration = end_time - start_time;
+    long double start_time1 = (long double) eventi1.front().fSec + (long double) eventi1.front().fNanoSec * 1e-9;
+    long double end_time1 = (long double) eventi1.back().fSec + (long double) eventi1.back().fNanoSec * 1e-9;
+    long double start_time2 = (long double) eventi2.front().fSec + (long double) eventi2.front().fNanoSec * 1e-9;
+    long double end_time2 = (long double) eventi2.back().fSec + (long double) eventi2.back().fNanoSec * 1e-9;
+    long double run_duration1 = end_time1 - start_time1;
+    long double run_duration2 = end_time2 - start_time2;
+    long double run_duration = max(run_duration1, run_duration2);
 
     for (double tolerance_ns = 1.0; tolerance_ns <= 100000000.0; tolerance_ns *= 5.0) {
         int common_event_count = count_common_events(eventi1, eventi2, tolerance_ns);
-        double common_event_frequency = common_event_count / run_duration;
+        double common_event_frequency = common_event_count / (long double) run_duration;
         tolerances.push_back(tolerance_ns);
         common_event_frequencies.push_back(common_event_frequency);
     }
@@ -2232,7 +2236,6 @@ void analyze_common_events(const vector<totalEvents>& eventi1, const vector<tota
     delete graph_common_events;
 
     plot_common_events_vs_tolerance(eventi1, eventi2, run_name1, run_name2);
-    plot_frequency_vs_tolerance_and_charge_cut_cd(eventi1, eventi2, run_name1, run_name2);
 }
 
 void analyze_common_events_with_energy_cut_cd(const vector<totalEvents>& eventi1, const vector<totalEvents>& eventi2, const string& run_name1, const string& run_name2, double energy_cut) {
@@ -2240,13 +2243,17 @@ void analyze_common_events_with_energy_cut_cd(const vector<totalEvents>& eventi1
     vector<double> common_event_frequencies;
 
     // Calcolo la durata della run
-    double start_time = min(eventi1.front().fSec + eventi1.front().fNanoSec * 1e-9, eventi2.front().fSec + eventi2.front().fNanoSec * 1e-9);
-    double end_time = max(eventi1.back().fSec + eventi1.back().fNanoSec * 1e-9, eventi2.back().fSec + eventi2.back().fNanoSec * 1e-9);
-    double run_duration = end_time - start_time;
+    long double start_time1 = (long double) eventi1.front().fSec + (long double) eventi1.front().fNanoSec * 1e-9;
+    long double end_time1 = (long double) eventi1.back().fSec + (long double) eventi1.back().fNanoSec * 1e-9;
+    long double start_time2 = (long double) eventi2.front().fSec + (long double) eventi2.front().fNanoSec * 1e-9;
+    long double end_time2 = (long double) eventi2.back().fSec + (long double) eventi2.back().fNanoSec * 1e-9;
+    long double run_duration1 = end_time1 - start_time1;
+    long double run_duration2 = end_time2 - start_time2;
+    long double run_duration = max(run_duration1, run_duration2);
 
     for (double tolerance_ns = 1.0; tolerance_ns <= 100000000.0; tolerance_ns *= 5.0) {
         int common_event_count = count_common_events_with_energy_cut_cd(eventi1, eventi2, tolerance_ns, energy_cut);
-        double common_event_frequency = common_event_count / run_duration;
+        double common_event_frequency = common_event_count / (long double) run_duration;
         tolerances.push_back(tolerance_ns);
         common_event_frequencies.push_back(common_event_frequency);
     }
@@ -2293,8 +2300,8 @@ int count_common_events_with_energy_cut_cd(const vector<totalEvents>& eventi1, c
     size_t i = 0, j = 0;
 
     while (i < eventi1.size() && j < eventi2.size()) {
-        double ev_time1 = eventi1[i].fSec * 1e9 + eventi1[i].fNanoSec;
-        double ev_time2 = eventi2[j].fSec * 1e9 + eventi2[j].fNanoSec;
+        long double ev_time1 = (long double) eventi1[i].fSec * 1e9 + (long double) eventi1[i].fNanoSec;
+        long double ev_time2 = (long double) eventi2[j].fSec * 1e9 + (long double) eventi2[j].fNanoSec;
 
         if (abs(ev_time1 - ev_time2) <= tolerance_ns && eventi2[j].NPE >= energy_cut) {
             common_event_count++;
@@ -2314,13 +2321,17 @@ void analyze_common_events_with_energy_cut_wp(const vector<totalEvents>& eventi1
     vector<double> common_event_frequencies;
 
     // Calcolo la durata della run
-    double start_time = min(eventi1.front().fSec + eventi1.front().fNanoSec * 1e-9, eventi2.front().fSec + eventi2.front().fNanoSec * 1e-9);
-    double end_time = max(eventi1.back().fSec + eventi1.back().fNanoSec * 1e-9, eventi2.back().fSec + eventi2.back().fNanoSec * 1e-9);
-    double run_duration = end_time - start_time;
+    long double start_time1 = (long double) eventi1.front().fSec + (long double) eventi1.front().fNanoSec * 1e-9;
+    long double end_time1 = (long double) eventi1.back().fSec + (long double) eventi1.back().fNanoSec * 1e-9;
+    long double start_time2 = (long double) eventi2.front().fSec + (long double) eventi2.front().fNanoSec * 1e-9;
+    long double end_time2 = (long double) eventi2.back().fSec + (long double) eventi2.back().fNanoSec * 1e-9;
+    long double run_duration1 = end_time1 - start_time1;
+    long double run_duration2 = end_time2 - start_time2;
+    long double run_duration = max(run_duration1, run_duration2);
 
     for (double tolerance_ns = 1.0; tolerance_ns <= 100000000.0; tolerance_ns *= 5.0) {
         int common_event_count = count_common_events_with_energy_cut_wp(eventi1, eventi2, tolerance_ns, energy_cut);
-        double common_event_frequency = common_event_count / run_duration;
+        double common_event_frequency = common_event_count / (long double) run_duration;
         tolerances.push_back(tolerance_ns);
         common_event_frequencies.push_back(common_event_frequency);
     }
@@ -2367,9 +2378,8 @@ int count_common_events_with_energy_cut_wp(const vector<totalEvents>& eventi1, c
     size_t i = 0, j = 0;
 
     while (i < eventi1.size() && j < eventi2.size()) {
-        double ev_time1 = eventi1[i].fSec * 1e9 + eventi1[i].fNanoSec;
-        double ev_time2 = eventi2[j].fSec * 1e9 + eventi2[j].fNanoSec;
-
+        long double ev_time1 = eventi1[i].fSec * 1e9 + eventi1[i].fNanoSec;
+        long double ev_time2 = eventi2[j].fSec * 1e9 + eventi2[j].fNanoSec;
         if (abs(ev_time1 - ev_time2) <= tolerance_ns && eventi1[i].NPE >= energy_cut) {
             common_event_count++;
             i++;
@@ -2439,54 +2449,4 @@ void plot_common_events_vs_tolerance(const vector<totalEvents>& eventi1, const v
 
     delete c_common_events;
     delete hist_common_events;
-}
-
-void plot_frequency_vs_tolerance_and_charge_cut_cd(const vector<totalEvents>& eventi1, const vector<totalEvents>& eventi2, const string& run_name1, const string& run_name2) {
-    vector<double> tolerances;
-    vector<double> charge_cuts;
-    vector<double> frequencies;
-
-    // Definisci i valori di tolleranza e taglio in carica da analizzare
-    for (double tolerance_ns = 1.0; tolerance_ns <= 100000000.0; tolerance_ns *= 10.0) {
-        for (double charge_cut = 40000.0; charge_cut <= 60000.0; charge_cut += 1000.0) {
-            tolerances.push_back(tolerance_ns);
-            charge_cuts.push_back(charge_cut);
-
-            // Calcola la frequenza degli eventi comuni
-            int common_event_count = count_common_events_with_energy_cut_cd(eventi1, eventi2, tolerance_ns, charge_cut);
-            double start_time = min(eventi1.front().fSec + eventi1.front().fNanoSec * 1e-9, eventi2.front().fSec + eventi2.front().fNanoSec * 1e-9);
-            double end_time = max(eventi1.back().fSec + eventi1.back().fNanoSec * 1e-9, eventi2.back().fSec + eventi2.back().fNanoSec * 1e-9);
-            double run_duration = end_time - start_time;
-            double frequency = common_event_count / run_duration;
-            frequencies.push_back(frequency);
-        }
-    }
-
-    // Creazione del grafico 3D
-    TCanvas *c_frequency_vs_tolerance_and_charge_cut = new TCanvas("c_frequency_vs_tolerance_and_charge_cut", "Frequency vs Tolerance and Charge Cut", 800, 600);
-    TGraph2D *graph_frequency_vs_tolerance_and_charge_cut = new TGraph2D(tolerances.size());
-
-    for (size_t i = 0; i < tolerances.size(); ++i) {
-        graph_frequency_vs_tolerance_and_charge_cut->SetPoint(i, tolerances[i], charge_cuts[i], frequencies[i]);
-    }
-
-    graph_frequency_vs_tolerance_and_charge_cut->SetTitle("Frequency vs Tolerance and Charge Cut;Tolerance [ns];Charge Cut CD [p.e.];Frequency [Hz]");
-    graph_frequency_vs_tolerance_and_charge_cut->GetXaxis()->SetTitleOffset(1.4);
-    graph_frequency_vs_tolerance_and_charge_cut->GetYaxis()->SetTitleOffset(1.6);
-    graph_frequency_vs_tolerance_and_charge_cut->Draw("surf1");
-
-    string main_folder = "images";
-    string folder_frequency_vs_tolerance_and_charge_cut = main_folder + "/Frequency_vs_Tolerance_and_Charge_Cut_plot";
-    if (!fs::exists(main_folder)) {
-        fs::create_directory(main_folder);
-    }
-    if (!fs::exists(folder_frequency_vs_tolerance_and_charge_cut)) {
-        fs::create_directory(folder_frequency_vs_tolerance_and_charge_cut);
-    }
-
-    string filename_frequency_vs_tolerance_and_charge_cut = folder_frequency_vs_tolerance_and_charge_cut + "/Frequency_vs_Tolerance_and_Charge_Cut_" + run_name1 + "_plot.png";
-    c_frequency_vs_tolerance_and_charge_cut->SaveAs(filename_frequency_vs_tolerance_and_charge_cut.c_str());
-
-    delete c_frequency_vs_tolerance_and_charge_cut;
-    delete graph_frequency_vs_tolerance_and_charge_cut;
 }
