@@ -680,28 +680,8 @@ FINE ANALISI DELLE RUN MODIFICATE
 CONFRONTO TRA TOTALEVENTS WP E CD
 ============================================
 Analisi del file RUN4049
-Prendendo un intervallo di tolleranza di 1 ns
-Il numero di eventi con lo stesso tempo registrati da WP e CD: 6803
-Prendendo un intervallo di tolleranza di 10 ns
-Il numero di eventi con lo stesso tempo registrati da WP e CD: 6814
-Prendendo un intervallo di tolleranza di 100 ns
-Il numero di eventi con lo stesso tempo registrati da WP e CD: 66394
-Prendendo un intervallo di tolleranza di 1000 ns
-Il numero di eventi con lo stesso tempo registrati da WP e CD: 77289
-Prendendo un intervallo di tolleranza di 10000 ns
-Il numero di eventi con lo stesso tempo registrati da WP e CD: 111335
-Prendendo un intervallo di tolleranza di 100000 ns
-Il numero di eventi con lo stesso tempo registrati da WP e CD: 427578
-Prendendo un intervallo di tolleranza di 1e+06 ns
-Il numero di eventi con lo stesso tempo registrati da WP e CD: 2236031
-Prendendo un intervallo di tolleranza di 1e+07 ns
-Il numero di eventi con lo stesso tempo registrati da WP e CD: 4457246
-Prendendo un intervallo di tolleranza di 1e+08 ns
-Il numero di eventi con lo stesso tempo registrati da WP e CD: 4826558
-Prendendo un intervallo di tolleranza di 1e+09 ns
-Il numero di eventi con lo stesso tempo registrati da WP e CD: 4983670
 =============================================
 ============================================
 FINE CONFRONTO WP e CD
 ============================================
-Tempo totale di esecuzione: 78.2166 secondi
+Tempo totale di esecuzione: 73.1265 secondi

@@ -616,9 +616,9 @@ void plot_muon_rate(const vector<muone>& eventi, const string& run_name, double 
 
     vector<double> times(num_bins);
     vector<double> rates(num_bins, 0.0);
-
+    vector<double> errors(num_bins, 0.0);
     for (const auto& ev : eventi) {
-        double event_time = ev.fSec + ev.fNanosec * 1e-9;
+        long double event_time = ev.fSec + ev.fNanosec * 1e-9;
         // Calcolo l'indice del bin in cui l'evento deve essere inserito
         int bin = (event_time - t_start) / interval_sec;
         if (bin >= 0 && bin < num_bins) {
@@ -626,21 +626,23 @@ void plot_muon_rate(const vector<muone>& eventi, const string& run_name, double 
         }
     }
 
-    // Calcolo i tempi centrali dei bin
+    // Calcolo i tempi centrali dei bin e gli errori
     for (int i = 0; i < num_bins; i++) {
         // Per ottenere il punto medio dell'intervallo
         times[i] = t_start + (i + 0.5) * interval_sec;
         // Verifico se il bin corrente è l'ultimo bin
         if (i == num_bins - 1) {
             // Calcolo il rate per l'ultimo bin in base alla durata effettiva
-            double last_bin_duration = duration - (num_bins - 1) * interval_sec;
+            long double last_bin_duration = duration - (num_bins - 1) * interval_sec;
             rates[i] /= last_bin_duration;
+            errors[i] = sqrt(rates[i] * last_bin_duration) / last_bin_duration;
         } else {
             rates[i] /= interval_sec;
+            errors[i] = sqrt(rates[i] * interval_sec) / interval_sec;
         }
     }
 
-    TGraph *graph = new TGraph(num_bins, &times[0], &rates[0]);
+    TGraphErrors *graph = new TGraphErrors(num_bins, &times[0], &rates[0], nullptr, &errors[0]);
 
     TCanvas *c_rate = new TCanvas(("RateCanvas_" + run_name).c_str(), "Rate Muoni vs Tempo", 800, 600);
     c_rate->SetGrid();
@@ -650,10 +652,8 @@ void plot_muon_rate(const vector<muone>& eventi, const string& run_name, double 
     graph->GetXaxis()->SetTitle("Tempo [s]");
     graph->GetYaxis()->SetTitle("Rate [Hz]");
     graph->GetYaxis()->SetRangeUser(0, *max_element(rates.begin(), rates.end()) * 1.1); // Imposta la scala dell'asse Y per partire da 0
-    graph->SetMarkerStyle(21);
-    graph->SetMarkerSize(1.5);
-    graph->SetLineColor(kRed);
-    graph->SetLineWidth(2);
+    graph->SetMarkerStyle(20);
+    graph->SetMarkerSize(1.4);
     graph->Draw("AP");
 
     string filename = folder_name + "/MuonRate_" + run_name + ".png";
@@ -666,6 +666,7 @@ void plot_muon_rate(const vector<muone>& eventi, const string& run_name, double 
 void plot_muon_rate_vs_run(const vector<vector<muone>>& eventi_per_file, const vector<string>& run_names) {
     vector<double> run_indices;
     vector<double> muon_rates;
+    vector<double> errors;
 
     for (size_t i = 0; i < eventi_per_file.size(); i++) {
         if (eventi_per_file[i].empty()) {
@@ -674,9 +675,11 @@ void plot_muon_rate_vs_run(const vector<vector<muone>>& eventi_per_file, const v
 
         long double total_time = total_run_time(eventi_per_file[i]);
         double rate = eventi_per_file[i].size() / (long double) total_time;
+        double error = sqrt(eventi_per_file[i].size()) / total_time;
 
         run_indices.push_back(i + 1);
         muon_rates.push_back(rate);
+        errors.push_back(error);
     }
 
     string main_folder = "images";
@@ -688,12 +691,12 @@ void plot_muon_rate_vs_run(const vector<vector<muone>>& eventi_per_file, const v
     }
 
     TCanvas *canvas = new TCanvas("canvas", "Rate dei Muoni in Funzione della Run", 800, 600);
-    TGraph *graph = new TGraph(run_indices.size(), &run_indices[0], &muon_rates[0]);
+    TGraphErrors *graph = new TGraphErrors(run_indices.size(), &run_indices[0], &muon_rates[0], nullptr, &errors[0]);
     canvas->SetGrid();
 
     graph->SetTitle("Rate dei Muoni in Funzione della Run;Indice della Run;Rate [Hz]");
-    graph->SetMarkerStyle(21);
-    graph->SetMarkerSize(1.5);
+    graph->SetMarkerStyle(20);
+    graph->SetMarkerSize(1.4);
     graph->Draw("AP");
 
     string filename = main_folder + "/Muon_Rate_vs_Run.png";
@@ -857,6 +860,7 @@ double edge_events(const vector<muone>& eventi, double cut_distance){
 void plot_muon_rate_with_edge_cut_vs_run(const vector<vector<muone>>& eventi_per_file, const vector<string>& run_names, double cut_distance) {
     vector<double> run_indices;
     vector<double> muon_rates;
+    vector<double> errors;
 
     for (size_t i = 0; i < eventi_per_file.size(); i++) {
         if (eventi_per_file[i].empty()) {
@@ -864,10 +868,14 @@ void plot_muon_rate_with_edge_cut_vs_run(const vector<vector<muone>>& eventi_per
         }
 
         long double total_time = total_run_time(eventi_per_file[i]);
-        double rate = ((double )eventi_per_file[i].size() - (double)edge_events(eventi_per_file[i], cut_distance)) / (long double) total_time;
+        int total_events = eventi_per_file[i].size();
+        int edge_event_count = edge_events(eventi_per_file[i], cut_distance);
+        double rate = (total_events - edge_event_count) / total_time;
+        double error = sqrt(total_events - edge_event_count) / total_time;
 
         run_indices.push_back(i + 1);
         muon_rates.push_back(rate);
+        errors.push_back(error);
     }
 
     string main_folder = "images";
@@ -879,13 +887,13 @@ void plot_muon_rate_with_edge_cut_vs_run(const vector<vector<muone>>& eventi_per
     }
     
     TCanvas *canvas = new TCanvas("canvas", "Rate dei Muoni in Funzione della Run", 800, 600);
-    TGraph *graph = new TGraph(run_indices.size(), &run_indices[0], &muon_rates[0]);
+    TGraphErrors *graph = new TGraphErrors(run_indices.size(), &run_indices[0], &muon_rates[0], nullptr, &errors[0]);
     canvas->SetGrid();
 
     string title = "Rate dei Muoni in Funzione della Run dopo il Taglio (" + to_string(cut_distance) + " mm);Indice della Run;Rate [Hz]";
     graph->SetTitle(title.c_str());
-    graph->SetMarkerStyle(21);
-    graph->SetMarkerSize(1.5);
+    graph->SetMarkerStyle(20);
+    graph->SetMarkerSize(1.4);
     graph->Draw("AP");
 
     string filename = main_folder + "/Muon_Rate_edge_cut_vs_Run.png";
@@ -2131,8 +2139,6 @@ void analyze_total_wp_cd(const vector<vector<totalEvents>>& total_eventi_per_fil
     for (size_t j = 0; j < total_eventi_per_file_wp.size(); j++) {
         cout << "Analisi del file " << total_run_names_wp[j] << endl;
         for (double tolerance_ns = 1.0; tolerance_ns <= 1000000000.0; tolerance_ns *= 10) {
-            cout << "Prendendo un intervallo di tolleranza di " << tolerance_ns << " ns" << endl;
-            cout << "Il numero di eventi con lo stesso tempo registrati da WP e CD: " << count_common_events(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], tolerance_ns) << endl;
             double overlap_area;
             plot_common_events_NPE(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], tolerance_ns, total_run_names_wp[j], total_run_names_cd[j]);
             plot_common_events_NPE_all(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], tolerance_ns, total_run_names_wp[j], total_run_names_cd[j]);
@@ -2153,8 +2159,8 @@ void analyze_total_wp_cd(const vector<vector<totalEvents>>& total_eventi_per_fil
         graph_overlap->SetTitle("Normalized Overlap Area totalWP & WP-classify Ev. vs Tolerance;Tolerance [ns];Normalized Overlap Area");
         graph_overlap->GetXaxis()->SetTitleOffset(1.4); // Sposta il titolo dell'asse X
         graph_overlap->GetYaxis()->SetTitleOffset(1.6); // Sposta il titolo dell'asse Y
-        graph_overlap->SetMarkerStyle(21);
-        graph_overlap->SetMarkerSize(1.5);
+        graph_overlap->SetMarkerStyle(20);
+        graph_overlap->SetMarkerSize(1.4);
         graph_overlap->Draw("AP");
         c_overlap->SetLogx();
 
@@ -2182,6 +2188,7 @@ void analyze_total_wp_cd(const vector<vector<totalEvents>>& total_eventi_per_fil
 void analyze_common_events(const vector<totalEvents>& eventi1, const vector<totalEvents>& eventi2, const string& run_name1, const string& run_name2) {
     vector<double> tolerances;
     vector<double> common_event_frequencies;
+    vector<double> errors;
 
     // Calcolo la durata della run
     long double start_time1 = (long double) eventi1.front().fSec + (long double) eventi1.front().fNanoSec * 1e-9;
@@ -2195,28 +2202,25 @@ void analyze_common_events(const vector<totalEvents>& eventi1, const vector<tota
     for (double tolerance_ns = 1.0; tolerance_ns <= 100000000.0; tolerance_ns *= 5.0) {
         int common_event_count = count_common_events(eventi1, eventi2, tolerance_ns);
         double common_event_frequency = common_event_count / (long double) run_duration;
+        double error = sqrt(common_event_count) / run_duration;
         tolerances.push_back(tolerance_ns);
         common_event_frequencies.push_back(common_event_frequency);
+        errors.push_back(error);
     }
 
     // Creazione del grafico della frequenza degli eventi comuni in funzione della tolleranza
     TCanvas *c_common_events = new TCanvas("c_common_events", "Common Events Rate vs Tolerance", 800, 600);
     int n = tolerances.size();
-    double* x = &tolerances[0];
-    double* y = new double[common_event_frequencies.size()];
-    for (size_t i = 0; i < common_event_frequencies.size(); ++i) {
-        y[i] = static_cast<double>(common_event_frequencies[i]);
-    }
-    TGraph *graph_common_events = new TGraph(n, x, y);
-    delete[] y;
+    TGraphErrors *graph_common_events = new TGraphErrors(n, &tolerances[0], &common_event_frequencies[0], nullptr, &errors[0]);
+
     c_common_events->SetGrid();
     c_common_events->SetLeftMargin(0.15);
     c_common_events->SetBottomMargin(0.15);
     graph_common_events->SetTitle("Common Events Rate vs Tolerance;Tolerance [ns];Rate [Hz]");
     graph_common_events->GetXaxis()->SetTitleOffset(1.4);
     graph_common_events->GetYaxis()->SetTitleOffset(1.6);
-    graph_common_events->SetMarkerStyle(21);
-    graph_common_events->SetMarkerSize(1.5);
+    graph_common_events->SetMarkerStyle(20);
+    graph_common_events->SetMarkerSize(1.4);
     graph_common_events->Draw("AP");
     c_common_events->SetLogx();
 
@@ -2241,6 +2245,7 @@ void analyze_common_events(const vector<totalEvents>& eventi1, const vector<tota
 void analyze_common_events_with_energy_cut_cd(const vector<totalEvents>& eventi1, const vector<totalEvents>& eventi2, const string& run_name1, const string& run_name2, double energy_cut) {
     vector<double> tolerances;
     vector<double> common_event_frequencies;
+    vector<double> errors;
 
     // Calcolo la durata della run
     long double start_time1 = (long double) eventi1.front().fSec + (long double) eventi1.front().fNanoSec * 1e-9;
@@ -2254,28 +2259,24 @@ void analyze_common_events_with_energy_cut_cd(const vector<totalEvents>& eventi1
     for (double tolerance_ns = 1.0; tolerance_ns <= 100000000.0; tolerance_ns *= 5.0) {
         int common_event_count = count_common_events_with_energy_cut_cd(eventi1, eventi2, tolerance_ns, energy_cut);
         double common_event_frequency = common_event_count / (long double) run_duration;
+        double error = sqrt(common_event_count) / run_duration;
         tolerances.push_back(tolerance_ns);
         common_event_frequencies.push_back(common_event_frequency);
+        errors.push_back(error);
     }
 
     // Creazione del grafico della frequenza degli eventi comuni in funzione della tolleranza
     TCanvas *c_common_events = new TCanvas("c_common_events", "Common Events Rate vs Tolerance", 800, 600);
     int n = tolerances.size();
-    double* x = &tolerances[0];
-    double* y = new double[common_event_frequencies.size()];
-    for (size_t i = 0; i < common_event_frequencies.size(); ++i) {
-        y[i] = static_cast<double>(common_event_frequencies[i]);
-    }
-    TGraph *graph_common_events = new TGraph(n, x, y);
-    delete[] y;
+    TGraphErrors *graph_common_events = new TGraphErrors(n, &tolerances[0], &common_event_frequencies[0], nullptr, &errors[0]);
     c_common_events->SetGrid();
     c_common_events->SetLeftMargin(0.15);
     c_common_events->SetBottomMargin(0.15);
     graph_common_events->SetTitle("Common Events Rate vs Tolerance with charge cut on CD;Tolerance [ns];Rate [Hz]");
     graph_common_events->GetXaxis()->SetTitleOffset(1.4);
     graph_common_events->GetYaxis()->SetTitleOffset(1.6);
-    graph_common_events->SetMarkerStyle(21);
-    graph_common_events->SetMarkerSize(1.5);
+    graph_common_events->SetMarkerStyle(20);
+    graph_common_events->SetMarkerSize(1.4);
     graph_common_events->Draw("AP");
     c_common_events->SetLogx();
 
@@ -2319,6 +2320,7 @@ int count_common_events_with_energy_cut_cd(const vector<totalEvents>& eventi1, c
 void analyze_common_events_with_energy_cut_wp(const vector<totalEvents>& eventi1, const vector<totalEvents>& eventi2, const string& run_name1, const string& run_name2, double energy_cut) {
     vector<double> tolerances;
     vector<double> common_event_frequencies;
+    vector<double> errors;
 
     // Calcolo la durata della run
     long double start_time1 = (long double) eventi1.front().fSec + (long double) eventi1.front().fNanoSec * 1e-9;
@@ -2332,28 +2334,24 @@ void analyze_common_events_with_energy_cut_wp(const vector<totalEvents>& eventi1
     for (double tolerance_ns = 1.0; tolerance_ns <= 100000000.0; tolerance_ns *= 5.0) {
         int common_event_count = count_common_events_with_energy_cut_wp(eventi1, eventi2, tolerance_ns, energy_cut);
         double common_event_frequency = common_event_count / (long double) run_duration;
+        double error = sqrt(common_event_count) / run_duration;
         tolerances.push_back(tolerance_ns);
         common_event_frequencies.push_back(common_event_frequency);
+        errors.push_back(error);
     }
 
     // Creazione del grafico della frequenza degli eventi comuni in funzione della tolleranza
     TCanvas *c_common_events = new TCanvas("c_common_events", "Common Events Rate vs Tolerance", 800, 600);
     int n = tolerances.size();
-    double* x = &tolerances[0];
-    double* y = new double[common_event_frequencies.size()];
-    for (size_t i = 0; i < common_event_frequencies.size(); ++i) {
-        y[i] = static_cast<double>(common_event_frequencies[i]);
-    }
-    TGraph *graph_common_events = new TGraph(n, x, y);
-    delete[] y;
+    TGraphErrors *graph_common_events = new TGraphErrors(n, &tolerances[0], &common_event_frequencies[0], nullptr, &errors[0]);
     c_common_events->SetGrid();
     c_common_events->SetLeftMargin(0.15);
     c_common_events->SetBottomMargin(0.15);
     graph_common_events->SetTitle("Common Events Rate vs Tolerance with charge cut on WP;Tolerance [ns];Rate [Hz]");
     graph_common_events->GetXaxis()->SetTitleOffset(1.4);
     graph_common_events->GetYaxis()->SetTitleOffset(1.6);
-    graph_common_events->SetMarkerStyle(21);
-    graph_common_events->SetMarkerSize(1.5);
+    graph_common_events->SetMarkerStyle(20);
+    graph_common_events->SetMarkerSize(1.4);
     graph_common_events->Draw("AP");
     c_common_events->SetLogx();
 
