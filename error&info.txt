@@ -1426,7 +1426,8 @@ Info in <TCanvas::Print>: png file images/Total_PeSum_complementary_log_plot/tot
 Info in <TCanvas::Print>: png file images/Total_PeSum_overlap_log_divided_plot/total_PeSum_log_divided_RUN4049_vs_RUN4049mod.png has been created
 Info in <TCanvas::Print>: png file images/Total_PeSum_overlap_log_divided_track_plot/total_PeSum_log_divided_RUN4049_vs_RUN4049mod.png has been created
 Info in <TCanvas::Print>: png file images/Path_Distance_plot/Path_Distance_RUN4049mod.png has been created
-Info in <TCanvas::Print>: png file images/Total_PeSum_log_plot/total_PeSum_log_RUN4049.png has been created
+Info in <TCanvas::Print>: png file images/Total_PeSum_log_plot/total_PeSum_log_RUN4049_WP.png has been created
+Info in <TCanvas::Print>: png file images/Total_PeSum_log_plot/total_PeSum_log_RUN4049_CD.png has been created
 Info in <TCanvas::Print>: png file images/Time_CD_WP_Events_NPE_plot/WPplot/WP_RUN4049_tolerance_1.00.png has been created
 Info in <TCanvas::Print>: png file images/Time_CD_WP_Events_NPE_plot/CDplot/CD_RUN4049_tolerance_1.00.png has been created
 Info in <TCanvas::Print>: png file images/Time_CD_WP_Events_comparison_NPE_plot/WPplot/WP_RUN4049_tolerance_1.00.png has been created

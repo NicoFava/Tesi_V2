@@ -246,7 +246,14 @@ int main(int argc, char* argv[]) {
     cout << "FINE ANALISI DELLE RUN MODIFICATE" << endl;
     cout << "============================================" << endl;
     for (size_t i = 0; i < total_eventi_per_file_wp.size(); i++){
+        string temp1 = total_run_names_wp[i];
+        string temp2 = total_run_names_cd[i];
+        total_run_names_wp[i] = total_run_names_wp[i] + "_WP";
         total_PeSum_histogram_log(total_eventi_per_file_wp[i], total_run_names_wp[i]);
+        total_run_names_wp[i] = temp1;
+        total_run_names_cd[i] = total_run_names_cd[i] + "_CD";
+        total_PeSum_histogram_log(total_eventi_per_file_cd[i], total_run_names_cd[i]);
+        total_run_names_cd[i] = temp2;
     }
     
     //Fino a qui dovrebbe funzionare per un numero arbitrario di file di eventi totali WP.

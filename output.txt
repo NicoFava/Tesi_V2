@@ -684,4 +684,4 @@ Analisi del file RUN4049
 ============================================
 FINE CONFRONTO WP e CD
 ============================================
-Tempo totale di esecuzione: 73.1265 secondi
+Tempo totale di esecuzione: 72.8292 secondi
