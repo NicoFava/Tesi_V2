@@ -1280,8 +1280,8 @@ void total_PeSum_histogram_log(const vector<totalEvents>& eventi1, const vector<
     }
     
     TCanvas *canvas = new TCanvas(("canvas_charge_" + run_name1 + "_vs_" + run_name2).c_str(), ("Istogramma Energia - " + run_name1 + " vs " + run_name2).c_str(), 800, 600);
-    TH1F *charge1 = new TH1F(("Distribuzione_dell_energia_" + run_name1).c_str(), ("Distribuzione dell'energia - " + run_name1).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
-    TH1F *charge2 = new TH1F(("Distribuzione_dell_energia_" + run_name2).c_str(), ("Distribuzione dell'energia - " + run_name2).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
+    TH1F *charge1 = new TH1F(run_name1.c_str(), ("Distribuzione dell'energia - " + run_name1).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
+    TH1F *charge2 = new TH1F(run_name2.c_str(), ("Distribuzione dell'energia - " + run_name2).c_str(), 100, 0, 7); // Binning logaritmico da 10^0 a 10^7
     
     // Applico il binning logaritmico sugli assi X e Y
     BinLogX(charge1);
@@ -1326,7 +1326,7 @@ void total_PeSum_histogram_log(const vector<totalEvents>& eventi1, const vector<
     legend->AddEntry(charge2, run_name2_legend.c_str(), "f");
     legend->Draw();
 
-    string filename = folder_name + "/total_PeSum_log_" + run_name1 + "_vs_" + run_name2 + ".png";
+    string filename = folder_name + "/total_PeSum_log_" + run_name1 + ".png";
     canvas->SaveAs(filename.c_str());
     delete canvas;
     delete charge1;
@@ -1379,7 +1379,7 @@ void total_PeSum_histogram_log_complementary(const vector<totalEvents>& eventi1,
     canvas->SetLogx();
     canvas->SetLogy();
 
-    string filename = folder_name + "/total_PeSum_complementary_log_" + run_name1 + "_vs_" + run_name2 + ".png";
+    string filename = folder_name + "/total_PeSum_complementary_log_" + run_name1 + ".png";
     canvas->SaveAs(filename.c_str());
     delete canvas;
     delete charge1;
@@ -1455,9 +1455,9 @@ void total_PeSum_histogram_log_divided(const vector<totalEvents>& eventi1, const
     }
     
     TCanvas *canvas = new TCanvas(("canvas_charge_" + run_name1 + "_vs_" + run_name2).c_str(), ("Istogramma Carica - " + run_name1 + " vs " + run_name2).c_str(), 800, 600);
-    TH1F *charge1_total = new TH1F(("Distribuzione_dell_energia_totale_" + run_name1).c_str(), ("Distribuzione dell'energia totale - " + run_name1).c_str(), 100, 0, 7);
-    TH1F *charge2_single = new TH1F(("Distribuzione_dell_energia_singoli_" + run_name2).c_str(), ("Distribuzione dell'energia singoli - " + run_name2).c_str(), 100, 0, 7);
-    TH1F *charge2_bundle = new TH1F(("Distribuzione_dell_energia_bundle_" + run_name2).c_str(), ("Distribuzione dell'energia bundle - " + run_name2).c_str(), 100, 0, 7);
+    TH1F *charge1_total = new TH1F(run_name1.c_str(), ("Distribuzione dell'energia totale - " + run_name1).c_str(), 100, 0, 7);
+    TH1F *charge2_single = new TH1F(run_name2.c_str(), ("Distribuzione dell'energia singoli - " + run_name2).c_str(), 100, 0, 7);
+    TH1F *charge2_bundle = new TH1F(run_name2.c_str(), ("Distribuzione dell'energia bundle - " + run_name2).c_str(), 100, 0, 7);
     
     // Applico il binning logaritmico sugli assi X e Y
     BinLogX(charge1_total);
@@ -1520,7 +1520,7 @@ void total_PeSum_histogram_log_divided(const vector<totalEvents>& eventi1, const
     legend->AddEntry(charge2_bundle, (run_name2 + " Bundle").c_str(), "f");
     legend->Draw();
 
-    string filename = folder_name + "/total_PeSum_log_divided_" + run_name1 + "_vs_" + run_name2 + ".png";
+    string filename = folder_name + "/total_PeSum_log_divided_" + run_name1 + ".png";
     canvas->SaveAs(filename.c_str());
     delete canvas;
     delete charge1_total;
@@ -1661,7 +1661,7 @@ void total_PeSum_histogram_log_divided_track(const vector<totalEvents>& eventi1,
     legend->AddEntry(charge2_track_gt4, (run_name2 + " trackID > 4").c_str(), "f");
     legend->Draw();
 
-    string filename = folder_name + "/total_PeSum_log_divided_" + run_name1 + "_vs_" + run_name2 + ".png";
+    string filename = folder_name + "/total_PeSum_log_divided_" + run_name1 + ".png";
     canvas->SaveAs(filename.c_str());
     delete canvas;
     delete charge1_total;
@@ -1720,7 +1720,7 @@ void plot_common_events_NPE(const vector<totalEvents>& eventi1, const vector<tot
     }
 
     string main_folder = "images";
-    string folder_name = main_folder + "/Time_CD_WP_Events_NPE_plot";
+    string folder_name = main_folder + "/Time_CD_WP_Events_NPE_plot/" + run_name1;
     string wp_folder = folder_name + "/WPplot";
     string cd_folder = folder_name + "/CDplot";
     if (!fs::exists(main_folder)) {
@@ -1828,7 +1828,7 @@ void plot_common_events_NPE_all(const vector<totalEvents>& eventi1, const vector
     }
 
     string main_folder = "images";
-    string folder_name = main_folder + "/Time_CD_WP_Events_comparison_NPE_plot";
+    string folder_name = main_folder + "/Time_CD_WP_Events_comparison_NPE_plot/" + run_name1;
     string wp_folder = folder_name + "/WPplot";
     string cd_folder = folder_name + "/CDplot";
     if (!fs::exists(main_folder)) {
@@ -1983,7 +1983,7 @@ void plot_common_events_NPE_muon(const vector<totalEvents>& eventi1, const vecto
     }
 
     string main_folder = "images";
-    string folder_name = main_folder + "/Time_CD_WP_Muon_Events_comparison_NPE_plot";
+    string folder_name = main_folder + "/Time_CD_WP_Muon_Events_comparison_NPE_plot/" + run_name1;
     string wp_folder = folder_name + "/WPplot";
     string cd_folder = folder_name + "/CDplot";
     if (!fs::exists(main_folder)) {
@@ -2133,11 +2133,10 @@ void plot_common_events_NPE_muon(const vector<totalEvents>& eventi1, const vecto
 }
 
 void analyze_total_wp_cd(const vector<vector<totalEvents>>& total_eventi_per_file_wp, const vector<vector<totalEvents>>& total_eventi_per_file_cd, const vector<vector<muone>>& updated_eventi_per_file, const vector<string>& total_run_names_wp, const vector<string>& total_run_names_cd, const vector<string>& run_names_mod) {
-    vector<double> tolerances;
-    vector<double> overlap_areas;
-
     for (size_t j = 0; j < total_eventi_per_file_wp.size(); j++) {
         cout << "Analisi del file " << total_run_names_wp[j] << endl;
+        vector<double> tolerances;
+        vector<double> overlap_areas;
         for (double tolerance_ns = 1.0; tolerance_ns <= 1000000000.0; tolerance_ns *= 10) {
             double overlap_area;
             plot_common_events_NPE(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], tolerance_ns, total_run_names_wp[j], total_run_names_cd[j]);
@@ -2149,38 +2148,10 @@ void analyze_total_wp_cd(const vector<vector<totalEvents>>& total_eventi_per_fil
         analyze_common_events(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], total_run_names_wp[j], total_run_names_cd[j]);
         analyze_common_events_with_energy_cut_cd(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], total_run_names_wp[j], total_run_names_cd[j], 5e4);
         analyze_common_events_with_energy_cut_wp(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], total_run_names_wp[j], total_run_names_cd[j], 5e3);
-        // Creazione del grafico dell'area di sovrapposizione in funzione della tolleranza
-        TCanvas *c_overlap = new TCanvas("c_overlap", "Overlap Area totalWP & WP-classify vs Tolerance", 800, 600);
-        TGraph *graph_overlap = new TGraph(tolerances.size(), &tolerances[0], &overlap_areas[0]);
-        c_overlap->SetGrid();
-        // Aggiungi margini al canvas
-        c_overlap->SetLeftMargin(0.15);
-        c_overlap->SetBottomMargin(0.15);
-        graph_overlap->SetTitle("Normalized Overlap Area totalWP & WP-classify Ev. vs Tolerance;Tolerance [ns];Normalized Overlap Area");
-        graph_overlap->GetXaxis()->SetTitleOffset(1.4); // Sposta il titolo dell'asse X
-        graph_overlap->GetYaxis()->SetTitleOffset(1.6); // Sposta il titolo dell'asse Y
-        graph_overlap->SetMarkerStyle(20);
-        graph_overlap->SetMarkerSize(1.4);
-        graph_overlap->Draw("AP");
-        c_overlap->SetLogx();
+        plot_time_difference_histogram(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], 100.0, total_run_names_wp[j], total_run_names_cd[j]);
 
-        string main_folder = "images";
-        string folder_im2= main_folder + "/Overlap_Area_vs_Tolerance_plot";
-        if (!fs::exists(main_folder)) {
-            fs::create_directory(main_folder);
-        }
-        if (!fs::exists(folder_im2)) {
-            fs::create_directory(folder_im2);
-        }
-
-        string filename_overlap2 = folder_im2 + "/Overlap_Area_vs_Tolerance_"+ total_run_names_wp[j] + "_plot.png";
-        c_overlap->SaveAs(filename_overlap2.c_str());
-
-        delete c_overlap;
-        delete graph_overlap;
-
-
-
+        // Chiamata alla nuova funzione per creare il grafico dell'area di sovrapposizione
+        plot_overlap_area_vs_tolerance(tolerances, overlap_areas, total_run_names_wp[j]);
     }
     cout << "=============================================" << endl;
 }
@@ -2281,7 +2252,7 @@ void analyze_common_events_with_energy_cut_cd(const vector<totalEvents>& eventi1
     c_common_events->SetLogx();
 
     string main_folder = "images";
-    string folder_common_events = main_folder + "/Common_Events_vs_Tolerance_with_cut_plot";
+    string folder_common_events = main_folder + "/Common_Events_vs_Tolerance_with_cut_plot/CD_cut";
     if (!fs::exists(main_folder)) {
         fs::create_directory(main_folder);
     }
@@ -2289,7 +2260,7 @@ void analyze_common_events_with_energy_cut_cd(const vector<totalEvents>& eventi1
         fs::create_directory(folder_common_events);
     }
 
-    string filename_common_events = folder_common_events + "/Common_Events_vs_Tolerance_" + run_name1 + "_rate__cut_CD_plot.png";
+    string filename_common_events = folder_common_events + "/Common_Events_vs_Tolerance_" + run_name1 + "_rate_cut_CD_plot.png";
     c_common_events->SaveAs(filename_common_events.c_str());
 
     delete c_common_events;
@@ -2356,7 +2327,7 @@ void analyze_common_events_with_energy_cut_wp(const vector<totalEvents>& eventi1
     c_common_events->SetLogx();
 
     string main_folder = "images";
-    string folder_common_events = main_folder + "/Common_Events_vs_Tolerance_with_cut_plot";
+    string folder_common_events = main_folder + "/Common_Events_vs_Tolerance_with_cut_plot/WP_cut";
     if (!fs::exists(main_folder)) {
         fs::create_directory(main_folder);
     }
@@ -2364,7 +2335,7 @@ void analyze_common_events_with_energy_cut_wp(const vector<totalEvents>& eventi1
         fs::create_directory(folder_common_events);
     }
 
-    string filename_common_events = folder_common_events + "/Common_Events_vs_Tolerance_" + run_name1 + "_rate__cut_WP_plot.png";
+    string filename_common_events = folder_common_events + "/Common_Events_vs_Tolerance_" + run_name1 + "_rate_cut_WP_plot.png";
     c_common_events->SaveAs(filename_common_events.c_str());
 
     delete c_common_events;
@@ -2447,4 +2418,165 @@ void plot_common_events_vs_tolerance(const vector<totalEvents>& eventi1, const v
 
     delete c_common_events;
     delete hist_common_events;
+}
+
+void plot_time_difference_histogram(const vector<totalEvents>& eventi1, const vector<totalEvents>& eventi2, double tolerance_ns, const string& run_name1, const string& run_name2) {
+    vector<long double> time_differences;
+
+    size_t i = 0, j = 0;
+    while (i < eventi1.size() && j < eventi2.size()) {
+        long double ev_time1 = (long double) eventi1[i].fSec * 1e9 + (long double) eventi1[i].fNanoSec;
+        long double ev_time2 = (long double) eventi2[j].fSec * 1e9 + (long double) eventi2[j].fNanoSec;
+
+        long double time_diff = abs(ev_time1 - ev_time2);
+        time_differences.push_back(time_diff);
+
+        if (time_diff <= tolerance_ns) {
+            i++;
+            j++;
+        } else if (ev_time1 < ev_time2) {
+            i++;
+        } else {
+            j++;
+        }
+    }
+
+    string main_folder = "images";
+    string folder_name = main_folder + "/Time_Difference_Histogram";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
+    if (!fs::exists(folder_name)) {
+        fs::create_directory(folder_name);
+    }
+
+    TCanvas *canvas = new TCanvas("canvas_time_diff", "Istogramma Differenza di Tempo", 800, 600);
+    std::ostringstream oss;
+    oss << std::fixed << std::setprecision(1) << tolerance_ns;
+    TH1F *hist = new TH1F("time_diff_hist", ("Istogramma Differenza di Tempo (Tolleranza: " + oss.str() + " ns)").c_str(), 100, 100, 100);
+    canvas->SetGrid();
+
+    for (const auto& diff : time_differences) {
+        hist->Fill(diff);
+    }
+
+    hist->GetXaxis()->SetTitle("Differenza di Tempo [ns]");
+    hist->GetYaxis()->SetTitle("Counts [a.u.]");
+    hist->SetLineWidth(2);
+    hist->SetLineColor(kBlue);
+    hist->SetFillColorAlpha(kBlue, 0.5);
+    hist->Draw();
+
+    string filename = folder_name + "/Time_Difference_" + run_name1 + ".png";
+    canvas->SaveAs(filename.c_str());
+
+    delete canvas;
+    delete hist;
+}
+
+void plot_muon_rate_mod(const vector<muone>& eventi, const string& run_name, double interval_sec) {
+    string main_folder = "images";
+    string folder_name = main_folder + "/MuonRate_plot_mod";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
+    if (!fs::exists(folder_name)) {
+        fs::create_directory(folder_name);
+    }
+    if (eventi.empty()) {
+        cerr << "Errore: Nessun evento disponibile all'interno del file " << run_name << " per il calcolo del rate!" << endl;
+        return;
+    }
+
+    // Trovo il tempo iniziale e finale della RUN
+    long double t_start = (long double) eventi.front().fSec + (long double) eventi.front().fNanosec * 1e-9;
+    long double t_end = (long double) eventi.back().fSec + (long double) eventi.back().fNanosec * 1e-9;
+    long double duration = (long double) t_end - (long double) t_start;
+
+    if (duration <= 0) {
+        cerr << "Errore: Tempo totale del file " << run_name << " non valido!" << endl;
+        return;
+    }
+
+    // Numero di bin = numero di intervalli di tempo approssimando per eccesso
+    int num_bins = ceil(duration / interval_sec);
+
+    vector<double> times(num_bins);
+    vector<double> rates(num_bins, 0.0);
+    vector<double> errors(num_bins, 0.0);
+    for (const auto& ev : eventi) {
+        long double event_time = ev.fSec + ev.fNanosec * 1e-9;
+        // Calcolo l'indice del bin in cui l'evento deve essere inserito
+        int bin = (event_time - t_start) / interval_sec;
+        if (bin >= 0 && bin < num_bins) {
+            rates[bin]++;
+        }
+    }
+
+    // Calcolo i tempi centrali dei bin e gli errori
+    for (int i = 0; i < num_bins; i++) {
+        // Per ottenere il punto medio dell'intervallo
+        times[i] = t_start + (i + 0.5) * interval_sec;
+        // Verifico se il bin corrente è l'ultimo bin
+        if (i == num_bins - 1) {
+            // Calcolo il rate per l'ultimo bin in base alla durata effettiva
+            long double last_bin_duration = duration - (num_bins - 1) * interval_sec;
+            rates[i] /= last_bin_duration;
+            errors[i] = sqrt(rates[i] * last_bin_duration) / last_bin_duration;
+        } else {
+            rates[i] /= interval_sec;
+            errors[i] = sqrt(rates[i] * interval_sec) / interval_sec;
+        }
+    }
+
+    TGraphErrors *graph = new TGraphErrors(num_bins, &times[0], &rates[0], nullptr, &errors[0]);
+
+    TCanvas *c_rate = new TCanvas(("RateCanvas_" + run_name).c_str(), "Rate Muoni vs Tempo", 800, 600);
+    c_rate->SetGrid();
+    stringstream title;
+    title << "Rate dei muoni nel tempo - " << run_name << " (Intervallo: " << fixed << setprecision(1) << interval_sec << " s)";
+    graph->SetTitle(title.str().c_str());
+    graph->GetXaxis()->SetTitle("Tempo [s]");
+    graph->GetYaxis()->SetTitle("Rate [Hz]");
+    graph->GetYaxis()->SetRangeUser(0, *max_element(rates.begin(), rates.end()) * 1.1); // Imposta la scala dell'asse Y per partire da 0
+    graph->SetMarkerStyle(20);
+    graph->SetMarkerSize(1.4);
+    graph->Draw("AP");
+
+    string filename = folder_name + "/MuonRate_" + run_name + ".png";
+    c_rate->SaveAs(filename.c_str());
+
+    delete c_rate;
+    delete graph;
+}
+
+void plot_overlap_area_vs_tolerance(const vector<double>& tolerances, const vector<double>& overlap_areas, const string& run_name) {
+    TCanvas *c_overlap = new TCanvas("c_overlap", "Overlap Area totalWP & WP-classify vs Tolerance", 800, 600);
+    TGraph *graph_overlap = new TGraph(tolerances.size(), &tolerances[0], &overlap_areas[0]);
+    c_overlap->SetGrid();
+    // Aggiungi margini al canvas
+    c_overlap->SetLeftMargin(0.15);
+    c_overlap->SetBottomMargin(0.15);
+    graph_overlap->SetTitle("Normalized Overlap Area totalWP & WP-classify Ev. vs Tolerance;Tolerance [ns];Normalized Overlap Area");
+    graph_overlap->GetXaxis()->SetTitleOffset(1.4); // Sposta il titolo dell'asse X
+    graph_overlap->GetYaxis()->SetTitleOffset(1.6); // Sposta il titolo dell'asse Y
+    graph_overlap->SetMarkerStyle(20);
+    graph_overlap->SetMarkerSize(1.4);
+    graph_overlap->Draw("AP");
+    c_overlap->SetLogx();
+
+    string main_folder = "images";
+    string folder_im2 = main_folder + "/Overlap_Area_vs_Tolerance_plot";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
+    if (!fs::exists(folder_im2)) {
+        fs::create_directory(folder_im2);
+    }
+
+    string filename_overlap2 = folder_im2 + "/Overlap_Area_vs_Tolerance_" + run_name + "_plot.png";
+    c_overlap->SaveAs(filename_overlap2.c_str());
+
+    delete c_overlap;
+    delete graph_overlap;
 }

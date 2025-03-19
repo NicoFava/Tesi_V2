@@ -156,13 +156,9 @@ int main(int argc, char* argv[]) {
         cout << "La distanza massima tra l'origine e il tracciato dei muoni è: " << max_dist << " mm" << endl;
         cout << "I muoni che passano nel bordo (cut = " << cut_distance << " mm ) sono: " << edge_events(eventi_per_file[i], cut_distance) << endl;
         cout << "La frequenza togliendo gli eventi di bordo è: " << ((double )eventi_per_file[i].size() - (double)edge_events(eventi_per_file[i], cut_distance)) / total_run_time(eventi_per_file[i]) << " Hz" << endl;
-        PeSum_histogram(eventi_per_file[i], run_names[i]);
         plot_polar_angle_distribution(eventi_per_file[i], run_names[i]);
         plot_azimuthal_angle_distribution(eventi_per_file[i], run_names[i]);
         Distance_histogram(eventi_per_file[i], run_names[i]);
-        PeSum_vs_polar_angle(eventi_per_file[i], run_names[i]);
-        PeSum_vs_azimuthal_angle(eventi_per_file[i], run_names[i]);
-        PeSum_histograms(eventi_per_file[i], run_names[i]);
         plot_trackID_distribution(eventi_per_file[i], run_names[i]);
         plot_muon_rate(eventi_per_file[i], run_names[i], 300);   
         Polar_vs_Azimuthal_angle(eventi_per_file[i], run_names[i]);
@@ -229,7 +225,7 @@ int main(int argc, char* argv[]) {
         PeSum_histogram_log(updated_eventi_per_file[i], run_names_mod[i]);
         PeSum_vs_polar_angle(updated_eventi_per_file[i], run_names_mod[i]);
         PeSum_vs_azimuthal_angle(updated_eventi_per_file[i], run_names_mod[i]);
-        plot_muon_rate(updated_eventi_per_file[i], run_names_mod[i], 300);   
+        plot_muon_rate_mod(updated_eventi_per_file[i], run_names_mod[i], 300);   
         plot_time_difference_vs_charge(total_eventi_per_file_wp[i], total_run_names_wp[i]);
         total_PeSum_histogram_log(total_eventi_per_file_wp[i], updated_eventi_per_file[i], total_run_names_wp[i] , run_names_mod[i]);
         total_PeSum_histogram_log_complementary(total_eventi_per_file_wp[i], updated_eventi_per_file[i], total_run_names_wp[i], run_names_mod[i]);
@@ -240,7 +236,6 @@ int main(int argc, char* argv[]) {
         }
         total_PeSum_histogram_log_divided(total_eventi_per_file_wp[i], updated_eventi_per_file[i], total_run_names_wp[i] , run_names_mod[i]);
         total_PeSum_histogram_log_divided_track(total_eventi_per_file_wp[i], updated_eventi_per_file[i], total_run_names_wp[i] , run_names_mod[i]);
-        path_distance_histogram(updated_eventi_per_file[i], run_names_mod[i]);
     }
     cout << "============================================" << endl;
     cout << "FINE ANALISI DELLE RUN MODIFICATE" << endl;
