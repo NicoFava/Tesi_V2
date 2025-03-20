@@ -936,6 +936,9 @@ void plot_trackID_distribution(const vector<muone>& eventi, const string& run_na
         }
     }
 
+    // Calcolo il numero totale di eventi
+    int total_events = eventi.size();
+
     string main_folder = "images";
     string folder_name = main_folder + "/TrackID_Distribution_plot";
     if (!fs::exists(main_folder)) {
@@ -951,7 +954,8 @@ void plot_trackID_distribution(const vector<muone>& eventi, const string& run_na
     canvas->SetGrid();
 
     for (int i = 0; i <= trackID_max; i++) {
-        trackID_hist->SetBinContent(i + 1, trackID_count[i]);
+        double percentage = (static_cast<double>(trackID_count[i]) / total_events) * 100;
+        trackID_hist->SetBinContent(i + 1, percentage);
         trackID_hist->GetXaxis()->SetBinLabel(i + 1, to_string(i).c_str());
     }
 
@@ -959,11 +963,11 @@ void plot_trackID_distribution(const vector<muone>& eventi, const string& run_na
     trackID_hist->SetLineWidth(2);
     trackID_hist->SetFillColorAlpha(kBlue, 1);
     trackID_hist->GetXaxis()->SetTitle("TrackID");
-    trackID_hist->GetYaxis()->SetTitle("Conteggio");
+    trackID_hist->GetYaxis()->SetTitle("Percentuale [%]");
     trackID_hist->SetStats(kFALSE); // Disabilito la casella delle statistiche
     trackID_hist->Draw("HIST");
 
-    // Creo una casella di testo in alto a destra per visualizzare il conteggio di ciascun trackID
+    // Creo una casella di testo in alto a destra per visualizzare la percentuale di ciascun trackID
     TPaveText *pave = new TPaveText(0.7, 0.7, 0.9, 0.9, "NDC");
     pave->SetFillColor(0);
     pave->SetTextAlign(12);
@@ -972,7 +976,10 @@ void plot_trackID_distribution(const vector<muone>& eventi, const string& run_na
     pave->SetFillStyle(1001); // Imposto lo stile di riempimento
     for (int i = 0; i <= trackID_max; i++) {
         if (trackID_count[i] > 0) {
-            pave->AddText(("TrackID " + to_string(i) + ": " + to_string(trackID_count[i])).c_str());
+            double percentage = (static_cast<double>(trackID_count[i]) / total_events) * 100;
+            std::ostringstream oss;
+            oss << std::fixed << std::setprecision(2) << percentage; // Imposta 2 cifre significative
+            pave->AddText(("TrackID " + to_string(i) + ": " + oss.str() + "%").c_str());
         }
     }
     pave->Draw();
