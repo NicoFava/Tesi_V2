@@ -251,10 +251,10 @@ int main(int argc, char* argv[]) {
         total_run_names_cd[i] = temp2;
     }
     
-    //Fino a qui dovrebbe funzionare per un numero arbitrario di file di eventi totali WP.
-    //Da qui in poi invece avendo aggiunto anche i file CD non è automatico analizzare più file WP WPmuonclassifytool e CD
-    //Per ora so che c'è solo una run (la RUN4049) in comune tra WPmuonclassifytool WP e CD
-    //Quindi per ora analizzo solo quella run
+    // Fino a qui dovrebbe funzionare per un numero arbitrario di file di eventi totali WP.
+    // Da qui in poi invece avendo aggiunto anche i file CD non è automatico analizzare più file WP WPmuonclassifytool e CD
+    // Per ora so che c'è solo una run (la RUN4049) in comune tra WPmuonclassifytool WP e CD
+    // Quindi per ora analizzo solo quella run
     // Una volta ottenuti diversi file potrei tenere solo quelli "in comune" ed eliminare gli altri tenendo magari i grafici essenziali
     // Oppure creo una seconda cartella inserendo i datasets wpclassify, CD e WP in maniera analoga ad ora ma mettendo solo quelli che hanno run in comune e le analizzo in maniera autonoma
     cout << "============================================" << endl;
@@ -262,7 +262,8 @@ int main(int argc, char* argv[]) {
     cout << "============================================" << endl;
     
     analyze_total_wp_cd(total_eventi_per_file_wp, total_eventi_per_file_cd, updated_eventi_per_file, total_run_names_wp, total_run_names_cd, run_names_mod);
-
+    plot_muon_rate_vs_run_with_energy_cut_cd(total_eventi_per_file_wp, total_eventi_per_file_cd, total_run_names_wp, 200.0, 5e4);
+    plot_muon_rate_vs_run_with_energy_cut_wp(total_eventi_per_file_wp, total_eventi_per_file_cd, total_run_names_wp, 200.0, 5e3);
     cout << "============================================" << endl;
     cout << "FINE CONFRONTO WP e CD" << endl;
     cout << "============================================" << endl;

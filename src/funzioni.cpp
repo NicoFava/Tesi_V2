@@ -2587,3 +2587,103 @@ void plot_overlap_area_vs_tolerance(const vector<double>& tolerances, const vect
     delete c_overlap;
     delete graph_overlap;
 }
+
+void plot_muon_rate_vs_run_with_energy_cut_cd(const vector<vector<totalEvents>>& total_eventi_per_file_wp, const vector<vector<totalEvents>>& total_eventi_per_file_cd, const vector<string>& run_names, double tolerance_ns, double energy_cut) {
+    vector<double> run_indices;
+    vector<double> muon_rates;
+    vector<double> errors;
+
+    for (size_t i = 0; i < total_eventi_per_file_wp.size(); i++) {
+        if (total_eventi_per_file_wp[i].empty() || total_eventi_per_file_cd[i].empty()) {
+            continue;
+        }
+
+        // Calcolo la durata della run
+        long double start_time1 = (long double) total_eventi_per_file_wp[i].front().fSec + (long double) total_eventi_per_file_wp[i].front().fNanoSec * 1e-9;
+        long double end_time1 = (long double) total_eventi_per_file_wp[i].back().fSec + (long double) total_eventi_per_file_wp[i].back().fNanoSec * 1e-9;
+        long double start_time2 = (long double) total_eventi_per_file_cd[i].front().fSec + (long double) total_eventi_per_file_cd[i].front().fNanoSec * 1e-9;
+        long double end_time2 = (long double) total_eventi_per_file_cd[i].back().fSec + (long double) total_eventi_per_file_cd[i].back().fNanoSec * 1e-9;
+        long double run_duration1 = end_time1 - start_time1;
+        long double run_duration2 = end_time2 - start_time2;
+        long double run_duration = max(run_duration1, run_duration2);
+
+        int common_event_count = count_common_events_with_energy_cut_cd(total_eventi_per_file_wp[i], total_eventi_per_file_cd[i], tolerance_ns, energy_cut);
+        double muon_rate = common_event_count / run_duration;
+        double error = sqrt(common_event_count) / run_duration;
+
+        run_indices.push_back(i + 1); // Indice della run
+        muon_rates.push_back(muon_rate);
+        errors.push_back(error);
+    }
+
+    // Creazione del grafico del rate dei muoni in funzione della run
+    TCanvas *canvas = new TCanvas("canvas_muon_rate", "Muon Rate vs Run", 800, 600);
+    TGraphErrors *graph = new TGraphErrors(run_indices.size(), &run_indices[0], &muon_rates[0], nullptr, &errors[0]);
+    canvas->SetGrid();
+
+    graph->SetTitle("Muon Rate vs Run with Energy Cut CD;Run Index;Muon Rate [Hz]");
+    graph->SetMarkerStyle(20);
+    graph->SetMarkerSize(1.4);
+    graph->Draw("AP");
+
+    string main_folder = "images";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
+
+    string filename = main_folder + "/Muon_Rate_vs_Run_with_Energy_Cut_CD.png";
+    canvas->SaveAs(filename.c_str());
+
+    delete canvas;
+    delete graph;
+}
+
+void plot_muon_rate_vs_run_with_energy_cut_wp(const vector<vector<totalEvents>>& total_eventi_per_file_wp, const vector<vector<totalEvents>>& total_eventi_per_file_cd, const vector<string>& run_names, double tolerance_ns, double energy_cut) {
+    vector<double> run_indices;
+    vector<double> muon_rates;
+    vector<double> errors;
+
+    for (size_t i = 0; i < total_eventi_per_file_wp.size(); i++) {
+        if (total_eventi_per_file_wp[i].empty() || total_eventi_per_file_cd[i].empty()) {
+            continue;
+        }
+
+        // Calcolo la durata della run
+        long double start_time1 = (long double) total_eventi_per_file_wp[i].front().fSec + (long double) total_eventi_per_file_wp[i].front().fNanoSec * 1e-9;
+        long double end_time1 = (long double) total_eventi_per_file_wp[i].back().fSec + (long double) total_eventi_per_file_wp[i].back().fNanoSec * 1e-9;
+        long double start_time2 = (long double) total_eventi_per_file_cd[i].front().fSec + (long double) total_eventi_per_file_cd[i].front().fNanoSec * 1e-9;
+        long double end_time2 = (long double) total_eventi_per_file_cd[i].back().fSec + (long double) total_eventi_per_file_cd[i].back().fNanoSec * 1e-9;
+        long double run_duration1 = end_time1 - start_time1;
+        long double run_duration2 = end_time2 - start_time2;
+        long double run_duration = max(run_duration1, run_duration2);
+
+        int common_event_count = count_common_events_with_energy_cut_wp(total_eventi_per_file_wp[i], total_eventi_per_file_cd[i], tolerance_ns, energy_cut);
+        double muon_rate = common_event_count / run_duration;
+        double error = sqrt(common_event_count) / run_duration;
+
+        run_indices.push_back(i + 1); // Indice della run
+        muon_rates.push_back(muon_rate);
+        errors.push_back(error);
+    }
+
+    // Creazione del grafico del rate dei muoni in funzione della run
+    TCanvas *canvas = new TCanvas("canvas_muon_rate", "Muon Rate vs Run", 800, 600);
+    TGraphErrors *graph = new TGraphErrors(run_indices.size(), &run_indices[0], &muon_rates[0], nullptr, &errors[0]);
+    canvas->SetGrid();
+
+    graph->SetTitle("Muon Rate vs Run with Energy Cut WP;Run Index;Muon Rate [Hz]");
+    graph->SetMarkerStyle(20);
+    graph->SetMarkerSize(1.4);
+    graph->Draw("AP");
+
+    string main_folder = "images";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
+
+    string filename = main_folder + "/Muon_Rate_vs_Run_with_Energy_Cut_WP.png";
+    canvas->SaveAs(filename.c_str());
+
+    delete canvas;
+    delete graph;
+}

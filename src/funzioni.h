@@ -234,4 +234,8 @@ void plot_time_difference_histogram(const vector<totalEvents>&, const vector<tot
 void plot_muon_rate_mod(const vector<muone>&, const string&, double);
 
 void plot_overlap_area_vs_tolerance(const vector<double>&, const vector<double>&, const string&);
+
+void plot_muon_rate_vs_run_with_energy_cut_cd(const vector<vector<totalEvents>>&, const vector<vector<totalEvents>>&, const vector<string>&, double, double);
+
+void plot_muon_rate_vs_run_with_energy_cut_wp(const vector<vector<totalEvents>>&, const vector<vector<totalEvents>>&, const vector<string>&, double, double);
 #endif

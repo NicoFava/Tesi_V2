@@ -3570,3 +3570,5 @@ Info in <TCanvas::Print>: png file images/Common_Events_vs_Tolerance_with_cut_pl
 Info in <TCanvas::Print>: png file images/Common_Events_vs_Tolerance_with_cut_plot/WP_cut/Common_Events_vs_Tolerance_RUN4051_rate_cut_WP_plot.png has been created
 Info in <TCanvas::Print>: png file images/Time_Difference_Histogram/Time_Difference_RUN4051.png has been created
 Info in <TCanvas::Print>: png file images/Overlap_Area_vs_Tolerance_plot/Overlap_Area_vs_Tolerance_RUN4051_plot.png has been created
+Info in <TCanvas::Print>: png file images/Muon_Rate_vs_Run_with_Energy_Cut_CD.png has been created
+Info in <TCanvas::Print>: png file images/Muon_Rate_vs_Run_with_Energy_Cut_WP.png has been created
