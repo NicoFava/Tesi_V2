@@ -170,6 +170,7 @@ int main(int argc, char* argv[]) {
         cout << "--------------------------------------------" << endl;
     }
     plot_muon_rate_vs_run(eventi_per_file, run_names);
+    plot_muon_rate_vs_run_eventID(eventi_per_file, run_names);
     plot_muon_rate_with_edge_cut_vs_run(eventi_per_file, run_names, cut_distance);
     cout << "La distanza del tracciato con l'origine massima registrata tra tutti i file è: " << *max_element(max_path_distances.begin(), max_path_distances.end()) << " mm" << endl;
     cout << "============================================" << endl;

@@ -238,4 +238,6 @@ void plot_overlap_area_vs_tolerance(const vector<double>&, const vector<double>&
 void plot_muon_rate_vs_run_with_energy_cut_cd(const vector<vector<totalEvents>>&, const vector<vector<totalEvents>>&, const vector<string>&, double, double);
 
 void plot_muon_rate_vs_run_with_energy_cut_wp(const vector<vector<totalEvents>>&, const vector<vector<totalEvents>>&, const vector<string>&, double, double);
+
+void plot_muon_rate_vs_run_eventID(const vector<vector<muone>>&, const vector<string>&);
 #endif

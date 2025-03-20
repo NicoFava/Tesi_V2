@@ -2687,3 +2687,46 @@ void plot_muon_rate_vs_run_with_energy_cut_wp(const vector<vector<totalEvents>>&
     delete canvas;
     delete graph;
 }
+
+void plot_muon_rate_vs_run_eventID(const vector<vector<muone>>& eventi_per_file, const vector<string>& run_names) {
+    vector<double> run_indices;
+    vector<double> muon_rates;
+    vector<double> errors;
+
+    for (size_t i = 0; i < eventi_per_file.size(); i++) {
+        if (eventi_per_file[i].empty()) {
+            continue;
+        }
+
+        long double total_time = total_run_time(eventi_per_file[i]);
+        double rate = Nevents(eventi_per_file[i]) / (long double) total_time;
+        double error = sqrt(Nevents(eventi_per_file[i])) / total_time;
+
+        run_indices.push_back(i + 1);
+        muon_rates.push_back(rate);
+        errors.push_back(error);
+    }
+
+    string main_folder = "images";
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
+    if (!fs::exists(main_folder)) {
+        fs::create_directory(main_folder);
+    }
+
+    TCanvas *canvas = new TCanvas("canvas", "Rate dei Muoni in Funzione della Run (EventID Univoco)", 800, 600);
+    TGraphErrors *graph = new TGraphErrors(run_indices.size(), &run_indices[0], &muon_rates[0], nullptr, &errors[0]);
+    canvas->SetGrid();
+
+    graph->SetTitle("Rate dei Muoni in Funzione della Run;Indice della Run;Rate [Hz]");
+    graph->SetMarkerStyle(20);
+    graph->SetMarkerSize(1.4);
+    graph->Draw("AP");
+
+    string filename = main_folder + "/Muon_Rate_vs_Run_EventID_univ.png";
+    canvas->SaveAs(filename.c_str());
+
+    delete canvas;
+    delete graph;
+}
