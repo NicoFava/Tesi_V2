@@ -1,16 +1,6 @@
 ============================================
  CARICAMENTO DATI WPMUONCLASSIFY 
 ============================================
-Caricamento file: RUN3322
-Caricamento file: RUN3326
-Caricamento file: RUN3413
-Caricamento file: RUN3415
-Caricamento file: RUN3416
-Caricamento file: RUN3530
-Caricamento file: RUN3531
-Caricamento file: RUN3639
-Caricamento file: RUN3677
-Caricamento file: RUN3697
 Caricamento file: RUN3708
 Caricamento file: RUN3709
 Caricamento file: RUN3743
@@ -37,24 +27,12 @@ Caricamento file: RUN4002
 Caricamento file: RUN4005
 Caricamento file: RUN4006
 Caricamento file: RUN4007
-Caricamento file: RUN4013
 Caricamento file: RUN4036
 Caricamento file: RUN4045
-Caricamento file: RUN4048
 Caricamento file: RUN4049
 Caricamento file: RUN4051
-Numero totale di file ROOT analizzati: 42
+Numero totale di file ROOT analizzati: 30
 ============================================
-RUN3322: 12934 eventi caricati
-RUN3326: 74193 eventi caricati
-RUN3413: 64440 eventi caricati
-RUN3415: 10536 eventi caricati
-RUN3416: 70877 eventi caricati
-RUN3530: 34924 eventi caricati
-RUN3531: 32251 eventi caricati
-RUN3639: 0 eventi caricati
-RUN3677: 138330 eventi caricati
-RUN3697: 171223 eventi caricati
 RUN3708: 11342 eventi caricati
 RUN3709: 16430 eventi caricati
 RUN3743: 52329 eventi caricati
@@ -81,10 +59,8 @@ RUN4002: 55300 eventi caricati
 RUN4005: 92924 eventi caricati
 RUN4006: 93490 eventi caricati
 RUN4007: 91522 eventi caricati
-RUN4013: 0 eventi caricati
 RUN4036: 61532 eventi caricati
 RUN4045: 98175 eventi caricati
-RUN4048: 36147 eventi caricati
 RUN4049: 98734 eventi caricati
 RUN4051: 8140 eventi caricati
 ============================================
@@ -284,133 +260,7 @@ RUN comuni tra wpclassify e cd_total:
 ============================================
  ALCUNI DATI PER OGNI RUN 
 ============================================
-1) RUN3322: 
-Informazioni sulla RUN non trovate.
-Tempo totale della RUN: t = 4135.07 s
-Numero di eventi totali registrati: 12934
-<delta_t> = 0.385339 s | rate (contando gli eventi bundle come unici 1/delta_t) = 2.59512 Hz
-Il rate dei muoni (righe/t_tot) è: 3.12788 Hz.
-Il numero di eventi univoci per EventID: 10732
-La frequenza calcolata solo con gli eventi univoci è: 2.59536 Hz
-In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
-La distanza massima tra l'origine e il tracciato dei muoni è: 20499.9 mm
-I muoni che passano nel bordo (cut = 2800 mm ) sono: 4188
-La frequenza togliendo gli eventi di bordo è: 2.11508 Hz
-Trovato trackID = -1, salto la creazione dell'istrogramma TrackID per la RUN3322
---------------------------------------------
-2) RUN3326: 
-Informazioni sulla RUN non trovate.
-Tempo totale della RUN: t = 12380.6 s
-Numero di eventi totali registrati: 74193
-<delta_t> = 0.586972 s | rate (contando gli eventi bundle come unici 1/delta_t) = 1.70366 Hz
-Il rate dei muoni (righe/t_tot) è: 5.99269 Hz.
-Il numero di eventi univoci per EventID: 57227
-La frequenza calcolata solo con gli eventi univoci è: 4.62232 Hz
-In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
-La distanza massima tra l'origine e il tracciato dei muoni è: 20524.5 mm
-I muoni che passano nel bordo (cut = 2800 mm ) sono: 25817
-La frequenza togliendo gli eventi di bordo è: 3.90741 Hz
-Trovato trackID = -1, salto la creazione dell'istrogramma TrackID per la RUN3326
---------------------------------------------
-3) RUN3413: 
-Informazioni sulla RUN non trovate.
-Tempo totale della RUN: t = 9953.79 s
-Numero di eventi totali registrati: 64440
-<delta_t> = 0.193678 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.1632 Hz
-Il rate dei muoni (righe/t_tot) è: 6.47392 Hz.
-Il numero di eventi univoci per EventID: 54336
-La frequenza calcolata solo con gli eventi univoci è: 5.45883 Hz
-In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
-La distanza massima tra l'origine e il tracciato dei muoni è: 20532.5 mm
-I muoni che passano nel bordo (cut = 2800 mm ) sono: 15356
-La frequenza togliendo gli eventi di bordo è: 4.93119 Hz
-Trovato trackID = -1, salto la creazione dell'istrogramma TrackID per la RUN3413
---------------------------------------------
-4) RUN3415: 
-Informazioni sulla RUN non trovate.
-Tempo totale della RUN: t = 1732.28 s
-Numero di eventi totali registrati: 10536
-<delta_t> = 0.194967 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.12907 Hz
-Il rate dei muoni (righe/t_tot) è: 6.08215 Hz.
-Il numero di eventi univoci per EventID: 8886
-La frequenza calcolata solo con gli eventi univoci è: 5.12965 Hz
-In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
-La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
-I muoni che passano nel bordo (cut = 2800 mm ) sono: 2509
-La frequenza togliendo gli eventi di bordo è: 4.63377 Hz
-Trovato trackID = -1, salto la creazione dell'istrogramma TrackID per la RUN3415
---------------------------------------------
-5) RUN3416: 
-Informazioni sulla RUN non trovate.
-Tempo totale della RUN: t = 11511.9 s
-Numero di eventi totali registrati: 70877
-<delta_t> = 0.192661 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.19046 Hz
-Il rate dei muoni (righe/t_tot) è: 6.15685 Hz.
-Il numero di eventi univoci per EventID: 59753
-La frequenza calcolata solo con gli eventi univoci è: 5.19054 Hz
-In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
-La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
-I muoni che passano nel bordo (cut = 2800 mm ) sono: 16970
-La frequenza togliendo gli eventi di bordo è: 4.68272 Hz
-Trovato trackID = -1, salto la creazione dell'istrogramma TrackID per la RUN3416
---------------------------------------------
-6) RUN3530: 
-Informazioni sulla RUN non trovate.
-Tempo totale della RUN: t = 5253.97 s
-Numero di eventi totali registrati: 34924
-<delta_t> = 0.182495 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.47959 Hz
-Il rate dei muoni (righe/t_tot) è: 6.64717 Hz.
-Il numero di eventi univoci per EventID: 29429
-La frequenza calcolata solo con gli eventi univoci è: 5.60129 Hz
-In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
-La distanza massima tra l'origine e il tracciato dei muoni è: 20524.5 mm
-I muoni che passano nel bordo (cut = 2800 mm ) sono: 8352
-La frequenza togliendo gli eventi di bordo è: 5.05751 Hz
-Trovato trackID = -1, salto la creazione dell'istrogramma TrackID per la RUN3530
---------------------------------------------
-7) RUN3531: 
-Informazioni sulla RUN non trovate.
-Tempo totale della RUN: t = 4842.63 s
-Numero di eventi totali registrati: 32251
-<delta_t> = 0.187711 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.32733 Hz
-Il rate dei muoni (righe/t_tot) è: 6.65981 Hz.
-Il numero di eventi univoci per EventID: 27104
-La frequenza calcolata solo con gli eventi univoci è: 5.59696 Hz
-In questo file non è presente il TrackID quindi non si può calcolare il numero di eventi bundle.
-La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
-I muoni che passano nel bordo (cut = 2800 mm ) sono: 7732
-La frequenza togliendo gli eventi di bordo è: 5.06316 Hz
-Trovato trackID = -1, salto la creazione dell'istrogramma TrackID per la RUN3531
---------------------------------------------
-8) RUN3639: RUN vuota, salto l'analisi.
---------------------------------------------
-9) RUN3677: 
-Informazioni sulla RUN non trovate.
-Tempo totale della RUN: t = 12862.4 s
-Numero di eventi totali registrati: 138330
-<delta_t> = 0.276882 s | rate (contando gli eventi bundle come unici 1/delta_t) = 3.61164 Hz
-Il rate dei muoni (righe/t_tot) è: 10.7546 Hz.
-Il numero di eventi univoci per EventID: 116557
-La frequenza calcolata solo con gli eventi univoci è: 9.06181 Hz
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 18568 e rappresentano il: 15.9304%. 
-La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
-I muoni che passano nel bordo (cut = 2800 mm ) sono: 33127
-La frequenza togliendo gli eventi di bordo è: 8.17909 Hz
---------------------------------------------
-10) RUN3697: 
-Informazioni sulla RUN non trovate.
-Tempo totale della RUN: t = 20473.9 s
-Numero di eventi totali registrati: 171223
-<delta_t> = 0.291017 s | rate (contando gli eventi bundle come unici 1/delta_t) = 3.43622 Hz
-Il rate dei muoni (righe/t_tot) è: 8.36298 Hz.
-Il numero di eventi univoci per EventID: 137728
-La frequenza calcolata solo con gli eventi univoci è: 6.727 Hz
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 29886 e rappresentano il: 21.6993%. 
-La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
-I muoni che passano nel bordo (cut = 2800 mm ) sono: 60732
-La frequenza togliendo gli eventi di bordo è: 5.39667 Hz
---------------------------------------------
-11) RUN3708: 
+1) RUN3708: 
 Informazioni sulla RUN non trovate.
 Tempo totale della RUN: t = 1693.94 s
 Numero di eventi totali registrati: 11342
@@ -423,7 +273,7 @@ La distanza massima tra l'origine e il tracciato dei muoni è: 20530.3 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 3052
 La frequenza togliendo gli eventi di bordo è: 4.89392 Hz
 --------------------------------------------
-12) RUN3709: 
+2) RUN3709: 
 Informazioni sulla RUN non trovate.
 Tempo totale della RUN: t = 3980.92 s
 Numero di eventi totali registrati: 16430
@@ -436,7 +286,7 @@ La distanza massima tra l'origine e il tracciato dei muoni è: 20508.1 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 4539
 La frequenza togliendo gli eventi di bordo è: 2.987 Hz
 --------------------------------------------
-13) RUN3743: 
+3) RUN3743: 
 Informazioni sulla RUN non trovate.
 Tempo totale della RUN: t = 7781.32 s
 Numero di eventi totali registrati: 52329
@@ -449,7 +299,7 @@ La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 13708
 La frequenza togliendo gli eventi di bordo è: 4.9633 Hz
 --------------------------------------------
-14) RUN3753: 
+4) RUN3753: 
 Informazioni sulla RUN non trovate.
 Tempo totale della RUN: t = 6043.41 s
 Numero di eventi totali registrati: 40160
@@ -462,7 +312,7 @@ La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 9625
 La frequenza togliendo gli eventi di bordo è: 5.05261 Hz
 --------------------------------------------
-15) RUN3793: 
+5) RUN3793: 
 Data di inizio: 2025-02-10 | Ora di inizio: 00:00 | Durata: 20929.6 s. 
 Tempo totale della RUN: t = 32650.6 s
 Numero di eventi totali registrati: 209297
@@ -475,7 +325,7 @@ La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 51998
 La frequenza togliendo gli eventi di bordo è: 4.81764 Hz
 --------------------------------------------
-16) RUN3872: 
+6) RUN3872: 
 Data di inizio: 2025-02-10 | Ora di inizio: 21:30 | Durata: 8937.55 s. 
 Tempo totale della RUN: t = 20655.3 s
 Numero di eventi totali registrati: 129659
@@ -488,7 +338,7 @@ La distanza massima tra l'origine e il tracciato dei muoni è: 20541.2 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 32634
 La frequenza togliendo gli eventi di bordo è: 4.69733 Hz
 --------------------------------------------
-17) RUN3885: 
+7) RUN3885: 
 Data di inizio: 2025-02-11 | Ora di inizio: 03:34 | Durata: 54190.6 s. 
 Tempo totale della RUN: t = 54190.6 s
 Numero di eventi totali registrati: 340561
@@ -501,7 +351,7 @@ La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 86160
 La frequenza togliendo gli eventi di bordo è: 4.69456 Hz
 --------------------------------------------
-18) RUN3889: 
+8) RUN3889: 
 Data di inizio: 2025-02-11 | Ora di inizio: 18:42 | Durata: 18963.3 s. 
 Tempo totale della RUN: t = 23151.8 s
 Numero di eventi totali registrati: 145502
@@ -514,7 +364,7 @@ La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 36462
 La frequenza togliendo gli eventi di bordo è: 4.70978 Hz
 --------------------------------------------
-19) RUN3896: 
+9) RUN3896: 
 Data di inizio: 2025-02-12 | Ora di inizio: 07:58 | Durata: 30031.9 s. 
 Tempo totale della RUN: t = 30031.6 s
 Numero di eventi totali registrati: 187385
@@ -527,7 +377,7 @@ La distanza massima tra l'origine e il tracciato dei muoni è: 20546.8 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 47583
 La frequenza togliendo gli eventi di bordo è: 4.65516 Hz
 --------------------------------------------
-20) RUN3937: 
+10) RUN3937: 
 Data di inizio: 2025-02-14 | Ora di inizio: 00:00 | Durata: 30613.2 s. 
 Tempo totale della RUN: t = 30613 s
 Numero di eventi totali registrati: 190515
@@ -540,7 +390,7 @@ La distanza massima tra l'origine e il tracciato dei muoni è: 20545.7 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 48177
 La frequenza togliendo gli eventi di bordo è: 4.6496 Hz
 --------------------------------------------
-21) RUN3938: 
+11) RUN3938: 
 Data di inizio: 2025-02-14 | Ora di inizio: 08:39 | Durata: 11747.8 s. 
 Tempo totale della RUN: t = 11804.6 s
 Numero di eventi totali registrati: 74006
@@ -553,7 +403,7 @@ La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 18491
 La frequenza togliendo gli eventi di bordo è: 4.70282 Hz
 --------------------------------------------
-22) RUN3940: 
+12) RUN3940: 
 Data di inizio: 2025-02-14 | Ora di inizio: 12:11 | Durata: 14195.3 s. 
 Tempo totale della RUN: t = 14263.7 s
 Numero di eventi totali registrati: 88993
@@ -566,7 +416,7 @@ La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 22446
 La frequenza togliendo gli eventi di bordo è: 4.66548 Hz
 --------------------------------------------
-23) RUN3945: 
+13) RUN3945: 
 Data di inizio: 2025-02-14 | Ora di inizio: 17:10 | Durata: 13698.9 s. 
 Tempo totale della RUN: t = 13698.5 s
 Numero di eventi totali registrati: 88813
@@ -579,7 +429,7 @@ La distanza massima tra l'origine e il tracciato dei muoni è: 20536.5 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 22441
 La frequenza togliendo gli eventi di bordo è: 4.8452 Hz
 --------------------------------------------
-24) RUN3947: 
+14) RUN3947: 
 Data di inizio: 2025-02-14 | Ora di inizio: 21:21 | Durata: 9457.48 s. 
 Tempo totale della RUN: t = 14397.4 s
 Numero di eventi totali registrati: 93004
@@ -592,7 +442,7 @@ La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 23194
 La frequenza togliendo gli eventi di bordo è: 4.8488 Hz
 --------------------------------------------
-25) RUN3948: 
+15) RUN3948: 
 Informazioni sulla RUN non trovate.
 Tempo totale della RUN: t = 14294.9 s
 Numero di eventi totali registrati: 91576
@@ -605,7 +455,7 @@ La distanza massima tra l'origine e il tracciato dei muoni è: 20545.7 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 23176
 La frequenza togliendo gli eventi di bordo è: 4.78491 Hz
 --------------------------------------------
-26) RUN3949: 
+16) RUN3949: 
 Data di inizio: 2025-02-15 | Ora di inizio: 05:39 | Durata: 12140.3 s. 
 Tempo totale della RUN: t = 12140.2 s
 Numero di eventi totali registrati: 77459
@@ -618,7 +468,7 @@ La distanza massima tra l'origine e il tracciato dei muoni è: 20530.3 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 19521
 La frequenza togliendo gli eventi di bordo è: 4.77241 Hz
 --------------------------------------------
-27) RUN3951: 
+17) RUN3951: 
 Data di inizio: 2025-02-15 | Ora di inizio: 10:15 | Durata: 13366.5 s. 
 Tempo totale della RUN: t = 13366.3 s
 Numero di eventi totali registrati: 86267
@@ -631,7 +481,7 @@ La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 21725
 La frequenza togliendo gli eventi di bordo è: 4.82872 Hz
 --------------------------------------------
-28) RUN3975: 
+18) RUN3975: 
 Data di inizio: 2025-02-15 | Ora di inizio: 21:17 | Durata: 7545.1 s. 
 Tempo totale della RUN: t = 7616.1 s
 Numero di eventi totali registrati: 50306
@@ -644,7 +494,7 @@ La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 12556
 La frequenza togliendo gli eventi di bordo è: 4.95661 Hz
 --------------------------------------------
-29) RUN3976: 
+19) RUN3976: 
 Data di inizio: 2025-02-16 | Ora di inizio: 00:18 | Durata: 14300.3 s. 
 Tempo totale della RUN: t = 14300.2 s
 Numero di eventi totali registrati: 92965
@@ -657,7 +507,7 @@ La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 22868
 La frequenza togliendo gli eventi di bordo è: 4.90183 Hz
 --------------------------------------------
-30) RUN3977: 
+20) RUN3977: 
 Data di inizio: 2025-02-16 | Ora di inizio: 04:22 | Durata: 14643.6 s. 
 Tempo totale della RUN: t = 14643.3 s
 Numero di eventi totali registrati: 94854
@@ -670,7 +520,7 @@ La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 23588
 La frequenza togliendo gli eventi di bordo è: 4.8668 Hz
 --------------------------------------------
-31) RUN3978: 
+21) RUN3978: 
 Data di inizio: 2025-02-16 | Ora di inizio: 08:31 | Durata: 14384.9 s. 
 Tempo totale della RUN: t = 14384.8 s
 Numero di eventi totali registrati: 93187
@@ -683,7 +533,7 @@ La distanza massima tra l'origine e il tracciato dei muoni è: 20503.9 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 23399
 La frequenza togliendo gli eventi di bordo è: 4.85151 Hz
 --------------------------------------------
-32) RUN3990: 
+22) RUN3990: 
 Data di inizio: 2025-02-16 | Ora di inizio: 17:31 | Durata: 13778.6 s. 
 Tempo totale della RUN: t = 13778.3 s
 Numero di eventi totali registrati: 89077
@@ -696,7 +546,7 @@ La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 22195
 La frequenza togliendo gli eventi di bordo è: 4.85416 Hz
 --------------------------------------------
-33) RUN4002: 
+23) RUN4002: 
 Data di inizio: 2025-02-16 | Ora di inizio: 21:37 | Durata: 8544.52 s. 
 Tempo totale della RUN: t = 8544.48 s
 Numero di eventi totali registrati: 55300
@@ -709,7 +559,7 @@ La distanza massima tra l'origine e il tracciato dei muoni è: 20542.5 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 13887
 La frequenza togliendo gli eventi di bordo è: 4.84675 Hz
 --------------------------------------------
-34) RUN4005: 
+24) RUN4005: 
 Data di inizio: 2025-02-17 | Ora di inizio: 01:43 | Durata: 14382.2 s. 
 Tempo totale della RUN: t = 14381.9 s
 Numero di eventi totali registrati: 92924
@@ -722,7 +572,7 @@ La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 23457
 La frequenza togliendo gli eventi di bordo è: 4.83017 Hz
 --------------------------------------------
-35) RUN4006: 
+25) RUN4006: 
 Data di inizio: 2025-02-17 | Ora di inizio: 08:37 | Durata: 14383.9 s. 
 Tempo totale della RUN: t = 14383.4 s
 Numero di eventi totali registrati: 93490
@@ -735,7 +585,7 @@ La distanza massima tra l'origine e il tracciato dei muoni è: 20514 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 23345
 La frequenza togliendo gli eventi di bordo è: 4.87681 Hz
 --------------------------------------------
-36) RUN4007: 
+26) RUN4007: 
 Data di inizio: 2025-02-17 | Ora di inizio: 09:55 | Durata: 14164.8 s. 
 Tempo totale della RUN: t = 14164.4 s
 Numero di eventi totali registrati: 91522
@@ -748,9 +598,7 @@ La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 22952
 La frequenza togliendo gli eventi di bordo è: 4.84101 Hz
 --------------------------------------------
-37) RUN4013: RUN vuota, salto l'analisi.
---------------------------------------------
-38) RUN4036: 
+27) RUN4036: 
 Data di inizio: 2025-02-17 | Ora di inizio: 21:29 | Durata: 8917.25 s. 
 Tempo totale della RUN: t = 8917.12 s
 Numero di eventi totali registrati: 61532
@@ -763,7 +611,7 @@ La distanza massima tra l'origine e il tracciato dei muoni è: 20548.1 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 14730
 La frequenza togliendo gli eventi di bordo è: 5.24855 Hz
 --------------------------------------------
-39) RUN4045: 
+28) RUN4045: 
 Data di inizio: 2025-02-18 | Ora di inizio: 01:40 | Durata: 14363 s. 
 Tempo totale della RUN: t = 14362.8 s
 Numero di eventi totali registrati: 98175
@@ -776,20 +624,7 @@ La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
 I muoni che passano nel bordo (cut = 2800 mm ) sono: 23731
 La frequenza togliendo gli eventi di bordo è: 5.18313 Hz
 --------------------------------------------
-40) RUN4048: 
-Informazioni sulla RUN non trovate.
-Tempo totale della RUN: t = 5288.74 s
-Numero di eventi totali registrati: 36147
-<delta_t> = 0.177833 s | rate (contando gli eventi bundle come unici 1/delta_t) = 5.62327 Hz
-Il rate dei muoni (righe/t_tot) è: 6.83471 Hz.
-Il numero di eventi univoci per EventID: 29741
-La frequenza calcolata solo con gli eventi univoci è: 5.62346 Hz
-Il numero di eventi bundle (muoni per traccia > 1) registrati è: 5515 e rappresentano il: 18.5434%. 
-La distanza massima tra l'origine e il tracciato dei muoni è: 20542.8 mm
-I muoni che passano nel bordo (cut = 2800 mm ) sono: 8662
-La frequenza togliendo gli eventi di bordo è: 5.19689 Hz
---------------------------------------------
-41) RUN4049: 
+29) RUN4049: 
 Data di inizio: 2025-02-18 | Ora di inizio: 08:08 | Durata: 14383.1 s. 
 Tempo totale della RUN: t = 14382.4 s
 Numero di eventi totali registrati: 98734
@@ -803,7 +638,7 @@ I muoni che passano nel bordo (cut = 2800 mm ) sono: 23676
 La frequenza togliendo gli eventi di bordo è: 5.21873 Hz
 Dati salvati con successo in RUN4049!
 --------------------------------------------
-42) RUN4051: 
+30) RUN4051: 
 Informazioni sulla RUN non trovate.
 Tempo totale della RUN: t = 1195.62 s
 Numero di eventi totali registrati: 8140
@@ -1373,4 +1208,4 @@ Analisi del file RUN4051
 ============================================
 FINE CONFRONTO WP e CD
 ============================================
-Tempo totale di esecuzione: 2098.19 secondi
+Tempo totale di esecuzione: 1945.76 secondi

@@ -229,7 +229,7 @@ int count_common_events_with_energy_cut_wp(const vector<totalEvents>&, const vec
 
 void plot_common_events_vs_tolerance(const vector<totalEvents>&, const vector<totalEvents>&, const string&, const string&);
 
-void plot_time_difference_histogram(const vector<totalEvents>&, const vector<totalEvents>&, double, const string&, const string&);
+void plot_time_difference_histogram(const vector<totalEvents>&, const vector<totalEvents>&, long double, const string&, const string&);
 
 void plot_muon_rate_mod(const vector<muone>&, const string&, double);
 

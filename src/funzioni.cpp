@@ -1328,9 +1328,11 @@ void total_PeSum_histogram_log(const vector<totalEvents>& eventi1, const vector<
     canvas->SetLogy();
 
     TLegend *legend = new TLegend(0.7, 0.7, 0.9, 0.9);
-    legend->AddEntry(charge1, run_name1.c_str(), "f");
-    string run_name2_legend = run_name1 + " muonclassify";
+    string run_name1_legend = run_name1 + "_WP";
+    legend->AddEntry(charge1, run_name1_legend.c_str(), "f");
+    string run_name2_legend = run_name1 + "_WPMuon";
     legend->AddEntry(charge2, run_name2_legend.c_str(), "f");
+    legend->SetTextSize(0.03); // Imposta la dimensione del testo della legenda
     legend->Draw();
 
     string filename = folder_name + "/total_PeSum_log_" + run_name1 + ".png";
@@ -2427,7 +2429,7 @@ void plot_common_events_vs_tolerance(const vector<totalEvents>& eventi1, const v
     delete hist_common_events;
 }
 
-void plot_time_difference_histogram(const vector<totalEvents>& eventi1, const vector<totalEvents>& eventi2, double tolerance_ns, const string& run_name1, const string& run_name2) {
+void plot_time_difference_histogram(const vector<totalEvents>& eventi1, const vector<totalEvents>& eventi2, long double tolerance_ns, const string& run_name1, const string& run_name2) {
     vector<long double> time_differences;
 
     size_t i = 0, j = 0;
@@ -2436,9 +2438,9 @@ void plot_time_difference_histogram(const vector<totalEvents>& eventi1, const ve
         long double ev_time2 = (long double) eventi2[j].fSec * 1e9 + (long double) eventi2[j].fNanoSec;
 
         long double time_diff = abs(ev_time1 - ev_time2);
-        time_differences.push_back(time_diff);
 
         if (time_diff <= tolerance_ns) {
+            time_differences.push_back(time_diff);
             i++;
             j++;
         } else if (ev_time1 < ev_time2) {
@@ -2460,6 +2462,8 @@ void plot_time_difference_histogram(const vector<totalEvents>& eventi1, const ve
     TCanvas *canvas = new TCanvas("canvas_time_diff", "Istogramma Differenza di Tempo", 800, 600);
     std::ostringstream oss;
     oss << std::fixed << std::setprecision(1) << tolerance_ns;
+    // Calcola l'intervallo dell'istogramma in base ai dati
+    long double max_time_diff = *max_element(time_differences.begin(), time_differences.end());
     TH1F *hist = new TH1F("time_diff_hist", ("Istogramma Differenza di Tempo (Tolleranza: " + oss.str() + " ns)").c_str(), 100, 100, 100);
     canvas->SetGrid();
 
@@ -2706,6 +2710,11 @@ void plot_muon_rate_vs_run_eventID(const vector<vector<muone>>& eventi_per_file,
         muon_rates.push_back(rate);
         errors.push_back(error);
     }
+
+    // Calcolo del valore medio e altre caratteristiche
+    double mean_rate = accumulate(muon_rates.begin(), muon_rates.end(), 0.0) / muon_rates.size();
+    double max_rate = *max_element(muon_rates.begin(), muon_rates.end());
+    double min_rate = *min_element(muon_rates.begin(), muon_rates.end());
 
     string main_folder = "images";
     if (!fs::exists(main_folder)) {
