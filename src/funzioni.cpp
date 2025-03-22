@@ -1327,12 +1327,12 @@ void total_PeSum_histogram_log(const vector<totalEvents>& eventi1, const vector<
     canvas->SetLogx();
     canvas->SetLogy();
 
-    TLegend *legend = new TLegend(0.7, 0.7, 0.9, 0.9);
+    TLegend *legend = new TLegend(0.68, 0.7, 0.88, 0.85); // Modifica le coordinate per spostare la legenda a destra e ridurre le dimensioni
     string run_name1_legend = run_name1 + "_WP";
     legend->AddEntry(charge1, run_name1_legend.c_str(), "f");
     string run_name2_legend = run_name1 + "_WPMuon";
     legend->AddEntry(charge2, run_name2_legend.c_str(), "f");
-    legend->SetTextSize(0.03); // Imposta la dimensione del testo della legenda
+    legend->SetTextSize(0.025); // Riduci leggermente la dimensione del testo della legenda
     legend->Draw();
 
     string filename = folder_name + "/total_PeSum_log_" + run_name1 + ".png";
@@ -1660,7 +1660,7 @@ void total_PeSum_histogram_log_divided_track(const vector<totalEvents>& eventi1,
     canvas->SetLogx();
     canvas->SetLogy();
 
-    TLegend *legend = new TLegend(0.7, 0.7, 0.9, 0.9);
+    TLegend *legend = new TLegend(0.65, 0.6, 1.0, 0.95); // Modifica le coordinate per spostare la legenda a destra
     legend->AddEntry(charge1_total, (run_name1 + " Totale").c_str(), "f");
     legend->AddEntry(charge2_single, (run_name2 + " Singoli").c_str(), "f");
     legend->AddEntry(charge2_track1, (run_name2 + " trackID = 1").c_str(), "f");
@@ -1668,6 +1668,7 @@ void total_PeSum_histogram_log_divided_track(const vector<totalEvents>& eventi1,
     legend->AddEntry(charge2_track3, (run_name2 + " trackID = 3").c_str(), "f");
     legend->AddEntry(charge2_track4, (run_name2 + " trackID = 4").c_str(), "f");
     legend->AddEntry(charge2_track_gt4, (run_name2 + " trackID > 4").c_str(), "f");
+    legend->SetTextSize(0.03); // Imposta la dimensione del testo della legenda
     legend->Draw();
 
     string filename = folder_name + "/total_PeSum_log_divided_" + run_name1 + ".png";
@@ -1889,9 +1890,10 @@ void plot_common_events_NPE_all(const vector<totalEvents>& eventi1, const vector
     hist1->SetFillColorAlpha(kRed, 0.5);
     hist1->Draw("SAME");
 
-    TLegend *legend1 = new TLegend(0.7, 0.7, 0.9, 0.9);
-    legend1->AddEntry(hist_all1, "Eventi totali", "f");
-    legend1->AddEntry(hist1, "Eventi accoppiati", "f");
+    TLegend *legend1 = new TLegend(0.7, 0.7, 0.9, 0.85); // Modifica le coordinate per spostare la legenda a destra e ridurre le dimensioni
+    legend1->SetTextSize(0.03); // Imposta la dimensione del testo della legenda
+    legend1->AddEntry(hist_all1, "totalWP", "f");
+    legend1->AddEntry(hist1, "totalWP+totalCD", "f");
     legend1->Draw();
 
     string filename1 = wp_folder + "/WP_" + run_name1 + "_tolerance_" + oss.str() + ".png";
@@ -1938,9 +1940,10 @@ void plot_common_events_NPE_all(const vector<totalEvents>& eventi1, const vector
     hist2->SetFillColorAlpha(kRed, 0.5);
     hist2->Draw("SAME");
 
-    TLegend *legend2 = new TLegend(0.7, 0.7, 0.9, 0.9);
-    legend2->AddEntry(hist_all2, "Eventi totali", "f");
-    legend2->AddEntry(hist2, "Eventi accoppiati", "f");
+    TLegend *legend2 = new TLegend(0.7, 0.7, 0.9, 0.85); // Modifica le coordinate per spostare la legenda a destra e ridurre le dimensioni
+    legend2->SetTextSize(0.03); // Imposta la dimensione del testo della legenda
+    legend2->AddEntry(hist_all2, "totalCD", "f");
+    legend2->AddEntry(hist2, "totalCD+totalWP", "f");
     legend2->Draw();
 
     string filename2 = cd_folder + "/CD_" + run_name1 + "_tolerance_" + oss.str() + ".png";
@@ -2059,10 +2062,11 @@ void plot_common_events_NPE_muon(const vector<totalEvents>& eventi1, const vecto
     hist_muone1->SetStats(kFALSE);
     hist_muone1->Draw("SAME");
 
-    TLegend *legend1 = new TLegend(0.7, 0.7, 0.9, 0.9);
-    legend1->AddEntry(hist_all1, "Eventi totali WP", "f");
-    legend1->AddEntry(hist1, "Eventi comuni WP", "f");
-    legend1->AddEntry(hist_muone1, "Eventi wp-classifytool", "f");
+    TLegend *legend1 = new TLegend(0.7, 0.7, 0.9, 0.85); // Modifica le coordinate per spostare la legenda a destra e ridurre le dimensioni
+    legend1->SetTextSize(0.03); // Imposta la dimensione del testo della legenda
+    legend1->AddEntry(hist_all1, "totalWP", "f");
+    legend1->AddEntry(hist1, "totalWP+totalCD", "f");
+    legend1->AddEntry(hist_muone1, "WpMuon", "f");
     legend1->Draw();
 
     string filename1 = wp_folder + "/WP_" + run_name1 + "_tolerance_" + oss.str() + ".png";
@@ -2127,9 +2131,10 @@ void plot_common_events_NPE_muon(const vector<totalEvents>& eventi1, const vecto
     hist2->SetFillColorAlpha(kRed, 0.5);
     hist2->Draw("SAME");
 
-    TLegend *legend2 = new TLegend(0.7, 0.7, 0.9, 0.9);
-    legend2->AddEntry(hist_all2, "Eventi totali CD", "f");
-    legend2->AddEntry(hist2, "Eventi comuni CD", "f");
+    TLegend *legend2 = new TLegend(0.7, 0.7, 0.9, 0.85); // Modifica le coordinate per spostare la legenda a destra e ridurre le dimensioni
+    legend2->SetTextSize(0.03); // Imposta la dimensione del testo della legenda
+    legend2->AddEntry(hist_all2, "totalCD", "f");
+    legend2->AddEntry(hist2, "totalCD+totalWP", "f");
     legend2->Draw();
 
     string filename2 = cd_folder + "/CD_" + run_name1 + "_tolerance_" + oss.str() + ".png";
@@ -2196,7 +2201,7 @@ void analyze_common_events(const vector<totalEvents>& eventi1, const vector<tota
     c_common_events->SetGrid();
     c_common_events->SetLeftMargin(0.15);
     c_common_events->SetBottomMargin(0.15);
-    graph_common_events->SetTitle("Common Events Rate vs Tolerance;Tolerance [ns];Rate [Hz]");
+    graph_common_events->SetTitle("Common Events Rate vs Tolerance;#Delta t [ns];Rate [Hz]");
     graph_common_events->GetXaxis()->SetTitleOffset(1.4);
     graph_common_events->GetYaxis()->SetTitleOffset(1.6);
     graph_common_events->SetMarkerStyle(20);
@@ -2252,7 +2257,7 @@ void analyze_common_events_with_energy_cut_cd(const vector<totalEvents>& eventi1
     c_common_events->SetGrid();
     c_common_events->SetLeftMargin(0.15);
     c_common_events->SetBottomMargin(0.15);
-    graph_common_events->SetTitle("Common Events Rate vs Tolerance with charge cut on CD;Tolerance [ns];Rate [Hz]");
+    graph_common_events->SetTitle("Common Events Rate vs Tolerance with charge cut on CD;#Delta t [ns];Rate [Hz]");
     graph_common_events->GetXaxis()->SetTitleOffset(1.4);
     graph_common_events->GetYaxis()->SetTitleOffset(1.6);
     graph_common_events->SetMarkerStyle(20);
@@ -2327,7 +2332,7 @@ void analyze_common_events_with_energy_cut_wp(const vector<totalEvents>& eventi1
     c_common_events->SetGrid();
     c_common_events->SetLeftMargin(0.15);
     c_common_events->SetBottomMargin(0.15);
-    graph_common_events->SetTitle("Common Events Rate vs Tolerance with charge cut on WP;Tolerance [ns];Rate [Hz]");
+    graph_common_events->SetTitle("Common Events Rate vs Tolerance with charge cut on WP;#Delta t [ns];Rate [Hz]");
     graph_common_events->GetXaxis()->SetTitleOffset(1.4);
     graph_common_events->GetYaxis()->SetTitleOffset(1.6);
     graph_common_events->SetMarkerStyle(20);
@@ -2463,15 +2468,14 @@ void plot_time_difference_histogram(const vector<totalEvents>& eventi1, const ve
     std::ostringstream oss;
     oss << std::fixed << std::setprecision(1) << tolerance_ns;
     // Calcola l'intervallo dell'istogramma in base ai dati
-    long double max_time_diff = *max_element(time_differences.begin(), time_differences.end());
-    TH1F *hist = new TH1F("time_diff_hist", ("Istogramma Differenza di Tempo (Tolleranza: " + oss.str() + " ns)").c_str(), 100, 100, 100);
+    TH1F *hist = new TH1F("time_diff_hist", ("Istogramma Differenza di Tempo (Tolleranza: " + oss.str() + " ns)").c_str(), 100, 0, tolerance_ns);
     canvas->SetGrid();
 
     for (const auto& diff : time_differences) {
         hist->Fill(diff);
     }
 
-    hist->GetXaxis()->SetTitle("Differenza di Tempo [ns]");
+    hist->GetXaxis()->SetTitle("#Delta t [ns]");
     hist->GetYaxis()->SetTitle("Counts [a.u.]");
     hist->SetLineWidth(2);
     hist->SetLineColor(kBlue);
@@ -2568,7 +2572,7 @@ void plot_overlap_area_vs_tolerance(const vector<double>& tolerances, const vect
     // Aggiungi margini al canvas
     c_overlap->SetLeftMargin(0.15);
     c_overlap->SetBottomMargin(0.15);
-    graph_overlap->SetTitle("Normalized Overlap Area totalWP & WP-classify Ev. vs Tolerance;Tolerance [ns];Normalized Overlap Area");
+    graph_overlap->SetTitle("Normalized Overlap Area totalWP & WP-classify Ev. vs Tolerance;#Delta t [ns];Overlap Area Normalizzata");
     graph_overlap->GetXaxis()->SetTitleOffset(1.4); // Sposta il titolo dell'asse X
     graph_overlap->GetYaxis()->SetTitleOffset(1.6); // Sposta il titolo dell'asse Y
     graph_overlap->SetMarkerStyle(20);
@@ -2621,11 +2625,11 @@ void plot_muon_rate_vs_run_with_energy_cut_cd(const vector<vector<totalEvents>>&
     }
 
     // Creazione del grafico del rate dei muoni in funzione della run
-    TCanvas *canvas = new TCanvas("canvas_muon_rate", "Muon Rate vs Run", 800, 600);
+    TCanvas *canvas = new TCanvas("canvas_muon_rate", "Rate dei Muoni in Funzione della Run", 800, 600);
     TGraphErrors *graph = new TGraphErrors(run_indices.size(), &run_indices[0], &muon_rates[0], nullptr, &errors[0]);
     canvas->SetGrid();
 
-    graph->SetTitle("Muon Rate vs Run with Energy Cut CD;Run Index;Muon Rate [Hz]");
+    graph->SetTitle("Rate dei Muoni vs Run (taglio della carica CD);Indice della Run;Rate [Hz]");
     graph->SetMarkerStyle(20);
     graph->SetMarkerSize(1.4);
     graph->Draw("AP");
@@ -2671,11 +2675,11 @@ void plot_muon_rate_vs_run_with_energy_cut_wp(const vector<vector<totalEvents>>&
     }
 
     // Creazione del grafico del rate dei muoni in funzione della run
-    TCanvas *canvas = new TCanvas("canvas_muon_rate", "Muon Rate vs Run", 800, 600);
+    TCanvas *canvas = new TCanvas("canvas_muon_rate", "Rate dei Muoni in Funzione della Run", 800, 600);
     TGraphErrors *graph = new TGraphErrors(run_indices.size(), &run_indices[0], &muon_rates[0], nullptr, &errors[0]);
     canvas->SetGrid();
 
-    graph->SetTitle("Muon Rate vs Run with Energy Cut WP;Run Index;Muon Rate [Hz]");
+    graph->SetTitle("Rate dei Muoni vs Run (taglio della carica WP);Indice della Run;Rate [Hz]");
     graph->SetMarkerStyle(20);
     graph->SetMarkerSize(1.4);
     graph->Draw("AP");
