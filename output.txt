@@ -1208,4 +1208,4 @@ Analisi del file RUN4051
 ============================================
 FINE CONFRONTO WP e CD
 ============================================
-Tempo totale di esecuzione: 2143.3 secondi
+Tempo totale di esecuzione: 1959.02 secondi

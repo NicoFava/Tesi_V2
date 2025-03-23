@@ -396,19 +396,34 @@ void Distance_histogram(const vector<muone>& eventi, const string& run_name){
     }
     
     TCanvas *canvas = new TCanvas(("canvas_dist_" + run_name).c_str(), ("Distanza percorsa - " + run_name).c_str(), 800, 600);
-    TH1F *dist = new TH1F(run_name.c_str(), ("Distribuzione distanza percorsa - " + run_name).c_str(), 100, 100, 100);
+    TH1F *dist = new TH1F(run_name.c_str(), ("Distribuzione distanza percorsa - " + run_name).c_str(), 100, 0, 45000);
     gPad->SetLeftMargin(0.12);
     dist->StatOverflows(kTRUE);
     canvas->SetGrid();
+    
     for (const auto& ev : eventi) {
-        dist->Fill(ev.distance);
+        double distance = sqrt(pow(ev.exit_x - ev.entry_x, 2) + pow(ev.exit_y - ev.entry_y, 2) + pow(ev.exit_z - ev.entry_z, 2));
+        dist->Fill(distance);
     }
+
     dist->SetLineColor(kOrange);
-    dist->GetXaxis()->SetTitle("Distance [mm]");
-    dist->GetYaxis()->SetTitle("Counts [a.u.]");
     dist->SetLineWidth(2);
     dist->SetFillColorAlpha(kOrange, 1);
+    dist->GetXaxis()->SetTitle("Distance [mm]");
+    dist->GetYaxis()->SetTitle("Counts [a.u.]");
     dist->Draw();
+
+    // Sposta la casella delle statistiche a sinistra
+    gStyle->SetOptStat(1111); // Abilita la casella delle statistiche
+    dist->SetStats(1); // Abilita la casella delle statistiche per questo istogramma
+    TPaveStats *stats = (TPaveStats*)dist->FindObject("stats");
+    if (stats) {
+        stats->SetX1NDC(0.2); // Nuova posizione X (angolo in basso a sinistra)
+        stats->SetX2NDC(0.4); // Nuova posizione X (angolo in alto a destra)
+        stats->SetY1NDC(0.7); // Nuova posizione Y (angolo in basso a sinistra)
+        stats->SetY2NDC(0.9); // Nuova posizione Y (angolo in alto a destra)
+    }
+
     string filename = folder_name + "/Distance_" + run_name + ".png";
     canvas->SaveAs(filename.c_str());
     delete canvas;
