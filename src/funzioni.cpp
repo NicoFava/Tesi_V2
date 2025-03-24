@@ -1992,6 +1992,11 @@ void plot_common_events_NPE_muon(const vector<totalEvents>& eventi1, const vecto
         all_NPE_muone.push_back(ev.PeSum);
     }
 
+    int cd_above_30k = 0, cd_above_10k = 0;
+    int cd_above_30k_not_wp = 0, cd_above_10k_not_wp = 0;
+
+    int wp_above_10k = 0, wp_above_8k = 0;
+    int wp_above_10k_not_muon = 0, wp_above_8k_not_muon = 0;
     // Riempio i vettori con gli eventi comuni entro la tolleranza
     while (i < eventi1.size() && j < eventi2.size()) {
         long double ev_time1 = (long double) eventi1[i].fSec * 1e9 + (long double) eventi1[i].fNanoSec;
@@ -2000,6 +2005,62 @@ void plot_common_events_NPE_muon(const vector<totalEvents>& eventi1, const vecto
         if (abs(ev_time1 - ev_time2) <= tolerance_ns) {
             common_NPE1.push_back(eventi1[i].NPE);
             common_NPE2.push_back(eventi2[j].NPE);
+            if (eventi1[i].NPE > 10000) {
+                wp_above_10k++;
+                bool is_muon = false;
+                for (const auto& muon : eventi_muone) {
+                    if (ev_time1 == (long double) muon.fSec * 1e9 + (long double) muon.fNanosec) {
+                        is_muon = true;
+                        break;
+                    }
+                }
+                if (!is_muon) {
+                    wp_above_10k_not_muon++;
+                }
+            }
+
+            if (eventi1[i].NPE > 8000) {
+                wp_above_8k++;
+                bool is_muon = false;
+                for (const auto& muon : eventi_muone) {
+                    if (ev_time1 == (long double) muon.fSec * 1e9 + (long double) muon.fNanosec) {
+                        is_muon = true;
+                        break;
+                    }
+                }
+                if (!is_muon) {
+                    wp_above_8k_not_muon++;
+                }
+            }
+
+            if (eventi2[j].NPE > 30000) {
+                cd_above_30k++;
+                bool is_muon = false;
+                for (const auto& muon : eventi_muone) {
+                    if (ev_time1 == (long double) muon.fSec * 1e9 + (long double) muon.fNanosec) {
+                        is_muon = true;
+                        break;
+                    }
+                }
+                if (!is_muon) {
+                    cd_above_30k_not_wp++;
+                }
+            }
+
+            if (eventi2[j].NPE > 10000) {
+                cd_above_10k++;
+                bool is_muon = false;
+                for (const auto& muon : eventi_muone) {
+                    if (ev_time1 == (long double) muon.fSec * 1e9 + (long double) muon.fNanosec) {
+                        is_muon = true;
+                        break;
+                    }
+                }
+                if (!is_muon) {
+                    cd_above_10k_not_wp++;
+                }
+            }
+
             i++;
             j++;
         } else if (ev_time1 < ev_time2) {
@@ -2159,6 +2220,16 @@ void plot_common_events_NPE_muon(const vector<totalEvents>& eventi1, const vecto
     delete hist2;
     delete hist_all2;
     delete legend2;
+
+    // Stampa i risultati
+    cout << "Frazione di eventi WP con carica >10K che non vengono identificati come eventi muoni: "
+         << (wp_above_10k_not_muon / static_cast<double>(wp_above_10k)) * 100 << "%" << endl;
+    cout << "Frazione di eventi WP con carica >8K che non vengono identificati come eventi muoni: "
+         << (wp_above_8k_not_muon / static_cast<double>(wp_above_8k)) * 100 << "%" << endl;
+    cout << "Frazione di eventi CD con carica >30K che non sono correlati ad un evento WP con corrispondenza ad eventi muone: "
+         << (cd_above_30k_not_wp / static_cast<double>(cd_above_30k)) * 100 << "%" << endl;
+    cout << "Frazione di eventi CD con carica >10K che non sono correlati ad un evento WP con corrispondenza ad eventi muone: "
+         << (cd_above_10k_not_wp / static_cast<double>(cd_above_10k)) * 100 << "%" << endl;
 }
 
 void analyze_total_wp_cd(const vector<vector<totalEvents>>& total_eventi_per_file_wp, const vector<vector<totalEvents>>& total_eventi_per_file_cd, const vector<vector<muone>>& updated_eventi_per_file, const vector<string>& total_run_names_wp, const vector<string>& total_run_names_cd, const vector<string>& run_names_mod) {
@@ -2166,18 +2237,21 @@ void analyze_total_wp_cd(const vector<vector<totalEvents>>& total_eventi_per_fil
         cout << "Analisi del file " << total_run_names_wp[j] << endl;
         vector<double> tolerances;
         vector<double> overlap_areas;
-        for (double tolerance_ns = 1.0; tolerance_ns <= 1000000000.0; tolerance_ns *= 10) {
+        for (double tolerance_ns : {1.0, 10.0, 100.0, 200.0, 1000.0, 10000.0, 100000.0, 1000000.0, 10000000.0, 100000000.0, 1000000000.0}) {
             double overlap_area;
             plot_common_events_NPE(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], tolerance_ns, total_run_names_wp[j], total_run_names_cd[j]);
             plot_common_events_NPE_all(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], tolerance_ns, total_run_names_wp[j], total_run_names_cd[j]);
-            plot_common_events_NPE_muon(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], updated_eventi_per_file[j], tolerance_ns, total_run_names_wp[j], total_run_names_cd[j], overlap_area);
+            if (tolerance_ns == 200.0 && total_run_names_wp[j] == "RUN4049") {
+                cout << "Tolleranza: " << tolerance_ns << " ns" << endl;
+                plot_common_events_NPE_muon(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], updated_eventi_per_file[j], tolerance_ns, total_run_names_wp[j], total_run_names_cd[j], overlap_area);
+            }
             tolerances.push_back(tolerance_ns);
             overlap_areas.push_back(overlap_area);
         }
         analyze_common_events(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], total_run_names_wp[j], total_run_names_cd[j]);
         analyze_common_events_with_energy_cut_cd(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], total_run_names_wp[j], total_run_names_cd[j], 5e4);
         analyze_common_events_with_energy_cut_wp(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], total_run_names_wp[j], total_run_names_cd[j], 5e3);
-        plot_time_difference_histogram(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], 100.0, total_run_names_wp[j], total_run_names_cd[j]);
+        plot_time_difference_histogram(total_eventi_per_file_wp[j], total_eventi_per_file_cd[j], 200.0, total_run_names_wp[j], total_run_names_cd[j]);
 
         // Chiamata alla nuova funzione per creare il grafico dell'area di sovrapposizione
         plot_overlap_area_vs_tolerance(tolerances, overlap_areas, total_run_names_wp[j]);
