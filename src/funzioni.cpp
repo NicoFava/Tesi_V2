@@ -922,7 +922,7 @@ void plot_trackID_distribution(const vector<muone>& eventi, const string& run_na
     // Controllo se c'è almeno un trackID uguale a -1
     for (const auto& e : eventi) {
         if (e.trackID == -1) {
-            cout << "Trovato trackID = -1, salto la creazione dell'istrogramma TrackID per la " << run_name << endl;
+            cout << "Trovato trackID = -1, salto la creazione dell'istogramma TrackID per la " << run_name << endl;
             return;
         }
     }
@@ -963,24 +963,27 @@ void plot_trackID_distribution(const vector<muone>& eventi, const string& run_na
         fs::create_directory(folder_name);
     }
 
-    TCanvas *canvas = new TCanvas(("canvas_trackID_" + run_name).c_str(), ("Distribuzione trackID - " + run_name).c_str(), 800, 600);
-    TH1F *trackID_hist = new TH1F(run_name.c_str(), ("Distribuzione trackID - " + run_name).c_str(), trackID_max + 1, 0, trackID_max + 1);
+    TCanvas *canvas = new TCanvas(("canvas_trackID_" + run_name).c_str(), ("Distribuzione Numero di Tracce - " + run_name).c_str(), 800, 600);
+    TH1F *trackID_hist = new TH1F(run_name.c_str(), ("Distribuzione Numero di Tracce - " + run_name).c_str(), trackID_max + 1, 0, trackID_max + 1);
     gPad->SetLeftMargin(0.12);
     canvas->SetGrid();
 
     for (int i = 0; i <= trackID_max; i++) {
         double percentage = (static_cast<double>(trackID_count[i]) / total_events) * 100;
         trackID_hist->SetBinContent(i + 1, percentage);
-        trackID_hist->GetXaxis()->SetBinLabel(i + 1, to_string(i).c_str());
+        trackID_hist->GetXaxis()->SetBinLabel(i + 1, to_string(i + 1).c_str()); // Cambia il label in "Numero di tracce"
     }
 
     trackID_hist->SetLineColor(kBlue);
     trackID_hist->SetLineWidth(2);
     trackID_hist->SetFillColorAlpha(kBlue, 1);
-    trackID_hist->GetXaxis()->SetTitle("TrackID");
+    trackID_hist->GetXaxis()->SetTitle("Numero di Tracce");
     trackID_hist->GetYaxis()->SetTitle("Percentuale [%]");
     trackID_hist->SetStats(kFALSE); // Disabilito la casella delle statistiche
     trackID_hist->Draw("HIST");
+
+    // Imposta la scala logaritmica sull'asse Y
+    canvas->SetLogy();
 
     // Creo una casella di testo in alto a destra per visualizzare la percentuale di ciascun trackID
     TPaveText *pave = new TPaveText(0.7, 0.7, 0.9, 0.9, "NDC");
@@ -994,7 +997,7 @@ void plot_trackID_distribution(const vector<muone>& eventi, const string& run_na
             double percentage = (static_cast<double>(trackID_count[i]) / total_events) * 100;
             std::ostringstream oss;
             oss << std::fixed << std::setprecision(2) << percentage; // Imposta 2 cifre significative
-            pave->AddText(("TrackID " + to_string(i) + ": " + oss.str() + "%").c_str());
+            pave->AddText(("# Tracce " + to_string(i + 1) + ": " + oss.str() + "%").c_str());
         }
     }
     pave->Draw();
@@ -1677,12 +1680,12 @@ void total_PeSum_histogram_log_divided_track(const vector<totalEvents>& eventi1,
 
     TLegend *legend = new TLegend(0.65, 0.6, 1.0, 0.95); // Modifica le coordinate per spostare la legenda a destra
     legend->AddEntry(charge1_total, (run_name1 + " Totale").c_str(), "f");
-    legend->AddEntry(charge2_single, (run_name2 + " Singoli").c_str(), "f");
-    legend->AddEntry(charge2_track1, (run_name2 + " trackID = 1").c_str(), "f");
-    legend->AddEntry(charge2_track2, (run_name2 + " trackID = 2").c_str(), "f");
-    legend->AddEntry(charge2_track3, (run_name2 + " trackID = 3").c_str(), "f");
-    legend->AddEntry(charge2_track4, (run_name2 + " trackID = 4").c_str(), "f");
-    legend->AddEntry(charge2_track_gt4, (run_name2 + " trackID > 4").c_str(), "f");
+    legend->AddEntry(charge2_single, (run_name1 + " Singoli").c_str(), "f");
+    legend->AddEntry(charge2_track1, (run_name1 + " # Tracce = 2").c_str(), "f");
+    legend->AddEntry(charge2_track2, (run_name1 + " # Tracce = 3").c_str(), "f");
+    legend->AddEntry(charge2_track3, (run_name1 + " # Tracce = 4").c_str(), "f");
+    legend->AddEntry(charge2_track4, (run_name1 + " # Tracce = 5").c_str(), "f");
+    legend->AddEntry(charge2_track_gt4, (run_name1 + " # Tracce > 5").c_str(), "f");
     legend->SetTextSize(0.03); // Imposta la dimensione del testo della legenda
     legend->Draw();
 
@@ -1869,11 +1872,13 @@ void plot_common_events_NPE_all(const vector<totalEvents>& eventi1, const vector
         fs::create_directory(cd_folder);
     }
 
-    // Istogramma per l'energia del CD
-    TCanvas *canvas1 = new TCanvas(run_name1.c_str(), "Istogramma Carica WP", 800, 600);
-    TH1F *hist1 = new TH1F(run_name1.c_str(), ("Istogramma Carica WP (Tolleranza: " + oss.str() + " ns)").c_str(), 100, 0, 7);
-    TH1F *hist_all1 = new TH1F((run_name1 + "_all").c_str(), ("Istogramma Carica WP (tutti gli eventi vs eventi accoppiati) Tolleranza: " + oss.str() + " ns").c_str(), 100, 0, 7);
+    // Istogramma per l'energia del WP
+    TCanvas *canvas1 = new TCanvas(("canvas1_" + run_name1).c_str(), "Istogramma Carica WP", 800, 600);
+    TH1F *hist1 = new TH1F(("hist1_" + run_name1).c_str(), ("Istogramma Carica WP (Tolleranza: " + oss.str() + " ns)").c_str(), 100, 0, 7);
+    TH1F *hist_all1 = new TH1F(("hist_all1_" + run_name1).c_str(), ("Istogramma Carica WP (tutti gli eventi vs eventi accoppiati) Tolleranza: " + oss.str() + " ns").c_str(), 100, 0, 7);
     canvas1->SetGrid();
+    gPad->SetLeftMargin(0.12); // Aumenta il margine sinistro
+    gPad->SetBottomMargin(0.12); // Aumenta il margine inferiore
     BinLogX(hist1);
     BinLogY(hist1);
     BinLogX(hist_all1);
@@ -1911,6 +1916,7 @@ void plot_common_events_NPE_all(const vector<totalEvents>& eventi1, const vector
     legend1->AddEntry(hist1, "totalWP+totalCD", "f");
     legend1->Draw();
 
+    canvas1->Update(); // Aggiorna il canvas
     string filename1 = wp_folder + "/WP_" + run_name1 + "_tolerance_" + oss.str() + ".png";
     canvas1->SaveAs(filename1.c_str());
 
@@ -1919,11 +1925,13 @@ void plot_common_events_NPE_all(const vector<totalEvents>& eventi1, const vector
     delete hist_all1;
     delete legend1;
 
-    // Istogramma per l'energia del WP
-    TCanvas *canvas2 = new TCanvas(run_name1.c_str(), "Istogramma Carica CD", 800, 600);
-    TH1F *hist2 = new TH1F(run_name1.c_str(), ("Istogramma Carica CD (Tolleranza: " + oss.str() + " ns)").c_str(), 100, 0, 8);
-    TH1F *hist_all2 = new TH1F((run_name1 + "_all").c_str(), ("Istogramma Carica CD (tutti gli eventi vs eventi accoppiati) Tolleranza: " + oss.str() + " ns").c_str(), 100, 0, 8);
+    // Istogramma per l'energia del CD
+    TCanvas *canvas2 = new TCanvas(("canvas2_" + run_name1).c_str(), "Istogramma Carica CD", 800, 600);
+    TH1F *hist2 = new TH1F(("hist2_" + run_name1).c_str(), ("Istogramma Carica CD (Tolleranza: " + oss.str() + " ns)").c_str(), 100, 0, 8);
+    TH1F *hist_all2 = new TH1F(("hist_all2_" + run_name1).c_str(), ("Istogramma Carica CD (tutti gli eventi vs eventi accoppiati) Tolleranza: " + oss.str() + " ns").c_str(), 100, 0, 8);
     canvas2->SetGrid();
+    gPad->SetLeftMargin(0.12); // Aumenta il margine sinistro
+    gPad->SetBottomMargin(0.12); // Aumenta il margine inferiore
     BinLogX(hist2);
     BinLogY(hist2);
     BinLogX(hist_all2);
@@ -1961,6 +1969,7 @@ void plot_common_events_NPE_all(const vector<totalEvents>& eventi1, const vector
     legend2->AddEntry(hist2, "totalCD+totalWP", "f");
     legend2->Draw();
 
+    canvas2->Update(); // Aggiorna il canvas
     string filename2 = cd_folder + "/CD_" + run_name1 + "_tolerance_" + oss.str() + ".png";
     canvas2->SaveAs(filename2.c_str());
 
@@ -2221,6 +2230,10 @@ void analyze_common_events(const vector<totalEvents>& eventi1, const vector<tota
     graph_common_events->GetYaxis()->SetTitleOffset(1.6);
     graph_common_events->SetMarkerStyle(20);
     graph_common_events->SetMarkerSize(1.4);
+
+    // Imposta il minimo dell'asse Y a 0
+    graph_common_events->GetYaxis()->SetRangeUser(0, *max_element(common_event_frequencies.begin(), common_event_frequencies.end()) * 1.1);
+
     graph_common_events->Draw("AP");
     c_common_events->SetLogx();
 
@@ -2272,11 +2285,15 @@ void analyze_common_events_with_energy_cut_cd(const vector<totalEvents>& eventi1
     c_common_events->SetGrid();
     c_common_events->SetLeftMargin(0.15);
     c_common_events->SetBottomMargin(0.15);
-    graph_common_events->SetTitle("Common Events Rate vs Tolerance with charge cut on CD;#Delta t [ns];Rate [Hz]");
+    graph_common_events->SetTitle("Rate eventi correlati vs t_co (taglio CD);t_co [ns];Rate [Hz]");
     graph_common_events->GetXaxis()->SetTitleOffset(1.4);
     graph_common_events->GetYaxis()->SetTitleOffset(1.6);
     graph_common_events->SetMarkerStyle(20);
     graph_common_events->SetMarkerSize(1.4);
+
+    // Imposta il minimo dell'asse Y a 0
+    graph_common_events->GetYaxis()->SetRangeUser(0, *max_element(common_event_frequencies.begin(), common_event_frequencies.end()) * 1.1);
+
     graph_common_events->Draw("AP");
     c_common_events->SetLogx();
 
@@ -2347,11 +2364,15 @@ void analyze_common_events_with_energy_cut_wp(const vector<totalEvents>& eventi1
     c_common_events->SetGrid();
     c_common_events->SetLeftMargin(0.15);
     c_common_events->SetBottomMargin(0.15);
-    graph_common_events->SetTitle("Common Events Rate vs Tolerance with charge cut on WP;#Delta t [ns];Rate [Hz]");
+    graph_common_events->SetTitle("Rate eventi correlati vs t_co (taglio WP);t_co [ns];Rate [Hz]");
     graph_common_events->GetXaxis()->SetTitleOffset(1.4);
     graph_common_events->GetYaxis()->SetTitleOffset(1.6);
     graph_common_events->SetMarkerStyle(20);
     graph_common_events->SetMarkerSize(1.4);
+    
+    // Imposta il minimo dell'asse Y a 0
+    graph_common_events->GetYaxis()->SetRangeUser(0, *max_element(common_event_frequencies.begin(), common_event_frequencies.end()) * 1.1);
+
     graph_common_events->Draw("AP");
     c_common_events->SetLogx();
 
@@ -2637,16 +2658,23 @@ void plot_muon_rate_vs_run_with_energy_cut_cd(const vector<vector<totalEvents>>&
         run_indices.push_back(i + 1); // Indice della run
         muon_rates.push_back(muon_rate);
         errors.push_back(error);
+
+        // Stampa il valore del rate e dell'errore per ogni run
+        cout << "Run " << run_names[i] << ": Rate = " << muon_rate << " Hz, Error = " << error << " Hz" << endl;
     }
 
     // Creazione del grafico del rate dei muoni in funzione della run
-    TCanvas *canvas = new TCanvas("canvas_muon_rate", "Rate dei Muoni in Funzione della Run", 800, 600);
+    TCanvas *canvas = new TCanvas("canvas_muon_rate_cd", "Rate dei Muoni in Funzione della Run", 800, 600);
     TGraphErrors *graph = new TGraphErrors(run_indices.size(), &run_indices[0], &muon_rates[0], nullptr, &errors[0]);
     canvas->SetGrid();
 
     graph->SetTitle("Rate dei Muoni vs Run (taglio della carica CD);Indice della Run;Rate [Hz]");
     graph->SetMarkerStyle(20);
     graph->SetMarkerSize(1.4);
+
+    // Imposta il range dell'asse Y da 0 a 5.1
+    graph->GetYaxis()->SetRangeUser(0, 5.1);
+
     graph->Draw("AP");
 
     string main_folder = "images";
@@ -2687,16 +2715,23 @@ void plot_muon_rate_vs_run_with_energy_cut_wp(const vector<vector<totalEvents>>&
         run_indices.push_back(i + 1); // Indice della run
         muon_rates.push_back(muon_rate);
         errors.push_back(error);
+
+        // Stampa il valore del rate e dell'errore per ogni run
+        cout << "Run " << run_names[i] << ": Rate = " << muon_rate << " Hz, Error = " << error << " Hz" << endl;
     }
 
     // Creazione del grafico del rate dei muoni in funzione della run
-    TCanvas *canvas = new TCanvas("canvas_muon_rate", "Rate dei Muoni in Funzione della Run", 800, 600);
+    TCanvas *canvas = new TCanvas("canvas_muon_rate_wp", "Rate dei Muoni in Funzione della Run", 800, 600);
     TGraphErrors *graph = new TGraphErrors(run_indices.size(), &run_indices[0], &muon_rates[0], nullptr, &errors[0]);
     canvas->SetGrid();
 
     graph->SetTitle("Rate dei Muoni vs Run (taglio della carica WP);Indice della Run;Rate [Hz]");
     graph->SetMarkerStyle(20);
     graph->SetMarkerSize(1.4);
+
+    // Imposta il range dell'asse Y da 0 a 5.1
+    graph->GetYaxis()->SetRangeUser(0, 5.1);
+
     graph->Draw("AP");
 
     string main_folder = "images";
@@ -2739,9 +2774,6 @@ void plot_muon_rate_vs_run_eventID(const vector<vector<muone>>& eventi_per_file,
     if (!fs::exists(main_folder)) {
         fs::create_directory(main_folder);
     }
-    if (!fs::exists(main_folder)) {
-        fs::create_directory(main_folder);
-    }
 
     TCanvas *canvas = new TCanvas("canvas", "Rate dei Muoni in Funzione della Run (EventID Univoco)", 800, 600);
     TGraphErrors *graph = new TGraphErrors(run_indices.size(), &run_indices[0], &muon_rates[0], nullptr, &errors[0]);
@@ -2750,6 +2782,10 @@ void plot_muon_rate_vs_run_eventID(const vector<vector<muone>>& eventi_per_file,
     graph->SetTitle("Rate dei Muoni in Funzione della Run;Indice della Run;Rate [Hz]");
     graph->SetMarkerStyle(20);
     graph->SetMarkerSize(1.4);
+
+    // Imposta il range dell'asse Y da 0 a 6
+    graph->GetYaxis()->SetRangeUser(0, 6);
+
     graph->Draw("AP");
 
     string filename = main_folder + "/Muon_Rate_vs_Run_EventID_univ.png";
