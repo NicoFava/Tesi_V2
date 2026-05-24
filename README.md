@@ -8,7 +8,7 @@
 <a id="it"></a>
 # 🌌 JUNO Cosmic Muon Analysis
 
-**JUNO Cosmic Muon Analysis** è l'evoluzione finale e ottimizzata dei progetti di analisi dati sviluppati per il mio lavoro di tesi triennale in Fisica (precedentemente *Tesi_V0*, *Tesi_V1*, *Tesi_V2*). Questo applicativo C++/ROOT supporta l'analisi di **più file ROOT contemporaneamente**, garantendo un'elaborazione efficiente e la generazione automatica di plot organizzati in apposite directory.
+**JUNO Cosmic Muon Analysis** è l'evoluzione finale e ottimizzata dei progetti di analisi dati sviluppati per il mio lavoro di tesi triennale in Fisica (precedentemente *Tesi_V0* e *Tesi_V1*). Questo applicativo C++/ROOT supporta l'analisi di **più file ROOT contemporaneamente**, garantendo un'elaborazione efficiente e la generazione automatica di plot organizzati in apposite directory.
 
 ## 📖 Contesto del Lavoro di Tesi
 
@@ -103,7 +103,7 @@ Un focus centrale di questo codice è stato l'incrocio dei dati provenienti da d
 <a id="en"></a>
 # 🌌 JUNO Cosmic Muon Analysis
 
-**JUNO Cosmic Muon Analysis** is the final, optimized iteration of the data analysis tools developed for my Bachelor's Thesis in Physics (formerly *Tesi_V0*, *Tesi_V1*, *Tesi_V2*). This C++/ROOT application processes **multiple ROOT files simultaneously**, ensuring efficient data analysis and automatic generation of structured plots.
+**JUNO Cosmic Muon Analysis** is the final, optimized iteration of the data analysis tools developed for my Bachelor's Thesis in Physics (formerly *Tesi_V0* and *Tesi_V1*). This C++/ROOT application processes **multiple ROOT files simultaneously**, ensuring efficient data analysis and automatic generation of structured plots.
 
 ## 📖 Thesis Context
 
